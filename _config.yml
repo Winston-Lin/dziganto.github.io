@@ -1,3 +1,8 @@
+---
+layout: splash
+header:
+  image: http://www.carlwozniak.com/clouds/Graphics/New%20Pix/clouds13.jpg
+---
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
