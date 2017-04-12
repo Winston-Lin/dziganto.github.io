@@ -8,7 +8,7 @@
 # Site Settings
 theme                    : minimal-mistakes-jekyll
 locale                   : "en"
-title                    : "Future Site Title"
+title                    : "Site Title"
 title_separator          : "-"
 name                     : "David Ziganto"
 description              : "TBD"
