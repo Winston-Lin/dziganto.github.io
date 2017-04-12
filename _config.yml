@@ -79,7 +79,7 @@ analytics:
 # Site Author
 author:
   name             : "David Ziganto"
-  avatar           : "http://www.cs.toronto.edu/~urtasun/courses/CSC411/CSC411_Fall15_files/machine_learning.jpg"
+  avatar           : /assets/images/head_shot.jpg
   bio              : "Senior Data Scientist"
   location         : "Chicago"
   email            : "david@thisismetis.com"
