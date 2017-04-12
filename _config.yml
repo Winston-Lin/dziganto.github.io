@@ -7,11 +7,11 @@
 
 # Site Settings
 theme                    : minimal-mistakes-jekyll
-locale                   : "en-US"
+locale                   : "en"
 title                    : "Site Title"
 title_separator          : "-"
 name                     : "David Ziganto"
-description              : ""
+description              : "Musings on machine learning, data science, and artificial intelligence."
 url                      : "https://dziganto.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
