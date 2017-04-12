@@ -10,7 +10,7 @@ theme                    : minimal-mistakes-jekyll
 locale                   : "en"
 title                    : "Site Title"
 title_separator          : "-"
-name                     : "Site Title"
+name                     : "Test"
 description              : "TBD"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
