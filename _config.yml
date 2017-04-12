@@ -239,11 +239,9 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: splash
+      layout: single
       author_profile: true
       read_time: true
       comments: # true
       share: true
       related: true
-      header:
-        image: http://www.carlwozniak.com/clouds/Graphics/New%20Pix/clouds13.jpg
