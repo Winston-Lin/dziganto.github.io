@@ -7,12 +7,12 @@
 
 # Site Settings
 theme                    : minimal-mistakes-jekyll
-locale                   : "en"
+locale                   : "en-US"
 title                    : "Site Title"
 title_separator          : "-"
 name                     : "David Ziganto"
-description              : "TBD"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : ""
+url                      : "https://dziganto.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
