@@ -8,9 +8,9 @@
 # Site Settings
 theme                    : minimal-mistakes-jekyll
 locale                   : "en"
-title                    : "Site Title"
+title                    : "Future Site Title"
 title_separator          : "-"
-name                     : "Test"
+name                     : "David Ziganto"
 description              : "TBD"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
