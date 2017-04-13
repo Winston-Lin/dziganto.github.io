@@ -1,7 +1,7 @@
 ![Image of Binary](/assets/images/binary-number-tunnel.jpg?raw=true)
 
 # Introduction
-Sparse matrices are common in machine learning. While they occur naturally in some data collection processes, far more often they arise when applying certain data transformation techniques like:
+Sparse matrices are common in machine learning. While they occur naturally in some data collection processes, more often they arise when applying certain data transformation techniques like:
 
 - [One-hot encoding](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) categorical variables
 - [CountVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) for NLP
