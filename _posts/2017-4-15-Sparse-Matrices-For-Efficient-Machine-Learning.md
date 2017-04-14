@@ -147,7 +147,7 @@ By the way, this works with plenty of other algorithms, too. For example, I ran 
 
 # How CSR Works
 ![CSR](/assets/images/CSR.png?raw=true)
-Credit for the image above goes to Nathan Bell's *Sparse Matrix Representations & Iterative Solvers* in the Additional Resources section below.
+Credit for the image above goes to Nathan Bell's *Sparse Matrix Representations & Iterative Solvers* in the **Additional Resources** section below.
 
 CSR requires three arrays. The first array stores all of the non-zero values. The second array stores the cumulutive count of non-zero values in all current and previous rows. The last array stores column index values for each non-zero value. I realize that may be confusing, so let's walk through an example. 
 
