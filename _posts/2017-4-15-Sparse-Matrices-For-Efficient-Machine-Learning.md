@@ -151,16 +151,16 @@ By the way, this works with plenty of other algorithms, too. For example, I ran 
 
 CSR requires three arrays. The first array stores all of the non-zero values. The second array stores the cumulutive count of non-zero values in all current and previous rows. The last array stores column index values for each non-zero value. I realize that may be confusing, so let's walk through an example. 
 
-Refer to the diagram above. The first step is to populate the first array which looks like this [1 7 2 8 5 3 9 6 4]. Again, we are only storing non-zero values. Step two is populating the second array. It always starts with 0. Since there are two non-zero values in row 1, we update our array like so [0 2]. There are 2, 3, 2, non-zero values in rows 2, 3, and 4, respectively. So we update the array so it becomes [0 2 4 7 9]. The length of this array should always be the number of rows + 1. The final step is to capture column indices. The first value, 1, is in column 1. The second value, 7, is in column 2. The third value, 2, is in column 2. And so on. The result is the array [0 1 1 2 0 2 3 1 3]. You may have noticed the columns are zero-indexed. 
+Refer to the diagram above. The first step is to populate the first array which looks like this [1 7 2 8 5 3 9 6 4]. Again, we are only storing non-zero values. Step two is populating the second array. It always starts with 0. Since there are two non-zero values in row 1, we update our array like so [0 2]. There are 2, 3, 2, non-zero values in rows 2, 3, and 4, respectively. So we update the array so it becomes [0 2 4 7 9]. The length of this array should always be the number of rows + 1. The final step is to capture column indices. Keep in mind that the columns are zero-indexed. The first value, 1, is in column 0. The second value, 7, is in column 1. The third value, 2, is in column 1. And so on. The result is the array [0 1 1 2 0 2 3 1 3].  
 
-Believe it or not, those three arrays allow us to perfectly reconstruct the original matrix. From here, common mathematical operations like addition or multiplication can be applied in an efficient manner. I will not go into further detail. Suffice it to say that there are many wonderful resources online if you're interested in details. 
+Believe it or not, these three arrays allow us to perfectly reconstruct the original matrix. From here, common mathematical operations like addition or multiplication can be applied in an efficient manner. I will not go into further detail. Suffice it to say there are many wonderful resources online if you're interested in details. 
 
 # Summary
-We learned that a matrix composed of many zeros is known as a sparse matrix. Sparse matrices have nice properties. For example, they can be compressed, leaving a smaller memory footprint, and they can speed up many machine learning algorithms. Additionally, we introduced matplotlib's *spy()* method that allows us to quickly view the sparsity of a matrix and we learned how to convert a dense matrix into a sparse matrix using CSR in Scipy. Lastly, we saw real-world examples of data compression and efficiency gains with regards to machine learning algorithms. 
+A matrix composed of many zeros is known as a sparse matrix. Sparse matrices have nice properties. How do you know if you have a sparse matrix? Use matplotlib's *spy()* method. Once you know your matrix is sparse, use Scipy's CSR to convert its type from dense to sparse, check data compression, let loose any of the machine learning algorithms listed above, and enjoy. 
 
-I want you to leave you with this: what if the original data matrix won't fit into memory in the first place? How would we even convert it to a sparse matrix? 
+In closing, I want you to leave you with this: what if the original data matrix won't fit into memory in the first place? Can you think of a way to convert it to a sparse matrix anyway? 
 
-Stay tuned because I'll answer that and many other questions in coming blogs.
+**Stay tuned because I'll answer that and many other questions in coming blogs.**
 
 # Additional Resources
 [Working with Sparse Matrices](http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/3-C/sparse.html)  
