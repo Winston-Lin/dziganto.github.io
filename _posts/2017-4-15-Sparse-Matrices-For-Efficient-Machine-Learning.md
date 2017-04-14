@@ -129,7 +129,7 @@ plt.title("Dense Matrix");
 ![Spy Dense](/assets/images/sparse_matrix_spy_dense.png?raw=true)
 
 ### Scipy CSR
-We have a dense matrix called *dataset*. We already know it is very sparse. Let's go ahead and transform it into a sparse matrix with Scipy's CSR. Note: CSR is one of many options. Consult the docs for more information. 
+We have a dense matrix called *dataset*. We already know it is very sparse so let's go ahead and transform it with Scipy's CSR. Note: CSR is one of many options. Consult the docs for more information. 
 ```
 from scipy.sparse import csr_matrix
 sparse_dataset = csr_matrix(dataset)
@@ -147,7 +147,7 @@ By the way, this works with plenty of other algorithms, too. For example, I ran 
 
 # How CSR Works
 ![CSR](/assets/images/CSR.png?raw=true)
-Credit for the image above goes to Nathan Bell's *Sparse Matrix Representations & Iterative Solvers* in the **Additional Resources** section below.
+*Credit for the image above goes to Nathan Bell's *Sparse Matrix Representations & Iterative Solvers* in the **Additional Resources** section below.*
 
 CSR requires three arrays. The first array stores all of the non-zero values. The second array stores the cumulutive count of non-zero values in all current and previous rows. The last array stores column index values for each non-zero value. I realize that may be confusing, so let's walk through an example. 
 
