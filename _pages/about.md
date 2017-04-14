@@ -1,4 +1,4 @@
 ---
 permalink: /about/
 ---
-To be completed...
+![Under Construction](http://setup.orderingonline.com/Content/Images/under-construction.png)
