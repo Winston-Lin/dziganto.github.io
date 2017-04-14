@@ -1,3 +1,7 @@
+---
+permalink: /posts/
+---
+
 ![Image of Binary](/assets/images/binary-number-tunnel.jpg?raw=true)
 
 # Introduction
