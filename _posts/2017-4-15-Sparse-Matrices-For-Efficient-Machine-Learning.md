@@ -15,9 +15,7 @@ Let's step back for a second. Just what the heck is a sparse matrix and how is i
 
 Here is an example of a sparse matrix:
 
-<p align="center">
-  <img src="/assets/images/sparse_matrix.png"
-</p>
+![Sparse Matrix](/assets/images/sparse_matrix.png?raw=true)
 
 Because sparse matrices have lots of zero values, we can apply special algorithms that will do two important things:
 
@@ -140,16 +138,12 @@ sparse_dataset = csr_matrix(dataset)
 ```
 
 ### Compression
-<p align="center">
-  <img src="/assets/images/sparse_matrix_compression.png?raw=true"
-</p>
+![Compression](/assets/images/sparse_matrix_compression.png?raw=true)
 
 From the graph above we can see that the dense matrix is 160 MB while the sparse matrix is 24 MB. That's 85% compression! Granted we started with a pretty sparse matrix.
 
 ### Computation Time
-<p align="center">
-  <img src="/assets/images/sparse_matrix_compute_time.png?raw=true"
-</p>
+![Compute Time](/assets/images/sparse_matrix_compute_time.png?raw=true)
 
 Since I made this a classification problem and since NLP problems often result in sparse matrices, I used the Bernoulli Naive Bayes classifier; it is known for speed. As you can see, converting to a sparse matrix lead to an 8-fold decrease in computation time! This makes sense because computing all those nonsensical zero multiplications has been eliminated. Hooray! 
 
