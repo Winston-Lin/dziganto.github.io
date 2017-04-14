@@ -142,12 +142,14 @@ From the graph above we can see that the dense matrix is 160 MB while the sparse
 
 ### Computation Time
 ![Computation](/assets/images/sparse_matrix_compute_time.png?raw=true)  
-Since I made this a classification problem and since NLP problems often result in sparse matrices, I used the Bernoulli Naive Bayes classifier. It is known for speed. As you can see, converting to a sparse matrix lead to an 8-fold decrease in computation time! This makes sense because computing all those nonsensical 0 multiplications has been eliminated. Hooray! 
+Since I made this a classification problem and since NLP problems often result in sparse matrices, I used the Bernoulli Naive Bayes classifier. It is known for speed. As you can see, converting to a sparse matrix lead to an 8-fold decrease in computation time! This makes sense because computing all those nonsensical zero multiplications has been eliminated. Hooray! 
 
-By the way, this works with plenty of other algorithms, too. For example, I ran vanilla logistic regression and cut processing time in half. Where does we not see improved processing times? Decision tree-based algorithms like random forest. 
+By the way, this works with plenty of other algorithms, too. For example, I ran vanilla logistic regression and cut processing time in half. Where do we not see improved processing times? Decision tree-based algorithms like random forest. 
+
+If you're interested in how CSR works, keep reading. Otherwise, go forth and experiment.
 
 
-# How It Works
+# How CSR Works
 
 # Additional Resources
 [Working with Sparse Matrices](http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/3-C/sparse.html)  
