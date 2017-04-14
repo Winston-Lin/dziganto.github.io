@@ -129,7 +129,7 @@ plt.title("Dense Matrix");
 ![Spy Dense](/assets/images/sparse_matrix_spy_dense.png?raw=true)
 
 ### Scipy CSR
-We have a dense matrix called *dataset*. We already know is very sparse. Let's go ahead and transform it into a sparse matrix with Scipy's CSR.
+We have a dense matrix called *dataset*. We already know it is very sparse. Let's go ahead and transform it into a sparse matrix with Scipy's CSR.
 ```
 from scipy.sparse import csr_matrix
 sparse_dataset = csr_matrix(dataset)
