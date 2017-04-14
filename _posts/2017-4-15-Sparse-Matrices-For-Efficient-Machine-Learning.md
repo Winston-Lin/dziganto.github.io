@@ -160,7 +160,7 @@ A matrix composed of many zeros is known as a sparse matrix. Sparse matrices hav
 
 In closing, I want you to leave you with this: what if the original data matrix won't fit into memory in the first place? Can you think of a way to convert it to a sparse matrix anyway? 
 
-**Stay tuned because I'll answer that and many other questions in coming blogs.**
+**Stay tuned because I'll answer that and many other questions in coming posts.**
 
 # Additional Resources
 [Working with Sparse Matrices](http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/3-C/sparse.html)  
