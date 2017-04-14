@@ -5,8 +5,8 @@ main:
   - title: "About"
     url: /about/
   - title: "Posts"
-    url: /year-archive/
+    url: /posts/
   - title: "Collections"
-    url: /collection-archive/
+    url: /collections/
   - title: "Resources"
-    url: /year-archive/
+    url: /resources/
