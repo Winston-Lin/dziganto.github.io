@@ -16,7 +16,7 @@ Let's step back for a second. Just what the heck is a sparse matrix and how is i
 Here is an example of a sparse matrix:
 
 <p align="center">
-  <img src="/assets/images/sparse_matrix.png?raw=true"
+  <img src="/assets/images/sparse_matrix.png"
 </p>
 
 Because sparse matrices have lots of zero values, we can apply special algorithms that will do two important things:
