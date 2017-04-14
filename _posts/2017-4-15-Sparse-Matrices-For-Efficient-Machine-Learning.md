@@ -105,3 +105,4 @@ At the time of this writing, the following sklearn 0.18.1 algorithms accept spar
 # Additional Resources
 [Working with Sparse Matrices](http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/3-C/sparse.html)  
 [Sparse Matrix Representations & Iterative Solvers](http://www.bu.edu/pasi/files/2011/01/NathanBell1-10-1000.pdf)
+[scikit-learn](http://scikit-learn.org/stable/index.html)
