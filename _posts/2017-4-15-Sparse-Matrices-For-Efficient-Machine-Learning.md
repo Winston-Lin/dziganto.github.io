@@ -99,10 +99,52 @@ At the time of this writing, the following sklearn 0.18.1 algorithms accept spar
   
 
 # Examples
+Several intersting topics will be covered in this section. First, I am going to introduce you to a great tool called [spy()](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.spy.html). It is available in the matplotlib library and it allows us to visually inspect a matrix for sparsity. Next, I will show you how to apply Scipy's Compressed Sparse Row [(CSR)](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html#scipy.sparse.csc_matrix) algorithm to obtain a sparse matrix. Next, I will show how this method allows us to compress our example data by 85%. And finally, I will run a Bernoulli Naive Bayes classifier on two versions of the same example data, dense and sparse, to show how sparsity leads to markedly decreased computation times. 
+
+### Setup
+I generated a sparse 2,000 by 10,000 dataset matrix composed of zeros and ones. 
+```
+import numpy as np
+np.random.seed(seed=12)  ## for reproducibility
+dataset = np.random.binomial(1, 0.1, 20000000).reshape(2000,10000)  ## dummy features
+y = np.random.binomial(1, 0.5, 2000)  ## dummy target variable
+```
+
+### Spy()
+I mentioned matplotlib's *spy()* method which allows us to visualize the sparsity of a dataset. The %matplotlib is for Jupyter notebook users. Feel free to omit otherwise.
+```
+%matplotlib inline
+import matplotlib.pyplot as plt
+plt.spy(dataset)
+plt.title("Sparse Matrix");
+```
 ![Spy Sparse](/assets/images/sparse_matrix_spy_sparse.png?raw=true)
+
+Notice that the graph is mostly white. For comparison purposes, here's a dense matrix.
+```
+np.random.seed(seed=43)
+plt.figure(figsize=(14,12))
+plt.spy(np.random.binomial(1, 0.9, 20000000).reshape(2000,10000))
+plt.title("Dense Matrix");
+```
 ![Spy Dense](/assets/images/sparse_matrix_spy_dense.png?raw=true)
-![Compression](/assets/images/sparse_matrix_compression.png?raw=true)
-![Computation](/assets/images/sparse_matrix_compute_time.png?raw=true)
+
+### Scipy CSR
+We have a dense matrix called *dataset*. We already know is very sparse. Let's go ahead and transform it into a sparse matrix with Scipy's CSR.
+```
+from scipy.sparse import csr_matrix
+sparse_dataset = csr_matrix(dataset)
+```
+
+### Compression
+![Compression](/assets/images/sparse_matrix_compression.png?raw=true)  
+From the graph above we can see that the dense matrix is 160 MB while the sparse matrix is 24 MB. That's 85% compression! Granted we started with a pretty sparse matrix.
+
+### Computation Time
+![Computation](/assets/images/sparse_matrix_compute_time.png?raw=true)  
+Since I made this a classification problem and since NLP problems often result in sparse matrices, I used the Bernoulli Naive Bayes classifier. It is known for speed. As you can see, converting to a sparse matrix lead to an 8-fold decrease in computation time! This makes sense because computing all those nonsensical 0 multiplications has been eliminated. Hooray! 
+
+By the way, this works with plenty of other algorithms, too. For example, I ran vanilla logistic regression and cut processing time in half. Where does we not see improved processing times? Decision tree-based algorithms like random forest. 
 
 
 # How It Works
