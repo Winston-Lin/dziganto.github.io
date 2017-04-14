@@ -145,10 +145,13 @@ Since I made this a classification problem and since NLP problems often result i
 
 By the way, this works with plenty of other algorithms, too. For example, I ran vanilla logistic regression and cut processing time in half. Where do we not see improved processing times? Decision tree-based algorithms like random forest. 
 
-If you're interested in how CSR works, keep reading. Otherwise, go forth and experiment.
+If you're interested in how CSR works, keep reading. Otherwise, I want you to think about this: what if the original data matrix won't fit into memory in the first place? How would we even convert it to a sparse matrix? 
+
+Stay tuned because I'll answer that and many other questions in coming blogs.
 
 
 # How CSR Works
+
 
 # Additional Resources
 [Working with Sparse Matrices](http://www.mathcs.emory.edu/~cheung/Courses/561/Syllabus/3-C/sparse.html)  
