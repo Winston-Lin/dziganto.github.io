@@ -101,7 +101,8 @@ At the time of this writing, the following sklearn 0.18.1 algorithms accept spar
 # Examples
 ![Spy Sparse](/assets/images/sparse_matrix_spy_sparse.png?raw=true)
 ![Spy Dense](/assets/images/sparse_matrix_spy_dense.png?raw=true)
-![Compression](/assets/images/sparse_matrix_compression.png?raw=true), ![Computation](/assets/images/sparse_matrix_compute_time.png?raw=true)
+![Compression](/assets/images/sparse_matrix_compression.png?raw=true)
+![Computation](/assets/images/sparse_matrix_compute_time.png?raw=true)
 
 
 # How It Works
