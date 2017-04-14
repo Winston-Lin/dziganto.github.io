@@ -17,8 +17,8 @@ Let's step back for a second. Just what the heck is a sparse matrix and how is i
 
 Now for the punchline. Because sparse matrices have lots of zero values, we can apply special algorithms that will do two important things:
 
-1) compress the memory footprint of our matrix object  
-2) speed up many machine learning routines
+1. **compress the memory footprint of our matrix object**  
+2. **speed up many machine learning routines**
 
 Data compression minimizes the amount of data we need to store. That is not the only benefit, however. Users of [sklearn](http://scikit-learn.org/stable/index.html) will note that all native machine learning algorithms operate on objects that are in-memory. Said another way, the machine learning process breaks down when a matrix object (usually called a dataframe) does not fit into RAM. In the event that we have a sparse matrix, storing all those zero values is a waste. In many cases it is possible to compress the matrix object so that it can fit in RAM.
 
