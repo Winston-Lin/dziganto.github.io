@@ -13,7 +13,9 @@ Sparse matrices are common in machine learning. While they occur naturally in so
 
 Let's step back for a second. Just what the heck is a sparse matrix and how is it different than other matrices? Turns out there are two major types of matrices: dense and sparse. Sparse matrices have lots of zero values. Dense matrices do not. Here is an example of a sparse matrix:
 
-![Sparse Matrix](/assets/images/sparse_matrix.png?raw=true)
+<p align="center">
+  <img src="/assets/images/sparse_matrix.png?raw=true"
+</p>
 
 Because sparse matrices have lots of zero values, we can apply special algorithms that will do two important things:
 
