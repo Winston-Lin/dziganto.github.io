@@ -10,3 +10,4 @@ permalink: /resources/
 ### Books
 [Intro to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.pdf)  
 [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
+
