@@ -1,6 +1,5 @@
 ---
 permalink: /resources/
-author_profile: true
 ---
 
 # Machine Learning
