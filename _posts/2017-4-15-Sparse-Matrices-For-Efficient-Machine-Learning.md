@@ -24,7 +24,7 @@ Because sparse matrices have lots of zero values, we can apply special algorithm
 
 Data compression minimizes the amount of data we need to store. That is not the only benefit, however. Users of [sklearn](http://scikit-learn.org/stable/index.html) will note that all native machine learning algorithms operate on objects that are in-memory. Said another way, the machine learning process breaks down when a matrix object (usually called a dataframe) does not fit into RAM. In the event that we have a sparse matrix, storing all those zero values is a waste. In many cases it is possible to compress the matrix object so that it can fit in RAM.
 
-Additionally, consider multiplying a sparse matrix and a dense matrix. Even though the sparse matrix has many zeros, and zero times anything is always zero, the standard approach requires this pointless operation nonetheless. The result is slowed computation time. It is much more efficient to only operate on elements that will return non-zero values. Therefore, any algorithm that applies some basic mathematical computation like multiplication will benefit from a sparse matrix implementation.
+Additionally, consider multiplying a sparse matrix by a dense matrix. Even though the sparse matrix has many zeros, and zero times anything is always zero, the standard approach requires this pointless operation nonetheless. The result is slowed computation time. It is much more efficient to operate only on elements that will return non-zero values. Therefore, any algorithm that applies some basic mathematical computation like multiplication will benefit from a sparse matrix implementation.
 
 Sklearn has many algorithms that accept sparse matrices. The way to know is by checking the *fit* attribute in the documentation. Look for this: **X: {array-like, sparse matrix}**. 
 
@@ -100,7 +100,7 @@ At the time of this writing, the following sklearn 0.18.1 algorithms accept spar
 - [RandomTreesEmbedding](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomTreesEmbedding.html#sklearn.ensemble.RandomTreesEmbedding)
   
 # Examples
-Several intersting topics will be covered in this section. First, I am going to introduce you to a great tool called [spy()](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.spy.html). It is available in the matplotlib library and it allows us to visually inspect a matrix for sparsity. Next, I will show you how to apply Scipy's Compressed Sparse Row [(CSR)](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html#scipy.sparse.csc_matrix) algorithm to obtain a sparse matrix. Next, I will show how this method allows us to compress our example data by 85%. And finally, I will run a Bernoulli Naive Bayes classifier on two versions of the same example data, dense and sparse, to show how sparsity leads to markedly decreased computation times. 
+Several intersting topics will be covered in this section. First, I am going to introduce you to a great tool called [spy()](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.spy.html). It is available in the matplotlib library and it allows us to visually inspect a matrix for sparsity. Next, I will show you how to apply Scipy's Compressed Sparse Row [(CSR)](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html#scipy.sparse.csc_matrix) algorithm to obtain a sparse matrix; this allows us to compress our example data by 85%. And finally, I will run a Bernoulli Naive Bayes classifier on two versions of the same example data, dense and sparse, to show how sparsity leads to markedly faster computation times. 
 
 ### Setup
 I generated a sparse 2,000 by 10,000 dataset matrix composed of zeros and ones. 
@@ -112,7 +112,7 @@ y = np.random.binomial(1, 0.5, 2000)  ## dummy target variable
 ```
 
 ### Spy()
-I mentioned matplotlib's *spy()* method which allows us to visualize the sparsity of a dataset. The %matplotlib is for Jupyter notebook users. Feel free to omit otherwise.
+I mentioned matplotlib's *spy()* method which allows us to visualize the sparsity of a dataset. The *%matplotlib* is for Jupyter notebook users. Feel free to omit it otherwise.
 ```
 %matplotlib inline
 import matplotlib.pyplot as plt
@@ -131,7 +131,7 @@ plt.title("Dense Matrix");
 ![Spy Dense](/assets/images/sparse_matrix_spy_dense.png?raw=true)
 
 ### Scipy CSR
-We have a dense matrix called *dataset*. We already know it is very sparse so let's go ahead and transform it with Scipy's CSR. Note: CSR is one of many options. Consult the docs for more information. 
+Now we have a dense matrix called *dataset*. We already know it is very sparse so let's go ahead and transform it with Scipy's CSR. Note: CSR is but one of many options. Consult the docs for other implementations. 
 ```
 from scipy.sparse import csr_matrix
 sparse_dataset = csr_matrix(dataset)
@@ -145,22 +145,22 @@ From the graph above we can see that the dense matrix is 160 MB while the sparse
 ### Computation Time
 ![Compute Time](/assets/images/sparse_matrix_compute_time.png?raw=true)
 
-Since I made this a classification problem and since NLP problems often result in sparse matrices, I used the Bernoulli Naive Bayes classifier; it is known for speed. As you can see, converting to a sparse matrix lead to an 8-fold decrease in computation time! This makes sense because computing all those nonsensical zero multiplications has been eliminated. Hooray! 
+Since I made this a classification problem, I used the Bernoulli Naive Bayes classifier which is known for speed. As you can see, converting to a sparse matrix lead to an 8-fold decrease in computation time!  
 
-By the way, this works with plenty of other algorithms, too. For example, I ran vanilla logistic regression and cut processing time in half. Where do we not see improved processing times? Decision tree-based algorithms like random forest. 
+In case you are wondering, this method works with plenty of other algorithms, too. For example, I ran vanilla logistic regression and cut processing time in half. Where do we not see improved processing times? Decision tree-based algorithms like random forest. 
 
 # How CSR Works
 ![CSR](/assets/images/CSR.png?raw=true)
-*Credit for the image above goes to Nathan Bell's Sparse Matrix Representations & Iterative Solvers in the **Additional Resources** section below.*
+*Image Credit: Nathan Bell's Sparse Matrix Representations & Iterative Solvers.*
 
-CSR requires three arrays. The first array stores all of the non-zero values. The second array stores the cumulutive count of non-zero values in all current and previous rows. The last array stores column index values for each non-zero value. I realize that may be confusing, so let's walk through an example. 
+CSR requires three arrays. The first array stores all non-zero values. The second array stores the cumulutive count of non-zero values in all current and previous rows. The last array stores column index values for each non-zero value. I realize that may be confusing, so let's walk through an example. 
 
-Refer to the diagram above. The first step is to populate the first array which looks like this [1 7 2 8 5 3 9 6 4]. Again, we are only storing non-zero values. Step two is populating the second array. It always starts with 0. Since there are two non-zero values in row 1, we update our array like so [0 2]. There are 2, 3, 2, non-zero values in rows 2, 3, and 4, respectively. So we update the array so it becomes [0 2 4 7 9]. The length of this array should always be the number of rows + 1. The final step is to capture column indices. Keep in mind that the columns are zero-indexed. The first value, 1, is in column 0. The second value, 7, is in column 1. The third value, 2, is in column 1. And so on. The result is the array [0 1 1 2 0 2 3 1 3].  
+Refer to the diagram above. The first step is to populate the first array which looks like this [1 7 2 8 5 3 9 6 4]. Again, we are only storing non-zero values. Step two is populating the second array. It always starts with 0. Since there are two non-zero values in row 1, we update our array like so [0 2]. There are 2 non-zero values in row 2, so update our array to [0 2 4]. Doing that for the remaining rows yields [0 2 4 7 9]. By the way, the length of this array should always be the number of rows + 1. The final step is to capture column indices. Keep in mind that the columns are zero-indexed. The first value, 1, is in column 0. The second value, 7, is in column 1. The third value, 2, is in column 1. And so on. The result is the array [0 1 1 2 0 2 3 1 3].  
 
-Believe it or not, these three arrays allow us to perfectly reconstruct the original matrix. From here, common mathematical operations like addition or multiplication can be applied in an efficient manner. I will not go into further detail. Suffice it to say there are many wonderful resources online if you're interested in details. 
+Believe it or not, these three arrays allow us to perfectly reconstruct the original matrix. From here, common mathematical operations like addition or multiplication can be applied in an efficient manner. How mathematical operators are applied in this context is beyond the scope of this post so I will not go into detail. Suffice it to say there are many wonderful resources online if you're interested in specifics. 
 
 # Summary
-A matrix composed of many zeros is known as a sparse matrix. Sparse matrices have nice properties. How do you know if you have a sparse matrix? Use matplotlib's *spy()* method. Once you know your matrix is sparse, use Scipy's CSR to convert its type from dense to sparse, check data compression, let loose any of the machine learning algorithms listed above, and enjoy. 
+A matrix composed of many zeros is known as a sparse matrix. Sparse matrices have nice properties. How do you know if you have a sparse matrix? Use matplotlib's *spy()* method. Once you know your matrix is sparse, use Scipy's CSR to convert its type from dense to sparse, check data compression, and apply any of the machine learning algorithms listed above. 
 
 In closing, I want you to leave you with this: what if the original data matrix won't fit into memory in the first place? Can you think of a way to convert it to a sparse matrix anyway? 
 
