@@ -112,7 +112,7 @@ y = np.random.binomial(1, 0.5, 2000)  ## dummy target variable
 ```
 
 ### Spy()
-I mentioned matplotlib's *spy()* method which allows us to visualize the sparsity of a dataset. [Note: the *%matplotlib* is for Jupyter notebook users. Feel free to omit it otherwise.]
+I mentioned Matplotlib's *spy()* method which allows us to visualize the sparsity of a dataset. [Note: the *%matplotlib* is for Jupyter notebook users. Feel free to omit it otherwise.]
 ```
 %matplotlib inline
 import matplotlib.pyplot as plt
@@ -170,7 +170,7 @@ Refer to the diagram above. The first step is to populate the first array. It al
 Believe it or not, these three arrays allow us to perfectly reconstruct the original matrix. From here, common mathematical operations like addition or multiplication can be applied in an efficient manner, the details of which are beyond the scope of this post. Suffice it to say there are many wonderful resources online if you are interested.
 
 # Summary
-A matrix composed of many zeros is known as a sparse matrix. Sparse matrices have nice properties. How do you know if you have a sparse matrix? Use matplotlib's *spy()* method. Once you know your matrix is sparse, use Scipy's CSR to convert its type from dense to sparse, check data compression, and apply any of the machine learning algorithms listed above. 
+A matrix composed of many zeros is known as a sparse matrix. Sparse matrices have nice properties. How do you know if you have a sparse matrix? Use Matplotlib's *spy()* method. Once you know your matrix is sparse, use Scipy's CSR to convert its type from dense to sparse, check data compression, and apply any of the machine learning algorithms listed above. 
 
 In closing, I want you to leave you with this: what if the original data matrix won't fit into memory in the first place? Can you think of a way to convert it to a sparse matrix anyway? 
 
