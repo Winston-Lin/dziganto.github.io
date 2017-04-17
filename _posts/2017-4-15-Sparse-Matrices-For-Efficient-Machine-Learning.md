@@ -144,15 +144,16 @@ From the graph above we can see that the dense matrix is 160 MB while the sparse
 
 ### Computation Time
 Since I made this a classification problem, I check processing time on three different algorithms: Bernoulli Naive Bayes, Logistic Regression, and Support Vector Machines.  
-![Compute Time](/assets/images/sparse_matrix_compute_time_nb.png?raw=true){: .center-image }
+
+![Compute Time](/assets/images/sparse_matrix_compute_time_nb.png?raw=true){: .center-image }  
 
 As you can see, the Naive Bayes classifier ran 8 times faster when operating on the sparse matrix!
 
- ![Compute Time](/assets/images/sparse_matrix_compute_time_logistic.png?raw=true){: .center-image }
+ ![Compute Time](/assets/images/sparse_matrix_compute_time_logistic.png?raw=true){: .center-image }  
  
  For logistic regression, we see roughly a 33% decrease in processing time. Not quite as performant as Naive Bayes but a big difference nonetheless.
  
- ![Compute Time](/assets/images/sparse_matrix_compute_time_svm.png?raw=true){: .center-image }
+ ![Compute Time](/assets/images/sparse_matrix_compute_time_svm.png?raw=true){: .center-image }  
  
  And finally, we have SVM. With sparse matrices we were able to achieve roughly a 50% reduction in processing time!
 
