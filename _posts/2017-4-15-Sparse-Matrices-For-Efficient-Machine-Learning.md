@@ -131,7 +131,7 @@ plt.title("Dense Matrix");
 ![Spy Dense](/assets/images/sparse_matrix_spy_dense.png?raw=true)
 
 ### Scipy CSR
-Now we have a dense matrix called *dataset*. We already know it is very sparse so let's go ahead and transform it with Scipy's CSR. Note: CSR is but one of many options. Consult the docs for other implementations. 
+Now we have a dense-type matrix called *dataset*. We already know it is very sparse so let's go ahead and transform it with Scipy's CSR. [Note: CSR is but one of many options; consult the docs for other implementations.] 
 ```
 from scipy.sparse import csr_matrix
 sparse_dataset = csr_matrix(dataset)
@@ -145,7 +145,7 @@ From the graph above we can see that the dense matrix is 160 MB while the sparse
 ### Computation Time
 ![Compute Time](/assets/images/sparse_matrix_compute_time.png?raw=true)
 
-Since I made this a classification problem, I used the Bernoulli Naive Bayes classifier which is known for speed. As you can see, converting to a sparse matrix lead to an 8-fold decrease in computation time!  
+Since I made this a classification problem, I leveraged the Bernoulli Naive Bayes classifier which is known for speed. As you can see, converting to a sparse matrix lead to an 8-fold decrease in computation time!  
 
 In case you are wondering, this method works with plenty of other algorithms, too. For example, I ran vanilla logistic regression and cut processing time in half. Where do we not see improved processing times? Decision tree-based algorithms like random forest. 
 
@@ -153,9 +153,9 @@ In case you are wondering, this method works with plenty of other algorithms, to
 ![CSR](/assets/images/CSR.png?raw=true)
 *Image Credit: Nathan Bell's Sparse Matrix Representations & Iterative Solvers.*
 
-CSR requires three arrays. The first array stores all non-zero values. The second array stores the cumulutive count of non-zero values in all current and previous rows. The last array stores column index values for each non-zero value. I realize that may be confusing, so let's walk through an example. 
+CSR requires three arrays. The first array stores the cumulutive count of non-zero values in all current and previous rows. The second array stores column index values for each non-zero value. And the third array stores all non-zero values. I realize that may be confusing, so let's walk through an example.   
 
-Refer to the diagram above. The first step is to populate the first array which looks like this [1 7 2 8 5 3 9 6 4]. Again, we are only storing non-zero values. Step two is populating the second array. It always starts with 0. Since there are two non-zero values in row 1, we update our array like so [0 2]. There are 2 non-zero values in row 2, so update our array to [0 2 4]. Doing that for the remaining rows yields [0 2 4 7 9]. By the way, the length of this array should always be the number of rows + 1. The final step is to capture column indices. Keep in mind that the columns are zero-indexed. The first value, 1, is in column 0. The second value, 7, is in column 1. The third value, 2, is in column 1. And so on. The result is the array [0 1 1 2 0 2 3 1 3].  
+Refer to the diagram above. The first step is to populate the first array. It always starts with 0. Since there are two non-zero values in row 1, we update our array like so [0 2]. There are 2 non-zero values in row 2, so we update our array to [0 2 4]. Doing that for the remaining rows yields [0 2 4 7 9]. By the way, the length of this array should always be the number of rows + 1. Step two is populating the second array of column indices. Note that the columns are zero-indexed. The first value, 1, is in column 0. The second value, 7, is in column 1. The third value, 2, is in column 1. And so on. The result is the array [0 1 1 2 0 2 3 1 3]. Finally, we populate the third array which looks like this [1 7 2 8 5 3 9 6 4]. Again, we are only storing non-zero values.   
 
 Believe it or not, these three arrays allow us to perfectly reconstruct the original matrix. From here, common mathematical operations like addition or multiplication can be applied in an efficient manner. How mathematical operators are applied in this context is beyond the scope of this post so I will not go into detail. Suffice it to say there are many wonderful resources online if you're interested in specifics. 
 
