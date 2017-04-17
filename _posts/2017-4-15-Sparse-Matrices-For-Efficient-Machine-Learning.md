@@ -143,11 +143,20 @@ sparse_dataset = csr_matrix(dataset)
 From the graph above we can see that the dense matrix is 160 MB while the sparse matrix is 24 MB. That's 85% compression! Granted we started with a pretty sparse matrix.
 
 ### Computation Time
-![Compute Time](/assets/images/sparse_matrix_compute_time.png?raw=true){: .center-image }
+Since I made this a classification problem, I check processing time on three different algorithms: Bernoulli Naive Bayes, Logistic Regression, and Support Vector Machines.  
+![Compute Time](/assets/images/sparse_matrix_compute_time_nb.png?raw=true){: .center-image }
 
-Since I made this a classification problem, I leveraged the Bernoulli Naive Bayes classifier which is known for speed. As you can see, the Naive Bayes classifier ran 8 times faster when operating on the sparse matrix! 
+As you can see, the Naive Bayes classifier ran 8 times faster when operating on the sparse matrix!
 
-In case you are wondering, this method works with plenty of other algorithms, too. For example, I ran vanilla logistic regression and cut processing time in half. Where do we not see improved processing times? Decision tree-based algorithms like random forest. 
+ ![Compute Time](/assets/images/sparse_matrix_compute_time_logistic.png?raw=true){: .center-image }
+ 
+ For logistic regression, we see roughly a 33% decrease in processing time. Not quite as performant as Naive Bayes but a big difference nonetheless.
+ 
+ ![Compute Time](/assets/images/sparse_matrix_compute_time_svm.png?raw=true){: .center-image }
+ 
+ And finally, we have SVM. With sparse matrices we were able to achieve roughly a 50% reduction in processing time!
+
+All in all, converting sparse matrices to the sparse matrix format almost always yields some efficiency in processing time. We saw this to be the case for Naive Bayes, Logistic Regression, and Support Vector Machines. Where do we not see improved processing times? Unfortunately for decision tree-based algorithms like random forest.
 
 # How CSR Works
 ![CSR](/assets/images/CSR.png?raw=true)
