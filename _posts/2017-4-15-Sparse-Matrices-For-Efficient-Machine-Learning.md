@@ -143,7 +143,7 @@ sparse_dataset = csr_matrix(dataset)
 From the graph above we can see that the dense matrix is 160 MB while the sparse matrix is 24 MB. That's 85% compression! Granted we started with a pretty sparse matrix.
 
 ### Computation Time
-Since I made this a classification problem, I check processing time on three different algorithms: Bernoulli Naive Bayes, Logistic Regression, and Support Vector Machines.  
+I ran three different classification algorithms and checked processing times for each. The algorithms are: Bernoulli Naive Bayes, Logistic Regression, and Support Vector Machines.  
 
 ![Compute Time](/assets/images/sparse_matrix_compute_time_nb.png?raw=true){: .center-image }  
 
