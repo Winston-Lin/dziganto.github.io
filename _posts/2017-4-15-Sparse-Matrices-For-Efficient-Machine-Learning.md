@@ -138,12 +138,12 @@ sparse_dataset = csr_matrix(dataset)
 ```
 
 ### Compression
-![Compression](/assets/images/sparse_matrix_compression.png?raw=true)
+![Compression](/assets/images/sparse_matrix_compression.png?raw=true){: .center-image }
 
 From the graph above we can see that the dense matrix is 160 MB while the sparse matrix is 24 MB. That's 85% compression! Granted we started with a pretty sparse matrix.
 
 ### Computation Time
-![Compute Time](/assets/images/sparse_matrix_compute_time.png?raw=true)
+![Compute Time](/assets/images/sparse_matrix_compute_time.png?raw=true){: .center-image }
 
 Since I made this a classification problem, I leveraged the Bernoulli Naive Bayes classifier which is known for speed. As you can see, the Naive Bayes classifier ran 8 times faster when operating on the sparse matrix! 
 
