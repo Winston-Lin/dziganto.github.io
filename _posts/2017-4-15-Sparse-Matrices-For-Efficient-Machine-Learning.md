@@ -138,6 +138,16 @@ sparse_dataset = csr_matrix(dataset)
 ```
 
 ### Compression
+```
+import seaborn as sns
+
+dense_size = np.array(dataset).nbytes/1e6
+sparse_size = (sparse_dataset.data.nbytes + sparse_dataset.indptr.nbytes + sparse_dataset.indices.nbytes)/1e6
+
+sns.barplot(['DENSE', 'SPARSE'], [dense_size, sparse_size])
+plt.ylabel('MB')
+plt.title('Compression')
+```
 ![Compression](/assets/images/sparse_matrix_compression.png?raw=true){: .center-image }
 
 From the graph above we can see that the dense matrix is 160 MB while the sparse matrix is 24 MB. That's 85% compression! Granted we started with a pretty sparse matrix.
@@ -145,13 +155,33 @@ From the graph above we can see that the dense matrix is 160 MB while the sparse
 ### Computation Time
 I ran three different classification algorithms - Naive Bayes, Logistic Regression, Support Vector Machines - and checked processing times for each.  
 
+```
+from sklearn.naive_bayes import BernoulliNB
+nb = BernoulliNB(binarize=None)
+%timeit nb.fit(dataset, y)
+%timeit nb.fit(sparse_dataset, y)
+```
 ![Compute Time](/assets/images/sparse_matrix_compute_time_nb.png?raw=true){: .center-image }  
 
 As you can see, the Naive Bayes classifier ran 8 times faster when operating on the sparse matrix!
 
+```
+from sklearn.linear_model import LogisticRegression
+lr = LogisticRegression(random_state=99)
+%timeit lr.fit(dataset, y)
+%timeit lr.fit(sparse_dataset, y)
+```
+
 ![Compute Time](/assets/images/sparse_matrix_compute_time_logistic.png?raw=true){: .center-image }  
  
 For logistic regression, we see roughly a 33% decrease in processing time. Not quite as performant as Naive Bayes but a big difference nonetheless.
+
+```
+from sklearn.svm import LinearSVC
+svc = LinearSVC()
+%timeit svc.fit(dataset, y)
+%timeit svc.fit(sparse_dataset, y)
+```
  
 ![Compute Time](/assets/images/sparse_matrix_compute_time_svm.png?raw=true){: .center-image }  
  
