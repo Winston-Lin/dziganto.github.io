@@ -11,7 +11,9 @@ Sparse matrices are common in machine learning. While they occur naturally in so
 - [CountVectorizing](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)  
 - [TfidfVectorizing](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html)  
 
-Let's step back for a second. Just what the heck is a sparse matrix and how is it different than other matrices? Turns out there are two major types of matrices: dense and sparse. Sparse matrices have lots of zero values. Dense matrices do not. 
+Let's step back for a second. Just what the heck is a sparse matrix and how is it different than other matrices? 
+
+Turns out there are two major types of matrices: dense and sparse. Sparse matrices have lots of zero values. Dense matrices do not. 
 
 Here is an example of a sparse matrix:
 
@@ -197,7 +199,7 @@ CSR requires three arrays. The first array stores the cumulutive count of nonzer
 
 Refer to the diagram above. The first step is to populate the first array. It always starts with 0. Since there are two nonzero values in row 1, we update our array like so [0 2]. There are 2 nonzero values in row 2, so we update our array to [0 2 4]. Doing that for the remaining rows yields [0 2 4 7 9]. By the way, the length of this array should always be the number of rows + 1. Step two is populating the second array of column indices. Note that the columns are zero-indexed. The first value, 1, is in column 0. The second value, 7, is in column 1. The third value, 2, is in column 1. And so on. The result is the array [0 1 1 2 0 2 3 1 3]. Finally, we populate the third array which looks like this [1 7 2 8 5 3 9 6 4]. Again, we are only storing nonzero values.   
 
-Believe it or not, these three arrays allow us to perfectly reconstruct the original matrix. From here, common mathematical operations like addition or multiplication can be applied in an efficient manner. Note: the exact details of how the mathematical operations work on sparse matrix implementations is beyond the scope of this post. Suffice it to say there are many wonderful resources online if you are interested.
+Believe it or not, these three arrays allow us to perfectly reconstruct the original matrix. From here, common mathematical operations like addition or multiplication can be applied in an efficient manner. Note: the exact details of how the mathematical operations work on sparse matrix implementations are beyond the scope of this post. Suffice it to say there are many wonderful resources online if you are interested.
 
 # Summary
 A matrix composed of many zeros is known as a sparse matrix. Sparse matrices have nice properties. How do you know if you have a sparse matrix? Use Matplotlib's *spy()* method. Once you know your matrix is sparse, use Scipy's CSR to convert its type from dense to sparse, check data compression, and apply any of the machine learning algorithms listed above. 
