@@ -7,9 +7,9 @@ permalink: /posts/
 # Introduction
 Sparse matrices are common in machine learning. While they occur naturally in some data collection processes, more often they arise when applying certain data transformation techniques like:
 
-- [One-hot encoding](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html) categorical variables
-- [CountVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) for NLP
-- [TfidfVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) for NLP
+- [One-hot encoding](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html)  
+- [CountVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)  
+- [TfidfVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html)  
 
 Let's step back for a second. Just what the heck is a sparse matrix and how is it different than other matrices? Turns out there are two major types of matrices: dense and sparse. Sparse matrices have lots of zero values. Dense matrices do not. 
 
@@ -24,7 +24,7 @@ Because sparse matrices have lots of zero values, we can apply special algorithm
 
 Since storing all those zero values is a waste, we can apply data compression techniques to minimize the amount of data we need to store. That is not the only benefit, however. Users of [sklearn](http://scikit-learn.org/stable/index.html) will note that all native machine learning algorithms require data matrices to be in-memory. Said another way, the machine learning process breaks down when a data matrix (usually called a dataframe) does not fit into RAM. One of the perks of converting a dense data matrix to sparse is that in many cases it is possible to compress it so that it can fit in RAM.
 
-Additionally, consider multiplying a sparse matrix by a dense matrix. Even though the sparse matrix has many zeros, and zero times anything is always zero, the standard approach requires this pointless operation nonetheless. The result is slowed processing time. It is much more efficient to operate only on elements that will return non-zero values. Therefore, any algorithm that applies some basic mathematical computation like multiplication will benefit from a sparse matrix implementation.
+Additionally, consider multiplying a sparse matrix by a dense matrix. Even though the sparse matrix has many zeros, and zero times anything is always zero, the standard approach requires this pointless operation nonetheless. The result is slowed processing time. It is much more efficient to operate only on elements that will return nonzero values. Therefore, any algorithm that applies some basic mathematical computation like multiplication can benefit from a sparse matrix implementation.
 
 Sklearn has many algorithms that accept sparse matrices. The way to know is by checking the *fit* attribute in the documentation. Look for this: **X: {array-like, sparse matrix}**. 
 
@@ -112,7 +112,7 @@ y = np.random.binomial(1, 0.5, 2000)  ## dummy target variable
 ```
 
 ### Spy()
-I mentioned Matplotlib's *spy()* method which allows us to visualize the sparsity of a dataset. [Note: the *%matplotlib* is for Jupyter notebook users. Feel free to omit it otherwise.]
+I mentioned Matplotlib's *spy()* method which allows us to visualize the sparsity of a dataset. [Note: the *%matplotlib inline* is for Jupyter notebook users. Feel free to omit it otherwise.]
 ```
 %matplotlib inline
 import matplotlib.pyplot as plt
@@ -153,7 +153,7 @@ plt.title('Compression')
 From the graph above we can see that the dense matrix is 160 MB while the sparse matrix is 24 MB. That's 85% compression! Granted we started with a pretty sparse matrix.
 
 ### Computation Time
-I ran three different classification algorithms - Naive Bayes, Logistic Regression, Support Vector Machines - and checked processing times for each.  
+I ran three different classification algorithms - Bernoulli Naive Bayes, Logistic Regression, Support Vector Machines - and checked processing times for each.  
 
 ```
 from sklearn.naive_bayes import BernoulliNB
@@ -187,17 +187,17 @@ svc = LinearSVC()
  
 And finally, we have SVM. With sparse matrices we were able to achieve roughly a 50% reduction in processing time!
 
-All in all, converting sparse matrices to the sparse matrix format almost always yields some efficiency in processing time. We saw this to be the case for Naive Bayes, Logistic Regression, and Support Vector Machines. Where do we not see improved processing times? Unfortunately for decision tree-based algorithms like random forest.
+All in all, converting sparse matrices to the sparse matrix format almost always yields some efficiency in processing time. We saw this to be the case for Naive Bayes, Logistic Regression, and Support Vector Machines. Where do we not see improved processing times? Decision tree based algorithms like random forest.
 
 # How CSR Works
 ![CSR](/assets/images/CSR.png?raw=true)
 *Image Credit: Nathan Bell's Sparse Matrix Representations & Iterative Solvers.*
 
-CSR requires three arrays. The first array stores the cumulutive count of non-zero values in all current and previous rows. The second array stores column index values for each non-zero value. And the third array stores all non-zero values. I realize that may be confusing, so let's walk through an example.   
+CSR requires three arrays. The first array stores the cumulutive count of nonzero values in all current and previous rows. The second array stores column index values for each nonzero value. And the third array stores all nonzero values. I realize that may be confusing, so let's walk through an example.   
 
-Refer to the diagram above. The first step is to populate the first array. It always starts with 0. Since there are two non-zero values in row 1, we update our array like so [0 2]. There are 2 non-zero values in row 2, so we update our array to [0 2 4]. Doing that for the remaining rows yields [0 2 4 7 9]. By the way, the length of this array should always be the number of rows + 1. Step two is populating the second array of column indices. Note that the columns are zero-indexed. The first value, 1, is in column 0. The second value, 7, is in column 1. The third value, 2, is in column 1. And so on. The result is the array [0 1 1 2 0 2 3 1 3]. Finally, we populate the third array which looks like this [1 7 2 8 5 3 9 6 4]. Again, we are only storing non-zero values.   
+Refer to the diagram above. The first step is to populate the first array. It always starts with 0. Since there are two nonzero values in row 1, we update our array like so [0 2]. There are 2 nonzero values in row 2, so we update our array to [0 2 4]. Doing that for the remaining rows yields [0 2 4 7 9]. By the way, the length of this array should always be the number of rows + 1. Step two is populating the second array of column indices. Note that the columns are zero-indexed. The first value, 1, is in column 0. The second value, 7, is in column 1. The third value, 2, is in column 1. And so on. The result is the array [0 1 1 2 0 2 3 1 3]. Finally, we populate the third array which looks like this [1 7 2 8 5 3 9 6 4]. Again, we are only storing nonzero values.   
 
-Believe it or not, these three arrays allow us to perfectly reconstruct the original matrix. From here, common mathematical operations like addition or multiplication can be applied in an efficient manner, the details of which are beyond the scope of this post. Suffice it to say there are many wonderful resources online if you are interested.
+Believe it or not, these three arrays allow us to perfectly reconstruct the original matrix. From here, common mathematical operations like addition or multiplication can be applied in an efficient manner. Note: the exact details of how the mathematical operations work on sparse matrix implementations is beyond the scope of this post. Suffice it to say there are many wonderful resources online if you are interested.
 
 # Summary
 A matrix composed of many zeros is known as a sparse matrix. Sparse matrices have nice properties. How do you know if you have a sparse matrix? Use Matplotlib's *spy()* method. Once you know your matrix is sparse, use Scipy's CSR to convert its type from dense to sparse, check data compression, and apply any of the machine learning algorithms listed above. 
@@ -211,4 +211,3 @@ In closing, I want you to leave you with this: what if the original data matrix 
 [Sparse Matrix Representations & Iterative Solvers](http://www.bu.edu/pasi/files/2011/01/NathanBell1-10-1000.pdf)  
 [Scikit-learn Documentation](http://scikit-learn.org/stable/index.html)  
 [Scipy Sparse Matrices](https://docs.scipy.org/doc/scipy/reference/sparse.html)
-[My Jupyter Notebook]()
