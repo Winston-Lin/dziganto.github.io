@@ -101,7 +101,7 @@ At the time of this writing, the following sklearn 0.18.1 algorithms accept spar
 - [LSHForest](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.LSHForest.html#sklearn.neighbors.LSHForest)
 - [RandomTreesEmbedding](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomTreesEmbedding.html#sklearn.ensemble.RandomTreesEmbedding)
   
-# Examples
+# Applications & Workflow
 I will cover several intersting topics in this section. First, there is a great tool called [spy()](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.spy.html). It is available in the Matplotlib library and it allows us to visually inspect a matrix for sparsity. Next, Scipy has the Compressed Sparse Row [(CSR)](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html#scipy.sparse.csc_matrix) algorithm which converts a dense matrix to a sparse matrix, allowing us to significantly compress our example data. And finally, I will run three classification algorithms on both dense and sparse versions of the same data to show how sparsity leads to markedly faster computation times. 
 
 ### Setup
