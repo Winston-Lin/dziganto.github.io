@@ -191,7 +191,7 @@ All in all, converting sparse matrices to the sparse matrix format almost always
 
 # How CSR Works
 ![CSR](/assets/images/CSR.png?raw=true)
-*Image Credit: Nathan Bell's Sparse Matrix Representations & Iterative Solvers.*
+*Image Credit: Nathan Bell's Sparse Matrix Representations & Iterative Solvers*
 
 CSR requires three arrays. The first array stores the cumulutive count of nonzero values in all current and previous rows. The second array stores column index values for each nonzero value. And the third array stores all nonzero values. I realize that may be confusing, so let's walk through an example.   
 
