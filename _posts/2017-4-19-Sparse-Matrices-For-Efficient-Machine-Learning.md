@@ -185,7 +185,7 @@ svc = LinearSVC()
  
 ![Compute Time](/assets/images/sparse_matrix_compute_time_svm.png?raw=true){: .center-image }  
  
-And finally, we have SVM. With sparse matrices we were able to achieve roughly a 50% reduction in processing time!
+And finally, we have SVM. With sparse matrices we are able to achieve roughly a 50% reduction in processing time!
 
 All in all, converting sparse matrices to the sparse matrix format almost always yields some efficiency in processing time. We saw this to be the case for Naive Bayes, Logistic Regression, and Support Vector Machines. Where do we not see improved processing times? Decision tree based algorithms like random forest.
 
