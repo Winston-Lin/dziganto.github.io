@@ -8,7 +8,7 @@
 # Site Settings
 theme                    : minimal-mistakes-jekyll
 locale                   : "en"
-title                    : "Site Title"
+title                    : "Standard Deviations"
 title_separator          : "-"
 name                     : "David Ziganto"
 description              : "Musings in machine learning, data science, and artificial intelligence."
