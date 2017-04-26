@@ -28,7 +28,7 @@ I chose the [Dota2 Games Results Data Set](https://archive.ics.uci.edu/ml/datase
 
 1. it is real-world data
 
-2) many people are interested in gaming
+2. many people are interested in gaming
 
 The dataset captures information for all games played in a space of 2 hours on the 13th of August, 2016. Specifically, the dataset consists of a target variable and 116 features. The target variable is coded -1 and 1 for dire victory and radiant victory, respectively where "dire" and "radiant" are names of each team. Three features provide game information and the remaining 113 features indicate if a particular hero was played for a given game. The dataset is reasonably sparse as only 10 of 113 possible heroes are chosen in a given game. Furthermore, the data was pre-split into training and test sets and zipped into a single file.
 
