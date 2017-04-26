@@ -31,7 +31,7 @@ I chose the [Dota2 Games Results Data Set](https://archive.ics.uci.edu/ml/datase
 
 The dataset captures information for all games played in a space of 2 hours on the 13th of August, 2016. Specifically, the dataset consists of a target variable and 116 features. The target variable is coded -1 and 1 for dire victory and radiant victory, respectively where "dire" and "radiant" are names of each team. Three features provide game information and the remaining 113 features indicate if a particular hero was played for a given game. The dataset is reasonably sparse as only 10 of 113 possible heroes are chosen in a given game. Furthermore, the data was pre-split into training and test sets and zipped into a single file.
 
-Fundamentally, this is a classification problem where one team wins and one team loses. No ties are allowed. The goal here is not to showcase classification algorithms. Rather, the goal is to introduce HDF5, show how to read/write files to the h5 format with compression, and how to work with HDF5 in pandas.
+Fundamentally, this is a classification problem where one team wins and one team loses. No ties are allowed. The goal here is not to showcase classification algorithms. Rather, the goal is to introduce HDF5 and to show you how to use pandas to read/write files to the HDF5 format with compression.
 
 Caveats: while partial I/O is extremely important from a machine learning perspective, this post will not delve into details. That will come in a future post but you should at least be aware that that capability already exists in HDF5. Additionally, I am including only snippets of my notebook. For all the gory details look [here](/_notebooks/HDF5.ipynb). 
 
@@ -59,8 +59,8 @@ X_train = pd.read_csv(z.open('dota2Train.csv'), header=None)
 X_test = pd.read_csv(z.open('dota2Test.csv'), header=None)
 ```
 
-# DF to H5 Conversion
-Let's convert these dataframes into H5 using three compressors set to max compression. You should update *filepath* to save your data. 
+# DF to HDF5 Conversion
+Let's convert these dataframes into HDF5 using three compressors set to max compression. You should update *filepath* to save your data. 
 ```
 compressors = ['blosc', 'bzip2', 'zlib']
 for compressor in compressors:
