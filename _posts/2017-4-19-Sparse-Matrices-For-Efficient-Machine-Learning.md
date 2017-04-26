@@ -204,7 +204,7 @@ Believe it or not, these three arrays allow us to perfectly reconstruct the orig
 # Summary
 A matrix composed of many zeros is known as a sparse matrix. Sparse matrices have nice properties. How do you know if you have a sparse matrix? Use Matplotlib's *spy()* method. Once you know your matrix is sparse, use Scipy's CSR to convert its type from dense to sparse, check data compression, and apply any of the machine learning algorithms listed above. 
 
-In closing, I want you to leave you with this: what if the original data matrix won't fit into memory in the first place? Can you think of a way to convert it to a sparse matrix anyway? 
+In closing, I want you to leave you with this: if the original data matrix won't fit into memory in the first place, can you think of a way to convert it to a sparse matrix anyway? 
 
 **Stay tuned because I'll answer that and many other questions in coming posts.**
 
