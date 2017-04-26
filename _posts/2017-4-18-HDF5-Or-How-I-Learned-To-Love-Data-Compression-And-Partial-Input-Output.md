@@ -1,7 +1,11 @@
-**(insert cover image)**
+---
+permalink: /posts/
+---
+
+![Data Compression Cover](/assets/images/data_compression.jpg?raw=true)
 
 # Introduction
-In my last post [Sparse Matrices For Efficient Machine Learning](insert link), I showcased methods and a workflow for converting a matrix with lots of zero values into a sparse matrix with Scipy. This did two things:
+In my last post [Sparse Matrices For Efficient Machine Learning](), I showcased methods and a workflow for converting a matrix with lots of zero values into a sparse matrix with Scipy. This did two things:
 
  1. compressed the in-memory footprint of the data matrix 
  2. sped up many machine learning routines
@@ -97,7 +101,7 @@ sns.barplot(['Original', 'blosc', 'bzip2', 'zlib'], train_compressed_size)
 plt.ylabel('MB')
 plt.title('HDF5 On-Disk Compression: Training Set');
 ```
-**INSERT IMAGE**
+![Train Compression](/assets/images/hdf5_train_compression.png?raw=true){: .center-image }
 
 Barplot showing each for comparison (test set):
 ```
@@ -105,7 +109,7 @@ sns.barplot(['Original', 'blosc', 'bzip2', 'zlib'], test_compressed_size)
 plt.ylabel('MB')
 plt.title('HDF5 On-Disk Compression: Test Set');
 ```
-**INSERT IMAGE**
+![Train Compression](/assets/images/hdf5_test_compression.png?raw=true){: .center-image }
 
 You will notice that bzip2 and zlib compress the data to roughly the same extent. Blosc, on the other hand, does result in significant compression but not to the same extent as bzip2 or zlib. Why is that? Turns out there exists this tradeoff between total compression and read/write times. Zlib and bzip2 are great if your main concern is on-disk storage. If your primary concern is read/write times but you still want to leverage on-disk compression, use blosc. 
 
@@ -117,6 +121,9 @@ I use spy() to get a sense of the data's sparsity. Since the data is long and sk
 fig = plt.figure(figsize=(15,8))
 plt.spy(X_train.transpose().ix[:, :1000]);
 ```
+
+![Spy](/assets/images/dota2_spy.png?raw=true){: .center-image }
+
 You can see the data is very sparse in all but the first three features.
 
 # Summary
