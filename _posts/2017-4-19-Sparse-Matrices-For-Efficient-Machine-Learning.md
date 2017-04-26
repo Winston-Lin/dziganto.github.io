@@ -1,5 +1,5 @@
 ---
-permalink: /posts/
+permalink: /posts/2017-4-19-Sparse-Matrices-For-Efficient-Machine-Learning.md
 ---
 
 ![Image of Binary](/assets/images/binary-number-tunnel.jpg?raw=true)
