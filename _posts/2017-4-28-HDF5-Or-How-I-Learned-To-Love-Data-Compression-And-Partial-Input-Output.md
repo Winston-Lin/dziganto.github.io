@@ -20,7 +20,7 @@ Before digging in, allow me to introduce the dataset we will be working with.
 
 # Dataset: Dota 2
 
-**Insert Dota2 Image**
+![Dota2](http://www.gamersbook.com/Portals/0/images/2013/11/Dota-2-PC-Game-11.jpg)
 
 Dota 2 is a popular computer game published by Valve Corporation. Two teams consisting of five players are forged from among 113 heros, each with unique strengths and weaknesses. Players and teams gain experience and items during the course of the game, which ends when one team destroys the "Ancient", a structure in the opposing team's base.
 
@@ -121,6 +121,23 @@ plt.spy(X_train.transpose().ix[:, :1000]);
 ![Spy](/assets/images/dota2_spy.png?raw=true){: .center-image }
 
 You can see the data is very sparse in all but the first three features.
+
+# In-Memory Compression
+Let's use CSR to compress this dataset in-memory and compare data footprints.
+```
+from scipy.sparse import csr_matrix
+X_train_sparse = csr_matrix(X_train)
+
+dense_size = np.array(X_train).nbytes/1e6
+sparse_size = (X_train_sparse.data.nbytes + X_train_sparse.indptr.nbytes + X_train_sparse.indices.nbytes)/1e6
+
+sns.barplot(['DENSE', 'SPARSE'], [dense_size, sparse_size])
+plt.ylabel('MB')
+plt.title('In-Memory Compression');
+```
+![In-Memory Compression](/assets/images/dota2_in_memory_compression.png?raw=true){: .center-image }
+
+We now have the capability to compress data in-memory and on-disk. New tools! And they will serve us well going forward.
 
 # Summary
 What are the big takeaways here?
