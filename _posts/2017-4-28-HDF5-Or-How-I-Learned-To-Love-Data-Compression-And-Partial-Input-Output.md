@@ -160,7 +160,7 @@ Thirdly, for those new to HDF5, hopefully you learned how to convert in-memory d
 And maybe, just maybe, you can start to see how one could take a sparse matrix that just won't fit into memory and crunch it down so that it can. 
 
 # Additional Resources
-[HDF5 Chunking & Compression](https://www.star.nesdis.noaa.gov/jpss/documents/HDF5_Tutorial_201509/2-2-Mastering%20Powerful%20Features.pptx.pdf)
-[HDF5 Performance](https://support.hdfgroup.org/HDF5/doc/TechNotes/TechNote-HDF5-ImprovingIOPerformanceCompressedDatasets.pdf)
-[HDF5 & Hadoop](https://support.hdfgroup.org/pubs/papers/Big_HDF_FAQs.pdf)
+[HDF5 Chunking & Compression](https://www.star.nesdis.noaa.gov/jpss/documents/HDF5_Tutorial_201509/2-2-Mastering%20Powerful%20Features.pptx.pdf)  
+[HDF5 Performance](https://support.hdfgroup.org/HDF5/doc/TechNotes/TechNote-HDF5-ImprovingIOPerformanceCompressedDatasets.pdf)  
+[HDF5 & Hadoop](https://support.hdfgroup.org/pubs/papers/Big_HDF_FAQs.pdf)  
 [Blosc](http://www.blosc.org/)
