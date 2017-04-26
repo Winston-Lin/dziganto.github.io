@@ -1,7 +1,3 @@
----
-permalink: /posts/
----
-
 ![Data Compression Cover](/assets/images/data_compression.jpg?raw=true)
 
 # Introduction
