@@ -1,7 +1,7 @@
 ![Data Compression Cover](/assets/images/data_compression.jpg?raw=true)
 
 # Introduction
-In my last post [Sparse Matrices For Efficient Machine Learning](), I showcased methods and a workflow for converting a matrix with lots of zero values into a sparse matrix with Scipy. This did two things:
+In my last post [Sparse Matrices For Efficient Machine Learning](https://dziganto.github.io/Sparse-Matrices-For-Efficient-Machine-Learning/), I showcased methods and a workflow for converting a matrix with lots of zero values into a sparse matrix with Scipy. This did two things:
 
  1. compressed the in-memory footprint of the data matrix 
  2. sped up many machine learning routines
@@ -34,7 +34,7 @@ The dataset captures information for all games played in a space of 2 hours on t
 
 Fundamentally, this is a classification problem where one team wins and one team loses. No ties are allowed. The goal here is not to showcase classification algorithms. Rather, the goal is to introduce HDF5, show how to read/write files to the h5 format with compression, and how to work with HDF5 in pandas.
 
-Caveats: while partial I/O is extremely important from a machine learning perspective, this post will not delve into details. That will come in a future post but you should at least be aware that that capability already exists in HDF5. Additionally, I am including only snippets of my notebook, so for all the gory details look [here](insert link). 
+Caveats: while partial I/O is extremely important from a machine learning perspective, this post will not delve into details. That will come in a future post but you should at least be aware that that capability already exists in HDF5. Additionally, I am including only snippets of my notebook, so for all the gory details look [here](/_notebooks/HDF5.ipynb). 
 
 # Setup
 ```
