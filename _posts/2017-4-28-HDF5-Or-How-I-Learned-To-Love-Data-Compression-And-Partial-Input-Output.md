@@ -90,7 +90,7 @@ for compressor in compressors:
         compressed_size.append( round(os.path.getsize("filepath" + dataset + "_" + str(compressor) + ".h5")/1e6, 2) )
 compressed_data_size = zip(sorted(['blosc', 'bzip2', 'zlib']*2), ['train', 'test']*3, compressed_size)
 ```
-Barplot showing each for comparison (train set):
+Barplot for comparison (train set):
 ```
 sns.barplot(['Original', 'blosc', 'bzip2', 'zlib'], train_compressed_size)
 plt.ylabel('MB')
@@ -98,7 +98,7 @@ plt.title('HDF5 On-Disk Compression: Training Set');
 ```
 ![Train Compression](/assets/images/hdf5_train_compression.png?raw=true){: .center-image }
 
-Barplot showing each for comparison (test set):
+Barplot for comparison (test set):
 ```
 sns.barplot(['Original', 'blosc', 'bzip2', 'zlib'], test_compressed_size)
 plt.ylabel('MB')
