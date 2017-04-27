@@ -109,14 +109,21 @@ plt.title('HDF5 On-Disk Compression: Test Set');
 You will notice that bzip2 and zlib compress the data to roughly the same extent. Blosc, on the other hand, does result in significant compression but not to the same extent as bzip2 or zlib. Why is that? Turns out there exists this tradeoff between total compression and read/write times. Zlib and bzip2 are great if your main concern is on-disk storage. If your primary concern is read/write times but you still want to leverage on-disk compression, use blosc. 
 
 # Compressors
-We just saw three compressors that drastically reduced the size of our dataset. You are probably wondering how they work. 
+We just saw three compressors that drastically reduced the size of our dataset. You are probably wondering how they work. Since each one could be a post unto itself, I will simply leave it to the reader to follow the links below to learn more.
 
 ## blosc
+[High-level Blosc](http://www.blosc.org/)
+[Technical Blosc](https://github.com/Blosc/c-blosc)  
+[HDF5 Blosc](https://github.com/Blosc/hdf5-blosc)  
+[Blosc Benchmarks on Genotype Data](http://alimanfoo.github.io/2016/09/21/genotype-compression-benchmark.html)
 
 ## bzip2
+[bzip2 Overview](http://bzip.org/)
+[bzip2 Wikipedia](https://en.wikipedia.org/wiki/Bzip2)
 
 ## zlib
-
+[zlib Overview](http://zlib.net/)
+[zlib Wikipedia](https://en.wikipedia.org/wiki/Zlib)
 
 # spy()
 That's right, I'm bringing Matplotlib's spy() back. 
@@ -129,9 +136,15 @@ plt.spy(X_train.transpose().ix[:, :1000]);
 
 ![Spy](/assets/images/dota2_spy.png?raw=true){: .center-image }
 
-You can see the data is very sparse in all but the first three features.
+You can see the data is very sparse in all but the first three features. The next logical step is to convert it to a sparse matrix using Scipy's CSR algorithm.
 
 # In-Memory Compression
+```
+# Preprocessing: separate target var from dataset
+y_train = X_train.pop(0)
+y_test = X_test.pop(0)
+```
+
 Let's use CSR to compress this dataset in-memory and compare data footprints.
 ```
 from scipy.sparse import csr_matrix
@@ -148,19 +161,49 @@ plt.title('In-Memory Compression');
 
 We now have the capability to compress data in-memory and on-disk. New tools! And they will serve us well going forward.
 
+# Machine Learning
+This section is a combination of fun and driving home a point. In my previous post I indicated that sparse matrix implementations can dramatically speed up machine learning algorithms. If you read that post you may have noticed that I created dummy data to test my hypothesis. Now that we have Dota2 data, this is the perfect opportunity to apply my logic to see how if it holds up on real-world data. Any guesses?
+
+## LogisticRegressionCV
+```
+from sklearn.linear_model import LogisticRegressionCV
+lr = LogisticRegressionCV(Cs=4, fit_intercept=True, cv=2, 
+                          dual=False, penalty='l2', scoring='neg_log_loss', 
+                          solver='liblinear', tol=0.0001, max_iter=100, 
+                          class_weight=None, n_jobs=-1, verbose=0, refit=True, 
+                          intercept_scaling=1.0, multi_class='ovr', random_state=12)
+%time lr.fit(X_train, y_train)
+%time lr.fit(X_train_sparse, y_train)
+```
+
+## BernoulliNB
+```
+from sklearn.naive_bayes import BernoulliNB
+clf = BernoulliNB(alpha=1.0, binarize=None, fit_prior=True, class_prior=None)
+%time clf.fit(X_train, y_train)
+%time clf.fit(X_train_sparse, y_train)
+```
+
+Algorithm | Dense Time | Sparse Time
+------------ | :-------------: | :------:
+LogisticRegressionCV | dense 1 | 2.28 sec
+BernoulliNB | dense 2 | sparse 2
+
+Quite a stark contrast. Again, this is a real dataset that was pulled from the UCI Machine Learning Repo. This isn't some contrived example. Test it for yourself.
+
 # Summary
 What are the big takeaways here?
 
-First, if you walk away with nothing else, be aware that HDF5 is a powerful tool that provides on-the-fly compression and partial I/O capabilities. It is so much more than that but knowing that much is a great start.
+1. If you walk away with nothing else, be aware that HDF5 is a powerful tool that provides on-the-fly compression and partial I/O capabilities. It is so much more than that but knowing that much is a great start.
 
-Secondly, for those newer to zip files, hopefully you learned how to read multiple files zipped together straight into pandas without having to download and/or unzip anything.
+2. For those less skilled in working with zip files, hopefully you learned how to read multiple files zipped into a single file straight into pandas without having to download and/or unzip anything.
 
-Thirdly, for those new to HDF5, hopefully you learned how to convert in-memory dataframes or files already on your computer to .h5 using compression.
+3. For those new to HDF5, hopefully you learned how to convert in-memory dataframes or files already on your computer to .h5 using compression.
 
-And maybe, just maybe, you can start to see how one could take a sparse matrix that just won't fit into memory and crunch it down so that it can. 
+4. Sparse matrices make many machine learning algorithms FAST.
+
+5. Maybe, just maybe, you can start to see how one could take a sparse matrix that just won't fit into memory and crunch it down so that it can. 
 
 # Additional Resources
 [HDF5 Chunking & Compression](https://www.star.nesdis.noaa.gov/jpss/documents/HDF5_Tutorial_201509/2-2-Mastering%20Powerful%20Features.pptx.pdf)  
-[HDF5 Performance](https://support.hdfgroup.org/HDF5/doc/TechNotes/TechNote-HDF5-ImprovingIOPerformanceCompressedDatasets.pdf)  
-[HDF5 & Hadoop](https://support.hdfgroup.org/pubs/papers/Big_HDF_FAQs.pdf)  
-[Blosc](http://www.blosc.org/)
+[HDF5 Performance](https://support.hdfgroup.org/HDF5/doc/TechNotes/TechNote-HDF5-ImprovingIOPerformanceCompressedDatasets.pdf)   [HDF5 & Hadoop](https://support.hdfgroup.org/pubs/papers/Big_HDF_FAQs.pdf)  
