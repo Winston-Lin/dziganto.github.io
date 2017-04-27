@@ -206,4 +206,5 @@ What are the big takeaways here?
 
 # Additional Resources
 [HDF5 Chunking & Compression](https://www.star.nesdis.noaa.gov/jpss/documents/HDF5_Tutorial_201509/2-2-Mastering%20Powerful%20Features.pptx.pdf)  
-[HDF5 Performance](https://support.hdfgroup.org/HDF5/doc/TechNotes/TechNote-HDF5-ImprovingIOPerformanceCompressedDatasets.pdf)   [HDF5 & Hadoop](https://support.hdfgroup.org/pubs/papers/Big_HDF_FAQs.pdf)  
+[HDF5 Performance](https://support.hdfgroup.org/HDF5/doc/TechNotes/TechNote-HDF5-ImprovingIOPerformanceCompressedDatasets.pdf)  
+[HDF5 & Hadoop](https://support.hdfgroup.org/pubs/papers/Big_HDF_FAQs.pdf)  
