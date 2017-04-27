@@ -164,32 +164,35 @@ We now have the capability to compress data in-memory and on-disk. New tools! An
 # Machine Learning
 Time to drive home a point. In my previous post I indicated that sparse matrix implementations can dramatically speed up machine learning algorithms. If you read that post you may have noticed that I created dummy data to test my hypothesis. Now that we have Dota2 data, this is the perfect opportunity to apply my logic to see how if it holds up on real-world data. Any guesses?
 
-## LogisticRegressionCV
-```
-from sklearn.linear_model import LogisticRegressionCV
-lr = LogisticRegressionCV(Cs=4, fit_intercept=True, cv=2, 
-                          dual=False, penalty='l2', scoring='neg_log_loss', 
-                          solver='liblinear', tol=0.0001, max_iter=100, 
-                          class_weight=None, n_jobs=-1, verbose=0, refit=True, 
-                          intercept_scaling=1.0, multi_class='ovr', random_state=12)
-%time lr.fit(X_train, y_train)
-%time lr.fit(X_train_sparse, y_train)
-```
-
 ## BernoulliNB
 ```
 from sklearn.naive_bayes import BernoulliNB
-clf = BernoulliNB(alpha=1.0, binarize=None, fit_prior=True, class_prior=None)
-%time clf.fit(X_train, y_train)
-%time clf.fit(X_train_sparse, y_train)
+nb = BernoulliNB(alpha=1.0, binarize=None, fit_prior=True, class_prior=None)
+%timeit nb.fit(X_train, y_train)
+%timeit nb.fit(X_train_sparse, y_train)
 ```
 
-Algorithm | Dense Time | Sparse Time
------------- | :-------------: | :------:
-LogisticRegressionCV | dense 1 | 2.28 sec
-BernoulliNB | dense 2 | sparse 2
+## PassiveAggressiveClassifier
+```
+from sklearn.linear_model import PassiveAggressiveClassifier
+pac = PassiveAggressiveClassifier(C=1.0, fit_intercept=True, n_iter=5, shuffle=True, verbose=0, loss='hinge', 
+                                  n_jobs=-11, random_state=12, warm_start=False, class_weight=None)
+%timeit pac.fit(X_train, y_train)
+%timeit pac.fit(X_train_sparse, y_train)
+```
 
-Quite a stark contrast. Again, this is a real dataset that was pulled from the UCI Machine Learning Repo. This isn't some contrived example. Test it for yourself.
+# Perceptron
+```
+from sklearn.linear_model import Perceptron
+percept = Perceptron(penalty='l2', alpha=0.001, fit_intercept=True, n_iter=20, shuffle=True, verbose=0, eta0=1.0, n_jobs=-1, 
+                     random_state=37, class_weight=None, warm_start=False)
+%timeit percept.fit(X_train, y_train)
+%timeit percept.fit(X_train_sparse, y_train)
+```
+
+![Computation Time](/assets/images/dota2_algo_timing.png?raw=true){: .center-image }
+
+Quite a contrast. Again, this is a real dataset that was pulled from the UCI Machine Learning Repo. This isn't some contrived example. Test it for yourself.
 
 # Summary
 What are the big takeaways here?
