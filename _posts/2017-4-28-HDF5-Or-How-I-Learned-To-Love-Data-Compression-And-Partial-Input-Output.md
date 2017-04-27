@@ -162,7 +162,7 @@ plt.title('In-Memory Compression');
 We now have the capability to compress data in-memory and on-disk. New tools! And they will serve us well going forward.
 
 # Machine Learning
-This section is a combination of fun and driving home a point. In my previous post I indicated that sparse matrix implementations can dramatically speed up machine learning algorithms. If you read that post you may have noticed that I created dummy data to test my hypothesis. Now that we have Dota2 data, this is the perfect opportunity to apply my logic to see how if it holds up on real-world data. Any guesses?
+Time to drive home a point. In my previous post I indicated that sparse matrix implementations can dramatically speed up machine learning algorithms. If you read that post you may have noticed that I created dummy data to test my hypothesis. Now that we have Dota2 data, this is the perfect opportunity to apply my logic to see how if it holds up on real-world data. Any guesses?
 
 ## LogisticRegressionCV
 ```
