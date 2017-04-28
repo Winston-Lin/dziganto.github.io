@@ -126,7 +126,7 @@ You may notice that bzip2 and zlib compress the data to roughly the same extent.
 We just saw three compressors that drastically reduced the size of our dataset. You are probably wondering how they work. Since each one could be a post unto itself, I will simply leave it to the reader to follow the links below to learn more.
 
 ## blosc
-[High-level Blosc](http://www.blosc.org/)
+[High-level Blosc](http://www.blosc.org/)  
 [Technical Blosc](https://github.com/Blosc/c-blosc)  
 [HDF5 Blosc](https://github.com/Blosc/hdf5-blosc)  
 [Blosc Benchmarks on Genotype Data](http://alimanfoo.github.io/2016/09/21/genotype-compression-benchmark.html)
