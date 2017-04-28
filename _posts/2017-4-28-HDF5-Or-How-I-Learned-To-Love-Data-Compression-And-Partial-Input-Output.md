@@ -210,7 +210,7 @@ What are the big takeaways here?
 
 And maybe, just maybe, you can start to see how one could take a sparse matrix that just won't fit into memory, process it, and crunch it down so that it can. 
 
-Stay tuned because next time we will explore PyTables and partial I/O.
+**Stay tuned because next time we will explore PyTables and partial I/O.**
 
 # Additional Resources
 [HDF5 Chunking & Compression](https://www.star.nesdis.noaa.gov/jpss/documents/HDF5_Tutorial_201509/2-2-Mastering%20Powerful%20Features.pptx.pdf)  
