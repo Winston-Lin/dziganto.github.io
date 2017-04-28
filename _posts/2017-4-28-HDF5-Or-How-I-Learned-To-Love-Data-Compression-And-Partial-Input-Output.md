@@ -132,11 +132,11 @@ We just saw three compressors that drastically reduced the size of our dataset. 
 [Blosc Benchmarks on Genotype Data](http://alimanfoo.github.io/2016/09/21/genotype-compression-benchmark.html)
 
 ## bzip2
-[bzip2 Overview](http://bzip.org/)
+[bzip2 Overview](http://bzip.org/)  
 [bzip2 Wikipedia](https://en.wikipedia.org/wiki/Bzip2)
 
 ## zlib
-[zlib Overview](http://zlib.net/)
+[zlib Overview](http://zlib.net/)  
 [zlib Wikipedia](https://en.wikipedia.org/wiki/Zlib)
 
 Back to our dataset...
