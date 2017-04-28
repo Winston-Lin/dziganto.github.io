@@ -144,7 +144,7 @@ Back to our dataset...
 # spy()
 That's right, I'm bringing Matplotlib's spy() back. 
 
-I use spy() to get a sense of the data's sparsity. Since the data is long and skinny, I transpose it so we can get a better view. Also, I am only capturing the first 1000 rows. Why? Because the dimensions of the dataset are highly skewed which causes the image to get compressed. In other words, the visualization gets crunched so bad that we cannot discern anything useful otherwise.
+I use spy() to get a sense of the data's sparsity. Since the data is long and skinny (92,650 x 117), I transpose it so we can get a better view. Also, I am only capturing the first 1000 rows. Why? Because the dimensions of the dataset are highly skewed which causes the image to get compressed. In other words, the visualization gets crunched so bad that we cannot discern anything useful otherwise.
 ```
 fig = plt.figure(figsize=(15,8))
 plt.spy(X_train.transpose().ix[:, :1000]);
