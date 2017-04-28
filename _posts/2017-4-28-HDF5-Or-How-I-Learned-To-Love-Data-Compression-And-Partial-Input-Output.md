@@ -92,6 +92,17 @@ for compressor in compressors:
     for dataset in datasets:
         compressed_size.append( round(os.path.getsize("filepath" + dataset + "_" + str(compressor) + ".h5")/1e6, 2) )
 compressed_data_size = zip(sorted(['blosc', 'bzip2', 'zlib']*2), ['train', 'test']*3, compressed_size)
+
+# get sizes of compressed objects
+train_compressed_size = [compressed_data_size[i][2] for i in range(0,len(compressed_data_size),2)]
+test_compressed_size = [compressed_data_size[i][2] for i in range(1,len(compressed_data_size),2)]
+# append original size values
+train_compressed_size.append(original_data_size[0][1])  ## append original train data size
+test_compressed_size.append(original_data_size[1][1])  ## append original test size
+# reorder list
+myorder=[3,0,1,2]
+train_compressed_size = [ train_compressed_size[i] for i in myorder]
+test_compressed_size = [ test_compressed_size[i] for i in myorder]
 ```
 Barplot of **Training Set** for comparison:
 ```
