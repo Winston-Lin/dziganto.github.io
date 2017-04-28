@@ -167,7 +167,7 @@ We now have the capability to compress data both *in-memory* and *on-disk*; this
 # Machine Learning
 In my previous post I indicated that sparse matrix implementations can dramatically speed up machine learning algorithms. If you read that post you may have noticed that I created dummy data to test my hypothesis. Now that we have Dota2 data, this is the perfect opportunity to see if my logic holds up on real-world data. 
 
-## BernoulliNB
+### BernoulliNB
 ```
 from sklearn.naive_bayes import BernoulliNB
 nb = BernoulliNB(alpha=1.0, binarize=None, fit_prior=True, class_prior=None)
@@ -175,7 +175,7 @@ nb = BernoulliNB(alpha=1.0, binarize=None, fit_prior=True, class_prior=None)
 %timeit nb.fit(X_train_sparse, y_train)
 ```
 
-## PassiveAggressiveClassifier
+### PassiveAggressiveClassifier
 ```
 from sklearn.linear_model import PassiveAggressiveClassifier
 pac = PassiveAggressiveClassifier(C=1.0, fit_intercept=True, n_iter=5, shuffle=True, verbose=0, loss='hinge', 
@@ -184,7 +184,7 @@ pac = PassiveAggressiveClassifier(C=1.0, fit_intercept=True, n_iter=5, shuffle=T
 %timeit pac.fit(X_train_sparse, y_train)
 ```
 
-# Perceptron
+### Perceptron
 ```
 from sklearn.linear_model import Perceptron
 percept = Perceptron(penalty='l2', alpha=0.001, fit_intercept=True, n_iter=20, shuffle=True, verbose=0, eta0=1.0, n_jobs=-1, 
