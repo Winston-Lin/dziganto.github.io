@@ -1,3 +1,7 @@
+---
+title:  "HDF5 Or How I Learned To Love Data Compression And Partial I/O"
+---
+
 ![Data Compression Cover](/assets/images/data_compression.jpg?raw=true)
 
 # Introduction
