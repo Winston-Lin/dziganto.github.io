@@ -1,5 +1,5 @@
 ---
-Category: Out-of-Core Computation
+Category: Sparse Matrix
 ---
 ![Image of Binary](/assets/images/binary-number-tunnel.jpg?raw=true)
 
