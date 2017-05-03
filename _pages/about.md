@@ -1,4 +1,5 @@
 ---
+layout: single
 permalink: /about/
 sidebar: true
 ---
