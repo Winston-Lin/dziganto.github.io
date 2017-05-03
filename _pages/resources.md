@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 permalink: /resources/
 ---
 
@@ -13,4 +13,4 @@ permalink: /resources/
 [Intro to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/)  
 [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 
-test
+test2
