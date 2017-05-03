@@ -1,6 +1,6 @@
 ---
 permalink: /posts/
-sidebar: true
+author_profile: true
 ---
 # Posts
 [HDF5 Or How I Learned To Love Data Compression And Partial I/O](https://dziganto.github.io/HDF5-Or-How-I-Learned-To-Love-Data-Compression-And-Partial-Input-Output/) (4/28/17)  
