@@ -1,5 +1,6 @@
 ---
 title:  "HDF5 Or How I Learned To Love Data Compression And Partial I/O"
+category: Out-of-Core Computation
 ---
 
 ![Data Compression Cover](/assets/images/data_compression.jpg?raw=true)
