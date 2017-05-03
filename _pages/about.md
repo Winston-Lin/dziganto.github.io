@@ -1,5 +1,5 @@
 ---
 permalink: /about/
-author_profile: true
+sidebar: true
 ---
 ![Under Construction](http://setup.orderingonline.com/Content/Images/under-construction.png)
