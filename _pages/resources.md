@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: single
 permalink: /resources/
 author_profile: true
 ---
@@ -14,4 +14,4 @@ author_profile: true
 [Intro to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/)  
 [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 
-test5
+test6
