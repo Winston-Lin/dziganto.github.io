@@ -3,7 +3,7 @@ main:
   - title: "About"
     url: /about/
   - title: "Posts"
-    url: /posts/
+    url: /_posts/list_of_posts
   - title: "Collections"
     url: /collections/
   - title: "Resources"
