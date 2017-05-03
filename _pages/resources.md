@@ -1,7 +1,7 @@
 ---
 layout: single
 permalink: /resources/
-author_profile: true
+sidebar: true
 ---
 
 # Machine Learning
@@ -14,4 +14,4 @@ author_profile: true
 [Intro to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/)  
 [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 
-test6
+test7
