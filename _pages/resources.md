@@ -1,7 +1,6 @@
 ---
 layout: single
 permalink: /resources/
-sidebar: true
 ---
 
 # Machine Learning
