@@ -49,7 +49,7 @@ I include the dollar sign when I'm using the Terminal. Do not actually type the 
 # Step 4: Add Bootstrap Script To S3
 1. 
 
-# Step 5: Create EMR Cluster W/Anaconda, Tensorflow, Theano, & Keras
+# Step 5: Create EMR Cluster w/Anaconda, Tensorflow, Theano, & Keras
 1. Sign in to the AWS Management Console and open the [Amazon EMR console](https://console.aws.amazon.com/elasticmapreduce/).
 2. Click **Create cluster**.
 3. Click **Go to advanced options** at top.
