@@ -47,7 +47,8 @@ I include the dollar sign when I'm using the Terminal. Do not actually type the 
 11. That's it. All done!
 
 # Step 4: Add Bootstrap Script To S3
-1. 
+1. Copy or download my script called [emr_configs.sh](https://github.com/dziganto/dziganto.github.io/blob/master/_scripts/emr_configs.sh). 
+2. Upload to the S3 bucket we created in Step 1 called **standard-deviations-demo-bucket**.
 
 # Step 5: Create EMR Cluster w/Anaconda, Tensorflow, Theano, & Keras
 1. Sign in to the AWS Management Console and open the [Amazon EMR console](https://console.aws.amazon.com/elasticmapreduce/).
