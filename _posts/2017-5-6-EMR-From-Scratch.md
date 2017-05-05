@@ -58,21 +58,23 @@ I include the dollar sign when I'm using the Terminal. Do not actually type the 
 5. Click blue **Next** button at bottom right.
 6. Set the number of *Core* instances. I am using 1 so we have 1 Master and 1 Worker. You can change this after the cluster is created so don't worry if you change your mind later.
 7. Click blue **Next** button at bottom right.
-8. Click the folder icon next to *S3 folder*. Select **standard-deviations-demo-bucket**.
-9. Click blue **Select** button.
-10. Click blue **Next** button at bottom right.
-11. (To Be Completed) add bootstrap script.
-12. Click blue **Next** button at bottom right.
-13. In *EC2 key pair*, open dropdown and select **standard-deviations-demo-key-pair**.
-14. Expand *EC2 Security Groups* at middle bottom of page.
-15. For *Master* use dropdown to select option ending in **(cluster_security_group)**.
-16. For *Core & Task* use dropdown to select option ending in **(cluster_security_group)**.
-17. Click blue **Create cluster** button at bottom right. 
-18. A dashboard opens. It takes 10+ minutes for your cluster to do its thing so be patient. Your cluster is ready when your status reads *Waiting* in green.
-19. Once your cluster is *Waiting*, located *Master public DNS* on your dashboard. Click on the blue text that says **SSH** to the far right of that line.
-20. A new window opens. Copy the command in the grey box from step 2.
-21. Open Terminal.
-22. Assuming your key is located in your *home* directory, paste this command as is and hit enter. Note: if you moved your key, you will have to update the path to where your .pem file is located.
-23. You will get a message saying "The authenticity of host 'long host name' can't be established. Are you sure you want to continue connecting?" This is standard. Type **yes**.
-24. You are successful if you see EMR spelled out in letters very large. 
-25. All done. Nothing more to see here.
+8. Input a name in the *Cluster name* field. I will use **Demo Cluster**.
+9. Click the folder icon next to *S3 folder*. Select **standard-deviations-demo-bucket**.
+10. Click blue **Select** button.
+11. Expand *Bootstrap Actions* at bottom. Open dropdown called *Add bootstrap action*. Select **Custom action**. Click grey **Configure and add** button. 
+12. New window opens. In the *Name* field I will use **emr bootstrap**. Select the folder to the right of **Script location** and update with **emr_script.sh**. Click blue **Add** button. Window will close.
+13. Click blue **Next** button at bottom right.
+14. Click blue **Next** button at bottom right.
+15. In *EC2 key pair*, open dropdown and select **standard-deviations-demo-key-pair**.
+16. Expand *EC2 Security Groups* at middle bottom of page.
+17. For *Master* use dropdown to select option ending in **(cluster_security_group)**.
+18. For *Core & Task* use dropdown to select option ending in **(cluster_security_group)**.
+19. Click blue **Create cluster** button at bottom right. 
+20. A dashboard opens. It takes 10+ minutes for your cluster to do its thing so be patient. Your cluster is ready when your status reads *Waiting* in green.
+21. Once your cluster is *Waiting*, located *Master public DNS* on your dashboard. Click on the blue text that says **SSH** to the far right of that line.
+22. A new window opens. Copy the command in the grey box from step 2.
+23. Open Terminal.
+24. Assuming your key is located in your *home* directory, paste this command as is and hit enter. Note: if you moved your key, you will have to update the path to where your .pem file is located.
+25. You will get a message saying "The authenticity of host 'long host name' can't be established. Are you sure you want to continue connecting?" This is standard. Type **yes**.
+26. You are successful if you see EMR spelled out in letters very large. 
+27. All done. Nothing more to see here.
