@@ -1,6 +1,6 @@
 ---
 published: false
-title: EMR From Anaconda To Zeppelin
+title: EMR - From Anaconda To Zeppelin
 ---
 
 # Motivation
