@@ -1,6 +1,6 @@
 ---
 layout: single
-permalink: /collections/
+permalink: /tutorials/
 author_profile: true
 ---
 
