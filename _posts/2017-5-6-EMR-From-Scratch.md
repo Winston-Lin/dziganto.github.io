@@ -62,7 +62,7 @@ I include the dollar sign when I'm using the Terminal. Do not actually type the 
 9. Click the folder icon next to *S3 folder*. Select **standard-deviations-demo-bucket**.
 10. Click blue **Select** button.
 11. Expand *Bootstrap Actions* at bottom. Open dropdown called *Add bootstrap action*. Select **Custom action**. Click grey **Configure and add** button. 
-12. New window opens. In the *Name* field I will use **emr bootstrap**. Select the folder to the right of **Script location** and update with **emr_script.sh**. Click blue **Add** button. Window will close.
+12. New window opens. In the *Name* field I will use **emr bootstrap**. Select the folder to the right of **Script location** and update with **emr_configs.sh**. Click blue **Add** button. Window will close.
 13. Click blue **Next** button at bottom right.
 14. Click blue **Next** button at bottom right.
 15. In *EC2 key pair*, open dropdown and select **standard-deviations-demo-key-pair**.
