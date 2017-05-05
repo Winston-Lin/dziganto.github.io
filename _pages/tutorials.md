@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: page
 permalink: /tutorials/
 author_profile: true
 ---
