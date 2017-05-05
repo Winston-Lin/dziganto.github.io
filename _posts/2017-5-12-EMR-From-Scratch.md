@@ -1,5 +1,4 @@
 ---
-published: false
 title: EMR: From Anaconda To Zeppelin
 ---
 
