@@ -4,13 +4,39 @@ title: EMR - From Anaconda To Zeppelin
 ---
 
 # Motivation
-This is the tutorial that I wish I had. 
+Amazon EMR is described [here](https://aws.amazon.com/emr/) as:
+```
+Amazon EMR provides a managed Hadoop framework that makes it easy, fast, and cost-effective to process vast amounts of data across dynamically scalable Amazon EC2 instances. You can also run other popular distributed frameworks such as Apache Spark, HBase, Presto, and Flink in Amazon EMR, and interact with data in other AWS data stores such as Amazon S3 and Amazon DynamoDB.
 
-This tutorial assumes that you setup an AWS account. It also assumes your region is set appropriately.
+Amazon EMR securely and reliably handles a broad set of big data use cases, including log analysis, web indexing, data transformations (ETL), machine learning, financial analysis, scientific simulation, and bioinformatics.
+```
+In other words, if you use Hadoop, Hive, Spark, Zeppelin, Tez, Hue, and/or Ganglia, then you should consider Amazon EMR because it makes the configuration process as painless as it can be. That's not to say it is easy, though. 
 
-Items in **bold** are buttons you click or data input into fields or code that you type. Items in *italics* are field names.
+While Amazon has excellent documentation for basic setup and while there are many great tutorials online that cover a few aspects found in this tutorial, I had no luck finding a straightforward, sequential tutorial that allowed me to do all the things I wanted to. In fact, many steps in this tutorial were discovered by yours truly after much trial and error. I am providing this to you in the hopes that my work can save you countless hours and moments of utter frustration. 
 
-I include the dollar sign when I'm using the Terminal. Do not actually type the dollar sign, only the code that comes after.
+Here is what will be covered:
+```
+1.  Create S3 Bucket
+2.  Create A Key Pair
+3.  Create A Security Group
+4.  Add Bootstrap Script To S3
+5.  Create EMR Cluster w/Anaconda, Tensorflow, Theano, & Keras
+6.  Setup FoxyProxy For Zeppelin
+7.  Setup Zeppelin Notebook
+8.  Set Anaconda As Default Python Interpreter In Zeppelin
+9.  Setup Shiro Authentication in Zeppelin
+10. Setup ZeppelinHub
+```
+
+In sum, this is the tutorial that I wish I had long ago. I hope you find it useful. 
+
+# Assumptions
+1. You already setup an AWS account. It also assumes your region is set appropriately.
+2. Items in **bold** are buttons you click or data input into fields or code that you type. 
+3. Items in *italics* are field names.
+4. I include the dollar sign when I'm using the Terminal. Do not actually type the dollar sign, only the code that comes after.
+
+Now on to the tutorial. Please follow the steps sequentially unless you've already setup certain aspects like FoxyProxy, if you are using Zeppelin for example.
 
 # Step 1: Create S3 Bucket
 1. Sign in to the AWS Management Console and open the [Amazon S3 console](https://console.aws.amazon.com/s3/).
@@ -79,7 +105,7 @@ I include the dollar sign when I'm using the Terminal. Do not actually type the 
 26. You are successful if you see EMR spelled out in letters very large. 
 27. All done. Nothing more to see here.
 
-# Setup FoxyProxy For Zeppelin
+# Step 6: Setup FoxyProxy For Zeppelin
 1. In Chrome, add the FoxyProxy Standard extension.
 2. Restart Chrome after installing FoxyProxy.
 3. Using a text editor, create a file named **foxyproxy-settings.xml** containing the following:
@@ -108,7 +134,7 @@ I include the dollar sign when I'm using the Terminal. Do not actually type the 
 7. In the Import FoxyProxy Settings dialog, click **Add**.
 8. Tutorial complete!
 
-# Setup Zeppelin Notebook
+# Step 7: Setup Zeppelin Notebook
 1. Navigate to the [Amazon EMR console](https://console.aws.amazon.com/elasticmapreduce/).
 2. Locate *Master public DNS* on your dashboard. 
 3. Click on the blue text that says **SSH** to the far right of that line.
@@ -134,7 +160,7 @@ $ sudo bash bin/zeppelin-daemon.sh start
 15. This will open a new tab in Chrome. If all was configured properly, Zeppelin notebook should fire up.
 16. Congratulations, you are done with this tutorial!
 
-# Set Anaconda As default Python Interpreter In Zeppelin
+# Step 8: Set Anaconda As Default Python Interpreter In Zeppelin
 1. Click **anonymous** in top right corner.
 2. Click **Interpreter**.
 3. Scroll down to python interpreter.
@@ -142,9 +168,9 @@ $ sudo bash bin/zeppelin-daemon.sh start
 4. Locate **zeppelin.python**.
 6. Set value to **/home/hadoop/anaconda/bin/python**
 7. All set!  
-Note: You can check by opening a new note and typing **print(sys.version)**. Make sure you are using the python interpreter!  
+*Note: You can check by opening a new note and typing **print(sys.version)**. Make sure you are using the python interpreter!*  
 
-# Setup Shiro Authentication in Zeppelin
+# Step 9: Setup Shiro Authentication in Zeppelin
 1. In EMR Terminal window, navigate to **/usr/lib/zeppelin/conf**.
 2. We need to copy two templates:
     1. type **$ sudo cp shiro.ini.template shiro.ini**
@@ -182,3 +208,6 @@ Note: You can check by opening a new note and typing **print(sys.version)**. Mak
 ```  
 *Note 1: usernames, passwords, and groups can be setup in shiro.ini file.*  
 *Note 2: note permissions (owners, writers, readers) can be set within note by clicking lock icon towards top right.*
+
+# Step 10: Setup ZepplinHub
+1. 
