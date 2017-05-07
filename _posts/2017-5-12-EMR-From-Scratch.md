@@ -167,10 +167,10 @@ Note: You can check by opening a new note and typing **print(sys.version)**. Mak
     1. type **$ sudo nano zeppelin-site.xml**
     2. locate **zeppelin.anonymous.allowed**
     3. set its value to **false**
-    4. type control+o (to save changes)
-    5. hit enter
-    6. type contol+x (to exit)
-5. Navigate to zeppelin directory by typing **$ cd ..**
+    4. simultaneously type **control o** (to save changes)
+    5. hit **enter**
+    6. simultaneously type **contol x** (to exit)
+5. Navigate to Zeppelin directory by typing **$ cd ..**
 6. Type **$ sudo bin/zeppelin-daemon.sh restart**
 7. Go to Zeppelin
 8. Click **Login** (top right corner)
@@ -180,5 +180,5 @@ Note: You can check by opening a new note and typing **print(sys.version)**. Mak
     2. user1 password2
     3. user2 password3
 ```  
-*Note 1: Usernames, Passwords, and Groups can be setup in shiro.ini file.*  
-*Note 2: Note permissions (owners, writers, readeres) can be set within note by clicking lock icon towards top right.*
+*Note 1: usernames, passwords, and groups can be setup in shiro.ini file.*  
+*Note 2: note permissions (owners, writers, readers) can be set within note by clicking lock icon towards top right.*
