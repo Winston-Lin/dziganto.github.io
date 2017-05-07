@@ -211,3 +211,4 @@ $ sudo bash bin/zeppelin-daemon.sh start
 
 # Step 10: Setup ZepplinHub
 1. 
+2.
