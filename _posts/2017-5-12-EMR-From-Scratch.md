@@ -71,10 +71,114 @@ I include the dollar sign when I'm using the Terminal. Do not actually type the 
 18. For *Core & Task* use dropdown to select option ending in **(cluster_security_group)**.
 19. Click blue **Create cluster** button at bottom right. 
 20. A dashboard opens. It takes 10+ minutes for your cluster to do its thing so be patient. Your cluster is ready when your status reads *Waiting* in green.
-21. Once your cluster is *Waiting*, located *Master public DNS* on your dashboard. Click on the blue text that says **SSH** to the far right of that line.
+21. Once your cluster is *Waiting*, locate *Master public DNS* on your dashboard. Click on the blue text that says **SSH** to the far right of that line.
 22. A new window opens. Copy the command in the grey box from step 2.
 23. Open Terminal.
-24. Assuming your key is located in your *home* directory, paste this command as is and hit enter. Note: if you moved your key, you will have to update the path to where your .pem file is located.
+24. Assuming your key is located in your *home* directory, paste this command as is and hit enter. *Note: if you moved your key, you will have to update the path to where your .pem file is located.*
 25. You will get a message saying "The authenticity of host 'long host name' can't be established. Are you sure you want to continue connecting?" This is standard. Type **yes**.
 26. You are successful if you see EMR spelled out in letters very large. 
 27. All done. Nothing more to see here.
+
+# Setup FoxyProxy For Zeppelin
+1. In Chrome, add the FoxyProxy Standard extension.
+2. Restart Chrome after installing FoxyProxy.
+3. Using a text editor, create a file named **foxyproxy-settings.xml** containing the following:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<foxyproxy>
+    <proxies>
+        <proxy name="emr-socks-proxy" id="2322596116" notes="" fromSubscription="false" enabled="true" mode="manual" selectedTabIndex="2" lastresort="false" animatedIcons="true" includeInCycle="true" color="#0055E5" proxyDNS="true" noInternalIPs="false" autoconfMode="pac" clearCacheBeforeUse="false" disableCache="false" clearCookiesBeforeUse="false" rejectCookies="false">
+            <matches>
+                <match enabled="true" name="*ec2*.amazonaws.com*" pattern="*ec2*.amazonaws.com*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="*ec2*.compute*" pattern="*ec2*.compute*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="10.*" pattern="http://10.*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="*10*.amazonaws.com*" pattern="*10*.amazonaws.com*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="*10*.compute*" pattern="*10*.compute*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="*.compute.internal*" pattern="*.compute.internal*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="*.ec2.internal*" pattern="*.ec2.internal*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+            </matches>
+            <manualconf host="localhost" port="8157" socksversion="5" isSocks="true" username="" password="" domain="" />
+        </proxy>
+    </proxies>
+</foxyproxy>
+```
+4. Click on the **FoxyProxy icon** in the toolbar and select **Options**.
+5. Click **Import/Export**.
+6. Click **Choose File**, select **foxyproxy-settings.xml**, and click **Open**.
+7. In the Import FoxyProxy Settings dialog, click **Add**.
+8. Tutorial complete!
+
+# Setup Zeppelin Notebook
+1. Navigate to the [Amazon EMR console](https://console.aws.amazon.com/elasticmapreduce/).
+2. Locate *Master public DNS* on your dashboard. 
+3. Click on the blue text that says **SSH** to the far right of that line.
+4. A new window opens. Copy the command in the grey box from step 2.
+5. Open Terminal.
+6. Assuming your key is located in your *home* directory, paste this command as is and hit enter.  
+*Note: if you moved your key, you will have to update the path to where your .pem file is located.*
+7. Run the following commands in sequence:
+```
+$ cd /usr/lib/zeppelin
+$ sudo bash bin/install-interpreter.sh -a 
+$ sudo bash bin/zeppelin-daemon.sh start
+```
+8. Go back to Amazon EMR dashboard and select **Enable Web Connection**. 
+9. A new window pops up. Copy the command from **Step 1: Open an SSH Tunnel to the Amazon EMR Master Node**.
+10. Open a new Terminal window and paste the command from step 9 above.   
+*NOTE 1: You may have to update the path to your key. I did since I stored my key in .ssh.*  
+*NOTE 2: This command opens a port. It will look like the command never finishes. That is normal. Do not close or exit.*  
+11. Open Chrome.
+12. Click the **FoxyProxy icon** at the top right and choose **Use proxies based on their pre-defined patterns and priorities**.
+13. Go back to the Amazon EMR dashboard. 
+14. In the same spot you clicked **Enable Web Connection**, the word Zeppelin should appear in blue text. Click it.
+15. This will open a new tab in Chrome. If all was configured properly, Zeppelin notebook should fire up.
+16. Congratulations, you are done with this tutorial!
+
+# Set Anaconda As default Python Interpreter In Zeppelin
+1. Click **anonymous** in top right corner.
+2. Click **Interpreter**.
+3. Scroll down to python interpreter.
+4. Click **Edit**.
+4. Locate **zeppelin.python**.
+6. Set value to **/home/hadoop/anaconda/bin/python**
+7. All set!  
+Note: You can check by opening a new note and typing **print(sys.version)**. Make sure you are using the python interpreter!  
+
+# Setup Shiro Authentication in Zeppelin
+1. In EMR Terminal window, navigate to **/usr/lib/zeppelin/conf**.
+2. We need to copy two templates:
+    1. type **$ sudo cp shiro.ini.template shiro.ini**
+    2. type **$ sudo cp zeppelin-site.xml.template zeppelin-site.xml**
+3. Secure the HTTP channel 
+    1. type **$ sudo nano shiro.ini**
+    2. under *[urls]* make sure this is set like so:
+    ```
+        1. #/api/version = anon
+        2. /api/interpreter/** = authc, roles[admin]
+        3. /api/configurations/** = authc, roles[admin]
+        4. /api/credential/** = authc, roles[admin]
+        5. #/** = anon 
+        6. /** = authc
+        7. type control+o (to save changes)
+        8. hit enter
+        9. type contol+x (to exit)
+     ```
+4. Secure Websocket channel
+    1. type **$ sudo nano zeppelin-site.xml**
+    2. locate **zeppelin.anonymous.allowed**
+    3. set its value to **false**
+    4. type control+o (to save changes)
+    5. hit enter
+    6. type contol+x (to exit)
+5. Navigate to zeppelin directory by typing **$ cd ..**
+6. Type **$ sudo bin/zeppelin-daemon.sh restart**
+7. Go to Zeppelin
+8. Click **Login** (top right corner)
+9. Use any of these username, password combos:
+```
+    1. admin password1
+    2. user1 password2
+    3. user2 password3
+```  
+*Note 1: Usernames, Passwords, and Groups can be setup in shiro.ini file.*  
+*Note 2: Note permissions (owners, writers, readeres) can be set within note by clicking lock icon towards top right.*
