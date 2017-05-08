@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Amazon EMR - From Anaconda To Zeppelin
 ---
 ![EMR](/assets/images/amazon_emr.png?raw=true){: .center-image }
