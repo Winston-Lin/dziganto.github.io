@@ -178,7 +178,6 @@ $ sudo bash bin/zeppelin-daemon.sh start
 #/** = anon 
 /** = authc
 ```  
-
 4. Secure Websocket channel
     1. type **$ sudo nano zeppelin-site.xml**
     2. locate **zeppelin.anonymous.allowed**
@@ -193,9 +192,7 @@ $ sudo bash bin/zeppelin-daemon.sh start
 9. Use any of these username, password combos:  
 ```
 admin password1
-
 user1 password2
-
 user2 password3
 ```  
 *Note 1: usernames, passwords, and groups can be setup in shiro.ini file.*  
