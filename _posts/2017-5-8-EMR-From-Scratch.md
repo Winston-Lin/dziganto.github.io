@@ -214,14 +214,13 @@ user2 password3
     1. type **$ cd /usr/lib/zeppelin/conf**
     2. type **$ cp zeppelin-env.sh.template zeppelin-env.sh**
     3. type **$ nano zeppelin-env.sh**
-    4. Add these lines:  
+    4. Add these lines and save:  
 ```    
 export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.VFSNotebookRepo, org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo"
 export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"
 export ZEPPELINHUB_API_TOKEN="YOUR_TOKEN_STRING"
 export ZEPPELINHUB_USER_KEY="YOUR_USER_KEY" (if authenticating)
 ```
-    5. Save and exit
 10. Navigate to zeppelin directory by typing **$ cd ..**
 11. Type **sudo bin/zeppelin-daemon.sh restart**
 12. Reload *ZeppelinHub*.
