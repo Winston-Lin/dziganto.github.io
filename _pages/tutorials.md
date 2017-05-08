@@ -4,4 +4,4 @@ permalink: /tutorials/
 author_profile: true
 ---
 
-[Amazon EMR - From Anaconda to Zeppelin](https://dziganto.github.io/EMR-From-Scratch/)
+[Amazon EMR - From Anaconda to Zeppelin](https://dziganto.github.io/zeppelin/spark/zeppelinhub/emr/anaconda/tensorflow/shiro/s3/theano/bootstrap%20script/EMR-From-Scratch/)
