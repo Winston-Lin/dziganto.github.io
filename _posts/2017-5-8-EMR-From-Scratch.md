@@ -15,23 +15,13 @@ In other words, if you use common Apache big data tools, you should seriously co
 
 Here is the list of Apache big data tools currently supported in EMR:
 
-* Flink
-* Ganglia
-* Hadoop
-* HBase
-* HCatalog
-* Hive
-* Hue
-* Mahout
-* Oozie
-* Pig
-* Phoenix
-* Presto
-* Spark
-* Sqoop
-* Tez
-* Zeppelin
-* ZooKeeper
+|       |         |       |       |
+| ----- | ------- | ----- | ----- |
+| Flink | Ganglia | Hadoop| HBase |
+| HCatalog | Hive | Hue | Mahout|
+| Oozie | Pig | Phoenix| Presto |
+| Spark | Sqoop | Tez | Zeppelin | 
+| ZooKeeper |
 
 While Amazon has excellent documentation for basic setup and while there are several great tutorials online that cover a few aspects found in this tutorial, I had no luck finding a straightforward, sequential tutorial that allowed me to do all the things I wanted to do. In fact, many steps in this tutorial were discovered by yours truly after much trial and error. I am providing this partially as a reference for myself and partially in the hopes that my work will save you countless hours and moments of downright frustration. 
 
