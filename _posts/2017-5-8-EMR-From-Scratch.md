@@ -195,6 +195,7 @@ admin password1
 user1 password2
 user2 password3
 ```  
+
 *Note 1: usernames, passwords, and groups can be setup in shiro.ini file.*  
 *Note 2: note permissions (owners, writers, readers) can be set within note by clicking lock icon towards top right.*
 
