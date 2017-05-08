@@ -146,7 +146,7 @@ Now on to the tutorial. Please follow the steps sequentially.
         </proxy>
     </proxies>
 </foxyproxy>
-```
+```  
 4. Click on the **FoxyProxy icon** in the toolbar and select **Options**.
 5. Click **Import/Export**.
 6. Click **Choose File**, select **foxyproxy-settings.xml**, and click **Open**.
