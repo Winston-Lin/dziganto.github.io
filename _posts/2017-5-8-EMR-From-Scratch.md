@@ -159,7 +159,7 @@ $ sudo bash bin/zeppelin-daemon.sh start
 4. Locate **zeppelin.python**.
 6. Set value to **/home/hadoop/anaconda/bin/python**
 7. All set!  
-*Note: You can check by opening a new note and typing **print(sys.version)**. Make sure you are using the python interpreter!*  
+*Note: You can check by opening a new note and typing **print(sys.version)**. Make sure you are using the python interpreter!*    
 # Step 9: Setup Shiro Authentication in Zeppelin
 1. In EMR Terminal window, navigate to **/usr/lib/zeppelin/conf**.
 2. We need to copy two templates:
