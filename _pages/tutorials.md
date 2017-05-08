@@ -4,4 +4,4 @@ permalink: /tutorials/
 author_profile: true
 ---
 
-![Under Construction](http://setup.orderingonline.com/Content/Images/under-construction.png)
+[Amazon EMR - From Anaconda to Zeppelin](https://dziganto.github.io/EMR-From-Scratch/)
