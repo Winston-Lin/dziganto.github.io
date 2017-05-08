@@ -213,16 +213,18 @@ $ sudo bash bin/zeppelin-daemon.sh start
     1. type **$ cd /usr/lib/zeppelin/conf**
     2. type **$ cp zeppelin-env.sh.template zeppelin-env.sh**
     3. type **$ nano zeppelin-env.sh**
-    4. Add these lines but make sure to update *ZEPPELINHUB_API_TOKEN* and *ZEPPELINHUB_USER_KEY*:
-        1. **export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.VFSNotebookRepo, org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo"**
-        2. **export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"** 
-        3. **export ZEPPELINHUB_API_TOKEN="YOUR_TOKEN_STRING"**
-        4. **export ZEPPELINHUB_USER_KEY="YOUR_USER_KEY"** (if authenticating)
-        5. Save and exit.
+    4. Add these lines:
+    ```    
+    export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.VFSNotebookRepo, org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo"
+    export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"
+    export ZEPPELINHUB_API_TOKEN="YOUR_TOKEN_STRING"
+    export ZEPPELINHUB_USER_KEY="YOUR_USER_KEY" (if authenticating)
+    ```
+    5. Save and exit
 10. Navigate to zeppelin directory by typing **$ cd ..**
 11. Type **sudo bin/zeppelin-daemon.sh restart**
 12. Reload *ZeppelinHub*.
 13. You know it worked if you click on your instance and your notebooks show up in the pane to the right.
 14. Congrats! You are all done.
 
-I hope you found this tutorial helpful. 
+That's all for now. I hope you found this tutorial helpful. 
