@@ -1,16 +1,36 @@
 ---
 published: false
-title: EMR - From Anaconda To Zeppelin
+title: Amazon EMR - From Anaconda To Zeppelin
 ---
 
 # Motivation
-Amazon EMR is described [here](https://aws.amazon.com/emr/) as:
+Amazon EMR is described [here](https://aws.amazon.com/emr/) as follows:
 
->Amazon EMR provides a managed Hadoop framework that makes it easy, fast, and cost-effective to process vast amounts of data across dynamically scalable Amazon EC2 instances. You can also run other popular distributed frameworks such as Apache Spark, HBase, Presto, and Flink in Amazon EMR, and interact with data in other AWS data stores such as Amazon S3 and Amazon DynamoDB.
+>Amazon EMR provides a managed Hadoop framework that makes it easy, fast, and cost-effective to process vast amounts of data across dynamically scalable Amazon EC2 instances. You can also run these other popular distributed frameworks such as Apache Spark, HBase, Presto, and Flink in Amazon EMR, and interact with data in other AWS data stores such as Amazon S3 and Amazon DynamoDB.
 
 >Amazon EMR securely and reliably handles a broad set of big data use cases, including log analysis, web indexing, data transformations (ETL), machine learning, financial analysis, scientific simulation, and bioinformatics.
 
-In other words, if you use Hadoop, Hive, Spark, Zeppelin, Tez, Hue, and/or Ganglia, then you should consider Amazon EMR because it makes the configuration process as painless as it can be. That's not to say it is easy, though. 
+In other words, if you use common Apache big data tools, you should consider Amazon EMR because it makes the configuration process as painless as it can be. That's not to say it is easy, though. 
+
+Here is the list of Apache big data tools currently supported in EMR:
+
+* Flink
+* Ganglia
+* Hadoop
+* HBase
+* HCatalog
+* Hive
+* Hue
+* Mahout
+* Oozie
+* Pig
+* Phoenix
+* Presto
+* Spark
+* Sqoop
+* Tez
+* Zeppelin
+* ZooKeeper
 
 While Amazon has excellent documentation for basic setup and while there are many great tutorials online that cover a few aspects found in this tutorial, I had no luck finding a straightforward, sequential tutorial that allowed me to do all the things I wanted to. In fact, many steps in this tutorial were discovered by yours truly after much trial and error. I am providing this to you in the hopes that my work will save you countless hours and moments of utter frustration. 
 
@@ -210,5 +230,25 @@ $ sudo bash bin/zeppelin-daemon.sh start
 *Note 2: note permissions (owners, writers, readers) can be set within note by clicking lock icon towards top right.*
 
 # Step 10: Setup ZepplinHub
-1. 
-2.
+1. Go to [ZeppelinHub](https://www.zeppelinhub.com/)
+2. Click blue **Register** button.
+3. Fill out form and agree to *Terms of Service* and *Privacy Policy*
+4. On the ZeppelinHub dashboard, locate **Zeppelin Instances** and click the **+** to the right.
+5. Type an instance name and a brief description.
+6. If you setup Shiro authentication, click **Include Zeppelin Credentials** and add username and password.
+7. Copy **token** (and **user key** if authenticating).
+8. Close window.
+9. You need to set the some environment variables 
+    1. type **$ cd ZEPPELIN_HOME/conf**
+    2. type **$ cp zeppelin-env.sh.template zeppelin-env.sh**
+    3. type **$ nano zeppelin-env.sh**
+    4. Add these lines but make sure to update *ZEPPELINHUB_API_TOKEN* and *ZEPPELINHUB_USER_KEY*:
+        1. **export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.VFSNotebookRepo, org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo"**
+        2. **export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"** 
+        3. **export ZEPPELINHUB_API_TOKEN="YOUR_TOKEN_STRING"**
+        4. **export ZEPPELINHUB_USER_KEY="YOUR_USER_KEY"** (if authenticating)
+10. Navigate to zeppelin directory by typing **$ cd ..**
+11. Type **sudo bin/zeppelin-daemon.sh restart**
+12. Reload *ZeppelinHub*.
+13. You know it worked if you click on your instance and your notebooks show up in the pane to the right.
+14. Congrats! You are all done.
