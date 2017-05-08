@@ -169,7 +169,7 @@ $ sudo bash bin/zeppelin-daemon.sh start
     2. type **$ sudo cp zeppelin-site.xml.template zeppelin-site.xml**
 3. Secure the HTTP channel 
     1. type **$ sudo nano shiro.ini**
-    2. under *[urls]* make sure this is set like so:
+    2. under *[urls]* make sure this is set like so:  
     ```
         1. #/api/version = anon
         2. /api/interpreter/** = authc, roles[admin]
@@ -192,7 +192,7 @@ $ sudo bash bin/zeppelin-daemon.sh start
 6. Type **$ sudo bin/zeppelin-daemon.sh restart**
 7. Go to Zeppelin
 8. Click **Login** (top right corner)
-9. Use any of these username, password combos:
+9. Use any of these username, password combos:  
 ```
     1. admin password1
     2. user1 password2
