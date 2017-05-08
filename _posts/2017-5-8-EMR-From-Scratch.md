@@ -63,7 +63,7 @@ Now on to the tutorial. Please follow the steps sequentially.
 3. Click **Create Key Pair**.
 4. Enter a key pair name. I will use **standard-deviations-demo-key-pair** for this demo.
 5. Click **Create**. 
-6. Your private key file will automatically download. The base file name is the name you specified as the name of your key pair, and the file name extension is .pem. 
+6. Your private key file will automatically download. The base filename is the name you specified as the name of your key pair, and the filename extension is .pem. 
 7. Save the private key file in a safe place. In practice, I move it to my *.ssh* directory. But to make this demo easier later on, I will move it to my *home* directory. Keep track of where you store your key. Use Finder to transfer the key or open Terminal and type **$ mv ~/Downloads/standard-deviations-demo-key-pair.pem ~**.
 8. Still in Terminal, navigate to where your key is located. Again, I stored my key in my *home* directory so there is no need for me to change directories at this point. You will have to if you stored your key somewhere besides the *home* directory.
 9. Use the following command to set the permissions of your private key file so only you can read it: **$ chmod 400 standard-deviations-demo-key-pair.pem**. You can check permissions with **ls -l**.
@@ -73,7 +73,7 @@ Now on to the tutorial. Please follow the steps sequentially.
 1. Open the Amazon [EC2 console](https://console.aws.amazon.com/ec2/).
 2. On the left-hand side, look for the group titled *NETWORK & SECURITY*. Click the 1st option called **Security Groups**.
 3. Click blue **Create Security Group** button.
-4. Set *Security* group name* to **cluster_security_group**.
+4. Set *Security group name* to **cluster_security_group**.
 5. Set *description* to **keep the bad guys out**
 6. The *inbound* tab should already be selected. If not, select it now.
 7. Click **Add Rule**.
