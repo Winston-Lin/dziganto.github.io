@@ -89,7 +89,7 @@ Now on to the tutorial. Please follow the steps sequentially.
 1. Sign in to the AWS Management Console and open the [Amazon EMR console](https://console.aws.amazon.com/elasticmapreduce/).
 2. Click **Create cluster**.
 3. Click **Go to advanced options** at top.
-4. We will use the latest EMR version which is 5.5.0. Select the software you want to install. For demo purpose, I will select **Hadoop 2.7.3**, **Spark 2.1.0**, and **Zeppelin 0.7.1**. Leave everything else as is.
+4. We will use the latest EMR version which is 5.5.0. Select the software you want to install. For demo purposes, I will select **Hadoop 2.7.3**, **Spark 2.1.0**, and **Zeppelin 0.7.1**. Leave everything else as is.
 5. Click blue **Next** button at bottom right.
 6. Set the number of *Core* instances. I am using 1 so we have 1 Master and 1 Worker. You can change this after the cluster is created so don't worry if you change your mind later.
 7. Click blue **Next** button at bottom right.
