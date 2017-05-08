@@ -212,7 +212,7 @@ $ sudo bash bin/zeppelin-daemon.sh start
     1. type **$ cd /usr/lib/zeppelin/conf**
     2. type **$ cp zeppelin-env.sh.template zeppelin-env.sh**
     3. type **$ nano zeppelin-env.sh**
-    4. Add these lines:
+    4. Add these lines:  
 ```    
 export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.VFSNotebookRepo, org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo"
 export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"
