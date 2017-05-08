@@ -10,7 +10,7 @@ Amazon EMR is described [here](https://aws.amazon.com/emr/) as follows:
 
 >Amazon EMR securely and reliably handles a broad set of big data use cases, including log analysis, web indexing, data transformations (ETL), machine learning, financial analysis, scientific simulation, and bioinformatics.
 
-In other words, if you use common Apache big data tools, you should consider Amazon EMR because it makes the configuration process as painless as it can be. That's not to say it is easy, though. 
+In other words, if you use common Apache big data tools, you should seriously consider Amazon EMR because it makes the configuration process as painless as it can be. That's not to say it is easy, though. 
 
 Here is the list of Apache big data tools currently supported in EMR:
 
@@ -32,7 +32,7 @@ Here is the list of Apache big data tools currently supported in EMR:
 * Zeppelin
 * ZooKeeper
 
-While Amazon has excellent documentation for basic setup and while there are many great tutorials online that cover a few aspects found in this tutorial, I had no luck finding a straightforward, sequential tutorial that allowed me to do all the things I wanted to. In fact, many steps in this tutorial were discovered by yours truly after much trial and error. I am providing this partially as a reference for myself and partially in the hopes that my work will save you countless hours and moments of downright frustration. 
+While Amazon has excellent documentation for basic setup and while there are several great tutorials online that cover a few aspects found in this tutorial, I had no luck finding a straightforward, sequential tutorial that allowed me to do all the things I wanted to. In fact, many steps in this tutorial were discovered by yours truly after much trial and error. I am providing this partially as a reference for myself and partially in the hopes that my work will save you countless hours and moments of downright frustration. 
 
 Here is what will be covered:
 ```
@@ -48,15 +48,13 @@ Here is what will be covered:
 10. Setup ZeppelinHub
 ```
 
-In sum, this is the tutorial that I wish I had long ago. I hope you find it useful. 
-
 # Assumptions
 1. You already setup an AWS account. It also assumes your region is set appropriately.
 2. Items in **bold** are buttons you click or data input into fields or code that you type. 
 3. Items in *italics* are field names.
 4. I include the dollar sign when I'm using the Terminal. Do not actually type the dollar sign, only the code that comes after.
 
-Now on to the tutorial. Please follow the steps sequentially unless you've already setup certain aspects like FoxyProxy, if you are using Zeppelin for example.
+Now on to the tutorial. Please follow the steps sequentially.
 
 # Step 1: Create S3 Bucket
 1. Sign in to the AWS Management Console and open the [Amazon S3 console](https://console.aws.amazon.com/s3/).
@@ -252,3 +250,5 @@ $ sudo bash bin/zeppelin-daemon.sh start
 12. Reload *ZeppelinHub*.
 13. You know it worked if you click on your instance and your notebooks show up in the pane to the right.
 14. Congrats! You are all done.
+
+I hope you found this tutorial helpful. 
