@@ -1,6 +1,7 @@
 ---
 published: true
 title: Amazon EMR - From Anaconda To Zeppelin
+categories: [Zeppelin, Spark, ZeppelinHub, EMR, Anaconda, Tensorflow, Shiro, S3, Theano, bootstrap script]
 ---
 ![EMR](/assets/images/amazon_emr.png?raw=true){: .center-image }
 
