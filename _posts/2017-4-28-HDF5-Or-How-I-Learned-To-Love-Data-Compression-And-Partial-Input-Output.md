@@ -41,7 +41,7 @@ The dataset captures information for all games played in a space of 2 hours on t
 
 Fundamentally, this is a classification problem where one team wins and one team loses. No ties are allowed. The goal here is not to showcase classification algorithms. Rather, the goal is to introduce HDF5 and to show you how to use pandas to read/write files from/to the HDF5 format with compression.
 
-Caveats: while HDF5 as partial I/O capabilities baked in and partial I/O is extremely important from a machine learning perspective, this post will not delve into details. That will come in a future post. However, you should at least be aware that HDF5 natively has that ability. Additionally, while I am including the bulk of the code from my notebook, all the gory details can be found [here](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/HDF5.ipynb) for those intersted. 
+Caveats: while HDF5 as partial I/O capabilities baked in and partial I/O is extremely important from a machine learning perspective, this post will not delve into details. That will come in a future post. However, you should at least be aware that HDF5 natively has that ability. Additionally, while I am including the bulk of the code from my notebook, all the gory details can be found [here](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/HDF5.ipynb) for those interested. 
 
 # Setup
 ```
