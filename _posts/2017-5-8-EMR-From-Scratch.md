@@ -169,18 +169,16 @@ $ sudo bash bin/zeppelin-daemon.sh start
     2. type **$ sudo cp zeppelin-site.xml.template zeppelin-site.xml**
 3. Secure the HTTP channel 
     1. type **$ sudo nano shiro.ini**
-    2. under *[urls]* make sure this is set like so:  
-    ```
-        1. #/api/version = anon
-        2. /api/interpreter/** = authc, roles[admin]
-        3. /api/configurations/** = authc, roles[admin]
-        4. /api/credential/** = authc, roles[admin]
-        5. #/** = anon 
-        6. /** = authc
-        7. type control+o (to save changes)
-        8. hit enter
-        9. type contol+x (to exit)
-     ```
+    2. under *[urls]* make sure this is set like so and save changes:  
+```
+#/api/version = anon
+/api/interpreter/** = authc, roles[admin]
+/api/configurations/** = authc, roles[admin]
+/api/credential/** = authc, roles[admin]
+#/** = anon 
+/** = authc
+```  
+
 4. Secure Websocket channel
     1. type **$ sudo nano zeppelin-site.xml**
     2. locate **zeppelin.anonymous.allowed**
@@ -194,9 +192,9 @@ $ sudo bash bin/zeppelin-daemon.sh start
 8. Click **Login** (top right corner)
 9. Use any of these username, password combos:  
 ```
-    1. admin password1
-    2. user1 password2
-    3. user2 password3
+1. admin password1
+2. user1 password2
+3. user2 password3
 ```  
 *Note 1: usernames, passwords, and groups can be setup in shiro.ini file.*  
 *Note 2: note permissions (owners, writers, readers) can be set within note by clicking lock icon towards top right.*
