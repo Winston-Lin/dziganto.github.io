@@ -24,7 +24,7 @@ conda install -y psycopg2 gensim
 pip install textblob selenium 
 
 # ----------------------------------------------------------------------
-#   Install Tensorflow (CPU only and installs Keras to act as backend)              
+#         Install Tensorflow (CPU only and installs Keras)              
 # ----------------------------------------------------------------------
 conda create -yn tensorflow
 source activate tensorflow
