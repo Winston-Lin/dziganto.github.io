@@ -11,9 +11,9 @@ Amazon EMR is described [here](https://aws.amazon.com/emr/) as follows:
 
 >Amazon EMR securely and reliably handles a broad set of big data use cases, including log analysis, web indexing, data transformations (ETL), machine learning, financial analysis, scientific simulation, and bioinformatics.
 
-In other words, if you use common Apache big data tools, you should seriously consider Amazon EMR because it makes the configuration process as painless as it can be. That's not to say it is easy, though. 
+In other words, if you use common big data Apache tools, you should seriously consider Amazon EMR because it makes the configuration process as painless as it can be. That's not to say it is always easy, though. 
 
-Here is the list of Apache big data tools currently supported in EMR:
+Here is the list of big data Apache tools currently supported in EMR:
 
 |       |         |       |       |
 | ----- | ------- | ----- | ----- |
@@ -160,7 +160,6 @@ $ sudo bash bin/zeppelin-daemon.sh start
 6. Set value to **/home/hadoop/anaconda/bin/python**
 7. All set!  
 *Note: You can check by opening a new note and typing **print(sys.version)**. Make sure you are using the python interpreter!*  
-
 # Step 9: Setup Shiro Authentication in Zeppelin
 1. In EMR Terminal window, navigate to **/usr/lib/zeppelin/conf**.
 2. We need to copy two templates:
