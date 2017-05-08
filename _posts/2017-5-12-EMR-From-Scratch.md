@@ -32,7 +32,7 @@ Here is the list of Apache big data tools currently supported in EMR:
 * Zeppelin
 * ZooKeeper
 
-While Amazon has excellent documentation for basic setup and while there are many great tutorials online that cover a few aspects found in this tutorial, I had no luck finding a straightforward, sequential tutorial that allowed me to do all the things I wanted to. In fact, many steps in this tutorial were discovered by yours truly after much trial and error. I am providing this to you in the hopes that my work will save you countless hours and moments of utter frustration. 
+While Amazon has excellent documentation for basic setup and while there are many great tutorials online that cover a few aspects found in this tutorial, I had no luck finding a straightforward, sequential tutorial that allowed me to do all the things I wanted to. In fact, many steps in this tutorial were discovered by yours truly after much trial and error. I am providing this partially as a reference for myself and partially in the hopes that my work will save you countless hours and moments of downright frustration. 
 
 Here is what will be covered:
 ```
