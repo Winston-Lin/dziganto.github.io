@@ -117,31 +117,13 @@ Now on to the tutorial. Please follow the steps sequentially.
 # Step 6: Setup FoxyProxy For Zeppelin
 1. In Chrome, add the FoxyProxy Standard extension.
 2. Restart Chrome after installing FoxyProxy.
-3. Using a text editor, create a file named **foxyproxy-settings.xml** containing the following:
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<foxyproxy>
-    <proxies>
-        <proxy name="emr-socks-proxy" id="2322596116" notes="" fromSubscription="false" enabled="true" mode="manual" selectedTabIndex="2" lastresort="false" animatedIcons="true" includeInCycle="true" color="#0055E5" proxyDNS="true" noInternalIPs="false" autoconfMode="pac" clearCacheBeforeUse="false" disableCache="false" clearCookiesBeforeUse="false" rejectCookies="false">
-            <matches>
-                <match enabled="true" name="*ec2*.amazonaws.com*" pattern="*ec2*.amazonaws.com*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
-                <match enabled="true" name="*ec2*.compute*" pattern="*ec2*.compute*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
-                <match enabled="true" name="10.*" pattern="http://10.*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
-                <match enabled="true" name="*10*.amazonaws.com*" pattern="*10*.amazonaws.com*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
-                <match enabled="true" name="*10*.compute*" pattern="*10*.compute*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
-                <match enabled="true" name="*.compute.internal*" pattern="*.compute.internal*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
-                <match enabled="true" name="*.ec2.internal*" pattern="*.ec2.internal*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
-            </matches>
-            <manualconf host="localhost" port="8157" socksversion="5" isSocks="true" username="" password="" domain="" />
-        </proxy>
-    </proxies>
-</foxyproxy>
-```  
-4. Click on the **FoxyProxy icon** in the toolbar and select **Options**.
-5. Click **Import/Export**.
-6. Click **Choose File**, select **foxyproxy-settings.xml**, and click **Open**.
-7. In the Import FoxyProxy Settings dialog, click **Add**.
-8. Tutorial complete!
+3. Copy or download my script called [foxyproxy-settings.xml](https://github.com/dziganto/dziganto.github.io/blob/master/_scripts/foxyproxy-settings.xml). 
+4. Upload to the S3 bucket we created in **Step 1: Create S3 Bucket**. 
+5. Click on the **FoxyProxy icon** in the toolbar and select **Options**.
+6. Click **Import/Export**.
+7. Click **Choose File**, select **foxyproxy-settings.xml**, and click **Open**.
+8. In the Import FoxyProxy Settings dialog, click **Add**.
+9. Tutorial complete!
 
 # Step 7: Setup Zeppelin Notebook
 1. Navigate to the [Amazon EMR console](https://console.aws.amazon.com/elasticmapreduce/).
