@@ -237,7 +237,7 @@ $ sudo bash bin/zeppelin-daemon.sh start
 7. Copy **token** (and **user key** if authenticating).
 8. Close window.
 9. You need to set the some environment variables 
-    1. type **$ cd ZEPPELIN_HOME/conf**
+    1. type **$ cd /usr/lib/zeppelin/conf**
     2. type **$ cp zeppelin-env.sh.template zeppelin-env.sh**
     3. type **$ nano zeppelin-env.sh**
     4. Add these lines but make sure to update *ZEPPELINHUB_API_TOKEN* and *ZEPPELINHUB_USER_KEY*:
@@ -245,6 +245,7 @@ $ sudo bash bin/zeppelin-daemon.sh start
         2. **export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"** 
         3. **export ZEPPELINHUB_API_TOKEN="YOUR_TOKEN_STRING"**
         4. **export ZEPPELINHUB_USER_KEY="YOUR_USER_KEY"** (if authenticating)
+        5. Save and exit.
 10. Navigate to zeppelin directory by typing **$ cd ..**
 11. Type **sudo bin/zeppelin-daemon.sh restart**
 12. Reload *ZeppelinHub*.
