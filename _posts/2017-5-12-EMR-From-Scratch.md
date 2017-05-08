@@ -2,6 +2,7 @@
 published: false
 title: Amazon EMR - From Anaconda To Zeppelin
 ---
+![EMR](/assets/images/amazon_emr.png?raw=true){: .center-image }
 
 # Motivation
 Amazon EMR is described [here](https://aws.amazon.com/emr/) as follows:
