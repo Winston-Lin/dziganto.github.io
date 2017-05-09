@@ -210,7 +210,7 @@ user2 password3
 6. If you setup Shiro authentication, click **Include Zeppelin Credentials** and add **username** and **password**.
 7. Copy **token** (and **user key** if authenticating).
 8. Close window.
-9. You need to set the some environment variables. Go to EMR Terminal window and connect via SSH, if you haven't already. 
+9. You need to set some environment variables. Go to EMR Terminal window and connect via SSH, if you haven't already. 
     1. type **$ cd /usr/lib/zeppelin/conf**
     2. type **$ nano zeppelin-env.sh**
     3. Add these lines and save:  
