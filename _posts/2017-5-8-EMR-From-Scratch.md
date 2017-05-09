@@ -188,9 +188,10 @@ $ sudo bash bin/zeppelin-daemon.sh start
     6. simultaneously type **contol x** (to exit)
 5. Navigate to Zeppelin directory by typing **$ cd ..**
 6. Type **$ sudo bin/zeppelin-daemon.sh restart**
-7. Go to Zeppelin
-8. Click **Login** (top right corner)
-9. Use any of these username, password combos:  
+7. Go back to Zeppelin
+8. Refresh the page. You should see **Login** towards the top right with a green dot to the left of it.
+8. Click **Login**.
+9. Use any of these **username**, **password** combos:  
 ```
 admin password1
 user1 password2
@@ -209,11 +210,10 @@ user2 password3
 6. If you setup Shiro authentication, click **Include Zeppelin Credentials** and add username and password.
 7. Copy **token** (and **user key** if authenticating).
 8. Close window.
-9. You need to set the some environment variables 
+9. You need to set the some environment variables. Go to EMR Terminal window and connect via SSH, if you haven't already. 
     1. type **$ cd /usr/lib/zeppelin/conf**
-    2. type **$ cp zeppelin-env.sh.template zeppelin-env.sh**
-    3. type **$ nano zeppelin-env.sh**
-    4. Add these lines and save:  
+    2. type **$ nano zeppelin-env.sh**
+    3. Add these lines and save:  
 ```    
 export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.VFSNotebookRepo, org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo"
 export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"
