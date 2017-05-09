@@ -226,4 +226,7 @@ export ZEPPELINHUB_USER_KEY="YOUR_USER_KEY" (if authenticating)
 13. You know it worked if you click on your instance and your notebooks show up in the pane to the right.
 14. Congrats! You are all done.
 
+# WARNING!
+Make sure you **Terminate** your cluster when you are done so you do not incur additional charges. The nice part is that the next time you want to spin up a similar cluster, click **Clone** and most of the work is already done for you. Enjoy!
+
 That's all for now. I hope you found this tutorial helpful. 
