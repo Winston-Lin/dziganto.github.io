@@ -161,9 +161,14 @@ You can see the data is very sparse in all but the first three features. The nex
 
 # In-Memory Compression
 ```
-# Preprocessing: separate target var from dataset
+# Preprocessing 
+## separate target var from dataset
 y_train = X_train.pop(0)
 y_test = X_test.pop(0)
+
+## change indicator values from -1, 0, 1 to 0, 1
+X_train = X_train.abs()
+X_test = X_test.abs()
 ```
 
 Let's use CSR to compress this in-memory dataset and compare data footprints.
