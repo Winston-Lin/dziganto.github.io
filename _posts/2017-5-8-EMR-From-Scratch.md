@@ -207,7 +207,7 @@ user2 password3
 3. Fill out form and agree to *Terms of Service* and *Privacy Policy*
 4. On the ZeppelinHub dashboard, locate **Zeppelin Instances** and click the **+** to the right.
 5. Type an instance name and a brief description.
-6. If you setup Shiro authentication, click **Include Zeppelin Credentials** and add username and password.
+6. If you setup Shiro authentication, click **Include Zeppelin Credentials** and add **username** and **password**.
 7. Copy **token** (and **user key** if authenticating).
 8. Close window.
 9. You need to set the some environment variables. Go to EMR Terminal window and connect via SSH, if you haven't already. 
