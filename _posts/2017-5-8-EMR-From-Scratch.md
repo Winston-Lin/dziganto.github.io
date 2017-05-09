@@ -80,7 +80,7 @@ Now on to the tutorial. Please follow the steps sequentially.
 8. Select **SSH** from the dropdown.
 9. Under *Source* there is a dropdown box that says *Custom*. Open the dropdown and select **MyIP**. This will automatically populate your IP address so only you will have access to your cluster.
 10. Click the blue **Create** button on bottom right.
-11. That's it. All done!
+11. That's it. All done with security group setup!
 
 # Step 4: Add Bootstrap Script To S3
 1. Copy or download my script called [emr_configs.sh](https://github.com/dziganto/dziganto.github.io/blob/master/_scripts/emr_configs.sh). 
@@ -108,7 +108,7 @@ Now on to the tutorial. Please follow the steps sequentially.
 19. Click blue **Create cluster** button at bottom right. 
 20. A dashboard opens. It takes 10+ minutes for your cluster to do its thing so be patient. Your cluster is ready when your status reads *Waiting* in green.
 21. Once your cluster is *Waiting*, locate *Master public DNS* on your dashboard. Click on the blue text that says **SSH** to the far right of that line.
-22. A new window opens. Copy the command in the grey box from step 2.
+22. A new window opens. In this window, copy the command in the grey box from step 2.
 23. Open Terminal.
 24. Assuming your key is located in your *home* directory, paste this command as is and hit enter. *Note: if you moved your key, you will have to update the path to where your .pem file is located.*
 25. You will get a message saying "The authenticity of host 'long host name' can't be established. Are you sure you want to continue connecting?" This is standard. Type **yes**.
@@ -124,13 +124,13 @@ Now on to the tutorial. Please follow the steps sequentially.
 6. Click **Import/Export**.
 7. Click **Choose File**, select **foxyproxy-settings.xml**, and click **Open**.
 8. In the Import FoxyProxy Settings dialog, click **Add**.
-9. Tutorial complete!
+9. FoxyProxy setup complete!
 
 # Step 7: Setup Zeppelin Notebook
 1. Navigate to the [Amazon EMR console](https://console.aws.amazon.com/elasticmapreduce/).
 2. Locate *Master public DNS* on your dashboard. 
 3. Click on the blue text that says **SSH** to the far right of that line.
-4. A new window opens. Copy the command in the grey box from step 2.
+4. A new window opens. In this window, copy the command in the grey box from step 2.
 5. Open Terminal.
 6. Assuming your key is located in your *home* directory, paste this command as is and hit enter.  
 *Note: if you moved your key, you will have to update the path to where your .pem file is located.*
@@ -150,7 +150,7 @@ $ sudo bash bin/zeppelin-daemon.sh start
 13. Go back to the Amazon EMR dashboard. 
 14. In the same spot you clicked **Enable Web Connection**, the word Zeppelin should appear in blue text. Click it.
 15. This will open a new tab in Chrome. If all was configured properly, Zeppelin notebook should fire up.
-16. Congratulations, you are done with this tutorial!
+16. Congratulations, you are done with this section!
 
 # Step 8: Set Anaconda As Default Python Interpreter In Zeppelin
 1. Click **anonymous** in top right corner.
@@ -159,7 +159,7 @@ $ sudo bash bin/zeppelin-daemon.sh start
 4. Click **Edit**.
 4. Locate **zeppelin.python**.
 6. Set value to **/home/hadoop/anaconda/bin/python**
-7. All set!  
+7. On to the next section!  
 *Note: You can check by opening a new note and typing **print(sys.version)**. Make sure you are using the python interpreter!*    
 
 # Step 9: Setup Shiro Authentication in Zeppelin
