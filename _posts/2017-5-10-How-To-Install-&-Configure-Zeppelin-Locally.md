@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 categories: [Anaconda, Shiro, Spark, Zeppelin, ZeppelinHub]
 ---
 
@@ -160,6 +160,8 @@ $ bin/zeppelin-daemon.sh restart
 12. Reload *ZeppelinHub* page.
 13. You know it worked if you click on your instance and your notebooks show up in the pane to the right.
 14. Congrats! You have installed and configured Zeppelin on your local machine.
+
+---
 
 As always, I hope you found this tutorial helpful. 
 
