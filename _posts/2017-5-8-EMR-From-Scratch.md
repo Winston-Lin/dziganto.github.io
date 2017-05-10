@@ -170,7 +170,8 @@ $ sudo bash bin/zeppelin-daemon.sh start
     2. type **$ sudo cp zeppelin-site.xml.template zeppelin-site.xml**
 3. Secure the HTTP channel 
     1. type **$ sudo nano shiro.ini**
-    2. under *[urls]* make sure this is set like so and save changes:  
+    2. Scroll down to the *[urls]* section
+    3. Make sure this is set like so and save changes:  
 ```
 #/api/version = anon
 /api/interpreter/** = authc, roles[admin]
@@ -228,5 +229,7 @@ export ZEPPELINHUB_USER_KEY="YOUR_USER_KEY" (if authenticating)
 
 # WARNING!
 Make sure you **Terminate** your cluster when you are done so you do not incur additional charges. The nice part is that the next time you want to spin up a similar cluster, click **Clone** and most of the work is already done for you. Enjoy!
+
+---
 
 That's all for now. I hope you found this tutorial helpful. 
