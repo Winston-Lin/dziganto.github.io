@@ -1,7 +1,7 @@
 ---
 published: true
 categories: [Anaconda, Shiro, Spark, Zeppelin, ZeppelinHub]
-title: How To Install & Configure Zeppelin Locally
+title: How To Install/Configure Spark & Zeppelin Locally
 ---
 
 ![EMR](/assets/images/zeppelin.jpg?raw=true){: .center-image }
@@ -10,49 +10,60 @@ title: How To Install & Configure Zeppelin Locally
 Apache Zeppelin is:
 >A web-based notebook that enables interactive data analytics. You can make beautiful data-driven, interactive and collaborative documents with SQL, Scala and more.
 
-In this tutorial I am going to show you how to setup Zeppelin locally. Specifically, I will show you step-by-step how to: 
-1. Download & Unpack Zeppelin
-2. Check That Spark Is Setup Correctly
-2. Connect Anaconda & Zeppelin (Optional)
-2. Setup Shiro Authentication 
-3. Setup/Configure ZeppelinHub
+In this tutorial I am going to show you how to easily setup Apache Spark and Zeppelin locally. Specifically, I will show you step-by-step how to: 
+1. Install Homebrew
+2. Install Spark & Its Dependencies
+3. Install Zeppelin
+4. Run Zeppelin
+5. Test Spark, PySpark, & Python Interpreters
+6. Setup Shiro Authentication 
+7. Setup ZeppelinHub
 
 # Assumptions
-In order to keep this tutorial short, I am going to assume you already did the following:
-- Installed [Anaconda w/Python 3](https://www.continuum.io/downloads)
-- Installed Java, Scala, and Apache Spark (see [this](https://medium.com/@josemarcialportilla/installing-scala-and-apache-spark-on-mac-os-837ae57d283f) tutorial for help)
-
-I also assume you have basic familiarity with bash.
+In order to keep this tutorial short, I am going to assume the following:
+- You already Installed [Anaconda w/Python < 3.6](https://www.continuum.io/downloads) (note: PySpark doesn't play nicely w/Python 3.6)
+- You already have Xcode installed on your Mac (see App store)
+- You are familiar with bash
+- You run all commands from your *home* directory
 
 Code that you should copy will look like this:  
 ```
 $ only copy text after the dollar sign
 ```
 
-# Download & Unpack Zeppelin
-1. Navigate to [Zeppelin downloads](http://zeppelin.apache.org/download.html).
-2. Click on the blue box called **zeppelin-0.7.1-bin-all.tgz**. This will take you to a list of download mirrors.
-3. Choose one of the links. I used the first one but any should work.
-4. Move the downloaded tgz file from **Downloads** to **home** by typing:
+# Install Homebrew
+Homebrew is great because it will automatically take care of almost all the requisite setup for you. I found this to be the easiest install method. 
+1. Copy and paste this command into Terminal:
 ```
-$ mv ~/Downloads/zeppelin-0.7.1-bin-all.tgz ~
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-5. Navigate to your home directory if you are not already there.
-6. Tar the package by typing:
-```
-$ tar -xzvf zeppelin-0.7.1-bin-all.tgz
-```
-7. Zeppelin is now downloaded and unpacked. 
-8. You can check that it was successful by doing two things.
-9. First, type this:
-```
-$ cd zeppelin-0.7.1-bin-all
-$ bin/zeppelin-daemon.sh start
-```
-10. Then, click this link: **http://localhost:8080/**.
-11. Zeppelin should fire right up.
 
-# Check That Spark Is Setup Correctly
+# Install Spark & Its Dependencies
+1. Copy and paste these commands into Terminal:
+```
+$ brew cask install java
+$ brew install scala
+$ brew install apache-spark
+```
+# Install Zeppelin
+1. Copy and paste this command into Terminal:
+```
+$ brew install apache-zeppelin
+```
+
+# Run Zeppelin
+We need to start the Zeppelin daemon.  
+1. Copy and paste this into Terminal:
+```
+$ zeppelin-daemon.sh start
+```
+2. Click this [link](http://localhost:8080) or open any browswer and type:
+```
+http://localhost:8080
+```
+Zeppelin should fire right up.
+
+# Test Spark, PySpark, & Python Interpreters
 1. In Zeppelin, click **Create new note**.
 2. A new window will open. Either keep the default *Note Name* or choose something you like. Leave **spark** as the *Default Interpreter*. Click **Create Note**.
 3. In the first box (called a paragraph), type **sc**.
@@ -60,6 +71,20 @@ $ bin/zeppelin-daemon.sh start
 5. This takes a few seconds so be patient. Everything is working properly if you get output that looks something like 
 >**res0: org.apache.spark.SparkContext = org.apache.spark.SparkContext@356639d8**.
 6. If you get an error in Step 5, Spark is not configured properly. Best go fix it now.
+7. In a separate paragraph, type this:
+```
+%pyspark
+import numpy as np
+np.arange(10)
+```
+>*If you get an error or a message that says PySpark is not responding, something is wrong with your configuration or **metastore_db**. You better go fix that.*  
+8. In yet another paragraph, type:
+```
+%python
+import numpy as np
+np.arange(8)
+```
+>*No issues means everything is working properly. Feel free to test other modules at this time.*
 
 # Connect Anaconda & Zeppelin (Optional)
 *Note: this step is only necessary if Anaconda is not set as your default python interpreter. I did not have to set this locally myself but I am including the steps in case you need them.* 
@@ -74,24 +99,24 @@ $ bin/zeppelin-daemon.sh start
 
 *Note: You can check by typing this into a new paragraph and running:* 
 ```
-%python
-print(sys.version)
+%sh
+python --version
 ```
 
 # Setup Shiro Authentication
-1. In your Terminal window, navigate to **~/zeppelin-0.7.1-bin-all/conf**.
-2. We need to copy three templates:
+1. In your Terminal window, navigate to **/usr/local/Cellar/apache-zeppelin/0.7.1/libexec/conf**.
+2. We need to copy three templates by copying and pasting these commands:
 ```
 $ sudo cp shiro.ini.template shiro.ini
 $ sudo cp zeppelin-site.xml.template zeppelin-site.xml
 $ sudo cp zeppelin-env.sh.template zeppelin-env.sh
 ```  
-3. We need to change authentication from *anonymous* to *username* and *password*:
+3. We need to change authentication from *anonymous* to *username* & *password*:
 ```
 $ sudo nano shiro.ini
 ```
 4. Scroll down to the [urls] section. 
-5. Make sure it looks like this:  
+5. Make sure it looks exactly like this:  
 ```
 #/api/version = anon
 /api/interpreter/** = authc, roles[admin]
@@ -108,24 +133,23 @@ $ sudo nano zeppelin-site.xml
 8. Locate **zeppelin.anonymous.allowed**.
 9. Set its value to **false**.
 10. Save changes and exit nano.
-11. Navigate to Zeppelin home directory by typing:
+11. Navigate to your home directory by typing:
 ```
-$ cd ..
+$ cd
 ```
 12. We need to restart Zeppelin so type:
 ```
-$ sudo bin/zeppelin-daemon.sh restart
+$ zeppelin-daemon.sh restart
 ```
-13. Go back to your Zeppelin notebook in your browser.
-14. Refresh the page. You should see **Login** towards the top right with a green dot to the left of it.
-15. Click **Login**.
-16. Use any of these **username** and **password** combos:
+13. Go back to the Zeppelin notebook in your browser.
+14. A window should pop up asking for username and password.
+15. Use any of these **username** and **password** combos:
 ```
 admin password1
 user1 password2
 user2 password3
 ```  
-*Note 1: usernames, passwords, and groups can be setup in **shiro.ini** file.*
+>*Note: usernames, passwords, and groups can be setup in **shiro.ini** file.*
 
 # Setup ZeppelinHub
 1. Go to [ZeppelinHub](https://www.zeppelinhub.com/)
@@ -138,7 +162,7 @@ user2 password3
 8. Close window.
 9. You need to set some environment variables:
 ```
-$ cd ~/zeppelin-0.7.1-bin-all/conf
+$ cd /usr/local/Cellar/apache-zeppelin/0.7.1/libexec/conf
 $ nano zeppelin-env.sh
 ```
 10. Scroll down to ZeppelinHub section and add this code:  
@@ -148,19 +172,19 @@ export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"
 export ZEPPELINHUB_API_TOKEN="YOUR_TOKEN_STRING"
 export ZEPPELINHUB_USER_KEY="YOUR_USER_KEY" (if authenticating)
 ```
-10. Navigate to Zeppelin home directory by typing:
+10. Navigate to your home directory by typing:
 ```
-$ cd ..
+$ cd
 ```  
 
 11. We need to restart Zeppelin again so type: 
 
 ```
-$ bin/zeppelin-daemon.sh restart
+$ zeppelin-daemon.sh restart
 ```  
 12. Reload *ZeppelinHub* page.
 13. You know it worked if you click on your instance and your notebooks show up in the pane to the right.
-14. Congrats! You have installed and configured Zeppelin on your local machine.
+14. Congrats! You have installed and configured Apache Spark & Zeppelin on your local machine.
 
 ---
 
