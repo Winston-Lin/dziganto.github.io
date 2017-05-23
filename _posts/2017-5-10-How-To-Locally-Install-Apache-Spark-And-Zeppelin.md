@@ -23,8 +23,8 @@ In this tutorial I am going to show you how to easily setup Apache Spark and Zep
 In order to keep this tutorial short, I am going to assume the following:
 - You are familiar with bash
 - You already have Xcode installed on your Mac (see App store)
-- You run all commands from your *home* directory
-- You already Installed [Anaconda w/Python < 3.6](https://www.continuum.io/downloads) 
+- You run all commands from your *home* directory unless otherwise specified
+- You already installed [Anaconda w/Python < 3.6](https://www.continuum.io/downloads) 
 >note: PySpark doesn't play nicely w/Python 3.6; any other version will work fine.
 
 
