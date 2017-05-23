@@ -1,7 +1,7 @@
 ---
 published: true
 categories: [Anaconda, Shiro, Spark, Zeppelin, ZeppelinHub]
-title: How To Install/Configure Spark & Zeppelin Locally
+title: How To Install & Configure Spark & Zeppelin Locally
 ---
 
 ![EMR](/assets/images/zeppelin.jpg?raw=true){: .center-image }
