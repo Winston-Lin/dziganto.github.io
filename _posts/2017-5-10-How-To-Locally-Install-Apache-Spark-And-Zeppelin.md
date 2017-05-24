@@ -91,23 +91,6 @@ np.arange(8)
 ```
 >*No issues means everything is working properly. Feel free to test other modules at this time.*
 
-# Connect Anaconda & Zeppelin (Optional)
-*Note: this step is only necessary if Anaconda is not set as your default python interpreter. I did not have to set this locally myself but I am including the steps in case you need them.* 
-
-1. In Zeppelin, click **anonymous** in top right corner.
-2. Click **Interpreter**.
-3. Scroll down to python interpreter.
-4. Click **Edit** button in top right of python interpreter box.
-5. Locate **zeppelin.python**.
-6. Set value to path where your Anaconda is located.
-7. All set!
-
-*Note: You can check by typing this into a new paragraph and running:* 
-```
-%sh
-python --version
-```
-
 # Setup Shiro Authentication
 1. In your Terminal window, navigate to **/usr/local/Cellar/apache-zeppelin/0.7.1/libexec/conf**.
 2. We need to copy three templates by copying and pasting these commands:
