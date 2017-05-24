@@ -72,7 +72,7 @@ Zeppelin should fire right up.
 4. Press play button or hit **Shift+Enter**.
 5. This takes a few seconds so be patient. Everything is working properly if you get output that looks something like 
 >**res0: org.apache.spark.SparkContext = org.apache.spark.SparkContext@356639d8**.  
->
+
 >If you get an error, Spark is not configured properly. This should not happen if you used Homebrew. 
 6. In a separate paragraph, type this:
 ```
