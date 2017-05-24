@@ -72,14 +72,14 @@ Zeppelin should fire right up.
 4. Press play button or hit **Shift+Enter**.
 5. This takes a few seconds so be patient. Everything is working properly if you get output that looks something like 
 >**res0: org.apache.spark.SparkContext = org.apache.spark.SparkContext@356639d8**.
-6. If you get an error in Step 5, Spark is not configured properly. Best go fix it now.
+6. If you get an error in Step 5, Spark is not configured properly. This should not happen if you used Homebrew. 
 7. In a separate paragraph, type this:
 ```
 %pyspark
 import numpy as np
 np.arange(10)
 ```
->*If you get an error or a message that says PySpark is not responding, something is wrong with your configuration or **metastore_db**. You better go fix that.*  
+>*If you get an error or a message that says PySpark is not responding, something is wrong with your configuration or **metastore_db**. Reminder: Python 3.6 will break PySpark. Use any version < 3.6. Also, check the log files located in **/usr/local/Cellar/apache-zeppelin/0.7.1/libexec/logs/**.*  
 8. In yet another paragraph, type:
 ```
 %python
