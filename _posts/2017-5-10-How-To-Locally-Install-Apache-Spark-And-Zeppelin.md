@@ -47,6 +47,7 @@ $ brew cask install java
 $ brew install scala
 $ brew install apache-spark
 ```
+
 # Install Zeppelin
 1. Copy and paste this command into Terminal:
 ```
