@@ -25,7 +25,7 @@ In order to keep this tutorial short, I am going to assume the following:
 - You already have Xcode installed on your Mac (see App store)
 - You run all commands from your *home* directory unless otherwise specified
 - You already installed [Anaconda w/Python < 3.6](https://www.continuum.io/downloads) 
->note: PySpark doesn't play nicely w/Python 3.6; any other version will work fine.
+>Note: PySpark doesn't play nicely w/Python 3.6; any other version will work fine.
 
 
 Code that you should copy will look like this:  
@@ -166,7 +166,6 @@ $ cd
 ```  
 
 11. We need to restart Zeppelin again so type: 
-
 ```
 $ zeppelin-daemon.sh restart
 ```  
