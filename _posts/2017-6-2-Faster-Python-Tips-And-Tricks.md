@@ -12,6 +12,16 @@ My initital intent was just to test the assertions. However, as I collected expe
 This post is split into two parts. In **Part 1**, I will compare two approaches commensurate with the "do this, not that" line of reasoning to see if there is a substantial difference and, if so, which approach is better. In **Part 2**, I will compare Py27 and Py35 within each category to see if there is credence to the claim that Py35 is indeed faster. 
 
 # Part 1: Comparing Methods
+In this part, I will describe and compare approaches for the following:
+* Looping Over A Collection
+* Looping Over A Collection & Indices
+* Looping Over Two Collections
+* Sorting Lists In Reverse Order
+* Appending Strings
+* Standard Library
+* ListExp vs GenExp
+* Dots
+
 ## Looping Over A Collection
 Looping over a collection is like this. Say you have a list of animals ['aardvark', 'bee', 'cat', 'dog'] and you want to access each item one at a time. How can you do this. One way is to access the item by index. So, for example, you could use a listcomp like this: 
 ```
