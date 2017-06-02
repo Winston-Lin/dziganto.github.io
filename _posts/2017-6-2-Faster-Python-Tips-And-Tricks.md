@@ -113,8 +113,11 @@ Which is faster? In this case, the second approach for both versions of Python i
 ## ListExp vs GenExp
 I will assume you are familiar with list expressions (ListExp) at this point. Generator expressions (GenExp) may or may not be new to you. For an in-depth description, see [this](https://www.python.org/dev/peps/pep-0289/) doc. One key quote from that doc is:
 >Generator expressions are a high performance, memory efficient generalization of list comprehensions.
+
 The doc also goes on to say:
+
 >As data volumes grow larger, generator expressions tend to perform better [than list expressions] because they do not exhaust cache memory and they allow Python to re-use objects between iterations.
+
 Let's now test those assertions by leveraging the cumulative sum example from the last section.
 ```
 Approach #1
@@ -145,11 +148,9 @@ for val in vals:
 Was there a difference? Py27 exhibited a marginal difference skewed towards the second approach being more performant. The results for Py35 were less consistent. Sometimes the second approach was marginally faster and sometimes marginally slower. The evidence seems to indicate that there may be a minute performance gain but it hardly seems worth the effort given some of the dramatic results we saw in other categories.
 
 # Part 2: Python 2 vs Python 3
-In the introduction, I questioned a claim I often hear. Specifically, Python 3 faster than Python 2. 
+In the introduction, I questioned a claim I often hear. Specifically, Python 3 is faster than Python 2. 
 
-First off, let me just say that while I gathered some empirical evidence by testing a few assertions, this subset is insufficient to formally declare either way. That said, there was evidence that some of the inner workings of Python 3 are far more optimized and, therefore, Python 3 is faster in some regards. Take for example the standard library example using map(). We saw an enormous difference when comparing Py27 and Py35 where Py35 scaled in constant time whereas Py27 did not. In the Looping Over Two Collections test, Py35 also performed better because zip() is an iterator in Py35.
-
-As a long time Py27 user and only occassionally a Python 3 user, this experiment got me much more excited about Python 3. Yes, I know Python 3 is the future but now I have something tangible to grasp on to - proof that aspects are indeed speedier and can lead to faster code. If nothing else, having conducted my own experiments has provided me the catalyst to finally make the transition.
+First off, let me just say that while I gathered some empirical evidence by testing a few assertions, this subset is insufficient to formally declare either way. That said, there was evidence that some of the inner workings of Python 3 are far more optimized and, therefore, Python 3 is faster in some regards. Take for example the standard library example using map(). We saw an enormous difference when comparing Py27 and Py35 where Py35 scaled in constant time and Py27 did not. In the Looping Over Two Collections test, Py35 also performed better because zip() is an iterator in Py35.
 
 # Summary
 There are many ways to speed up Python code. Blazing fast libraries like Cython or Numba exist. However, I decided to focus on coding techniques in this blog article. As such, I identified a few techniques that looked promising and ran experiments to determine if the assertions that they lead to speedier code are in fact true. As an add-on, I wanted to explore the often asserted claim that Python 3 is faster than Python 2. Without further ado, here are the results in classic bullet point format:
@@ -162,7 +163,9 @@ There are many ways to speed up Python code. Blazing fast libraries like Cython 
 * Dots may give you marginal performance gains but probably not worth the effort
 * When Python 3 is better than Python 2, it is MUCH better
 
-In sum, this was a fun project that got me thinking. There are so many avenues left unexplored and this project raised so many more questions than it answered, yet I feel much more confident in the prowess of Python 3 now. 
+As a long time Py27 user and only occassionally a Python 3 user, this experiment got me much more excited about Python 3. Yes, I know Python 3 is the future but now I have something tangible to grasp on to - proof that aspects are indeed speedier and can lead to faster code. If nothing else, having conducted my own experiments has provided me the catalyst to finally make the transition. 
+
+In sum, this was a fun project that got me thinking. There are so many avenues left unexplored and this project raised many more questions than it answered for me, yet I feel much more confident in the prowess of Python 3 now. 
 
 As always, I hope you found this enlightening, entertaining, or both. If you have questions, comments, or feedback, feel free to ping me.
 
