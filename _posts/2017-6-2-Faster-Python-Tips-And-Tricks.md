@@ -9,7 +9,7 @@ There is a plethora of information about how to speed up Python code. Some state
 
 My initital intent was just to test the assertions. However, as I collected experimental data on the various methods, I became curious about another claim I often hear: Python 3 is faster than Python 2. So I plied the exact same experimental methods in Python 2.7 (Py27) and Python 3.5 (Py35), affecting the necessary changes like using xrange for Py27 and and range for Py35. All of my experiments as well as results and corresponding graphs can be found here: [Py27 Notebook](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Faster_Python_Tips_And_Tricks_Py27.ipynb) and [Py35 Notebook](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Faster_Python_Tips_And_Tricks_Py35.ipynb).
 
-This post is split into two parts. In **Part 1**, I will compare two approaches commensurate with the "do this, not that" line of reasoning to see if there is a substantial difference and, if so, which approach is better. In **Part 2**, I will compare Python 2 and Python 3 to see if there is credence to the claim that Py3 is indeed faster. 
+This post is split into two parts. In **Part 1**, I will compare two approaches commensurate with the "do this, not that" line of reasoning to see if there is a substantial difference and, if so, which approach is better. In **Part 2**, I will compare Python 2 and Python 3 to see if there is credence to the claim that Python 3 is indeed faster. 
 
 # Part 1: Comparing Methods
 In this part, I will describe and compare approaches for the following:
