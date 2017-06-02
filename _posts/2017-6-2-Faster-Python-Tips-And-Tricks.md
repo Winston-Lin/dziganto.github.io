@@ -9,7 +9,7 @@ There is a plethora of information about how to speed up Python code. Some state
 
 My initital intent was just to test the assertions. However, as I collected experimental data on the various methods, I became curious about another claim I often hear: Python 3 is faster than Python 2. So I plied the exact same experimental methods in Python 2.7 (Py27) and Python 3.5 (Py35), affecting the necessary changes like using xrange for Py27 and and range for Py35. All of my experiments as well as results and corresponding graphs can be found here: [Py27 Notebook](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Faster_Python_Tips_And_Tricks_Py27.ipynb) and [Py35 Notebook](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Faster_Python_Tips_And_Tricks_Py35.ipynb).
 
-This post is split into two parts. In **Part 1**, I will compare two approaches commensurate with the "do this, not that" line of reasoning to see if there is a substantial difference and, if so, which approach is better. In **Part 2**, I will compare Py27 and Py35 within each category to see if there is credence to the claim that Py35 is indeed faster. 
+This post is split into two parts. In **Part 1**, I will compare two approaches commensurate with the "do this, not that" line of reasoning to see if there is a substantial difference and, if so, which approach is better. In **Part 2**, I will compare Py2 and Py3 to see if there is credence to the claim that Py3 is indeed faster. 
 
 # Part 1: Comparing Methods
 In this part, I will describe and compare approaches for the following:
@@ -144,7 +144,7 @@ for val in vals:
 ```
 Was there a difference? Py27 exhibited a marginal difference skewed towards the second approach being more performant. The results for Py35 were less consistent. Sometimes the second approach was marginally faster and sometimes marginally slower. The evidence seems to indicate that there may be a minute performance gain but it hardly seems worth the effort given some of the dramatic results we saw in other categories.
 
-# Part 2: Py27 vs Py35
+# Part 2: Py2 vs Py3
 In the introduction, I questioned a claim I often hear. Specifically, Python 3 faster than Python 2. 
 
 First off, let me just say that while I gathered some empirical evidence by testing a few assertions, this subset is insufficient to formally declare either way. That said, there was evidence that some of the inner workings of Python 3 are far more optimized and, therefore, Python 3 is faster in some regards. Take for example the standard library example using map(). We saw an enormous difference when comparing Py27 and Py35 where Py35 scaled in constant time whereas Py27 did not. In the Looping Over Two Collections test, Py35 also performed better because zip() is an iterator in Py35.
