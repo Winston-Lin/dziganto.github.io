@@ -9,7 +9,8 @@ title: Faster Python - Tips & Tricks
 # Introduction
 There is a plethora of information about how to speed up Python code. Some stategies revolve around leveraging libraries like Cython whereas others propose a "do this, not that" coding approach. An example of the latter is using vectorized implementations instead of for loops. There exist many "do this, not that" strategies but I decided to focus on just a few, which I discovered in the *Links* section below. 
 
-My initital intent was just to test the assertions. However, as I collected experimental data on the various methods, I became curious about another claim I often hear: Python 3 is faster than Python 2. So I plied the exact same experimental methods in Python 2.7 (Py27) and Python 3.5 (Py35), affecting the necessary changes like using xrange for Py27 and and range for Py35. All of my experiments as well as timings and corresponding graphs can be found here: [Py27 Notebook](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Faster_Python_Tips_And_Tricks_Py27.ipynb) and [Py35 Notebook](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Faster_Python_Tips_And_Tricks_Py35.ipynb).
+My initital intent was just to test the assertions. However, as I collected experimental data on the various methods, I became curious about another claim I often hear: Python 3 is faster than Python 2. So I plied the exact same experimental methods in Python 2.7 (Py27) and Python 3.5 (Py35), affecting the necessary changes like using xrange for Py27 and and range for Py35. All of my experiments as well as timings and corresponding graphs can be found here: [Py27 Notebook](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Faster_Python_Tips_And_Tricks_Py27.ipynb) and [Py35 Notebook](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Faster_Python_Tips_And_Tricks_Py35.ipynb). 
+>For those not wishing to view all results, I will include a few choice graphs in this article that represent the more dramatic differences in strategies for Python 3. For methodology and timings including those for Python 2, please review the notebooks.
 
 This post is split into two parts. In **Part 1**, I will compare two approaches commensurate with the "do this, not that" line of reasoning to see if there is a substantial difference and, if so, which approach is better. In **Part 2**, I will compare Python 2 and Python 3 to see if there is credence to the claim that Python 3 is indeed faster. 
 
@@ -38,6 +39,8 @@ animals = ['aardvark', 'bee', 'cat', 'dog']
 [animal for animal in animals]
 ```
 It is definitely easier to read and understand what is happening. But is it faster? Turns out that it is. The second approach cuts the processing time nearly in half. 
+
+![LoopOverCollectionPy35](/assets/images/loopcollectionpy35.png?raw=true){: .center-image }
 
 ## Looping Over A Collection & Indices
 We know what looping over a collection looks like. What is this *indices* business that we're now incorporating? Well, instead of just returning the list item, we also want to know its index value. The two approaches that were tested are as follows:
@@ -111,6 +114,8 @@ Approach #2
 newlist = map(np.cumsum, range(100))
 ```
 Which is faster? In this case, the second approach for both versions of Python is faster. An interesting result manifested, though. Here we see another discrepancy between Py27 and Py35. Py27 showed only slight improvement in the second approach, even as it scaled. However, Py35 not only ran much faster with approach two (nanoseconds instead of milliseconds or seconds), but scaled in constant time. That is a massive difference! There may be some credence to the claim that Python 3 is faster than Python 2 after all.
+![StandardLibraryPy35](/assets/images/stdlibrarypy35.png?raw=true){: .center-image }
+
 
 ## ListExp vs GenExp
 I will assume you are familiar with list expressions (ListExp) at this point. Generator expressions (GenExp) may or may not be new to you. For an in-depth description, see [this](https://www.python.org/dev/peps/pep-0289/) doc. One key quote from that doc is:
@@ -129,7 +134,9 @@ Approach #1
 Approach #2
 (np.cumsum(item) for item in range(100))
 ```
-Generator expressions are certainly easy to use as they look almost identical to list expressions. So do they perform as touted? In both versions, the answer is unequivocally YES! List expressions scaled with the data whereas generator expressions scaled in constant time for both versions. An interesing result is that Py27 generator expressions were slightly faster than Py35. I am unclear as to why that is the case. Worth exploring in the future.
+Generator expressions are certainly easy to use as they look almost identical to list expressions. So do they perform as touted? In both versions, the answer is unequivocally YES! List expressions scaled with the data whereas generator expressions scaled in constant time for both versions. An interesing result is that Py27 generator expressions were slightly faster than Py35. I am unclear as to why that is the case. Worth exploring in the future. 
+
+![LoopOverCollectionPy35](/assets/images/listgenexppy35.png?raw=true){: .center-image }
 
 ## Dots
 The final strategy that I tested had to do with this thing called dots. Dots is just another way to say methods. Lacking a clear way to state this strategy in words, I will instead get right to the approaches, which should be self-explanatory.
