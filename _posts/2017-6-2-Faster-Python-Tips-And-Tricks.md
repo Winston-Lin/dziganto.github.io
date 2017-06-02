@@ -5,7 +5,7 @@ title: Faster Python - Tips & Tricks
 ---
 
 # Introduction
-There is a plethora of information about how to speed up Python code. Some stategies revolve around leveraging libraries like Cython whereas others propose a "do this, not that" coding approach. An example of the latter is using list expressions instead of creating an empty list, looping through, and appending at each iteration. There exist many "do this, not that" strategies but I decided to focus on just a few, which I discovered in the *Links* section below. 
+There is a plethora of information about how to speed up Python code. Some stategies revolve around leveraging libraries like Cython whereas others propose a "do this, not that" coding approach. An example of the latter is using vectorized implementations instead of for loops. There exist many "do this, not that" strategies but I decided to focus on just a few, which I discovered in the *Links* section below. 
 
 My initital intent was just to test the assertions. However, as I collected experimental data on the various methods, I became curious about another claim I often hear: Python 3 is faster than Python 2. So I plied the exact same experimental methods in Python 2.7 (Py27) and Python 3.5 (Py35), affecting the necessary changes like using xrange for Py27 and and range for Py35. All of my experiments as well as results and corresponding graphs can be found here: [Py27 Notebook](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Faster_Python_Tips_And_Tricks_Py27.ipynb) and [Py35 Notebook](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Faster_Python_Tips_And_Tricks_Py35.ipynb).
 
@@ -35,7 +35,7 @@ Another way to approach the same problem is:
 animals = ['aardvark', 'bee', 'cat', 'dog']
 [animal for animal in animals]
 ```
-It is definitely easier to read and understand what is happening. But is it faster? Turns out that it is. Cuts the processing time nearly in half. 
+It is definitely easier to read and understand what is happening. But is it faster? Turns out that it is. The second approach cuts the processing time nearly in half. 
 
 ## Looping Over A Collection & Indices
 We know what looping over a collection looks like. What is this *indices* business that we're now incorporating? Well, instead of just returning the list item, we also want to know its index value. The two approaches that were tested are as follows:
@@ -153,7 +153,7 @@ In the introduction, I questioned a claim I often hear. Specifically, Python 3 i
 First off, let me just say that while I gathered some empirical evidence by testing a few assertions, this subset is insufficient to formally declare either way. That said, there was evidence that some of the inner workings of Python 3 are far more optimized and, therefore, Python 3 is faster in some regards. Take for example the standard library example using map(). We saw an enormous difference when comparing Py27 and Py35 where Py35 scaled in constant time and Py27 did not. In the Looping Over Two Collections test, Py35 also performed better because zip() is an iterator in Py35.
 
 # Summary
-There are many ways to speed up Python code. Blazing fast libraries like Cython or Numba exist. However, I decided to focus on coding techniques in this blog article. As such, I identified a few techniques that looked promising and ran experiments to determine if the assertions that they lead to speedier code are in fact true. As an add-on, I wanted to explore the often asserted claim that Python 3 is faster than Python 2. Without further ado, here are the results in classic bullet point format:
+There are many ways to speed up Python code. Blazing fast libraries like Cython or Numba exist. However, I decided to focus on coding techniques in this blog article. As such, I identified a few techniques that looked promising and ran experiments to determine if the assertion that they lead to speedier code is in fact true. As an add-on, I wanted to explore the often asserted claim that Python 3 is faster than Python 2. Without further ado, here are the results in classic bullet point format:
 * Avoid using a list's index to access its items when looping over a collection
 * Using enumerate() is more beautiful but not faster for looping over a collection and indices
 * Mind your Python version when looping over two collections - use itertools for Python 2
@@ -169,7 +169,7 @@ In sum, this was a fun project that got me thinking. There are so many avenues l
 
 ---
 
-As always, I hope you found this enlightening, entertaining, or both. If you have questions, comments, or feedback, feel free to ping me.
+As always, I hope you found this enlightening, entertaining, or both. If you have questions, comments, or feedback, please let me know.
 
 ---
 # Links
