@@ -3,6 +3,8 @@ published: true
 categories: [Python]
 title: Faster Python - Tips & Tricks
 ---
+![Python](/assets/images/python_logo.jpeg?raw=true){: .center-image }
+
 
 # Introduction
 There is a plethora of information about how to speed up Python code. Some stategies revolve around leveraging libraries like Cython whereas others propose a "do this, not that" coding approach. An example of the latter is using vectorized implementations instead of for loops. There exist many "do this, not that" strategies but I decided to focus on just a few, which I discovered in the *Links* section below. 
