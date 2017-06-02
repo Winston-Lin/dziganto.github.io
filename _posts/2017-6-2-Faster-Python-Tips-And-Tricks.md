@@ -167,6 +167,8 @@ As a long time Py27 user and only occassionally a Python 3 user, this experiment
 
 In sum, this was a fun project that got me thinking. There are so many avenues left unexplored and this project raised many more questions than it answered for me, yet I feel much more confident in the prowess of Python 3 now. 
 
+---
+
 As always, I hope you found this enlightening, entertaining, or both. If you have questions, comments, or feedback, feel free to ping me.
 
 ---
