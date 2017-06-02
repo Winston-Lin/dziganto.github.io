@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 categories: [Python]
 title: Faster Python - Tips & Tricks
 ---
