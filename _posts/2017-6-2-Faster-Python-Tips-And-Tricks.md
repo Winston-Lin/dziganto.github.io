@@ -14,7 +14,7 @@ My initital intent was just to test the assertions. However, as I collected expe
 >
 >For detailed information including methodology and quantitative values for timings as well as details about Python 2, please review the notebooks linked above.
 
-This post is split into two parts. In **Part 1**, I will compare two approaches commensurate with the "do this, not that" line of reasoning to see if there is a substantial difference and, if so, which approach is better. In **Part 2**, I will compare Python 2 and Python 3 to see if there is credence to the claim that Python 3 is indeed faster. 
+This post is split into two parts. In **Part 1**, I will compare two approaches commensurate with the "do this, not that" logic to see if there is a substantial difference and, if so, which approach is better. In **Part 2**, I will compare Python 2 and Python 3 to see if there is credence to the claim that Python 3 is indeed faster. 
 
 # Part 1: Comparing Methods
 In this part, I will describe and compare approaches for the following:
