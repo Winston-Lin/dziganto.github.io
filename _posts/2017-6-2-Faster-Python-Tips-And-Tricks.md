@@ -179,14 +179,14 @@ There are many ways to speed up Python code. Blazing fast libraries like Cython 
 * Using enumerate() is more beautiful but not faster for looping over a collection and indices
 * Mind your Python version when looping over two collections - use itertools for Python 2
 * Use built-in functions whenever possible
-* How you append strings may matter at scale but my experiment was not definitive
-* Forget list expressions at scale, generator expressions are king
+* How you append strings may matter at scale but my experiment was not conclusive
+* Forget list expressions at scale; rock generator expressions instead
 * Dots may give you marginal performance gains but may not be worth the effort
 * When Python 3 is better than Python 2, it is MUCH better
 
 As a long time Py27 user and only occassionally a Python 3 user, this experiment got me much more excited about Python 3. Yes, I know Python 3 is the future but now I have something tangible to grasp on to - proof that aspects are indeed speedier and can lead to faster code. If nothing else, having conducted my own experiments has provided me the catalyst to finally make the transition. 
 
-In sum, this was a fun project that got me thinking. There are so many avenues left unexplored and this project raised many more questions than it answered for me, yet now I feel much more confident in the prowess of Python 3. 
+In sum, this was a fun project that got me thinking. There are so many avenues left unexplored and this project raised many more questions than it answered for me, yet now I feel much more confident about the prowess of Python 3. 
 
 ---
 
