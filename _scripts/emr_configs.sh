@@ -16,6 +16,8 @@ sudo ln -s /mnt/usr-moved/share /usr/
 wget https://repo.continuum.io/archive/Anaconda3-4.3.1-Linux-x86_64.sh -O ~/anaconda.sh
 bash ~/anaconda.sh -b -p $HOME/anaconda
 echo -e '\nexport PATH=$HOME/anaconda/bin:$PATH' >> $HOME/.bashrc && source $HOME/.bashrc
+conda create -n py35 python=3.5 -y
+echo -e '\nsource activate py35' >> $HOME/.bashrc && source $HOME/.bashrc
 
 # ----------------------------------------------------------------------
 #                    Install Additional Packages              
@@ -24,7 +26,7 @@ conda install -y psycopg2 gensim
 pip install textblob selenium 
 
 # ----------------------------------------------------------------------
-#         Install Tensorflow (CPU only and installs Keras)              
+#         Install Tensorflow (CPU only and installs Keras )              
 # ----------------------------------------------------------------------
 conda create -yn tensorflow
 source activate tensorflow
@@ -32,11 +34,11 @@ pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorfl
 source deactivate
 
 # ----------------------------------------------------------------------
-#                    Install Theano            
+#                         Install Theano            
 # ----------------------------------------------------------------------
 conda install -y theano pygpu
 
 # ----------------------------------------------------------------------
-#                            Install updates                             
+#                         Security Update            
 # ----------------------------------------------------------------------
 sudo yum -y update
