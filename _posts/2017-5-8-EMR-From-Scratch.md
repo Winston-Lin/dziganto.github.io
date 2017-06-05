@@ -84,6 +84,7 @@ Now on to the tutorial. Please follow the steps sequentially.
 
 # Step 4: Add Bootstrap Script To S3
 1. Copy or download my script called [emr_configs.sh](https://github.com/dziganto/dziganto.github.io/blob/master/_scripts/emr_configs.sh). 
+>You may notice that we are downloading **Anaconda3-4.2.0** which is not the most current version. That is by design. Version 4.3.0 upgraded to Python 3.6 which will break PySpark. 
 2. Upload to the S3 bucket we created in Step 1 called **standard-deviations-demo-bucket**.
 
 # Step 5: Create EMR Cluster w/Anaconda, Tensorflow, Theano, & Keras
@@ -168,6 +169,11 @@ $ sudo bash bin/zeppelin-daemon.sh start
 ```
 %python
 print(sys.version)   
+```
+>The output should read something like: 
+```
+3.5.2 |Anaconda custom (64-bit)| (default, Jul  2 2016, 17:53:06)
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
 ```
 
 # Step 9: Setup Shiro Authentication in Zeppelin
