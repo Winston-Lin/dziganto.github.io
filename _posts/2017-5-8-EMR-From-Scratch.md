@@ -155,13 +155,20 @@ $ sudo bash bin/zeppelin-daemon.sh start
 # Step 8: Set Anaconda As Default Python Interpreter In Zeppelin
 1. Click **anonymous** in top right corner.
 2. Click **Interpreter**.
-3. Scroll down to python interpreter.
+3. Scroll down to the *python* interpreter.
 4. Click **Edit**.
 4. Locate **zeppelin.python**.
 6. Set value to **/home/hadoop/anaconda/bin/python**
-7. On to the next section!  
+7. Now find the *spark* interpreter.
+8. Locate **zeppelin.pyspark.python**.
+9. Set value to **/home/hadoop/anaconda/bin/python**
+10. That's it! On to the next section.  
 
-*Note: You can check by opening a new note and typing **print(sys.version)**. Make sure you are using the python interpreter!*    
+>Note: You can check that Anaconda is configured correctly as default by opening a new note and typing: 
+```
+%python
+print(sys.version)   
+```
 
 # Step 9: Setup Shiro Authentication in Zeppelin
 1. In EMR Terminal window, navigate to **/usr/lib/zeppelin/conf**.
