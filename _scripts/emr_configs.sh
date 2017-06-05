@@ -2,7 +2,7 @@
 # Python packages, Tensorflow w/Keras, and Theano
 
 # ----------------------------------------------------------------------
-#  move /usr/lib to /mnt/usr-moved/lib; otherwise run out of space on /
+#  move /usr/local to /mnt/usr-moved/local; else run out of space on /
 # ----------------------------------------------------------------------
 sudo mkdir /mnt/usr-moved
 sudo mv /usr/local /mnt/usr-moved/
