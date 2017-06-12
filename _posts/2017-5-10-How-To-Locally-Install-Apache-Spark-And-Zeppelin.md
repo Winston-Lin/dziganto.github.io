@@ -17,7 +17,7 @@ In this tutorial I am going to show you how to easily setup Apache Spark and Zep
 4. Run Zeppelin
 5. Test Spark, PySpark, & Python Interpreters
 6. Setup Shiro Authentication 
-7. Setup ZeppelinHub
+7. Setup Zepl
 
 # Assumptions
 In order to keep this tutorial short, I am going to assume the following:
@@ -140,26 +140,25 @@ user2 password3
 ```  
 >*Note: usernames, passwords, and groups can be setup in **shiro.ini** file.*
 
-# Setup ZeppelinHub
-1. Go to [ZeppelinHub](https://www.zeppelinhub.com/)
-2. Click blue **Register** button.
-3. Fill out form and agree to *Terms of Service* and *Privacy Policy*
-4. On the ZeppelinHub dashboard, locate **Zeppelin Instances** and click the **+** to the right.
-5. Type an instance name and a brief description.
-6. If you setup Shiro authentication, click **Include Zeppelin Credentials** and add **username** and **password**.
-7. Copy **token** (and **user key** if authenticating).
-8. Close window.
-9. You need to set some environment variables:
+# Setup Zepl (formerly ZeppelinHub)
+1. Go to [Zepl](https://www.zepl.com)
+2. Click blue **Sign Up** button.
+3. Supply *Username*, *e-mail*, *password* and click blue **Create Account** button
+4. Click **New** button towards top right of screen.
+5. Select **Repository**.
+6. Give it a *name* and *description*.
+7. Click blue **Link** button.
+8. A new window pops up with key information you'll need to set environment variables.
+9. Let's set those variables now. Type:
 ```
 $ cd /usr/local/Cellar/apache-zeppelin/0.7.1/libexec/conf
 $ nano zeppelin-env.sh
 ```
-10. Scroll down to ZeppelinHub section and add this code:  
+10. Follow the instructions on Zepl for correctly updating *zeppelin-env.sh*. At the time of this writing, the updates looked like this:  
 ```    
-export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.VFSNotebookRepo, org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo"
-export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"
-export ZEPPELINHUB_API_TOKEN="YOUR_TOKEN_STRING"
-export ZEPPELINHUB_USER_KEY="YOUR_USER_KEY" (if authenticating)
+export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.GitNotebookRepo, org.apache.zeppelin$
+export ZEPPELINHUB_API_ADDRESS="https://www.zepl.com"
+export ZEPPELINHUB_API_TOKEN="INSERT YOUR TOKEN HERE"
 ```
 10. Navigate to your home directory by typing:
 ```
@@ -170,9 +169,8 @@ $ cd
 ```
 $ zeppelin-daemon.sh restart
 ```  
-12. Reload *ZeppelinHub* page.
-13. You know it worked if you click on your instance and your notebooks show up in the pane to the right.
-14. Congrats! You have installed and configured Apache Spark & Zeppelin on your local machine.
+12. You'll notice that your repository is not connected and does not have any of your notebooks loaded. Simply open each notebook, run some code, and that notebook will load automatically.
+13. Congrats! You have installed and configured Apache Spark & Zeppelin on your local machine.
 
 ---
 
