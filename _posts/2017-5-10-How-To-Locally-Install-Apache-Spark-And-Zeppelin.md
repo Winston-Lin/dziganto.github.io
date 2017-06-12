@@ -169,7 +169,7 @@ $ cd
 ```
 $ zeppelin-daemon.sh restart
 ```  
-12. You'll notice that your repository is not connected and does not have any of your notebooks loaded. Simply open each notebook, run some code, and that notebook will load automatically.
+12. You'll notice that your Zepl repository is not connected to your local and does not have any of your notebooks loaded. Simply open each notebook, run some code, and then that notebook will load automatically.
 13. Congrats! You have installed and configured Apache Spark & Zeppelin on your local machine.
 
 ---
