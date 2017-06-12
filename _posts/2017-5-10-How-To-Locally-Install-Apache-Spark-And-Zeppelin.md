@@ -17,7 +17,7 @@ In this tutorial I am going to show you how to easily setup Apache Spark and Zep
 4. Run Zeppelin
 5. Test Spark, PySpark, & Python Interpreters
 6. Setup Shiro Authentication 
-7. Setup Zepl
+7. Setup Zepl (formerly ZeppelinHub)
 
 # Assumptions
 In order to keep this tutorial short, I am going to assume the following:
