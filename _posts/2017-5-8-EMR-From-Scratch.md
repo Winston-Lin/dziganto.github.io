@@ -37,7 +37,7 @@ Here is what will be covered:
 7.  Setup Zeppelin Notebook
 8.  Set Anaconda As Default Python Interpreter In Zeppelin
 9.  Setup Shiro Authentication in Zeppelin
-10. Setup ZeppelinHub
+10. Setup Zepl (formerly ZeppelinHub)
 ```
 
 # Assumptions
@@ -215,29 +215,29 @@ user2 password3
 *Note 1: usernames, passwords, and groups can be setup in shiro.ini file.*  
 *Note 2: note permissions (owners, writers, readers) can be set within note by clicking lock icon towards top right.*
 
-# Step 10: Setup ZepplinHub
-1. Go to [ZeppelinHub](https://www.zeppelinhub.com/)
-2. Click blue **Register** button.
-3. Fill out form and agree to *Terms of Service* and *Privacy Policy*
-4. On the ZeppelinHub dashboard, locate **Zeppelin Instances** and click the **+** to the right.
-5. Type an instance name and a brief description.
-6. If you setup Shiro authentication, click **Include Zeppelin Credentials** and add **username** and **password**.
-7. Copy **token** (and **user key** if authenticating).
-8. Close window.
-9. You need to set some environment variables. Go to EMR Terminal window and connect via SSH, if you haven't already. 
-    1. type **$ cd /usr/lib/zeppelin/conf**
-    2. type **$ nano zeppelin-env.sh**
-    3. Add these lines and save:  
-```    
-export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.VFSNotebookRepo, org.apache.zeppelin.notebook.repo.zeppelinhub.ZeppelinHubRepo"
-export ZEPPELINHUB_API_ADDRESS="https://www.zeppelinhub.com"
-export ZEPPELINHUB_API_TOKEN="YOUR_TOKEN_STRING"
-export ZEPPELINHUB_USER_KEY="YOUR_USER_KEY" (if authenticating)
+# Step 10: Setup Zepl (formerly ZepplinHub)
+1. Go to [Zepl](https://www.zepl.com)
+2. Click blue **Sign Up** button.
+3. Supply *Username*, *e-mail*, *password* and click blue **Create Account** button
+4. Click **New** button towards top right of screen.
+5. Select **Repository**.
+6. Give it a *name* and *description*.
+7. Click blue **Link** button.
+8. A new window pops up with key information you'll need to set environment variables.
+9. Let's set those variables now. Go to EMR Terminal window and connect via SSH, if you haven't already and type:
 ```
-10. Navigate to zeppelin directory by typing **$ cd ..**
-11. Type **sudo bin/zeppelin-daemon.sh restart**
-12. Reload *ZeppelinHub*.
-13. You know it worked if you click on your instance and your notebooks show up in the pane to the right.
+$ $ cd /usr/lib/zeppelin/conf
+$ nano zeppelin-env.sh
+```
+10. Follow the instructions on Zepl for correctly updating *zeppelin-env.sh*. At the time of this writing, the updates looked like this:
+```    
+export ZEPPELIN_NOTEBOOK_STORAGE="org.apache.zeppelin.notebook.repo.GitNotebookRepo, org.apache.zeppelin$
+export ZEPPELINHUB_API_ADDRESS="https://www.zepl.com"
+export ZEPPELINHUB_API_TOKEN="INSERT YOUR TOKEN HERE"
+```
+11. Navigate to zeppelin directory by typing **$ cd ..**
+12. Type **sudo bin/zeppelin-daemon.sh restart**
+13. To connect your Zeppelin notebooks and Zepl, simply create or open a notebook, run some code, and then that notebook will load automatically.
 14. Congrats! You are all done.
 
 # WARNING!
