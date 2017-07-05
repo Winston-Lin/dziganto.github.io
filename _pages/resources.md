@@ -4,6 +4,7 @@ permalink: /resources/
 author_profile: true    
 ---
 
+
 MACHINE LEARNING
 ---
 ### Videos
