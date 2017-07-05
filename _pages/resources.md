@@ -18,7 +18,7 @@ author_profile: true
 
 ### Papers
 [A Few Useful Things To Know About Machine Learning - Pedro Domingos](http://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)  
-[gcForest - Towards an Alternative to Deep Neural Networks](https://arxiv.org/pdf/1702.08835.pdf)
+[Deep Forest - Towards an Alternative to Deep Neural Networks](https://arxiv.org/pdf/1702.08835.pdf)
 
 ### Misc
 [How to Use t-SNE Effectively](http://distill.pub/2016/misread-tsne/)  
