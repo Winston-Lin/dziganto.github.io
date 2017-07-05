@@ -1,11 +1,11 @@
 ---
 layout: single
 permalink: /resources/
-author_profile: true    
----  
+author_profile: true
 
-**MACHINE LEARNING**
+--- 
 
+# MACHINE LEARNING
 ---
 
 ### Videos
