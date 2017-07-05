@@ -11,7 +11,7 @@ author_profile: true
 [Trevor Hastie & Rob Tibshirani](https://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/)
 
 ### Books
-[Artificial Intelligence: A Modern Approach](http://aima.cs.berkeley.edu/)  
+[Artificial Intelligence - A Modern Approach](http://aima.cs.berkeley.edu/)  
 [Pattern Recognition and Machine Learning](https://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738)  
 [Intro to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/)  
 [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
