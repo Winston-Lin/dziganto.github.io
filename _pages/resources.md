@@ -5,7 +5,7 @@ author_profile: true
 
 ---  
 
-**MACHINE LEARNING**  
+**ALL THINGS MACHINE LEARNING**  
 
 ---
 
