@@ -4,8 +4,6 @@ permalink: /resources/
 author_profile: true
 ---
 
-# Machine Learning  
-
 ### Videos
 [Andrew Ng](https://www.youtube.com/playlist?list=PL0Smm0jPm9WcCsYvbhPCdizqNKps69W4Z)   
 [Mathematical Monk](https://www.youtube.com/playlist?list=PLD0F06AA0D2E8FFBA)  
