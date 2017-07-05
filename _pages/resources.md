@@ -2,10 +2,10 @@
 layout: single
 permalink: /resources/
 author_profile: true
-
 --- 
 
-# MACHINE LEARNING
+MACHINE LEARNING
+---
 
 ### Videos
 [Andrew Ng](https://www.youtube.com/playlist?list=PL0Smm0jPm9WcCsYvbhPCdizqNKps69W4Z)   
