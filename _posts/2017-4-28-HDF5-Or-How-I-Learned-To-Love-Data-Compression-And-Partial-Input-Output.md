@@ -235,8 +235,6 @@ What are the big takeaways here?
 
 Let me leave you with this: we may not know how to take a sparse matrix that won't fit into RAM and crunch it down just yet, but taking a step into what is known as out-of-core computation puts us a tad closer.
 
-**On that note, stay tuned because next time we will explore PyTables and partial I/O.**
-
 # Additional Resources
 [HDF5 Chunking & Compression](https://www.star.nesdis.noaa.gov/jpss/documents/HDF5_Tutorial_201509/2-2-Mastering%20Powerful%20Features.pptx.pdf)  
 [HDF5 Performance](https://support.hdfgroup.org/HDF5/doc/TechNotes/TechNote-HDF5-ImprovingIOPerformanceCompressedDatasets.pdf)  
