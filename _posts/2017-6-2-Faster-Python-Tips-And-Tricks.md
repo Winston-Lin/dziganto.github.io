@@ -114,7 +114,7 @@ my_string = "".join([item for item in mylist])
 The first is probably easier to wrap your head around unless you have already worked with the esoteric looking *string.join()* function before. So which is faster? It appears the first approach may be faster. However, I am calling this result inconclusive. Why? I will skip the implementation details but the short version is that I was only able to time a single run for each approach using *%time* instead of the multi-run *%timeit*. Therefore, the results are questionable. I plan to circle back in the future to conduct a more thorough test.
 
 ## Standard Library
-Python's standard library is replete with built-in functions. The claim here is that these built-in functions are highly optimized and, therefore, significantly faster than a pure programming approach. In case that is not clear, let us look at a concrete example. Say I want to generate a list that stores the a cumulative sum of consecutive integers. So if my set of integers is [0, 1, 2, 3], my generated list would be [0, 1, 3, 6]. Here are the two approaches that were tested.
+Python's standard library is replete with built-in functions. The claim here is that these built-in functions are highly optimized and, therefore, significantly faster than a pure programming approach. In case that is not clear, let us look at a concrete example. Say I want to generate a list that stores the cumulative sum of consecutive integers. So if my set of integers is [0, 1, 2, 3], my generated list would be [0, 1, 3, 6]. Here are the two approaches that were tested.
 ```
 Approach #1
 newlist = [np.cumsum(item) for item in range(100)]
@@ -179,7 +179,7 @@ There are many ways to speed up Python code. Blazing fast libraries like Cython 
 * Using enumerate() is more beautiful but not faster for looping over a collection and indices
 * Mind your Python version when looping over two collections - use itertools for Python 2
 * Use built-in functions whenever possible
-* How you append strings may matter at scale but my experiment was not conclusive
+* How you append strings may matter at scale but my experiment was inconclusive
 * Forget list expressions at scale; rock generator expressions instead
 * Dots may give you marginal performance gains but may not be worth the effort
 * When Python 3 is better than Python 2, it is MUCH better
