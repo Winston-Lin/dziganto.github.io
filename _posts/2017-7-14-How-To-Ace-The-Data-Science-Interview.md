@@ -5,14 +5,21 @@ title: How To Ace The Data Science Interview
 ---
 ![Scary Interview](/assets/images/scary-interview.jpg?raw=true){: .center-image }
 
-There's no way around it. Technical interviews can seem harrowing. I would argue nowhere is this more so than in data science. There's just so much to know. 
+There's no way around it. Technical interviews can seem harrowing. Nowhere, I would argue, is this more so than in data science. There's just so much to know. 
 >What if they ask about bagging or boosting or A/B testing? 
 >
 >What about SQL or Apache Spark or maximum likelihood estimation?
 
 Unfortunately, I'm aware of no magic bullet that'll prepare you for the breadth of questions you'll be up against. Experience is all you'll have to rely upon. However, having interviewed scores of applicants, I can share some insights that will make your interview smoother and your ideas clearer and more succinct. All this so that you'll finally stand out amongst the ever growing crowd. 
 
-Without further ado, here are interviewing tips to make you shine.
+Without further ado, here are interviewing tips to make you shine:
+1. Use Concrete Examples
+2. Know How To Answer Ambiguous Questions
+3. Choose The Best Algorithm: Accuracy vs Speed vs Interpretability
+4. Draw Pictures
+5. Avoid Jargon or Concepts You're Unsure Of
+6. Don't Expect To Know Everything
+7. An Interview Is A Dialogue, Not A Test
 
 ## Tip #1: Use Concrete Examples
 This is a simple fix that reframes a complicated idea into one that's easy to follow and grasp. Unfortunately, it's an area where many interviewees go astray, leading to long, rambling, and occassionally nonsensical explanations. Let's look at an example. 
@@ -108,9 +115,9 @@ A few things to keep in mind when drawing pictures:
 This is hands down the easiest way to sabotage yourself. I see it all the time. Here's the situation. You're deep in your explanation of how gradient descent (GD) works and things are going smoothly, so you decide to reach a little and mention *Elastic Net* when describing GD and regularization even though you're not very confident in how Elastic Net works or exactly what it is. But things were going great and you want to show how smart you are. You can slip this in and nobody will notice, right? Not a chance! Thing is, you don't notice how painfully obvious it is to the interviewer that you don't know this term. Your voice quivers or your face contorts when you let slip the word *Elastic Net*. It's likely imperceptible to you but not to us. What happens? The moment you're done talking I effortlessly wreck your world. I hone in on your weakness and exploit it. Am I being a jerk? Some people think so. But consider this. If I hire you, odds are you'll have to defend a model or platform to hardcore techies or C-level execs. Imagine you pull the same stunt. Things are going well, you're explaining the pros of your model, and then you let slip this slippery term you haven't quite come to grips with. Now it's not me that's going to pick you apart; it's one of them. And once you fail to explain this term, you lose all credibility. Your model or platform is kaput. So this is really an exercise in communication. You need to foster credibility and you do that by exhibiting knowledge, not the contrary.
 
 ## Tip #6: Don't Expect To Know Everything
-In my opinion, a good technical interview is one where I, as the interviewer, can find the limits of your knowledge. And you better believe I'm going to take you there. Sometimes it only takes 2-3 questions to find someone's limit and sometimes it takes delving into some esoteric edge case that's 10 questions deep. Sometimes it's even asking questions that I don't know the answer to but I can follow your logic and study your body language to see if there's a good chance that you do. Plus, I have the luxury of looking it up later.  
+In my opinion, a good technical interview is one where I, as the interviewer, can find the limits of your knowledge. And you better believe I'm going to take you to that limit. Sometimes it only takes 2-3 questions to find someone's limit and sometimes it takes delving into some esoteric edge case that's 10 questions deep. Sometimes it's even asking questions that I don't know the answer to but I can follow your logic and study your body language to see if there's a good chance that you do. Plus, I have the luxury of looking up the answer later to check my intuition.  
 
-The point is that if you walk out of an interview feeling down because you weren't able to answer every question, you should rethink your expectations. A good interviewer will most definitely take you there. Instead, focus on the types of questions you got wrong. Did you miss a bunch of easy questions? Then that's on you. Did you miss a question about advantages and disadvantages of using OVA Binomial vs Multinomial Logistic Regression? Probably not a big deal and you walk away with something new to learn. 
+The point is that if you walk out of an interview feeling down because you weren't able to answer every question, you should rethink your expectations. A good interviewer will most definitely take you just beyond your limits. Instead, focus on the types of questions you got wrong. Did you miss a bunch of easy questions? Then that's on you. Did you miss a question about advantages and disadvantages of using OVA Binomial vs Multinomial Logistic Regression? Probably not a big deal and you walk away with something new to learn. 
 
 ## Tip #7: An Interview Is A Dialogue, Not A Test
 Most everyone walks into a technical interview thinking all I have to do is answer all the questions correctly and then I'm home free. Nope! Even if you magically pull that off (see Tip #6), the interviewer is looking at more than just your technical knowledge. There's a very good chance the interviewer could be your boss or co-worker, which means you'll be spending lots of time together. That also means you're being evaluated for fit. Maybe you're high energy but the group is mostly introverted. That would mess with the dynamics so you're a no-go. It could be that the interviewer is one of those people that's "always right" and will not tolerate a challenge, even if it's warranted. Who knows, maybe your personalities clash. It happens. But it's better to find that out sooner rather than later.
