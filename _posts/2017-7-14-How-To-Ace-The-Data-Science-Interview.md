@@ -89,6 +89,9 @@ I covered this implicitly in Tip #2 but any time someone asks you about the meri
 To distill this down, whenever you're answering a question about which algorithm to use, consider the implications of a particular model with regards to accuracy, speed, and intrepretability. Let the constraints around these 3 characteristics drive your decision about which algorithm to use.
 
 ## Tip #4: Draw Pictures
+
+![Draw](/assets/images/machine_learning_xkcd.png?raw=true){: .center-image }
+
 This should go without saying, *should* being the operative word. Most interviewees make good use of the whiteboard or a piece of paper but occassionally I interview someone who tries to explain everything in words. That makes for a bad experience, let me tell you. We've all heard the old adage "a picture is worth a thousand words". And it's so true. Applying this technique can turn a five minute rambling explanation into a 10-second drawing and a 30-second explanation. Remember, the whiteboard is your friend. Use it!
 
 A few things to keep in mind when drawing pictures:
