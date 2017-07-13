@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 categories: [Data Science, Interview]
 title: How To Ace The Data Science Interview
 ---
