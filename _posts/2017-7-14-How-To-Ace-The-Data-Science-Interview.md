@@ -99,7 +99,7 @@ A few things to keep in mind when drawing pictures:
 5. using different colors for classification or clustering is helpful
 6. vocalize what you're doing while you're doing it; it helps me follow because I haven't perfected my mind reading skills yet
 
-## Tip #5: Avoid Jargon or Concepts That You're Not Confident About
+## Tip #5: Avoid Jargon or Concepts You're Unsure Of
 This is hands down the easiest way to sabotage yourself. I see it all the time. Here's the situation. You're deep in your explanation of how gradient descent (GD) works and things are going smoothly, so you decide to reach a little and mention *Elastic Net* when describing how GD applies to regularization even though you're not very confident in how Elastic Net works or exactly what it is. But things were going great and you want to show how smart you are. You can slip this in and nobody will notice, right? Not a chance! Thing is, you don't notice how painfully obvious it is to the interviewer that you don't know this term. Your voice quivers or your face contorts when you let slip the word *Elastic Net*. It's likely imperceptible to you but not to us. What happens? The moment you're done talking I effortlessly wreck your world. I hone in on your weakness and exploit it. Am I being a jerk? Some people think so. But consider this. If I hire you, odds are you'll have to defend a model or platform to hardcore techies or C-level execs. Imagine you pull the same stunt. Things are going well, you're explaining the pros of your model, and then you let slip this slippery term you haven't quite come to grips with. Now it's not me that's going to pick you apart; it's one of them. And once you fail to explain this term, you lose all credibility. Your model or platform is kaput. So this is really an exercise in communication. You need to foster credibility and you do that by exhibiting knowledge, not the contrary.
 
 ## Tip #6: Don't Expect To Know Everything
@@ -120,6 +120,6 @@ Having strong technical skills will get you far in many industries but can leave
 2. Know How To Answer Ambiguous Questions
 3. Choose The Best Algorithm: Accuracy vs Speed vs Interpretability
 4. Draw Pictures
-5. Avoid Jargon or Concepts That You're Not Confident About
+5. Avoid Jargon or Concepts You're Unsure Of
 6. Don't Expect To Know Everything
 7. An Interview Is A Dialogue, Not A Test
