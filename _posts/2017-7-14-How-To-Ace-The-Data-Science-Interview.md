@@ -6,7 +6,7 @@ title: How To Ace The Data Science Interview
 ![Scary Interview](/assets/images/scary-interview.jpg?raw=true){: .center-image }
 
 There's no way around it. Technical interviews can seem harrowing. I would argue nowhere is this more so than in data science. There's just so much to know. 
->What if they ask about Support Vector Machines or boosting or A/B testing? 
+>What if they ask about bagging or boosting or A/B testing? 
 >
 >What about SQL or Apache Spark or maximum likelihood estimation?
 
