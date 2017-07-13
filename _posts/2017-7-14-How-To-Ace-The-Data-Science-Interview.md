@@ -74,7 +74,7 @@ Admittedly, not much information is provided. That is usually by design. So it m
 
 **Interviewer:** You've got it!
 
-**Me:** Based on that information, I would recommend a logistic regression model. It outputs class probabilities so we can check that box. Additionally, it's a linear model so it runs much more quickly than lots of other models and it produces coefficients that are relatively easy to interpret. 
+**Me:** Based on that information, I would recommend a Logistic Regression model. It outputs class probabilities so we can check that box. Additionally, it's a linear model so it runs much more quickly than lots of other models and it produces coefficients that are relatively easy to interpret. 
 
 The point here is to ask enough pointed questions to get the necessary information you need to make an informed decision. The dialogue may go lot so of different ways but don't hesitate to ask clarifying questions. Get used to it because it's something you'll have to do on a daily basis when you're working as a DS in the wild!
 
@@ -97,3 +97,24 @@ A few things to keep in mind when drawing pictures:
 ## Tip #5: Avoid Jargon or Concepts That You're Not Confident About
 This is hands down the easiest way to sabotage yourself. I see it all the time. Here's the situation. You're deep in your explanation of how gradient descent works and things are going smoothly, so you decide to reach a little and mention *Elastic Net* when describing how it applies to regularization even though you're not very confident in how Elastic Net works or exactly what it is. But things were going great and you want to show how smart you are. Thing is, you don't notice how painfully obvious it is to the interviewer that you don't know this term. Your voice quivers or your face contorts when you let slip the word *Elastic Net*. It's likely imperceptible to you but not to us. What happens? The moment you're done talking I effortlessly wreck your world. I hone in on your weakness and exploit it. Am I being a jerk? Some people think so. But consider this. If I hire you, odds are you're going to have to defend a model or platform to hardcore techies or C-level execs. Also imagine you pull the same stunt. Things are going well, you're explaining the pros of your model, and then you let slip this slippery term you haven't quite come to grips with. Now it's not me that's going to pick you apart; it's one of them. And once you fail to explain this term, you lose all credibility. Your model or platform is kaput. So this is really an exercise in communication. You need to foster credibility and you do that by exhibiting knowledge, not the contrary.
 
+## Tip #6: Don't Expect To Know Everything
+In my opinion, a good technical interview is one where I, as the interviewer, can find the limits of your knowledge. And you better believe I'm going to take you there. Sometimes it only takes 2-3 questions to find someone's limit and sometimes it takes delving into some esoteric edge case that's 10 questions deep. Sometimes it's even asking questions that I don't know the answer to but I can follow your logic and study your body language to see if there's a good chance that you do.  
+
+The point is that if you walk out of an interview feeling down because you weren't able to answer every question, you should rethink your expectations. A good interviewer will most definitely take you there. Instead, focus on the types of questions you got right or wrong. Did you miss a bunch of easy questions? Then that's on you. Did you miss a question about advantages and disadvantages of using OVA Binomial vs Multinomial Logistic Regression? Probably not a big deal and you walk away with something new to learn. 
+
+## Tip #7: An Interview Is A Dialogue, Not A Test
+Most everyone walks into a technical interview thinking all I have to do is answer all the questions correctly and then I'm home free. Nope! Even if you magically pull that off (see Tip #6), the interviewer is looking at more than your technical knowledge. There's a very good chance the interviewer could be your boss or co-worker, which means you'll be spending lots of time together. That also means you're being evaluated for fit. Maybe you're high energy but the group is mostly introverted. That would mess with the dynamics so you're a no-go. It could be that the interviewer is one of those people that's *always right* and will not tolerate a challenge, even if it's warranted. 
+
+So the first 6 tips built you up and now it appears I'm telling you it may be hopeless after all. Far from it! The key here is that an interview is a two-way street. Can you be eliminated for any number of serious or silly reasons, even if you have all the technical skills? Absolutley. But the fact is that you have an equal amount of power. You should treat the interview not as a test but as a dialogue or a two-way interview. You are interviewing this employer as much as they are interviewing you. If the interviewer is a jerk or has a massive ego or you see some other red flag, don't discount it. You should step back and consider if you really want to work there. 
+
+And trust me, I get it. You may have been out of work for awhile and the sound of a paycheck sounds mighty nice right about now. And maybe this is your best play. But assuming you have a little breathing room, seriously consider the anguish, the torment you'll experience working for the jerk across the table. Having a paycheck but working full-time, feeling miserable, and having to add a job search on top of all that is no easy feat. In sum, ask questions, document those red flags, and choose wisely. When you find the right culture - you'll know it immediately - grab hold with everything you can and enjoy the ride. 
+
+## Summary
+Having strong technical skills will get you far in many industries but can leave you empty-handed in data science. Here are some ways you can stand out:
+1. Using Concrete Examples
+2. Know How To Answer Ambiguous Questions
+3. Choose The Best Algorithm: Accuracy vs Speed vs Interpretability
+4. Draw Pictures
+5. Avoid Jargon or Concepts That You're Not Confident About
+6. Don't Expect To Know Everything
+7. An Interview Is A Dialogue, Not A Test
