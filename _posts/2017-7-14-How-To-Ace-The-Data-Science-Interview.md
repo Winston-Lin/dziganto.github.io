@@ -84,3 +84,16 @@ I covered this implicitly in Tip #2 but any time someone asks you about the meri
 To distill this down, whenever you're answering a question about which algorithm to use, consider the implications of a particular model with regards to accuracy, speed, and intrepretability. Let the constraints around these 3 characteristics drive your decision about which algorithm to use.
 
 ## Tip #4: Draw Pictures
+This should go without saying, *should* being the operative word. Most interviewees make good use of the whiteboard or a piece of paper but occassionally I interview someone who tries to explain everything in words. That makes for a bad experience, let me tell you. We've all heard the old adage: a picture is worth a thousand words. And it's so true. Applying this technique can turn a five minute rambling explanation into a 10-second drawing and a 30-second explanation. Remember, the whiteboard is your friend. Use it!
+
+A few things to keep in mind when drawing pictures:
+1. label your axes
+2. explain your axes
+3. stay in 2D (unless you're an artist; I've seen too many people crash and burn drawing in 3D)
+4. use different shapes to denote different classes or clusters (e.g. triangles for class 0; circles for class 1)
+5. using different colors for classification or clustering is helpful (still use #4 though)
+6. vocalize what you're doing while you're doing it; it helps me follow because I haven't perfected my mind reading skills yet
+
+## Tip #5: Avoid Jargon or Concepts That You're Not Confident About
+This is hands down the easiest way to sabotage yourself. I see it all the time. Here's the situation. You're deep in your explanation of how gradient descent works and things are going smoothly, so you decide to reach a little and mention *Elastic Net* when describing how it applies to regularization even though you're not very confident in how Elastic Net works or exactly what it is. But things were going great and you want to show how smart you are. Thing is, you don't notice how painfully obvious it is to the interviewer that you don't know this term. Your voice quivers or you wince when you let slip the word *Elastic Net*. It's likely imperceptible to you but not to us. What happens? The moment you're done talking I effortlessly wreck your world. I hone in on your weakness and exploit it. Am I being a jerk? Some people think so. But consider this. If I hire you, odds are you're going to have to defend a model or platform to hardcore techies or C-level execs. Also imagine you pull the same stunt. Things are going well, you're explaining the pros of your model, and then you let slip this slippery term you haven't quite come to grips with. Now it's not me that's going to pick you apart; it's one of them. And once you fail to explain this term, you lose all credibility. Your model or platform is kaput. So this is really an exercise in communication. You need to foster credibility and you do that by exhibiting knowledge, not the contrary.
+
