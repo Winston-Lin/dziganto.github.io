@@ -22,6 +22,7 @@ author_profile: true
 
 ### Papers
 [A Few Useful Things To Know About Machine Learning - Pedro Domingos](http://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)  
+[Progressive Cross-Validation](http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf)  
 [Deep Forest - Towards an Alternative to Deep Neural Networks](https://arxiv.org/pdf/1702.08835.pdf)
 
 ### Misc
