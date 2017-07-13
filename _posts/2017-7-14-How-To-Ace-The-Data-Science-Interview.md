@@ -8,7 +8,7 @@ title: How To Ace The Data Science Interview
 There's no way around it. Technical interviews can seem harrowing. I would argue nowhere is this more so than in data science. There's just so much to know. 
 >What if they ask about Support Vector Machines or boosting or A/B testing? What about SQL? Apache Spark? Maximum likelihood? Poisson regression? Precision vs recall? And on and on and on.
 
-Unfortunately, I'm aware of no magic bullet that'll prepare you for the breadth of questions you'll be up against. Experience is all you'll have to rely upon. However, having interviewed scores of applicants, I can share some insights that will make your interview smoother and your ideas clearer, more succinct, and of the appropriate depth. All of this so that you'll finally stand out among the ever growing crowd. 
+Unfortunately, I'm aware of no magic bullet that'll prepare you for the breadth of questions you'll be up against. Experience is all you'll have to rely upon. However, having interviewed scores of applicants, I can share some insights that will make your interview smoother and your ideas clearer and more succinct. All this so that you'll finally stand out among the ever growing crowd. 
 
 Without further ado, here are interviewing tips to make you stand out.
 
@@ -30,7 +30,7 @@ On the face of it, this is a solid explanation. However, from an interviewer's p
 #### Better Approach
 K-means clustering is an unsupervised machine learning algorithm that segments data into groups. It's unsupervised because the data isn't labeled. In other words, there is no ground truth to speak of. Instead, we're trying to extract underlying structure from the data, if indeed it exists.
 
-Let me give you an example. Say we're an advertising firm. Up to this point we have been showing the same online ad to all viewers of a given website. We think we can be more effective if we can find a way to segment those viewers to send them targeted ads instead. One way to do this is through clustering. We already have a way to capture a viewer's income and age. (draws image on whiteboard)
+Let me give you an example. Say we're an advertising firm. Up to this point we've been showing the same online ad to all viewers of a given website. We think we can be more effective if we can find a way to segment those viewers to send them targeted ads instead. One way to do this is through clustering. We already have a way to capture a viewer's income and age. (draws image on whiteboard)
 
 ![Kmeans](/assets/images/kmeans.jpg?raw=true){: .center-image }
 
@@ -39,6 +39,9 @@ The x-axis is *age* and y-axis is *income* in this case. This is a simple 2D cas
 Distance between each data point to each centroid is calculated and each data point gets assigned to its nearest centroid. Once all data points have been assigned, the centroid is moved to the mean position of all the data points within its group. This is shown in the top right graph. Distances from centroids are again calculated and data points reassigned as depicted in the bottom right graph. The centroids move. See bottom left graph. 
 
 This process repeats until no points change groups. And now we have segmented our viewers so we can show them targeted advertisements.
+
+#### Takeaway
+Have a toy example ready to go to explain each concept. It could be something similar to the clustering example above or it could relate how decision trees work. Just make sure you use real-world examples. It shows not only that you know how the algorithm works but that you know at least one use case and that you can communicate your ideas effectively. Nobody wants to hear generic explanations; it's boring and makes you blend in with everyone else.
 
 ## Tip #2: Know How To Answer Ambiguous Questions
 From the interviewer's perspective, these are some of the most exciting questions to ask. It's something like: 
@@ -62,40 +65,42 @@ Admittedly, not much information is provided. That is usually by design. So it m
 
 **Interviewer:** I'm not sure. Like what?
 
-**Me:** Well, for starters, what metric are we focused on? Do you care about accuracy, precision, recall, log loss, or something else?
+**Me:** Well, for starters, what metric are we focused on? Do you care about accuracy, precision, recall, class probabilities, or something else?
 
 **Interviewer:** That'a great question. We're interested in knowing the probability that someone will default on their loan. 
 
-**Me:** Ok, that's very helpful. Are there any constraints around interpretability of the model and/or the speed of the response from the model?
+**Me:** Ok, that's very helpful. Are there any constraints around interpretability of the model and/or the speed of the model?
 
 **Interviewer:** Yes, actually both. The model has to be highly interpretable since we work in a highly regulated industry. Also, customers apply for loans online and we guarantee a response within a few seconds. 
 
-**Me:** So let me just make sure I understand. We've got just a few features with lots of records. Furthermore, our model has to ouptut class probabilities, has to run quickly, and has to be highly interpretable. Is that correct?
+**Me:** So let me just make sure I understand. We've got just a few features with lots of records. Furthermore, our model has to output class probabilities, has to run quickly, and has to be highly interpretable. Is that correct?
 
 **Interviewer:** You've got it!
 
 **Me:** Based on that information, I would recommend a Logistic Regression model. It outputs class probabilities so we can check that box. Additionally, it's a linear model so it runs much more quickly than lots of other models and it produces coefficients that are relatively easy to interpret. 
 
-The point here is to ask enough pointed questions to get the necessary information you need to make an informed decision. The dialogue may go lot so of different ways but don't hesitate to ask clarifying questions. Get used to it because it's something you'll have to do on a daily basis when you're working as a DS in the wild!
+#### Takeaway
+
+The point here is to ask enough pointed questions to get the necessary information you need to make an informed decision. The dialogue may go lots of different ways but don't hesitate to ask clarifying questions. Get used to it because it's something you'll have to do on a daily basis when you're working as a DS in the wild!
 
 ## Tip #3: Choose The Best Algorithm: Accuracy vs Speed vs Interpretability
-I covered this implicitly in Tip #2 but any time someone asks you about the merits of using one algorithm over another, the answer almost always boils down to pinpointing which of 1 or 2 of the 3 characteristics - accuracy or speed or interpretability - are most important. Note, it's usually not possible to get all 3 unless you have some trivial problem. I've never been so fortunate. Anyway, some situations will favor accuracy over intrepretability. For example, a deep neural net may outperform a decision tree on a certain problem. The converse can be true as well. There are some circumstances, especially in highly regulated industries like insurance and finance, that prioritize interpretability. In this case, it's completely acceptable to give up some accuracy for a model that's easily interpretable. Of course there are situations where speed is paramount. 
+I covered this implicitly in Tip #2 but any time someone asks you about the merits of using one algorithm over another, the answer almost always boils down to pinpointing which of 1 or 2 of the 3 characteristics - accuracy or speed or interpretability - are most important. Note, it's usually not possible to get all 3 unless you have some trivial problem. I've never been so fortunate. Anyway, some situations will favor accuracy over intrepretability. For example, a deep neural net may outperform a decision tree on a certain problem. The converse can be true as well. There are some circumstances, especially in highly regulated industries like insurance and finance, that prioritize interpretability. In this case, it's completely acceptable to give up some accuracy for a model that's easily interpretable. Of course there are situations where speed is paramount too. 
 
 To distill this down, whenever you're answering a question about which algorithm to use, consider the implications of a particular model with regards to accuracy, speed, and intrepretability. Let the constraints around these 3 characteristics drive your decision about which algorithm to use.
 
 ## Tip #4: Draw Pictures
-This should go without saying, *should* being the operative word. Most interviewees make good use of the whiteboard or a piece of paper but occassionally I interview someone who tries to explain everything in words. That makes for a bad experience, let me tell you. We've all heard the old adage: a picture is worth a thousand words. And it's so true. Applying this technique can turn a five minute rambling explanation into a 10-second drawing and a 30-second explanation. Remember, the whiteboard is your friend. Use it!
+This should go without saying, *should* being the operative word. Most interviewees make good use of the whiteboard or a piece of paper but occassionally I interview someone who tries to explain everything in words. That makes for a bad experience, let me tell you. We've all heard the old adage "a picture is worth a thousand words". And it's so true. Applying this technique can turn a five minute rambling explanation into a 10-second drawing and a 30-second explanation. Remember, the whiteboard is your friend. Use it!
 
 A few things to keep in mind when drawing pictures:
 1. label your axes
 2. explain your axes
 3. stay in 2D (unless you're an artist; I've seen too many people crash and burn drawing in 3D)
 4. use different shapes to denote different classes or clusters (e.g. triangles for class 0; circles for class 1)
-5. using different colors for classification or clustering is helpful (still use #4 though)
+5. using different colors for classification or clustering is helpful
 6. vocalize what you're doing while you're doing it; it helps me follow because I haven't perfected my mind reading skills yet
 
 ## Tip #5: Avoid Jargon or Concepts That You're Not Confident About
-This is hands down the easiest way to sabotage yourself. I see it all the time. Here's the situation. You're deep in your explanation of how gradient descent works and things are going smoothly, so you decide to reach a little and mention *Elastic Net* when describing how it applies to regularization even though you're not very confident in how Elastic Net works or exactly what it is. But things were going great and you want to show how smart you are. Thing is, you don't notice how painfully obvious it is to the interviewer that you don't know this term. Your voice quivers or your face contorts when you let slip the word *Elastic Net*. It's likely imperceptible to you but not to us. What happens? The moment you're done talking I effortlessly wreck your world. I hone in on your weakness and exploit it. Am I being a jerk? Some people think so. But consider this. If I hire you, odds are you're going to have to defend a model or platform to hardcore techies or C-level execs. Also imagine you pull the same stunt. Things are going well, you're explaining the pros of your model, and then you let slip this slippery term you haven't quite come to grips with. Now it's not me that's going to pick you apart; it's one of them. And once you fail to explain this term, you lose all credibility. Your model or platform is kaput. So this is really an exercise in communication. You need to foster credibility and you do that by exhibiting knowledge, not the contrary.
+This is hands down the easiest way to sabotage yourself. I see it all the time. Here's the situation. You're deep in your explanation of how gradient descent (GD) works and things are going smoothly, so you decide to reach a little and mention *Elastic Net* when describing how GD applies to regularization even though you're not very confident in how Elastic Net works or exactly what it is. But things were going great and you want to show how smart you are. You can slip this in and nobody will notice, right? Not a chance! Thing is, you don't notice how painfully obvious it is to the interviewer that you don't know this term. Your voice quivers or your face contorts when you let slip the word *Elastic Net*. It's likely imperceptible to you but not to us. What happens? The moment you're done talking I effortlessly wreck your world. I hone in on your weakness and exploit it. Am I being a jerk? Some people think so. But consider this. If I hire you, odds are you'll have to defend a model or platform to hardcore techies or C-level execs. Imagine you pull the same stunt. Things are going well, you're explaining the pros of your model, and then you let slip this slippery term you haven't quite come to grips with. Now it's not me that's going to pick you apart; it's one of them. And once you fail to explain this term, you lose all credibility. Your model or platform is kaput. So this is really an exercise in communication. You need to foster credibility and you do that by exhibiting knowledge, not the contrary.
 
 ## Tip #6: Don't Expect To Know Everything
 In my opinion, a good technical interview is one where I, as the interviewer, can find the limits of your knowledge. And you better believe I'm going to take you there. Sometimes it only takes 2-3 questions to find someone's limit and sometimes it takes delving into some esoteric edge case that's 10 questions deep. Sometimes it's even asking questions that I don't know the answer to but I can follow your logic and study your body language to see if there's a good chance that you do.  
@@ -107,11 +112,11 @@ Most everyone walks into a technical interview thinking all I have to do is answ
 
 So the first 6 tips built you up and now it appears I'm telling you it may be hopeless after all. Far from it! The key here is that an interview is a two-way street. Can you be eliminated for any number of serious or silly reasons, even if you have all the technical skills? Absolutley. But the fact is that you have an equal amount of power. You should treat the interview not as a test but as a dialogue or a two-way interview. You are interviewing this employer as much as they are interviewing you. If the interviewer is a jerk or has a massive ego or you see some other red flag, don't discount it. You should step back and consider if you really want to work there. 
 
-And trust me, I get it. You may have been out of work for awhile and the sound of a paycheck sounds mighty nice right about now. And maybe this is your best play. But assuming you have a little breathing room, seriously consider the anguish, the torment you'll experience working for the jerk across the table. Having a paycheck but working full-time, feeling miserable, and having to add a job search on top of all that is no easy feat. In sum, ask questions, document those red flags, and choose wisely. When you find the right culture - you'll know it immediately - grab hold with everything you can and enjoy the ride. 
+And trust me, I get it. You may have been out of work for awhile and the sound of a paycheck sounds mighty nice right about now. And maybe this is your best play. But assuming you have a little breathing room, seriously consider the anguish, the torment you'll experience working for the jerk across the table. Having a paycheck but working full-time, feeling miserable, and having to add a job search on top of all that is no easy feat. In sum, ask questions, document those red flags, and choose wisely. When you find the right job and the right culture - you'll know it immediately - grab hold with everything you've got and enjoy the ride. 
 
 ## Summary
 Having strong technical skills will get you far in many industries but can leave you empty-handed in data science. Here are some ways you can stand out:
-1. Using Concrete Examples
+1. Use Concrete Examples
 2. Know How To Answer Ambiguous Questions
 3. Choose The Best Algorithm: Accuracy vs Speed vs Interpretability
 4. Draw Pictures
