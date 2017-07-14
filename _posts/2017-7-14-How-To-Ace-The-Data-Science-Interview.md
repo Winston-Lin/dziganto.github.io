@@ -57,7 +57,7 @@ From the interviewer's perspective, these are some of the most exciting question
 
 **Interviewer:** How do you approach classification problems?
 
-As an interviewee, before I had the chance to sit on the other side of the table, I thought these questions were ill posed. "What an overly vague question", I would think to myself. "What was the point?", I'd say. However, now that I've interviewed scores of applicants, I see the value in this type of question. It shows several things about the interviewee: 
+As an interviewee, before I had the chance to sit on the other side of the table, I thought these questions were ill posed. However, now that I've interviewed scores of applicants, I see the value in this type of question. It shows several things about the interviewee: 
 1. How they react on their feet 
 2. If they ask probing questions 
 3. How they go about attacking a problem
