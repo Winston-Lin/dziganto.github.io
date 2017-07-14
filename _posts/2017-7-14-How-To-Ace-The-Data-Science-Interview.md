@@ -19,7 +19,7 @@ Without further ado, here are interviewing tips to make you shine:
 4. Draw Pictures
 5. Avoid Jargon or Concepts You're Unsure Of
 6. Don't Expect To Know Everything
-7. An Interview Is A Dialogue, Not A Test
+7. Realize An Interview Is A Dialogue, Not A Test
 
 ## Tip #1: Use Concrete Examples
 This is a simple fix that reframes a complicated idea into one that's easy to follow and grasp. Unfortunately, it's an area where many interviewees go astray, leading to long, rambling, and occassionally nonsensical explanations. Let's look at an example. 
@@ -121,7 +121,7 @@ In my opinion, a good technical interview is one where I, as the interviewer, ca
 
 The point is that if you walk out of an interview feeling down because you weren't able to answer every question, you should rethink your expectations. A good interviewer will most definitely take you just beyond your limits. Instead, focus on the types of questions you got wrong. Did you miss a bunch of easy questions? Then that's on you. Did you miss a question about advantages and disadvantages of using OVA Binomial vs Multinomial Logistic Regression? Probably not a big deal and you walk away with something new to learn. 
 
-## Tip #7: An Interview Is A Dialogue, Not A Test
+## Tip #7: Realize An Interview Is A Dialogue, Not A Test
 Most everyone walks into a technical interview thinking all they have to do is answer all the questions correctly and then they're home free. Nope! Even if you magically pull that off (see **Tip #6**), the interviewer is looking at more than just your technical knowledge. There's a very good chance the interviewer could be your boss or co-worker, which means you'll be spending lots of time together. That also means you're being evaluated for fit. Maybe you're high energy but the group is mostly introverted. That would mess with the dynamics so you're a no-go. It could be that the interviewer is one of those people that's "always right" and will not tolerate a challenge, even if it's warranted. Who knows, maybe your personalities clash. It happens. But it's better to find that out sooner rather than later.
 
 So the first 6 tips built you up and now it appears I'm telling you it may be hopeless after all. Far from it. The key here is that an interview is a two-way street. Can you be eliminated for any number of serious or silly reasons, even if you have all the technical skills? Absolutely. But the fact is that you have an equal amount of power. You should treat the interview not as a test but as a dialogue; you are interviewing this employer as much as they are interviewing you. If the interviewer is a jerk or has a massive ego or you see some other red flag, don't discount it. You should step back and consider if you really want to work there. 
@@ -136,4 +136,4 @@ Having strong technical skills will get you far in many industries but can leave
 4. Draw Pictures
 5. Avoid Jargon or Concepts You're Unsure Of
 6. Don't Expect To Know Everything
-7. An Interview Is A Dialogue, Not A Test
+7. Realize An Interview Is A Dialogue, Not A Test
