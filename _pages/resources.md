@@ -18,7 +18,7 @@ author_profile: true
 [Artificial Intelligence - A Modern Approach](http://aima.cs.berkeley.edu/)  
 [Pattern Recognition and Machine Learning](https://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738)  
 [Intro to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/)  
-[Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
+[Elements of Statistical Learning](https://www.amazon.com/Elements-Statistical-Learning-Prediction-Statistics/dp/0387848576)
 
 ### Papers
 [A Few Useful Things To Know About Machine Learning - Pedro Domingos](http://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)  
@@ -26,4 +26,5 @@ author_profile: true
 [Deep Forest - Towards an Alternative to Deep Neural Networks](https://arxiv.org/pdf/1702.08835.pdf)
 
 ### Misc
+[How to Become a Data Scientist - Brandon Rohrer](https://brohrer.github.io/one_step_program_become_data_scientist.html)  
 [How to Use t-SNE Effectively](http://distill.pub/2016/misread-tsne/)  
