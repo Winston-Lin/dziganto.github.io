@@ -184,7 +184,7 @@ There are many ways to speed up Python code. Blazing fast libraries like Cython 
 * Dots may give you marginal performance gains but may not be worth the effort
 * When Python 3 is better than Python 2, it is MUCH better
 
-As a long time Py27 user and only occassionally a Python 3 user, this experiment got me much more excited about Python 3. Yes, I know Python 3 is the future but now I have something tangible to grasp on to - proof that aspects are indeed speedier and can lead to faster code. If nothing else, having conducted my own experiments has provided me the catalyst to finally make the transition. 
+As a long time Python 2 user, this experiment got me much more excited about Python 3. Yes, I know Python 3 is the future but now I have something tangible to grasp on to - proof that aspects are indeed speedier and can lead to faster code. If nothing else, having conducted my own experiments has provided me the catalyst to finally make the transition. 
 
 In sum, this was a fun project that got me thinking. There are so many avenues left unexplored and this project raised many more questions than it answered for me, yet now I feel much more confident about the prowess of Python 3. 
 
