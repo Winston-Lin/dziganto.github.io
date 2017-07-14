@@ -10,7 +10,7 @@ There's no way around it. Technical interviews can seem harrowing. Nowhere, I wo
 >
 >What about SQL or Apache Spark or maximum likelihood estimation?
 
-Unfortunately, I'm aware of no magic bullet that'll prepare you for the breadth of questions you'll be up against. Experience is all you'll have to rely upon. However, having interviewed scores of applicants, I can share some insights that will make your interview smoother and your ideas clearer and more succinct. All this so that you'll finally stand out amongst the ever growing crowd. 
+Unfortunately, I know of no magic bullet that'll prepare you for the breadth of questions you'll be up against. Experience is all you'll have to rely upon. However, having interviewed scores of applicants, I can share some insights that will make your interview smoother and your ideas clearer and more succinct. All this so that you'll finally stand out amongst the ever growing crowd. 
 
 Without further ado, here are interviewing tips to make you shine:
 1. Use Concrete Examples
