@@ -82,7 +82,7 @@ Admittedly, not much information is provided. That is usually by design. So it m
 
 **Me:** Ok, that's very helpful. Are there any constraints around interpretability of the model and/or the speed of the model?
 
-**Interviewer:** Yes, actually both. The model has to be highly interpretable since we work in a highly regulated industry. Also, customers apply for loans online and we guarantee a response within a few seconds. 
+**Interviewer:** Yes, both actually. The model has to be highly interpretable since we work in a highly regulated industry. Also, customers apply for loans online and we guarantee a response within a few seconds. 
 
 **Me:** So let me just make sure I understand. We've got just a few features with lots of records. Furthermore, our model has to output class probabilities, has to run quickly, and has to be highly interpretable. Is that correct?
 
@@ -103,7 +103,7 @@ To distill this down, whenever you're answering a question about which algorithm
 
 ![Draw](/assets/images/machine_learning_xkcd.png?raw=true){: .center-image }
 
-This should go without saying, *should* being the operative word. Most interviewees make good use of the whiteboard or a piece of paper but occassionally I interview someone who tries to explain everything in words. That makes for a bad experience, let me tell you. We've all heard the old adage "a picture is worth a thousand words". And it's so true. Applying this technique can turn a five minute rambling explanation into a 10-second drawing and a 30-second explanation. Remember, the whiteboard is your friend. Use it!
+This should go without saying - *should* being the operative word. Most interviewees make good use of the whiteboard or a piece of paper but occassionally I interview someone who tries to explain everything in words. That makes for a bad experience, let me tell you. We've all heard the old adage "a picture is worth a thousand words". And it's so true. Applying this technique can turn a five minute rambling explanation into a 10-second drawing and a 30-second explanation. Remember, the whiteboard is your friend. Use it!
 
 A few things to keep in mind when drawing pictures:
 1. Label your axes
@@ -126,7 +126,7 @@ Most everyone walks into a technical interview thinking all they have to do is a
 
 So the first 6 tips built you up and now it appears I'm telling you it may be hopeless after all. Far from it. The key here is that an interview is a two-way street. Can you be eliminated for any number of serious or silly reasons, even if you have all the technical skills? Absolutely. But the fact is that you have an equal amount of power. You should treat the interview not as a test but as a dialogue; you are interviewing this employer as much as they are interviewing you. If the interviewer is a jerk or has a massive ego or you see some other red flag, don't discount it. You should step back and consider if you really want to work there. 
 
-And trust me, I get it. You may have been out of work for awhile and the sound of a paycheck sounds mighty nice right about now. And maybe this is your best play. But assuming you have a little breathing room, seriously consider the anguish, the torment you'll experience working for the jerk across the table. Having a paycheck but working full-time, feeling miserable, and having to add a job search on top of all that is no easy feat. In sum, ask questions, document those red flags, and choose wisely. When you find the right job and the right culture, you'll know it immediately. 
+And trust me, I get it. You may have been out of work for awhile and the sound of a paycheck sounds mighty nice right about now. And maybe this is your best play. But assuming you have a little breathing room, seriously consider the anguish you'll experience working for the jerk across the table. Having a paycheck but working full-time, feeling miserable, and having to add a job search on top of all that is no easy feat. In sum, ask questions, document those red flags, and choose wisely. When you find the right job and the right culture, you'll know it immediately. 
 
 ## Summary
 Having strong technical skills will get you far in many industries but can leave you empty-handed in data science. Here are some ways you can stand out:
