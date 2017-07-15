@@ -26,17 +26,17 @@ This is a simple fix that reframes a complicated idea into one that's easy to fo
 
 ***Interviewer:** Tell me about K-means clustering.*
 
-#### Typical Response
+### Typical Response
 *K-means clustering is an unsupervised machine learning algorithm that segments data into groups. It's unsupervised because the data isn't labeled. In other words, there is no ground truth to speak of. Instead, we're trying to extract underlying structure from the data, if indeed it exists. Let me show you what I mean. [draws image on whiteboard]*
 
 ![Kmeans](/assets/images/kmeans.jpg?raw=true){: .center-image }
 
 *The way it works is simple. First, you initialize some centroids. Then you calculate the distance of each data point to each centroid. Each data point gets assigned to its nearest centroid. Once all data points have been assigned, the centroid is moved to the mean position of all the data points within its group. You repeat this process until no points change groups.*
 
-#### What Went Wrong?
+### What Went Wrong?
 On the face of it, this is a solid explanation. However, from an interviewer's perspective there are several issues. First, you provided no context. You spoke in generalities and abstractions. This makes your explanation harder to follow. Second, while the whiteboard drawing is helpful, you did not explain the axes, how to choose the number of centroids, how to initialize, and so on. There's so much more information that you could have included. 
 
-#### Better Response
+### Better Response
 *K-means clustering is an unsupervised machine learning algorithm that segments data into groups. It's unsupervised because the data isn't labeled. In other words, there is no ground truth to speak of. Instead, we're trying to extract underlying structure from the data, if indeed it exists.*
 
 *Let me give you an example. Say we're an advertising firm. Up to this point we've been showing the same online ad to all viewers of a given website. We think we can be more effective if we can find a way to segment those viewers to send them targeted ads instead. One way to do this is through clustering. We already have a way to capture a viewer's income and age. [draws image on whiteboard]*
@@ -49,7 +49,7 @@ On the face of it, this is a solid explanation. However, from an interviewer's p
 
 *Now we have segmented our viewers so we can show them targeted advertisements.*
 
-#### Takeaway
+### Takeaway
 **Have a toy example ready to go to explain each concept.** It could be something similar to the clustering example above or it could relate how decision trees work. Just make sure you use real-world examples. It shows not only that you know how the algorithm works but that you know at least one use case and that you can communicate your ideas effectively. Nobody wants to hear generic explanations; it's boring and makes you blend in with everyone else.
 
 ## Tip #2: Know How To Answer Ambiguous Questions
@@ -90,14 +90,14 @@ Admittedly, not much information is provided. That is usually by design. So it m
 
 ***Me:** Based on that information, I would recommend a Logistic Regression model. It outputs class probabilities so we can check that box. Additionally, it's a linear model so it runs much more quickly than lots of other models and it produces coefficients that are relatively easy to interpret.* 
 
-#### Takeaway
+### Takeaway
 
 The point here is to **ask enough pointed questions to get the necessary information you need to make an informed decision.** The dialogue may go lots of different ways but don't hesitate to ask clarifying questions. Get used to it because it's something you'll have to do on a daily basis when you're working as a DS in the wild!
 
 ## Tip #3: Choose The Best Algorithm: Accuracy vs Speed vs Interpretability
 I covered this implicitly in **Tip #2** but any time someone asks you about the merits of using one algorithm over another, the answer almost always boils down to pinpointing which 1 or 2 of the 3 characteristics - accuracy or speed or interpretability - are most important. Note, it's usually not possible to get all 3 unless you have some trivial problem. I've never been so fortunate. Anyway, some situations will favor accuracy over intrepretability. For example, a deep neural net may outperform a decision tree on a certain problem. The converse can be true as well. See [No Free Lunch Theorem](http://www.statsblogs.com/2014/01/25/machine-learning-lesson-of-the-day-the-no-free-lunch-theorem/). There are some circumstances, especially in highly regulated industries like insurance and finance, that prioritize interpretability. In this case, it's completely acceptable to give up some accuracy for a model that's easily interpretable. Of course there are situations where speed is paramount too. 
 
-#### Takeaway
+### Takeaway
 
 Whenever you're answering a question about which algorithm to use, **consider the implications of a particular model with regards to accuracy, speed, and intrepretability**. Let the constraints around these 3 characteristics drive your decision about which algorithm to use.
 
