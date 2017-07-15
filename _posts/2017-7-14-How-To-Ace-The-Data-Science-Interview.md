@@ -24,7 +24,7 @@ Without further ado, here are interviewing tips to make you shine:
 ## Tip #1: Use Concrete Examples
 This is a simple fix that reframes a complicated idea into one that's easy to follow and grasp. Unfortunately, it's an area where many interviewees go astray, leading to long, rambling, and occassionally nonsensical explanations. Let's look at an example. 
 
-**Interviewer:** *Tell me about K-means clustering.*
+***Interviewer:** Tell me about K-means clustering.*
 
 #### Typical Response
 *K-means clustering is an unsupervised machine learning algorithm that segments data into groups. It's unsupervised because the data isn't labeled. In other words, there is no ground truth to speak of. Instead, we're trying to extract underlying structure from the data, if indeed it exists. Let me show you what I mean. [draws image on whiteboard]*
@@ -55,7 +55,7 @@ On the face of it, this is a solid explanation. However, from an interviewer's p
 ## Tip #2: Know How To Answer Ambiguous Questions
 From the interviewer's perspective, these are some of the most exciting questions to ask. It's something like: 
 
-**Interviewer:** *How do you approach classification problems?*
+***Interviewer:** How do you approach classification problems?*
 
 As an interviewee, before I had the chance to sit on the other side of the table, I thought these questions were ill posed. However, now that I've interviewed scores of applicants, I see the value in this type of question. It shows several things about the interviewee: 
 1. How they react on their feet 
@@ -64,31 +64,31 @@ As an interviewee, before I had the chance to sit on the other side of the table
 
 Let's look at a concrete example:
 
-**Interviewer:** *I'm trying to classify loan defaults. Which machine learning algorithm should I use and why?*
+***Interviewer:** I'm trying to classify loan defaults. Which machine learning algorithm should I use and why?*
 
 Admittedly, not much information is provided. That is usually by design. So it makes perfect sense to ask probing questions. The dialogue may go something like this:
 
-**Me:** *Tell me more about the data. Specifically, which features are included and how many observations?*
+***Me:** Tell me more about the data. Specifically, which features are included and how many observations?*
 
-**Interviewer:** *The features include income, debt, number of accounts, number of missed payments, and length of credit history. This is a big dataset as there are over 100 million customers.*
+***Interviewer:** The features include income, debt, number of accounts, number of missed payments, and length of credit history. This is a big dataset as there are over 100 million customers.*
 
-**Me:** *So relatively few features but lots of data. Got it. Are there any constraints I should be aware of?*
+***Me:** So relatively few features but lots of data. Got it. Are there any constraints I should be aware of?*
 
-**Interviewer:** *I'm not sure. Like what?*
+***Interviewer:** I'm not sure. Like what?*
 
-**Me:** *Well, for starters, what metric are we focused on? Do you care about accuracy, precision, recall, class probabilities, or something else?*
+***Me:** Well, for starters, what metric are we focused on? Do you care about accuracy, precision, recall, class probabilities, or something else?*
 
-**Interviewer:** *That'a great question. We're interested in knowing the probability that someone will default on their loan.* 
+***Interviewer:** That'a great question. We're interested in knowing the probability that someone will default on their loan.* 
 
-**Me:** *Ok, that's very helpful. Are there any constraints around interpretability of the model and/or the speed of the model?*
+***Me:** Ok, that's very helpful. Are there any constraints around interpretability of the model and/or the speed of the model?*
 
-**Interviewer:** *Yes, both actually. The model has to be highly interpretable since we work in a highly regulated industry. Also, customers apply for loans online and we guarantee a response within a few seconds.* 
+***Interviewer:** Yes, both actually. The model has to be highly interpretable since we work in a highly regulated industry. Also, customers apply for loans online and we guarantee a response within a few seconds.* 
 
-**Me:** *So let me just make sure I understand. We've got just a few features with lots of records. Furthermore, our model has to output class probabilities, has to run quickly, and has to be highly interpretable. Is that correct?*
+***Me:** So let me just make sure I understand. We've got just a few features with lots of records. Furthermore, our model has to output class probabilities, has to run quickly, and has to be highly interpretable. Is that correct?*
 
-**Interviewer:** *You've got it.*
+***Interviewer:** You've got it.*
 
-**Me:** *Based on that information, I would recommend a Logistic Regression model. It outputs class probabilities so we can check that box. Additionally, it's a linear model so it runs much more quickly than lots of other models and it produces coefficients that are relatively easy to interpret.* 
+***Me:** Based on that information, I would recommend a Logistic Regression model. It outputs class probabilities so we can check that box. Additionally, it's a linear model so it runs much more quickly than lots of other models and it produces coefficients that are relatively easy to interpret.* 
 
 #### Takeaway
 
