@@ -10,9 +10,9 @@ author_profile: true
 ---
 
 ### Videos
-[Andrew Ng](https://www.youtube.com/playlist?list=PL0Smm0jPm9WcCsYvbhPCdizqNKps69W4Z)   
-[Mathematical Monk](https://www.youtube.com/playlist?list=PLD0F06AA0D2E8FFBA)  
-[Trevor Hastie & Rob Tibshirani](https://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/)  
+[Andrew Ng's ML Series](https://www.youtube.com/playlist?list=PL0Smm0jPm9WcCsYvbhPCdizqNKps69W4Z)   
+[Mathematical Monk's ML](https://www.youtube.com/playlist?list=PLD0F06AA0D2E8FFBA)  
+[15 Hours of ML](https://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/)  
 [How Deep Neural Networks Work](https://www.youtube.com/watch?v=ILsA4nyG7I0)  
 [How Convolutional Neural Networks Work](https://www.youtube.com/watch?v=FmpDIaiMIeA)
 
