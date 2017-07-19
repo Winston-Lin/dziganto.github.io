@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Python Deep Learning Frameworks (1)
 categories: [Deep Learning, Nervana Neon, Python, PyTorch, TensorFlow]
 ---
