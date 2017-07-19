@@ -9,7 +9,7 @@ categories: [Deep Learning, Nervana Neon, Python, PyTorch, TensorFlow]
 What I can say about **deep learning** that hasn't been said a thousand times already? It's powerful, it's state-of-the-art, and it's here to stay. But you already knew that. So instead of polluting the interwebs with yet another post about the prowess of deep learning or how it works, I'm going to focus on its application. Specifically, through a series of upcoming posts, I'll look at three of the most promising python deep learning frameworks - Neon, PyTorch, and TensorFlow - and assess them on a number of dimensions, including: 
 1. How easy are they to setup?
 2. How useful is the documentation?
-3. How helpful and useful are the tutorials?
+3. How is the quality and breadth of the tutorials?
 4. What is the learning curve like?
 5. Are there key performance differences between the frameworks?
 
@@ -18,7 +18,7 @@ I'll wrap up the series with a full buildout in each framework of a deep reinfor
 ## Objective
 The objective of this post is simply to introduce the three frameworks and provide a roadmap. 
 
-## The Three Frameworks
+## The Deep Learning Frameworks
 The three deep learning frameworks that I'll investigate are:
 1. Neon
 2. PyTorch
@@ -67,7 +67,7 @@ According to the [TensorFlow's website](https://www.tensorflow.org/):
 >TensorFlow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them. The flexible architecture allows you to deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device with a single API. TensorFlow was originally developed by researchers and engineers working on the Google Brain Team within Google's Machine Intelligence research organization for the purposes of conducting machine learning and deep neural networks research, but the system is general enough to be applicable in a wide variety of other domains as well.
 
 ## Summary
-Three of the most promising python deep learning frameworks - Intel Nervana's Neon, PyTorch, and TensorFlow - were introduced. In upcoming posts, I'll assess each on a number of dimensions including: ease of installation, usefulness of documentation, quality and breadth of the tutorials, how steep the learning curve is, and if there are key performance differences. Lastly, I'll conclude this series by building out a deep reinforcement learning project in each of the three frameworks.
+Three of the most promising python deep learning frameworks - Neon, PyTorch, and TensorFlow - were introduced. In upcoming posts, I'll assess each on a number of dimensions including: ease of installation, usefulness of documentation, quality and breadth of the tutorials, how steep the learning curve is, and if there are key performance differences. Lastly, I'll conclude this series by building out a deep reinforcement learning project in each of the three frameworks.
 
 ## Next Time
 I'll walk you through the installation process of each framework and compare the relative ease or difficulty of getting each setup. 
