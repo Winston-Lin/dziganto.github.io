@@ -56,13 +56,13 @@ According to the [TensorFlow's website](https://www.tensorflow.org/):
 
 According to [Theano's website](http://www.deeplearning.net/software/theano/index.html):
 >Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Theano features:
-
-tight integration with NumPy – Use numpy.ndarray in Theano-compiled functions.
-transparent use of a GPU – Perform data-intensive computations much faster than on a CPU.
-efficient symbolic differentiation – Theano does your derivatives for functions with one or many inputs.
-speed and stability optimizations – Get the right answer for log(1+x) even when x is really tiny.
-dynamic C code generation – Evaluate expressions faster.
-extensive unit-testing and self-verification – Detect and diagnose many types of errors.
+>
+>- tight integration with NumPy – Use numpy.ndarray in Theano-compiled functions.
+>- transparent use of a GPU – Perform data-intensive computations much faster than on a CPU.
+>- efficient symbolic differentiation – Theano does your derivatives for functions with one or many inputs.
+>- speed and stability optimizations – Get the right answer for log(1+x) even when x is really tiny.
+>- dynamic C code generation – Evaluate expressions faster.
+>- extensive unit-testing and self-verification – Detect and diagnose many types of errors.
 
 
 ## Summary
