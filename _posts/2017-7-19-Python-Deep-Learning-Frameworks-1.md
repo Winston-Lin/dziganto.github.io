@@ -6,7 +6,7 @@ categories: [Deep Learning, Nervana Neon, Python, PyTorch, TensorFlow]
 ![deep learning](/assets/images/deep_learning.jpeg?raw=true)
 
 ## Introduction
-What I can say about **deep learning** that hasn't been said a thousand times already? It's powerful, it's state-of-the-art, and it's here to stay. But you already knew that. So instead of polluting the interwebs with yet another post about the prowess of deep learning or how it works, I'm going to focus on its application. Specifically, through a series of upcoming posts, I'll look at three of the most promising python deep learning frameworks - Neon, PyTorch, and TensorFlow - and assess them on a number of dimensions, including: 
+What I can say about **deep learning** that hasn't been said a thousand times already? It's powerful, it's state-of-the-art, and it's here to stay. But you already knew that. So instead of polluting the Web with yet another post about the prowess of deep learning or how it works, I'm going to focus on its application. Specifically, through a series of upcoming posts, I'll look at three of the most promising python deep learning frameworks - Neon, PyTorch, and TensorFlow - and assess them on a number of dimensions, including: 
 1. How easy are they to setup?
 2. How useful is the documentation?
 3. How is the quality and breadth of the tutorials?
