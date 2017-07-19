@@ -30,13 +30,13 @@ Linux users will have to make a few adjustments; see the docs. Windows users, I'
 
 The first thing you'll want to do is make sure Neon's dependecies are installed. Here's a checklist for you to follow:
 
-|Library|Installed?|Where to find|
-|---|---|--|
+|Library|Installed?|Source|
+|---|---|:--:|
 |h5py| |conda|
-|pip| |--|
+|pip| |N/A|
 |pkg-config| |brew|
 |pyaml| |pip| 
-|virtualenv| | |python 3|
+|virtualenv| |python 3|
 
 If you're not sure which libraries are installed, do the following:  
 - Check your conda libraries `conda list`  
