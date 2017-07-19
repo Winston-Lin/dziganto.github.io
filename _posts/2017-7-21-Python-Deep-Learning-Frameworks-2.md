@@ -28,16 +28,22 @@ Linux users will have to make a few adjustments; see the docs. Windows users, I'
 
 ### Neon (version 2.0.0)
 Source installation instructions can be found [here](http://neon.nervanasys.com/docs/latest/installation.html) but here are the steps you need to know to get up and running:
+1. `conda create --name neon pip`
+2. `source activate neon`
+3. `git clone https://github.com/NervanaSystems/neon.git`
+4. `cd neon && make sysinstall`
+
 1. Install the [Math Kernel Library](https://software.intel.com/en-us/mkl). *Might not be required.*
-2. Create Intel conda environment: `conda create -n intel intelpython3_full python=3`
-3. Activate Intel conda env: `source activate intel`
-4. Install conda dependencies: `conda install h5py pkg-config`
-5. Install special dependency for audio/videos: `conda install -c menpo ffmpeg`
-6. Install special dependency for images: `conda install -c menpo opencv3` - THIS DOESN'T WORK, NEED TO FIX
-7. Install pip dependencies: `pip install pyaml`
-8. Install Neon: `git clone https://github.com/NervanaSystems/neon.git`
-9. Configure Neon: `cd neon && make sysinstall`
-10. Test installation: `python examples/mnist_mlp.py -b mkl` or `neon examples/mnist_mlp.yaml`
+2. Set Intel library versions as default: `conda config --add channels intel`
+3. Create Intel conda environment: `conda create -n intel intelpython3_full python=3`
+4. Activate Intel conda env: `source activate intel`
+5. Install conda dependencies: `conda install h5py pkg-config`
+6. Install special dependency for audio/videos: `conda install -c menpo ffmpeg`
+7. Install special dependency for images: `conda install -c menpo opencv3` - THIS DOESN'T WORK, NEED TO FIX
+8. Install pip dependencies: `pip install pyaml`
+9. Install Neon: `git clone https://github.com/NervanaSystems/neon.git`
+10. Configure Neon: `cd neon && make sysinstall`
+11. Test installation: `python examples/mnist_mlp.py -b mkl` or `neon examples/mnist_mlp.yaml`
 
 **Fix: MKL backend not working.**
 
