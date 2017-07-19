@@ -15,8 +15,8 @@ The objective of this post is document the installation process for Neon, PyTorc
 I'm going to make some key assumptions to keep this post as brief as possible. In particular, I'm assuming you:
 
 1. Are using a Mac
-2. Are using Python 3.5+
-3. Have [Anaconda](https://www.continuum.io/downloads) installed 
+2. Have [Anaconda](https://www.continuum.io/downloads) installed 
+3. Have updated conda with `conda update conda`
 4. Updated all libraries with `conda update --all`
 5. Have Pip installed
 6. Have [Homebrew](https://brew.sh/) installed
@@ -26,41 +26,20 @@ Linux users will have to make a few adjustments; see the docs. Windows users, I'
 ## Installation 
 
 ### Neon (version 2.0.0)
-*Note: Most of the steps included below come directly from Neon's website located [here](http://neon.nervanasys.com/docs/latest/installation.html).*
+Source installation instructions can be found [here](http://neon.nervanasys.com/docs/latest/installation.html) but here are the steps you need to know:
+1. Install the [Math Kernel Library](https://software.intel.com/en-us/mkl). 
+2. Set Intel libraries as default: `conda config --add channels intel`
+3. Create Intel conda environment: `conda create -n intel intelpython3_full python=3`
+4. Activate Intel conda env: `source activate intel`
+5. Install conda dependencies: `conda install h5py pkg-config`
+6. Install special dependency for audio/videos: `conda install -c menpo ffmpeg`
+7. Install special dependency for images: `conda install -c menpo opencv3` - THIS DOESN'T WORK, NEED TO FIX
+7. Install pip dependencies: `pip install pyaml`
+8. Install Neon: `git clone https://github.com/NervanaSystems/neon.git`
+9. Configure Neon: `cd neon && make sysinstall`
+10. Test installation: `python examples/mnist_mlp.py -b mkl` or `neon examples/mnist_mlp.yaml`
 
-The first thing you'll want to do is make sure Neon's dependecies are installed. Here's a checklist for you to follow:
-
-|Library|Installed?|Source|
-|---|---|:--:|
-|h5py| |conda|
-|pip| |N/A|
-|pkg-config| |brew|
-|pyaml| |pip| 
-|virtualenv| |python 3|
-
-If you're not sure which libraries are installed, do the following:  
+As an aside, if you're not sure which libraries are installed, do the following:
 - Check your conda libraries `conda list`  
 - Check your pip libraries `pip freeze` 
 
-Check **virtualenv** by typing `python3 -m venv -h`. You should see a bunch of text that ends with 
->*Once an environment has been created, you may wish to activate it, e.g. by sourcing an activate script in its bin directory.* If that's the case, virtualenv is setup correctly.
-
-It's worth installing **OpenCV** and **FFmpeg** while we're at it. You can install **opencv3** with `conda install -c menpo opencv3`. Install **ffmpeg** by typing `brew install ffmpeg`. Check FFmpeg to make sure all dependencies are installed by typing `brew info ffmpeg`. I had to `brew install <insert>`: yasm, texi2html, and pkg-config.
-
-***This installation will focus specifically on CPU installation. Configuring GPU capabilities requires installation of CUDA SDK and drivers. I refer you to Neon's [docs](http://neon.nervanasys.com/docs/latest/installation.html) for additional details.***
-
-The next step is to install Neon with Anaconda. Follow this process:
-1. Configure & activate a new conda environment 
-```
-conda create --name neon pip
-source activate neon
-```
-2. Clone & run a system-wide install.
-```
-git clone https://github.com/NervanaSystems/neon.git
-cd neon && make sysinstall
-```
-3. Deactivate the environment.
-```
-source deactivate
-```
