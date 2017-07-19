@@ -15,7 +15,7 @@ The objective of this post is document the installation process for Neon, PyTorc
 I'm going to make some key assumptions to keep this post as brief as possible. In particular, I'm assuming you:
 
 1. Are using a Mac
-2. Are using Python 3.5
+2. Are using Python 3.5+
 3. Have [Anaconda](https://www.continuum.io/downloads) installed 
 4. Updated all libraries with `conda update --all`
 5. Have Pip installed
