@@ -56,8 +56,8 @@ Source installation instructions can be found [here](http://deeplearning.net/sof
 
 ## An Aside
 If you're not sure which libraries you have installed, do the following:
-- Check your conda libraries `conda list`  
-- Check your pip libraries `pip freeze` 
+- Check your conda libraries: `conda list`  
+- Check your pip libraries: `pip freeze` 
 
 ## Summary
 All three were incredibly easy to install and configure; I didn't run into a single major issue. I give a slight edge to PyTorch for leveraging conda and Python 3. TensorFlow, in my opinion, runs a very close second because it builds with Python 3 but relies on pip instead of conda. Theano captures the third spot. It leverages conda for the installation process but requires Python 2.7 due to one of its dependencies. 
