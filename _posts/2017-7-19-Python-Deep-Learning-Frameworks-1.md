@@ -16,7 +16,7 @@ What I can say about **deep learning** that hasn't been said a thousand times al
 I'll wrap up the series with a full buildout in each framework of a deep reinforcment learning project, but more on that to come in the future.
 
 ## Objective
-The objective of this post is simply to introduce the three frameworks and provide a roadmap. 
+The objective of this post is simply to introduce the three frameworks and to provide a roadmap of future work. 
 
 ## The Deep Learning Frameworks
 The three deep learning frameworks that I'll investigate are:
@@ -66,7 +66,7 @@ According to [Theano's website](http://www.deeplearning.net/software/theano/inde
 
 
 ## Summary
-Three of the most promising python deep learning frameworks - PyTorch, TensorFlow, and Theano - were introduced. In upcoming posts, I'll assess each on a number of dimensions including: ease of installation, usefulness of documentation, quality and breadth of the tutorials, how steep the learning curve is, and if there are key performance differences. Lastly, I'll conclude this series by building out a deep reinforcement learning project in each of the three frameworks.
+Three of the leading Python deep learning frameworks - PyTorch, TensorFlow, and Theano - were introduced. In upcoming posts, I'll assess each on a number of dimensions including: ease of installation, usefulness of documentation, quality and breadth of the tutorials, how steep the learning curve is, and if there are key performance differences. Lastly, I'll conclude this series by building out a deep reinforcement learning project in each of the three frameworks.
 
 ## Next Time
 I'll walk you through the installation process of each framework and compare the relative ease or difficulty of getting each setup. 
