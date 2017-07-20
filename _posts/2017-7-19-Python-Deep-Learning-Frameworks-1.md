@@ -1,7 +1,7 @@
 ---
 published: true
 title: Python Deep Learning Frameworks (1) - Introduction
-categories: [Deep Learning, Nervana Neon, Python, PyTorch, TensorFlow]
+categories: [Deep Learning, Python, PyTorch, TensorFlow, Theano]
 ---
 ![deep learning](/assets/images/deep_learning.jpeg?raw=true)
 
