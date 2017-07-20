@@ -9,7 +9,7 @@ categories: [Deep Learning, Nervana Neon, Python, PyTorch, TensorFlow]
 
 
 ## Objective
-The objective of this post is document the installation process for Neon, PyTorch, and TensorFlow. Installation notes and tips to make the installation smooth are included. Lastly, an assessment of the relative difficulty of installing each deep learning framework is contained within for comparison purposes. 
+The objective of this post is document the installation process for PyTorch, TensorFlow, and Theano. Installation notes and tips to make the installation smooth are included. Lastly, an assessment of the relative difficulty of installing each deep learning framework is contained within for comparison purposes. 
 
 ## Requirements
 I'm going to make some key assumptions to keep this post as brief as possible. In particular, I'm assuming you:
@@ -25,33 +25,6 @@ I'm going to make some key assumptions to keep this post as brief as possible. I
 Linux users will have to make a few adjustments; see the docs. Windows users, I'm sorry but you're on your own. 
 
 ## Installation 
-
-### Neon (version 2.0.0)
-Source installation instructions can be found [here](http://neon.nervanasys.com/docs/latest/installation.html) but here are the steps you need to know to get up and running:
-1. `conda create --name neon pip`
-2. `source activate neon`
-3. `git clone https://github.com/NervanaSystems/neon.git`
-4. `cd neon && make sysinstall`
-
-1. Install the [Math Kernel Library](https://software.intel.com/en-us/mkl). *Might not be required.*
-2. Set Intel library versions as default: `conda config --add channels intel`
-3. Create Intel conda environment: `conda create -n intel intelpython3_full python=3`
-4. Activate Intel conda env: `source activate intel`
-5. Install conda dependencies: `conda install h5py pkg-config`
-6. Install special dependency for audio/videos: `conda install -c menpo ffmpeg`
-7. Install special dependency for images: `conda install -c menpo opencv3` - THIS DOESN'T WORK, NEED TO FIX
-8. Install pip dependencies: `pip install pyaml`
-9. Install Neon: `git clone https://github.com/NervanaSystems/neon.git`
-10. Configure Neon: `cd neon && make sysinstall`
-11. Test installation: `python examples/mnist_mlp.py -b mkl` or `neon examples/mnist_mlp.yaml`
-
-**Fix: MKL backend not working.**
-
-As an aside, if you're not sure which libraries are installed, do the following:
-- Check your conda libraries `conda list`  
-- Check your pip libraries `pip freeze` 
-
-Notes: MKL backend didn't work out of the box
 
 ### PyTorch (version 0.1.12)
 Source installation instructions can be found [here](http://pytorch.org/) but here are the steps you need to know to get up and running:
@@ -71,5 +44,17 @@ Here are the steps you need to know to get up and running:
 
 Notes: Dead simple w/Anaconda. Recommended install is virtualenv. Supports pip to install as well, so there are options which is nice. Using pip will come with degraded performance, though, because doesn't leverage hardware acceleration that gives better CPU performance. 
 
+### Theano (version 0.9)
+Source installation instructions can be found [here](http://deeplearning.net/software/theano/install_macos.html). Theano and its dependencies, one of which (pygpu) requires Python 2.7, can easily be installed with Anaconda like so:
+1. Create Theano conda environment: `conda create --name theano python=2.7`
+2. Activate Theano conda environment: `source activate theano`
+3. Install Theano dependencies: `conda install numpy scipy mkl nose sphinx pydot-ng`
+3. Install Theano: `conda install theano pygpu`
+
+### An Aside
+If you're not sure which libraries are installed, do the following:
+- Check your conda libraries `conda list`  
+- Check your pip libraries `pip freeze` 
+
 ## Results
-In my opinion, PyTorch is optimal because it uses conda as the recommended install process. So incredibly easy!
+All three were easy to install and configure with conda. Didn't run into any major issues. The only minor issues was the error I got with virtualenv with regards to TensorFlow, but using conda made the installation easy. Again, I focused on the CPU setup, forgoing the GPU side of things. 
