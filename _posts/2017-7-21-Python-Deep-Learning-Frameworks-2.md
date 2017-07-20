@@ -3,7 +3,7 @@ published: false
 title: Python Deep Learning Frameworks (2) - Installation
 categories: [Deep Learning, Nervana Neon, Python, PyTorch, TensorFlow]
 ---
-![](/assets/images/include.jpeg?raw=true)
+![](/assets/images/installing.jpeg?raw=true){: .center-image }
 
 ## Introduction
 This is the second post in a series looking at three leading deep learning frameworks in Python. As described in the last post, the overall goal is to assess each on a number of dimensions. In particular, in this post we will investigate the installation process of each framework.
