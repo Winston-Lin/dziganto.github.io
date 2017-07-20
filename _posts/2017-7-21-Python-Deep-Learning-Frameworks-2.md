@@ -41,7 +41,10 @@ To note is that I did not build this from source which would have leveraged hard
 Here are the steps you need to know to get up and running:
 1. Create TensorFlow conda environment: `conda create -n tensorflow`
 2. Activate TensorFlow conda environment: `source activate tensorflow`
-3. Install TensorFlow: `pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.2.1-py3-none-any.whl`
+3. Install TensorFlow: 
+```
+pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.2.1-py3-none-any.whl
+```
 
 **Notes:** Having options in how to install TensorFlow is great because odds are you're comfortable with at least one approach. That said, I chose to leverage pip which made installation a breeze. In just three steps I was able to install and configure TensorFlow without issue. Instead of pip I would have preferred leveraging conda for the install. For that reason I give PyTorch a slight edge from an installation perspective.  
 
