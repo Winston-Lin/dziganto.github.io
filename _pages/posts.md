@@ -4,11 +4,18 @@ permalink: /posts/
 author_profile: true
 ---
 
-**Posts**
+**POSTS**
 
 ---
-[Python Deep Learning Frameworks (1) - Introduction](https://dziganto.github.io/deep%20learning/nervana%20neon/python/pytorch/tensorflow/Python-Deep-Learning-Frameworks-1/)  
+### Getting The Job
 [How To Ace The Data Science Interview](https://dziganto.github.io/data%20science/interview/How-To-Ace-The-Data-Science-Interview/)  
+
+### Python
 [Faster Python - Tips & Tricks](https://dziganto.github.io/python/Faster-Python-Tips-And-Tricks/)  
+
+### Deep Learning
+[Python Deep Learning Frameworks (1) - Introduction](https://dziganto.github.io/deep%20learning/nervana%20neon/python/pytorch/tensorflow/Python-Deep-Learning-Frameworks-1/) 
+
+### Machine Learning Tips
 [HDF5 Or How I Learned To Love Data Compression And Partial I/O](https://dziganto.github.io/out-of-core%20computation/HDF5-Or-How-I-Learned-To-Love-Data-Compression-And-Partial-Input-Output/)  
 [Sparse Matrices For Efficient Machine Learning](https://dziganto.github.io/Sparse-Matrices-For-Efficient-Machine-Learning/)
