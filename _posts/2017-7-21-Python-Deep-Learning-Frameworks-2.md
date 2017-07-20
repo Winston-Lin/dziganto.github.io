@@ -55,7 +55,7 @@ Source installation instructions can be found [here](http://deeplearning.net/sof
 3. Install Theano dependencies: `conda install numpy scipy mkl nose sphinx pydot-ng`
 3. Install Theano: `conda install theano pygpu`
 
-**Notes:** Like PyTorch, everything is installed through conda which makes installation dead simple. My only gripe is that one of Theano's dependencies required Python 2.7. Definitely note a deal breaker but I prefer Python 3. For that reason, I give PyTorch and TensorFlow an edge.
+**Notes:** Like PyTorch, everything is installed through conda which makes installation dead simple. My only gripe is that one of Theano's dependencies required Python 2.7. Definitely not a deal breaker but I prefer Python 3. For that reason, I give PyTorch and TensorFlow an edge.
 
 ## An Aside
 If you're not sure which libraries you have installed, do the following:
@@ -65,4 +65,4 @@ If you're not sure which libraries you have installed, do the following:
 ## Summary
 All three were incredibly easy to install and configure; I didn't run into a single major issue. I give a slight edge to PyTorch for leveraging conda and Python 3. TensorFlow, in my opinion, runs a very close second because it builds with Python 3 but relies on pip instead of conda. Theano captures the third spot. It leverages conda for the installation process but requires Python 2.7 due to one of its dependencies. 
 
-All in all, the installation process was a breeze for all three frameworks. I say PyTorch > TensorFlow > Theano for the reasons mentioned above but keep in mind that the differences are minute. You really can't go wrong with any one of these from an installation perspective.
+All in all, the installation process was a breeze for all three frameworks. I say PyTorch > TensorFlow > Theano for the reasons mentioned above but keep in mind that the differences are minute. You really can't go wrong with any one of these.
