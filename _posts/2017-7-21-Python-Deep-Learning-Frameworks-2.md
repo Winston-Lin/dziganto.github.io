@@ -1,7 +1,7 @@
 ---
 published: false
 title: Python Deep Learning Frameworks (2) - Installation
-categories: [Deep Learning, Nervana Neon, Python, PyTorch, TensorFlow]
+categories: [Deep Learning, Python, PyTorch, TensorFlow, Theano]
 ---
 ![](/assets/images/installing.jpeg?raw=true){: .center-image }
 
