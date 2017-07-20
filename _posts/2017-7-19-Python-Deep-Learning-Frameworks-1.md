@@ -16,7 +16,7 @@ What I can say about **deep learning** that hasn't been said a thousand times al
 I'll wrap up the series with a full buildout in each framework of a deep reinforcment learning project, but more on that to come in the future.
 
 ## Objective
-The objective of this post is simply to introduce the three frameworks and to provide a roadmap of future work. 
+The objective of this post is simply to introduce the three frameworks and to provide a roadmap for future work. 
 
 ## The Deep Learning Frameworks
 The three deep learning frameworks that I'll investigate are:
