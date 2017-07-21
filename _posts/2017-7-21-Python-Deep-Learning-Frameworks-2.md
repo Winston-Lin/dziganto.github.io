@@ -34,7 +34,7 @@ Source installation instructions can be found [here](http://pytorch.org/) but he
 **Notes:** Installation through conda is the recommended approach. For this reason, setup couldn't be easier. Installation was fast, smooth, and dead simple. Three steps and PyTorch was installed and configured. It really doesn't get any easier than this. 
 
 ### TensorFlow (version 1.2)
-Source installation instructions can be found [here](https://www.tensorflow.org/install/install_mac). Tensorflow provides multiple options for installation: virtualenv (recommended), pip, Docker, and from source. The recommended approach is virtualenv but this caused errors on my machine. So as not to break any of my other open source software configurations, I used pip to install. 
+Source installation instructions can be found [here](https://www.tensorflow.org/install/install_mac). Tensorflow provides multiple options for installation: virtualenv, pip, Docker, and from source. The recommended approach is virtualenv but this caused errors on my machine. So as not to break any of my other open source software configurations, I used pip to install. 
 
 To note is that I did not build this from source which would have leveraged hardware acceleration. Therefore, CPU performance will be degraded somewhat. It's not a big deal from an installation perspective but it will have implications in the future when comparing performance.  
 
@@ -46,7 +46,7 @@ Here are the steps you need to know to get up and running:
 pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.2.1-py3-none-any.whl
 ```
 
-**Notes:** Having options with regards to installing TensorFlow is great because odds are you're comfortable with at least one approach. That said, I chose to leverage pip which made installation a breeze. In just three steps I was able to install and configure TensorFlow without issue. Would I have preferred conda instead of pip? Definitely. So for that reason I give PyTorch a very slight edge.  
+**Notes:** Having options with regards to installing TensorFlow is great because odds are you're comfortable with at least one approach. That said, I chose to leverage pip which made installation a breeze. In just three steps I was able to install and configure TensorFlow without issue. However, would I have preferred conda instead of pip? You bet. So for that reason I give PyTorch a very slight edge.  
 
 ### Theano (version 0.9)
 Source installation instructions can be found [here](http://deeplearning.net/software/theano/install_macos.html). Theano and its dependencies, one of which (pygpu) requires Python 2.7, can easily be installed with conda like so:
@@ -65,4 +65,4 @@ If you're not sure which libraries you have installed, do the following:
 ## Summary
 All three Python deep learning frameworks were incredibly easy to install and configure; I didn't run into a single major issue. I give a slight edge to PyTorch for leveraging conda and Python 3. TensorFlow, in my opinion, runs a very close second because it builds with Python 3 but relies on pip instead of conda. Theano captures the third spot. It leverages conda for the installation process but requires Python 2.7 due to one of its dependencies. 
 
-All in all, the installation process was a breeze for all three frameworks. I say PyTorch > TensorFlow > Theano for the reasons mentioned above but keep in mind that the differences are minuscule.
+All in all, the installation process was a breeze for all three frameworks. I say PyTorch > TensorFlow > Theano for the reasons mentioned above but keep in mind that the differences are minuscule. 
