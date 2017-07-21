@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Python Deep Learning Frameworks (2) - Installation
 categories: [Deep Learning, Python, PyTorch, TensorFlow, Theano]
 ---
