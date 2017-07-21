@@ -14,7 +14,8 @@ author_profile: true
 [Faster Python - Tips & Tricks](https://dziganto.github.io/python/Faster-Python-Tips-And-Tricks/)  
 
 ### Deep Learning
-[Python Deep Learning Frameworks (1) - Introduction](https://dziganto.github.io/deep%20learning/nervana%20neon/python/pytorch/tensorflow/Python-Deep-Learning-Frameworks-1/) 
+[Python Deep Learning Frameworks (1) - Introduction](https://dziganto.github.io/deep%20learning/python/pytorch/tensorflow/theano/Python-Deep-Learning-Frameworks-1/)  
+[Python Deep Learning Frameworks (2) - Installation](https://dziganto.github.io/deep%20learning/python/pytorch/tensorflow/theano/Python-Deep-Learning-Frameworks-2/)
 
 ### Machine Learning Tips
 [HDF5 Or How I Learned To Love Data Compression And Partial I/O](https://dziganto.github.io/out-of-core%20computation/HDF5-Or-How-I-Learned-To-Love-Data-Compression-And-Partial-Input-Output/)  
