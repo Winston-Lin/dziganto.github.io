@@ -6,7 +6,7 @@ categories: [Deep Learning, Python, PyTorch, TensorFlow, Theano]
 ![](/assets/images/installing.jpeg?raw=true){: .center-image }
 
 ## Introduction
-This is the second post in a series looking at three leading deep learning frameworks in Python. As described in the last post, the overall goal is to assess each on a number of dimensions. In this post we will investigate the installation process.
+This is the second post in a series looking at three leading deep learning frameworks in Python. As described in the last post [Python Deep Learning Frameworks (1) - Introduction](https://dziganto.github.io/deep%20learning/python/pytorch/tensorflow/theano/Python-Deep-Learning-Frameworks-1/), the overall goal is to assess each on a number of dimensions. In this post we will investigate the installation process.
 
 ## Objective
 The objective of this post is to document the installation process for PyTorch, TensorFlow, and Theano. An assessment of the relative difficulty of installing each deep learning framework is included at the end for comparison purposes. 
