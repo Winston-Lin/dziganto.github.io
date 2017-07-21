@@ -9,17 +9,17 @@ categories: [Deep Learning, Python, PyTorch, TensorFlow, Theano]
 This is the second post in a series looking at three leading deep learning frameworks in Python. As described in the last post, the overall goal is to assess each on a number of dimensions. In this post we will investigate the installation process.
 
 ## Objective
-The objective of this post is document the installation process for PyTorch, TensorFlow, and Theano. An assessment of the relative difficulty of installing each deep learning framework is included at the end for comparison purposes. 
+The objective of this post is to document the installation process for PyTorch, TensorFlow, and Theano. An assessment of the relative difficulty of installing each deep learning framework is included at the end for comparison purposes. 
 
 ## Requirements
 I'm going to make some key assumptions to keep this post as brief as possible. In particular, I'm assuming you:
 
 1. Are using a Mac
-2. Have [Anaconda](https://www.continuum.io/downloads) with Python 3.5+ installed
-3. Have updated conda with `conda update conda`
-4. Updated all libraries with `conda update --all`
-5. Have Pip installed
-6. Have [Homebrew](https://brew.sh/) installed
+2. Have installed [Anaconda](https://www.continuum.io/downloads) with Python 3.5+
+3. Have updated conda with: `conda update conda`
+4. Updated all libraries with: `conda update --all`
+5. Have installed Pip
+6. Have installed [Homebrew](https://brew.sh/)
 7. Have administrator privileges
 
 ## Installation 
@@ -46,7 +46,7 @@ Here are the steps you need to know to get up and running:
 pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.2.1-py3-none-any.whl
 ```
 
-**Notes:** Having options in how to install TensorFlow is great because odds are you're comfortable with at least one approach. That said, I chose to leverage pip which made installation a breeze. In just three steps I was able to install and configure TensorFlow without issue. Instead of pip I would have preferred leveraging conda for the install. For that reason I give PyTorch a slight edge from an installation perspective.  
+**Notes:** Having options with regards to installing TensorFlow is great because odds are you're comfortable with at least one approach. That said, I chose to leverage pip which made installation a breeze. In just three steps I was able to install and configure TensorFlow without issue. Would I have preferred conda instead of pip? Definitely. So for that reason I give PyTorch a very slight edge.  
 
 ### Theano (version 0.9)
 Source installation instructions can be found [here](http://deeplearning.net/software/theano/install_macos.html). Theano and its dependencies, one of which (pygpu) requires Python 2.7, can easily be installed with conda like so:
@@ -55,7 +55,7 @@ Source installation instructions can be found [here](http://deeplearning.net/sof
 3. Install Theano dependencies: `conda install numpy scipy mkl nose sphinx pydot-ng`
 3. Install Theano: `conda install theano pygpu`
 
-**Notes:** Like PyTorch, everything is installed through conda which makes installation dead simple. My only gripe is that one of Theano's dependencies required Python 2.7. Definitely not a deal breaker but I prefer Python 3. For that reason, I give PyTorch and TensorFlow an edge.
+**Notes:** Like PyTorch, everything is installed through conda which makes installation dead simple. My only gripe is that one of Theano's dependencies requires Python 2.7. Definitely not a deal breaker but I prefer Python 3. For that reason, I give PyTorch and TensorFlow the edge.
 
 ## An Aside
 If you're not sure which libraries you have installed, do the following:
@@ -63,6 +63,6 @@ If you're not sure which libraries you have installed, do the following:
 - Check your pip libraries: `pip freeze` 
 
 ## Summary
-All three were incredibly easy to install and configure; I didn't run into a single major issue. I give a slight edge to PyTorch for leveraging conda and Python 3. TensorFlow, in my opinion, runs a very close second because it builds with Python 3 but relies on pip instead of conda. Theano captures the third spot. It leverages conda for the installation process but requires Python 2.7 due to one of its dependencies. 
+All three Python deep learning frameworks were incredibly easy to install and configure; I didn't run into a single major issue. I give a slight edge to PyTorch for leveraging conda and Python 3. TensorFlow, in my opinion, runs a very close second because it builds with Python 3 but relies on pip instead of conda. Theano captures the third spot. It leverages conda for the installation process but requires Python 2.7 due to one of its dependencies. 
 
-All in all, the installation process was a breeze for all three frameworks. I say PyTorch > TensorFlow > Theano for the reasons mentioned above but keep in mind that the differences are minute. You really can't go wrong with any one of these.
+All in all, the installation process was a breeze for all three frameworks. I say PyTorch > TensorFlow > Theano for the reasons mentioned above but keep in mind that the differences are minuscule.
