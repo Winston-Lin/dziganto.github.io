@@ -7,7 +7,7 @@ author_profile: true
 **POSTS**
 
 ---
-### Getting The Job
+### General
 [How To Ace The Data Science Interview](https://dziganto.github.io/data%20science/interview/How-To-Ace-The-Data-Science-Interview/)  
 
 ### Python
