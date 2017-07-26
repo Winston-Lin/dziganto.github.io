@@ -24,7 +24,7 @@ Now that you know the difference between offline and online learning, you may be
 # Implementing With Scikit-Learn
 You can tackle both classification and regression problems with online learning. Additionally, there are a variety of loss functions, regularization options, and other hyperparameters for the choosing. To keep this brief, I'll walk you through a regression example using robust regression with L2 regularization. 
 
->If you're interested in implementing Ordinary Least Square or in implementing Support Vector Machines or Logistic Regression for classification problems, see my notebook [here](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Online_Learning.ipynb) for details.
+>If you're interested in implementing Ordinary Least Squares or in implementing Support Vector Machines or Logistic Regression for classification problems, see my notebook [here](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Online_Learning.ipynb) for details.
 
 Scikit-learn comes with a number of canonical datasets. We'll use the [Boston](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston) dataset here. 
 
@@ -90,10 +90,18 @@ The RMSE turns out to be a little better for this robust regressor as opposed to
 That's it. Pretty painless.
 
 # What's Next?
-This is just the tip of the iceburg. In a future post, we'll pair up online learning with something called out-of-core computation, all in the PyData stack. This will allow us to build models on data that is too large for memory yets fits on disk. The great part about this is that we can build models on large datasets without having to resort to new tools, new computing architectures, or massive code revamps.
+This is just the tip of the iceburg. In a future post, we'll pair up online learning with something called out-of-core computation, all in the PyData stack. This will allow us to build models on data that is too large to fit in memory yet fits on disk. The great part about this is that we can build models on large datasets without having to resort to new tools, new computing architectures, or massive code revamps.
 
 # Summary
-In this post, I introduced online learning, constrasted it with offline or batch learning, described its typical use cases, and showed how to implement it in Scikit-learn. What should you take away from this? Online learning is a powerful tool you can use to tackle problems that may have been previously beyond your reach. For example, by pairing this approach with another called out-of-core that I'll present in a future post, we can tackle data too big for memory. Additionally, online learning is data efficient and highly adapatable to changing data distributions in real-time, which is just another name for streaming analytics. 
+In this post, I introduced online learning, constrasted it with offline or batch learning, described its typical use cases, and showed you how to implement it in Scikit-learn. 
+
+What should you take away from this post? Online learning is a powerful tool you can now use to tackle problems that may have previously been beyond your reach. 
+
+---
+
+Stay tuned because in a future post I'll pair online learning with something called out-of-core methods to tackle data too big to fit in memory.
+
+---
 
 # Resources
 [CILVR Lab @ NYU](http://cilvr.cs.nyu.edu/doku.php?id=courses:bigdata:slides:start)  
