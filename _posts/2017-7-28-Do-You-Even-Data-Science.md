@@ -15,7 +15,7 @@ Four simple words that when uttered in sequence conjure fierce and ceaseless deb
 
 Run a Google search. You'll find loads of responses. In fact, you can spend an hour, an afternoon, or probably even a week engrossed in this mind numbing task. 
 
-And it never ends. It seems every week there's a new post about what a data scientist is and what a data scientist is not. Some weeks you have to be an expert in statistics and others you have to know Scala. Some weeks you have to be an expert in software development, machine learning, big data technologies, and visualization tools. And some weeks you have to actually know how to talk to people and clearly articulate your ideas in addition to all the other technical skills. Every week I read these posts, and every week I cringe. 
+And it never ends. It seems every week there's a new post about what a data scientist is and what a data scientist is not. Some weeks you have to be an expert in Statistics and others you have to know Scala. Some weeks you have to be an expert in software development, machine learning, big data technologies, and visualization tools. And some weeks you have to actually know how to talk to people and clearly articulate your ideas in addition to all the other technical skills. Every week I read these posts, and every week I cringe. 
 
  ## The Myth of Boxes
  ![boxes](/assets/images/boxes.jpg?raw=true){: .center-image }  
@@ -31,9 +31,9 @@ This is lazy thinking, a mental shortcut if you will. To assume everyone must ha
 ![spectrum](/assets/images/spectrum.png?raw=true){: .center-image }  
 Credit: [GRlMGOR on DeviantArt](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Ffc04.deviantart.net%2Ffs26%2Fi%2F2008%2F092%2F5%2Fe%2FSpectrum_by_GRlMGOR.png&f=1){: .center-image }
 
-Rather than focusing on who we should admit to our special club and who we should exclude, let's focus on how to bring more people into the fold. Rather than arguing about which algorithms, which tools, and which programming languages someone should know, let's focus our energy on real problems. 
+Rather than focusing on who we should admit into our special club and who we should exclude, let's focus on how to bring more people into the fold. Rather than arguing about which algorithms, which tools, and which programming languages someone should know, let's focus our energy on real problems. 
 
-People are not boxes. People don't magically morph from non data scientist to data scientist. **It's not quantum; it's spectral.**
+Because people are not boxes. People don't magically morph from non data scientist to data scientist. **It's not quantum; it's spectral.**
 
 Let me say that again: 
 > Data science is a spectrum. 
@@ -50,7 +50,7 @@ Credit: [Wikipedia](https://en.wikipedia.org/wiki/Scientific_method){: .center-i
 Fundamentally data science is just a rebranding of this idea. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. Advances in math and science are the driving force behind the innovations you see around you everyday. Siri? Credit math and science. That new, razor-thin, super duper high-definition tv? Math and science. That super computer that fits neatly in your pocket that you call a cell phone? Math and science. Convolutional neural networks? Yup, math and science.
 
 ## Now What?
-Here's the thing: regardless of your current skill set, you can learn, share, and contribute. It doesn't matter if you're new to programming or wrote your own language. It doesn't matter if you haven't taken a stats class in a decade or you teach it. It doesn't matter if you're a high school dropout or a PhD. It doesn't matter your gender or your race or anything else for that matter. All that matters is that you take that next step. Take that free Python or stats course on [Coursera](https://www.coursera.org/) or [edX](https://www.edx.org/). Read a blog. Go to a Meetup. Get involved. 
+Here's the thing: regardless of your current skill set, you can learn, share, and contribute to data science. It doesn't matter if you're new to programming or wrote your own language. It doesn't matter if you haven't taken a stats class in a decade or you teach it. It doesn't matter if you're a high school dropout or a PhD. It doesn't matter your gender or your race or anything else for that matter. All that matters is that you take that next step. Take that free Python or stats course on [Coursera](https://www.coursera.org/) or [edX](https://www.edx.org/). Read a blog. Go to a Meetup. Get involved. 
 
 I'll leave you with this famous quote from Mark Twain:
 >“The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.”
