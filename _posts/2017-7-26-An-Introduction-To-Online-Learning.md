@@ -90,7 +90,7 @@ The RMSE turns out to be a little better for this robust regressor as opposed to
 That's it. Pretty painless.
 
 # What's Next?
-This is just the tip of the iceburg. In a future post, we'll pair up online learning with something called out-of-core methods, all in the PyData stack. This will allow us to build models on data that is too large to fit in memory yet fits on disk. The great part about this is that we can build models on large datasets without having to resort to new tools, new computing architectures, or massive code revamps.
+This is just the tip of the iceburg. In a future post, we'll pair up online learning with something called out-of-core computation, all in the PyData stack. This will allow us to build models on data that is too large to fit in memory yet fits on disk. The great part about this is that we can build models on large datasets without having to resort to new tools, new computing architectures, or massive code revamps.
 
 # Summary
 In this post, I introduced online learning, constrasted it with offline or batch learning, described its typical use cases, and showed you how to implement it in Scikit-learn. 
@@ -99,7 +99,7 @@ What should you take away from this post? Online learning is a powerful tool you
 
 ---
 
-Stay tuned because in a future post I'll pair online learning with something called out-of-core methods to tackle data too big to fit in memory.
+Stay tuned because in a future post I'll pair online learning with something called out-of-core computation to tackle data too big to fit in memory.
 
 ---
 
