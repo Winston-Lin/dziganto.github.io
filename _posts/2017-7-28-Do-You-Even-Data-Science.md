@@ -15,7 +15,7 @@ Four simple words that when uttered in sequence conjure fierce and ceaseless deb
 
 Run a Google search. You'll find loads of responses. In fact, you can spend an hour, an afternoon, or probably even a week engrossed in this mind numbing task. 
 
-And it never ends. It seems every week there's a new post about what a data scientist is and what a data scientist is not. Some weeks you have to be an expert in statistics and others you have to know Scala. Some weeks you have to be an expert in software development, machine learning, big data technologies, and visualization tools. And some weeks you have to actually know how to talk to people and clearly articulate your ideas in addition to all the other technical skills. Every week I read these posts and every week I cringe. 
+And it never ends. It seems every week there's a new post about what a data scientist is and what a data scientist is not. Some weeks you have to be an expert in statistics and others you have to know Scala. Some weeks you have to be an expert in software development, machine learning, big data technologies, and visualization tools. And some weeks you have to actually know how to talk to people and clearly articulate your ideas in addition to all the other technical skills. Every week I read these posts, and every week I cringe. 
 
  ## The Myth of Boxes
  ![boxes](/assets/images/boxes.jpg?raw=true){: .center-image }  
@@ -52,4 +52,5 @@ Fundamentally data science is just a rebranding of this idea. Sure, we use fancy
 ## Now What?
 Here's the thing: regardless of your current skill set, you can learn, share, and contribute. It doesn't matter if you're new to programming or wrote your own language. It doesn't matter if you haven't taken a stats class in a decade or you teach it. It doesn't matter if you're a high school dropout or a PhD. It doesn't matter your gender or your race or anything else for that matter. All that matters is that you take that next step. Take that free Python or stats course on [Coursera](https://www.coursera.org/) or [edX](https://www.edx.org/). Read a blog. Go to a Meetup. Get involved. 
 
->“The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.” - Mark Twain
+I'll leave you with this famous quote from Mark Twain:
+>“The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.”
