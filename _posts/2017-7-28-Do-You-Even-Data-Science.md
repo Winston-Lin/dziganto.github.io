@@ -52,7 +52,7 @@ Fundamentally data science is just a rebranding of this idea. Sure, we use fancy
 ## Now What?
 Here's the thing: regardless of your current skill set, you can learn, share, and contribute to data science. It doesn't matter if you're new to programming or wrote your own language. It doesn't matter if you haven't taken a stats class in a decade or you teach it. It doesn't matter if you're a high school dropout or a PhD. It doesn't matter your gender or your race or anything else for that matter. All that matters is that you take that next step. Take that free Python or stats course on [Coursera](https://www.coursera.org/) or [edX](https://www.edx.org/). Read a blog. Go to a Meetup. Get involved. 
 
-I'll leave you with two things: 
+Finally, I'll leave you with two items: 
 1. A great [article](https://brohrer.github.io/one_step_program_become_data_scientist.html) by Brandon Rohrer about how to become a data scientist
 2. A famous quote from Mark Twain:
 >“The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.”
