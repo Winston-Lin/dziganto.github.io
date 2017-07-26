@@ -31,7 +31,7 @@ This is lazy thinking - a mental shortcut if you will. To assume everyone must h
 ![spectrum](/assets/images/spectrum.png?raw=true){: .center-image }  
 Credit: [GRlMGOR on DeviantArt](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Ffc04.deviantart.net%2Ffs26%2Fi%2F2008%2F092%2F5%2Fe%2FSpectrum_by_GRlMGOR.png&f=1){: .center-image }
 
-Rather than focusing on who we should admit into our special club and who we should exclude, let's focus on how to bring more people into the fold. Rather than arguing about which algorithms, which tools, and which programming languages someone should know, let's focus our energy on real problems. 
+Rather than focusing on who we should admit into our special club and who we should exclude, let's focus on how to bring more people into the fold. And rather than arguing about which algorithms, which tools, and which programming languages someone should know, let's focus our energy on real problems. 
 
 Because people are not boxes. People don't magically morph from non data scientist to data scientist. **It's not quantum; it's spectral.**
 
