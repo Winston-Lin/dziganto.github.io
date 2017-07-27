@@ -1,6 +1,6 @@
 ---
 published: true
-title: An Introduction To Online Learning
+title: An Introduction To Online Machine Learning
 categories: [Data Science, Online Learning, Python, Scikit-learn]
 ---
 ![](/assets/images/data-stream.jpg?raw=true){: .center-image }
