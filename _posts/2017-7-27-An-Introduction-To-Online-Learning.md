@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: An Introduction To Online Learning
 categories: [Data Science, Online Learning, Python, Scikit-learn]
 ---
