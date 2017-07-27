@@ -1,7 +1,7 @@
 ---
 published: false
 title: An Introduction To Online Learning
-categories: [Online Learning, Python, Scikit-learn]
+categories: [Data Science, Online Learning, Python, Scikit-learn]
 ---
 ![](/assets/images/data-stream.jpg?raw=true){: .center-image }
 
@@ -14,19 +14,20 @@ My objective in this post is to introduce you to online learning, describe its u
 # Offline vs Online Learning
 So what differentiates offline and online learning? In the simplest sense, offline learning is an approach that ingests all the data at one time to build a model whereas online learning is an approach that ingests data one observation at a time. There's a perfect one-to-one analogy here for those familiar with [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent). Offline learning, also known as batch learning, is akin to batch gradient descent. Online learning, on the other hand, is the analog of stochastic gradient descent. In fact, as we'll see, implementing online learning in Scikit-learn will utilize stochastic gradient descent with a variety of loss functions to create online learning versions of algorithms like logistic regression and support vector machines. There's more to online learning, though.
 
-Online learning is data efficient and adaptable. Online learning is data efficient because once data has been consumed it is no longer required. Technically, this means you don't have to store your data. Online learning is adapatable because it makes no assumption about your data distribution. As your data distribution morphs and/or drifts, due to say changing customer behavior, the model can adapt on-the-fly to keep pace with trends in real-time. In order to do something similar with offline learning you'd have to create a sliding window of your data and retrain every time. And if you've been paying attention, you surely noticed that you can use this methodology to do streaming analytics. A powerful tool indeed!
+Online learning is data efficient and adaptable. Online learning is data efficient because once data has been consumed it is no longer required. Technically, this means you don't have to store your data. Online learning is adapatable because it makes no assumption about the distribution of your data. As your data distribution morphs or drifts, due to say changing customer behavior, the model can adapt on-the-fly to keep pace with trends in real-time. In order to do something similar with offline learning you'd have to create a sliding window of your data and retrain every time. And if you've been paying attention, you surely noticed that you can use this methodology to do streaming analytics. 
 
 # Online Learning Use Cases
 Now that you know the difference between offline and online learning, you may be wondering when to consider the latter. Simply put, consider online learning when:
 1. Your data doesn't fit into memory
-2. You expect your data distribution to morph and/or drift over time
+2. You expect the distribution of your data to morph or drift over time
+3. Your data is a function of time (e.g. stock prices)
 
 # Implementing With Scikit-Learn
 You can tackle both classification and regression problems with online learning. Additionally, there are a variety of loss functions, regularization options, and other hyperparameters for the choosing. To keep this brief, I'll walk you through a regression example using robust regression with L2 regularization. 
 
 >If you're interested in implementing Ordinary Least Squares or in implementing Support Vector Machines or Logistic Regression for classification problems, see my notebook [here](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Online_Learning.ipynb) for details.
 
-Scikit-learn comes with a number of canonical datasets. We'll use the [Boston](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston) dataset here. 
+Scikit-learn comes with a number of canonical datasets. We'll use the [Boston](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston) dataset. 
 
 Step 1 - Import the necessary libraries:
 ```
@@ -42,7 +43,7 @@ Step 2 - Load the data:
 boston = load_boston()
 ```
 
-Step 3 - Split data into training and test sets:
+Step 3 - Split the data into training and test sets:
 ```
 X_train_boston, X_test_boston, y_train_boston, y_test_boston = train_test_split(boston.data,
                                                                                 boston.target,
