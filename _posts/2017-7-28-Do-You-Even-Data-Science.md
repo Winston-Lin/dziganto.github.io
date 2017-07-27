@@ -8,7 +8,7 @@ Credit: [Flickr](https://images.duckduckgo.com/iu/?u=https%3A%2F%2Ffarm3.staticf
 
 ## What is a Data Scientist?
 
-Four simple words that when uttered in sequence conjure fierce and ceaseless debate. You're likely to hear things like:
+Five simple words that when uttered in sequence conjure fierce and ceaseless debate. You're likely to hear things like:
 - *"A data scientist is someone who is better at statistics than any software engineer and better at software engineering than any statistician."* 
 - *"A data scientist is someone with math and stats knowledge, domain expertise, and hacking skills."* 
 - *"A data scientist is a statistician who lives in San Francisco."* 
@@ -40,7 +40,7 @@ Let me say that again:
 
 Let that sink in. Seriously. 
 
-If and where an organization draws the line is its prerogative. Some organizations have clear skills needs while others are more fuzzy. Some organizations distinguish data scientists at different levels with adjectives like *junior* or *principal* while some organizations don't even confer the title data scientist, though individuals surely do data science there. 
+Where or if an organization draws the line is its prerogative. Some organizations have clear needs with regards to skills while others are more fuzzy. Some organizations distinguish data scientists at different levels with adjectives like *junior* or *principal* while some organizations don't even confer the title data scientist, though individuals surely do data science there. 
 
 You needn't get bogged down in this. The crucial component is this thing called the Scientific Method. If you're using its ideas to quantitatively drive your decisions, then you're doing some level of data science. Doesn't matter if you're generating a report of descriptive statistics or developing a bleeding edge machine learning algorithm in the lab.   
 
