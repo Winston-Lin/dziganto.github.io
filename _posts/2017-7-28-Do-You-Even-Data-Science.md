@@ -49,7 +49,7 @@ Credit: [Wikipedia](https://en.wikipedia.org/wiki/Scientific_method){: .center-i
 
 Fundamentally data science is just a rebranding of this idea. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. Advances in math and science are the driving force behind the innovations you see around you everyday. 
 
-Siri? Credit math and science. That new, razor-thin, super duper high-definition tv? Math and science. That super computer that fits neatly in your pocket that you call a cell phone? Math and science. Convolutional neural networks? Yup, math and science.
+Siri? Credit math and science. That new, razor-thin, super-duper high-definition tv? Math and science. That super computer that fits neatly in your pocket that you call a cell phone? Math and science. Convolutional neural networks? Yup, math and science.
 
 ## Now What?
 Here's the thing: regardless of your current skill set, you can learn, share, and contribute to data science. It doesn't matter if you're new to programming or wrote your own language; whether you haven't taken a stats class in a decade or you teach it; whether you're a high school dropout or a PhD. It doesn't matter your gender or your race or anything else for that matter. All that matters is that you take that next step. Take that free Python or Stats course on [Coursera](https://www.coursera.org/) or [edX](https://www.edx.org/). Read a blog. Go to a Meetup. Get involved. 
