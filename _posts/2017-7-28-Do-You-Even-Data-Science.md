@@ -55,7 +55,7 @@ If you're new to data science, don't fret. Just get started. It doesn't even rea
 
 And if you're a grizzled veteran, share your expertise by blogging, creating tutorials, speaking locally, mentoring newcomers, or contributing in whatever way makes sense for you. 
 
-Regardless of your current skill set, regardless of you gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling. There's room for everyone. 
+The big takeaway is that regardless of your current skill set, regardless of you gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling. There's room for everyone. 
 
 I'll leave you with two items: 
 1. A great [article](https://brohrer.github.io/one_step_program_become_data_scientist.html) by Brandon Rohrer about how to become a data scientist that I couldn't agree with more
