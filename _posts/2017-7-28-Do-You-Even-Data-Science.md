@@ -41,14 +41,12 @@ Let that sink in. Seriously.
 
 Where or if an organization draws the line is its prerogative. Some organizations have clear needs with regards to skills while others are more fuzzy. Some organizations distinguish data scientists of varying skill with adjectives like *junior* or *principal* while some organizations don't even confer the title data scientist, though individuals surely do data science there. 
 
-You needn't get bogged down in this. The crucial component is this thing called the Scientific Method. If you're using its ideas to quantitatively drive your decisions, then you're doing some level of data science. Doesn't matter if you're generating a report of descriptive statistics or developing a bleeding edge machine learning algorithm in the lab.   
+You needn't get bogged down in this. The crucial component is this thing called the Scientific Method. If you use it to quantitatively drive your decisions, then you're doing some level of data science. Doesn't matter if you're generating a report of descriptive statistics or developing a bleeding edge machine learning algorithm in the lab.   
 
 ![scientific method](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Scientific_Method_as_an_Ongoing_Process.svg/900px-The_Scientific_Method_as_an_Ongoing_Process.svg.png){: .center-image }
 Credit: [Wikipedia](https://en.wikipedia.org/wiki/Scientific_method){: .center-image }
 
-Fundamentally data science is just a rebranding of this idea. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. Advances in math and science are the driving force behind the innovations you see around you everyday. 
-
-Siri? Credit math and science. That new, razor-thin, super-duper high-definition tv? Math and science. That super computer that fits neatly in your pocket that you call a cell phone? Math and science. Convolutional neural networks? Yup, math and science.
+Ever look at a data science pipeline? It usually goes something like this: ask a question, generate some hypotheses, collect data, see if any of your hypotheses have merit, make refinements, and repeat. Hmm, sounds an awful lot like the Scientific Method. Maybe this term *data science* is really just a rebranding of this idea. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. It's just math and science at the core. 
 
 ## Now What?
 If you're new to data science, don't fret. Just get started. It doesn't even really matter where. Want to learn Python? Dip your toe by taking that introductory class. Curious about Statistics? Watch Khan Academy videos. Want to learn from those in the know? Read a blog. Go to a Meetup. Get involved.  
