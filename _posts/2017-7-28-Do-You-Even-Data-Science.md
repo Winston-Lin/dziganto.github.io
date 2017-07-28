@@ -21,7 +21,7 @@ And it never ends. It seems every week there's a new post about what a data scie
  ![boxes](/assets/images/boxes.jpg?raw=true){: .center-image }  
  Credit: [movingboxestoronto](http://www.movingboxestoronto.net/portals/562/images/maintenance.jpg){: .center-image }
  
-Maybe it's human nature or maybe it's an ego thing but these posts revolve around this idea that you can place people into metaphorical boxes. One box is labeled **Not Data Scientist** and the other **Data Scientist**. Where and how you decide to draw the line determines which people go into which boxes. 
+Maybe it's human nature or maybe it's elitism but these posts revolve around this idea that you can place people into metaphorical boxes. One box is labeled **Not Data Scientist** and the other **Data Scientist**. Where and how you decide to draw the line determines which people go into which boxes. 
 
 With that in mind, allow me to propose an unoriginal idea: that one's experiences bias one's worldview. For example, I am a visual and kinesthetic learner, have to build everything from scratch to truly understand it, have a Master's degree from a highly regarded university, and prefer to work alone initially on a new project until I've fleshed out my own ideas and am ready to share with the group. Therefore, it's easy for me to assume every data scientist is highly visual and kinesthetic. It's easy for me to assume every data scientist should build everything from scratch. It's easy for me to assume every data scientist should have a Master's or PhD from a reputable university. It's easy to assume every data scientist should flesh out their own ideas before collaborating. I mean, I'm a data scientist. I know what it takes. Right?
 
