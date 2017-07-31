@@ -15,7 +15,7 @@ Five simple words that when uttered in sequence conjure fierce and ceaseless deb
 
 Run a Google search. You'll find innumerable opinions on the matter. In fact, you can spend an hour, an afternoon, or probably even a week engrossed in this mind numbing task. 
 
-And it never ends. It seems every week there's a new post delineating what a data scientist *is* and what a data scientist *is not*. Some weeks you have to be an expert in Statistics and others you have to know Scala. Some weeks you have to be an expert in software development, machine learning, big data technologies, and visualization tools. And some weeks you have to actually know how to talk to people and clearly articulate your ideas in addition to all the other technical skills. Every week I read these posts, and every week I cringe. 
+And it never ends. It seems every week there's a new post delineating what a data scientist *is* and what a data scientist *is not*. Some weeks you have to be an expert in Statistics and others you have to know Scala. Some weeks you have to be an expert in software development, machine learning, big data technologies, and visualization tools. And some weeks you have to actually know how to talk to people and clearly articulate your ideas, in addition to all the other technical skills. Every week I read these posts, and every week I cringe. 
 
  ## The Myth of Boxes
  ![boxes](/assets/images/boxes.jpg?raw=true){: .center-image }  
@@ -40,7 +40,7 @@ Rather than focusing on who we should admit into our special little club and who
 Because people are not boxes. People don't magically morph from **Not Data Scientist** to **Data Scientist**. 
 >It's not quantum; it's spectral.
 
-Let me say that again: **Data science is a spectrum.** 
+Let me say that again: **data science is a spectrum.** 
 
 Let that sink in. Seriously. 
 
@@ -53,7 +53,7 @@ Ever look at a data science pipeline? It can take many fanciful forms but it usu
 5. Make refinements  
 6. Iterate
 
-Hmm, sounds an awful lot like the **Scientific Method**. Maybe this term *Data Scientist* is really just another name for someone who practices these ideas - a rebranding if you will. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. At the core we're just doing math and science. 
+Hmm, sounds an awful lot like the **Scientific Method**. Maybe this term *data scientist* is really just another name for someone who practices these ideas - a rebranding if you will. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. At the core we're just doing math and science. 
 
 In fact, if you leverage the Scientific Method to quantitatively drive your decisions, then I have news for you: you're absolutely doing some level of data science. Doesn't matter if you're generating a report of descriptive statistics for you boss, predicting the next trend on Twitter, or developing a bleeding edge machine learning algorithm in the lab.    
 
