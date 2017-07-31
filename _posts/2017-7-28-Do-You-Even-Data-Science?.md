@@ -34,8 +34,7 @@ This is lazy thinking, a mental shortcut. To assume everyone must share my exper
 
 Rather than focusing on who we should admit into our special little club and who we should exclude, let's focus on bringing more people into the fold. Instead of arguing about which algorithms, which tools, and which programming languages a *real* data scientist should know, let's focus our energy on real problems. 
 
-Because people are not boxes. People don't magically morph from **Not Data Scientist** to **Data Scientist**. 
->It's not quantum; it's spectral.
+Because people are not boxes. People don't magically morph from **Not Data Scientist** to **Data Scientist**. It's not quantum; it's spectral.
 
 Let me say that again: **data science is a spectrum.** 
 
