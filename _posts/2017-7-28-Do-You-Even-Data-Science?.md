@@ -17,6 +17,7 @@ Run a Google search. You'll find innumerable opinions on the matter. In fact, yo
 And it never ends. It seems every week there's a new post delineating what a data scientist *is* and what a data scientist *is not*. Some weeks you have to be an expert in Statistics and others you have to know Scala. Some weeks you have to be an expert in software development, machine learning, big data technologies, and visualization tools. And some weeks you have to actually know how to talk to people and clearly articulate your ideas, in addition to all the other technical skills. Every week I read these posts, and every week I cringe. 
 
  ## The Myth of Boxes
+ 
  ![boxes](/assets/images/boxes.jpg?raw=true){: .center-image }  
  
 Maybe it's human nature or maybe it's elitism but these posts revolve around this idea that you can place people into metaphorical boxes. One is labeled **Data Scientist** and the other **Not Data Scientist**. Where and how you decide to draw the line determines which people go into which boxes. 
