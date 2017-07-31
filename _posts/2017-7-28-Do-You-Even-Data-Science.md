@@ -15,17 +15,17 @@ Five simple words that when uttered in sequence conjure fierce and ceaseless deb
 
 Run a Google search. You'll find innumerable opinions on the matter. In fact, you can spend an hour, an afternoon, or probably even a week engrossed in this mind numbing task. 
 
-And it never ends. It seems every week there's a new post about what a data scientist is and what a data scientist is not. Some weeks you have to be an expert in Statistics and others you have to know Scala. Some weeks you have to be an expert in software development, machine learning, big data technologies, and visualization tools. And some weeks you have to actually know how to talk to people and clearly articulate your ideas in addition to all the other technical skills. Every week I read these posts, and every week I cringe. 
+And it never ends. It seems every week there's a new post delineating what a data scientist is and what a data scientist is not. Some weeks you have to be an expert in Statistics and others you have to know Scala. Some weeks you have to be an expert in software development, machine learning, big data technologies, and visualization tools. And some weeks you have to actually know how to talk to people and clearly articulate your ideas in addition to all the other technical skills. Every week I read these posts, and every week I cringe. 
 
  ## The Myth of Boxes
  ![boxes](/assets/images/boxes.jpg?raw=true){: .center-image }  
  Credit: [movingboxestoronto](http://www.movingboxestoronto.net/portals/562/images/maintenance.jpg){: .center-image }
  
-Maybe it's human nature or maybe it's elitism but these posts revolve around this idea that you can place people into metaphorical boxes. One box is labeled **Not Data Scientist** and the other **Data Scientist**. Where and how you decide to draw the line determines which people go into which boxes. 
+Maybe it's human nature or maybe it's elitism but these posts revolve around this idea that you can place people into metaphorical boxes. One is labeled **Data Scientist** and the other **Not Data Scientist**. Where and how you decide to draw the line determines which people go into which boxes. 
 
 But why the discrepancies? 
 
-One possible explanation is that that one's experiences bias one's worldview. Let me clarify with an example. I have a Master's degree from a well-known univesity, have to build everything from scratch to truly understand it,  and prefer an even mix of working alone and collaborating with others. Therefore, it's easy for me to assume every data scientist should have a Master's or PhD from a reputable university. It's easy for me to assume every data scientist should build everything from scratch. And it's easy for me to assume every data scientist should work in exactly the same way as I do. I mean, I'm a data scientist. I know what it takes. Right?
+One possible explanation is that that one's experiences bias one's worldview. Let me clarify with an example. I have a Master's degree from a well-known university, have to build everything from scratch to truly understand it,  and prefer an even mix of working alone and collaborating with others. Therefore, it's easy for me to assume every data scientist should have a Master's or PhD from a reputable university. It's easy for me to assume every data scientist should build everything from scratch. And it's easy for me to assume every data scientist should work in exactly the same way as I do. I mean, I'm a data scientist. I know what it takes. Right?
 
 This is lazy thinking - a mental shortcut if you will. To assume everyone must share my experiences is myopic. Sure, it worked for me, but other data scientists have very different experiences. That's fine. That's normal. In fact, that's ideal because the world is chock full of difficult problems. Solutions aren't going to come from a homogeneous group. We need fresh ideas, open lines of communication, and inclusion. We need to shift our thinking.
 
@@ -42,21 +42,20 @@ Let me say that again: **Data science is a spectrum.**
 Let that sink in. Seriously. 
 
 ## Back To The Question
-Ever look at a data science pipeline? It can take many forms but it usually breaks down into something like this: ask a question, generate some hypotheses, collect data, see if any of your hypotheses have merit, make refinements, and repeat. Hmm, sounds an awful lot like the Scientific Method. Maybe this term *data scientist* is really just someone who practices these ideas - a rebranding if you will. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. At the core we're just doing math and science. 
+Ever look at a data science pipeline? It can take many forms but it usually breaks down into something like this: ask a question, generate some hypotheses, collect data, see if any of your hypotheses have merit, make refinements, and repeat. Hmm, sounds an awful lot like the Scientific Method. Maybe this term *data scientist* is really just another name for someone who practices these ideas - a rebranding if you will. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. At the core we're just doing math and science and then communicating our findings. 
 
-In fact, if you leverage the Scientific Method to quantitatively drive your decisions, then I have news for you: you're absolutely doing some level of data science. Doesn't matter if you're generating a report of descriptive statistics for you boss, predicting the next trend on Twitter, or developing a bleeding edge machine learning algorithm in the lab.    
+In fact, if you leverage the Scientific Method to quantitatively drive your decisions, then I have news for you: you're absolutely doing some level of data science - doesn't matter if you're generating a report of descriptive statistics for you boss, predicting the next trend on Twitter, or developing a bleeding edge machine learning algorithm in the lab.    
 
 ![scientific method](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Scientific_Method_as_an_Ongoing_Process.svg/900px-The_Scientific_Method_as_an_Ongoing_Process.svg.png){: .center-image }
 Credit: [Wikipedia](https://en.wikipedia.org/wiki/Scientific_method){: .center-image }
 
 ## Now What?
-If you're new to data science, don't fret. The trick is to get started. It doesn't even really matter where. Want to learn Python? Dip your toe in by taking that introductory class. Curious about Statistics? Check out Khan Academy videos. Want to learn from those in the know? Read a blog. Go to a Meetup. Get involved.  
+If you're new to data science, don't fret. Figuring out where to even start is daunting. But the dirty little secret that no one tells you is that there is no "right" place to start. Honestly, the trick is just getting started period. It doesn't even really matter where. Follow your interests. Want to learn Python? Dip your toe in by taking that introductory class. Curious about Statistics? Check out Khan Academy videos. Want to learn from those in the know? Read a blog. Go to a Meetup. Get involved.  
 
-And if you're a grizzled veteran, share your expertise by blogging, creating tutorials, speaking locally, mentoring newcomers, or contributing in whatever way makes sense for you. 
+And if you're a grizzled veteran, share your expertise. Blog, create tutorials, speak locally, mentor newcomers, or contribute in whatever way makes sense for you. 
 
-The big takeaway here is that regardless of your current skill set, regardless of you gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling. There's room for everyone. 
+The one thing I want you to take away from this post is that regardless of your current skill set, regardless of you gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling. There's room for everyone. 
 
 I'll leave you with two items: 
-1. A great [article](https://brohrer.github.io/one_step_program_become_data_scientist.html) by Brandon Rohrer about how to become a data scientist that I couldn't agree with more
-2. A famous quote from Mark Twain:
->“The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.”
+1. A great [article](https://brohrer.github.io/one_step_program_become_data_scientist.html) by Brandon Rohrer about how to become a data scientist that I couldn't agree with more.
+2. A famous quote from Mark Twain: **“The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one.”**
