@@ -35,7 +35,7 @@ This is lazy thinking, a mental shortcut. To assume everyone must share my exper
 ![spectrum](/assets/images/spectrum.png?raw=true){: .center-image }  
 Credit: [GRlMGOR on DeviantArt](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Ffc04.deviantart.net%2Ffs26%2Fi%2F2008%2F092%2F5%2Fe%2FSpectrum_by_GRlMGOR.png&f=1){: .center-image }
 
-Rather than focusing on who we should admit into our special little club and who we should exclude, let's focus on how to bring more people into the fold. Instead of arguing about which algorithms, which tools, and which programming languages a *real* data scientist should know, let's focus our energy on real problems. 
+Rather than focusing on who we should admit into our special little club and who we should exclude, let's focus on bringing more people into the fold. Instead of arguing about which algorithms, which tools, and which programming languages a *real* data scientist should know, let's focus our energy on real problems. 
 
 Because people are not boxes. People don't magically morph from **Not Data Scientist** to **Data Scientist**. 
 >It's not quantum; it's spectral.
@@ -45,22 +45,30 @@ Let me say that again: **Data science is a spectrum.**
 Let that sink in. Seriously. 
 
 ## Back To The Question
-Ever look at a data science pipeline? It can take many fanciful forms but it usually breaks down into something like this: ask a question, generate some hypotheses, collect data, see if any of your hypotheses have merit, make refinements, and repeat. Hmm, sounds an awful lot like the **Scientific Method**. Maybe this term *Data Scientist* is really just another name for someone who practices these ideas - a rebranding if you will. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. At the core we're just doing math and science. 
+Ever look at a data science pipeline? It can take many fanciful forms but it usually breaks down into something like this: 
+1. Ask a question  
+2. Generate some hypotheses  
+3. Collect data  
+4. See if any of your hypotheses have merit  
+5. Make refinements  
+6. Iterate
 
-In fact, if you leverage the Scientific Method to quantitatively drive your decisions, then I have news for you: you're absolutely doing some level of data science - doesn't matter if you're generating a report of descriptive statistics for you boss, predicting the next trend on Twitter, or developing a bleeding edge machine learning algorithm in the lab.    
+Hmm, sounds an awful lot like the **Scientific Method**. Maybe this term *Data Scientist* is really just another name for someone who practices these ideas - a rebranding if you will. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. At the core we're just doing math and science. 
+
+In fact, if you leverage the Scientific Method to quantitatively drive your decisions, then I have news for you: you're absolutely doing some level of data science. Doesn't matter if you're generating a report of descriptive statistics for you boss, predicting the next trend on Twitter, or developing a bleeding edge machine learning algorithm in the lab.    
 
 ![scientific method](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Scientific_Method_as_an_Ongoing_Process.svg/900px-The_Scientific_Method_as_an_Ongoing_Process.svg.png){: .center-image }
 Credit: [Wikipedia](https://en.wikipedia.org/wiki/Scientific_method){: .center-image }
 
 ## Now What?
-If you're new to data science, don't fret. Figuring out where to even start is daunting. But the dirty little secret that no one tells you is that there is no "right" place to start. Honestly, the trick is just getting started. Period. It doesn't even really matter where. Follow your interests. 
+If you're new to data science, don't fret. Figuring out where to even start is daunting. But the dirty little secret that no one ever tells you is that there is no "right" place to start. Honestly, the trick is just getting started. Period. It doesn't even really matter where. Follow your interests. 
 
 Want to learn Python? Dip your toe in by taking that introductory class. Curious about Statistics? Check out Khan Academy videos. Want to learn from those in the know? Read a blog. Go to a Meetup. Attend a conference. Get involved.  
 
 And if you're a grizzled veteran, share your expertise: blog, create tutorials, give talks, mentor newcomers, or contribute in whatever way makes sense for you. 
 
 ## Takeaway
-The one thing I want you to take away from this post is that regardless of your current skill set, regardless of you gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling. There's room for everyone. 
+The one thing I want you to take away from this post is that regardless of your current skill set, regardless of your gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling. There's room for everyone. 
 
 I'll leave you with two items: 
 1. A great [article](https://brohrer.github.io/one_step_program_become_data_scientist.html) by Brandon Rohrer about how to become a data scientist that I couldn't agree with more.
