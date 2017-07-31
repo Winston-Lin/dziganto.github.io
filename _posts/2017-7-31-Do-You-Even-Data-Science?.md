@@ -51,7 +51,7 @@ Ever look at a data science pipeline? It can take many fanciful forms but it usu
 
 Hmm, sounds an awful lot like the **Scientific Method**. Maybe this term *data scientist* is really just another name for someone who practices these ideas - a rebranding if you will. Sure, we use fancy new tools and bandy about buzzwords like *machine learning* and *big data*, but let's not fool ourselves. At the core we're just doing math and science. 
 
-In fact, if you leverage the Scientific Method to quantitatively drive your decisions, then I have news for you: you're absolutely doing some level of data science. Doesn't matter if you're generating a report of descriptive statistics for your boss, predicting the next trend on Twitter, or developing a bleeding edge machine learning algorithm in the lab.    
+In fact, if you leverage the Scientific Method to quantitatively drive your decisions, then I have news for you: you're absolutely doing *some level* of data science. Doesn't matter if you're generating a report of descriptive statistics for your boss, predicting the next trend on Twitter, or developing a bleeding edge machine learning algorithm in the lab.    
 
 ![scientific method](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Scientific_Method_as_an_Ongoing_Process.svg/900px-The_Scientific_Method_as_an_Ongoing_Process.svg.png){: .center-image }
 
