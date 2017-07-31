@@ -25,15 +25,17 @@ Maybe it's human nature or maybe it's elitism but these posts revolve around thi
 
 But why the discrepancies? 
 
-One possible explanation is that that one's experiences bias one's worldview. Let me clarify with an example. I have a Master's degree from a well-known university, have to build everything from scratch to truly understand it,  and prefer an even mix of working alone and collaborating with others. Therefore, it's easy for me to assume every data scientist should have a Master's or PhD from a reputable university. It's easy for me to assume every data scientist should build everything from scratch. And it's easy for me to assume every data scientist should work in exactly the same way as I do. I mean, I'm a data scientist. I know what it takes. Right?
+One possible explanation is that that one's experiences bias one's worldview. Let me clarify with an example. I have a Master's degree from a well-known university, have to build everything from scratch to truly understand it,  and prefer an even mix of working alone and collaborating with others. Therefore, it's easy for me to assume every data scientist should have a Master's or PhD from a reputable university. It's easy for me to assume every data scientist should build everything from scratch. And it's easy for me to assume every data scientist should work in exactly the same way as I do. 
 
-This is lazy thinking - a mental shortcut if you will. To assume everyone must share my experiences is myopic. Sure, it worked for me, but other data scientists have very different experiences. That's fine. That's normal. In fact, that's ideal because the world is chock full of difficult problems. Solutions aren't going to come from a homogeneous group. We need fresh ideas, open lines of communication, and inclusion. We need to shift our thinking.
+I mean, I'm a data scientist. I know what it takes. Right?
+
+This is lazy thinking, a mental shortcut. To assume everyone must share my experiences is myopic. Sure, it worked for me, but other data scientists have very different experiences. That's fine. That's normal. In fact, that's ideal because the world is chock full of difficult problems. Solutions aren't going to come from a homogeneous group. We need fresh ideas, open lines of communication, and inclusion. We need to shift our thinking.
 
 ## A Shift in Thinking
 ![spectrum](/assets/images/spectrum.png?raw=true){: .center-image }  
 Credit: [GRlMGOR on DeviantArt](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Ffc04.deviantart.net%2Ffs26%2Fi%2F2008%2F092%2F5%2Fe%2FSpectrum_by_GRlMGOR.png&f=1){: .center-image }
 
-Rather than focusing on who we should admit into our special little club and who we should exclude, let's focus on how to bring more people into the fold. Instead of arguing about which algorithms, which tools, and which programming languages someone should know, let's focus our energy on real problems. 
+Rather than focusing on who we should admit into our special little club and who we should exclude, let's focus on how to bring more people into the fold. Instead of arguing about which algorithms, which tools, and which programming languages a *real* data scientist should know, let's focus our energy on real problems. 
 
 Because people are not boxes. People don't magically morph from **Not Data Scientist** to **Data Scientist**. 
 >It's not quantum; it's spectral.
