@@ -50,10 +50,13 @@ In fact, if you leverage the Scientific Method to quantitatively drive your deci
 Credit: [Wikipedia](https://en.wikipedia.org/wiki/Scientific_method){: .center-image }
 
 ## Now What?
-If you're new to data science, don't fret. Figuring out where to even start is daunting. But the dirty little secret that no one tells you is that there is no "right" place to start. Honestly, the trick is just getting started period. It doesn't even really matter where. Follow your interests. Want to learn Python? Dip your toe in by taking that introductory class. Curious about Statistics? Check out Khan Academy videos. Want to learn from those in the know? Read a blog. Go to a Meetup. Get involved.  
+If you're new to data science, don't fret. Figuring out where to even start is daunting. But the dirty little secret that no one tells you is that there is no "right" place to start. Honestly, the trick is just getting started. Period. It doesn't even really matter where. Follow your interests. 
 
-And if you're a grizzled veteran, share your expertise. Blog, create tutorials, speak locally, mentor newcomers, or contribute in whatever way makes sense for you. 
+Want to learn Python? Dip your toe in by taking that introductory class. Curious about Statistics? Check out Khan Academy videos. Want to learn from those in the know? Read a blog. Go to a Meetup. Attend a conference. Get involved.  
 
+And if you're a grizzled veteran, share your expertise. Blog, create tutorials, give talks, mentor newcomers, or contribute in whatever way makes sense for you. 
+
+## Takeaway
 The one thing I want you to take away from this post is that regardless of your current skill set, regardless of you gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling. There's room for everyone. 
 
 I'll leave you with two items: 
