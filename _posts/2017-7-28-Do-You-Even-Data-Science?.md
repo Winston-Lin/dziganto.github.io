@@ -4,7 +4,6 @@ title: Do You Even Data Science?
 categories: [Data Science]
 ---
 ![slippery words](/assets/images/slippery_words.jpg?raw=true){: .center-image }  
-Credit: [Flickr](https://images.duckduckgo.com/iu/?u=https%3A%2F%2Ffarm3.staticflickr.com%2F2876%2F9711837104_c82f29ac48_z.jpg&f=1){: .center-image }
 
 ## What is a Data Scientist?
 
@@ -19,7 +18,6 @@ And it never ends. It seems every week there's a new post delineating what a dat
 
  ## The Myth of Boxes
  ![boxes](/assets/images/boxes.jpg?raw=true){: .center-image }  
- Credit: [movingboxestoronto](http://www.movingboxestoronto.net/portals/562/images/maintenance.jpg){: .center-image }
  
 Maybe it's human nature or maybe it's elitism but these posts revolve around this idea that you can place people into metaphorical boxes. One is labeled **Data Scientist** and the other **Not Data Scientist**. Where and how you decide to draw the line determines which people go into which boxes. 
 
@@ -58,7 +56,6 @@ Hmm, sounds an awful lot like the **Scientific Method**. Maybe this term *data s
 In fact, if you leverage the Scientific Method to quantitatively drive your decisions, then I have news for you: you're absolutely doing some level of data science. Doesn't matter if you're generating a report of descriptive statistics for your boss, predicting the next trend on Twitter, or developing a bleeding edge machine learning algorithm in the lab.    
 
 ![scientific method](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Scientific_Method_as_an_Ongoing_Process.svg/900px-The_Scientific_Method_as_an_Ongoing_Process.svg.png){: .center-image }
-Credit: [Wikipedia](https://en.wikipedia.org/wiki/Scientific_method){: .center-image }
 
 ## Now What?
 If you're new to data science, don't fret. Figuring out where to even start is daunting. But the dirty little secret that no one ever tells you is that there is no "right" place to start. Honestly, the trick is just getting started. Period. It doesn't even really matter where. Follow your interests. 
@@ -69,3 +66,9 @@ And if you're a grizzled veteran, share your expertise: blog, create tutorials, 
 
 ## Takeaway
 The one thing I want you to take away from this post is that regardless of your current skill set, regardless of your gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling. There's room for everyone. 
+
+---
+Image credits:  
+[Slippery Words](https://images.duckduckgo.com/iu/?u=https%3A%2F%2Ffarm3.staticflickr.com%2F2876%2F9711837104_c82f29ac48_z.jpg&f=1)  
+[Boxes](http://www.movingboxestoronto.net/portals/562/images/maintenance.jpg)  
+[Scientific Method](https://en.wikipedia.org/wiki/Scientific_method)
