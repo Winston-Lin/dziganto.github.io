@@ -56,7 +56,7 @@ In fact, if you leverage the Scientific Method to quantitatively drive your deci
 ![scientific method](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Scientific_Method_as_an_Ongoing_Process.svg/900px-The_Scientific_Method_as_an_Ongoing_Process.svg.png){: .center-image }
 
 ## Now What?
-If you're new to data science, don't fret. Figuring out where to even start is daunting. But the dirty little secret that no one ever tells you is that there is no "right" place to start. Honestly, the trick is just getting started. Period. It doesn't even really matter where. Follow your interests. 
+If you're new to data science, don't fret. Figuring out where to even start can be daunting. But the dirty little secret that no one ever tells you is that there is no "right" place to start. Honestly, the trick is just getting started. Period. It doesn't even really matter where. Follow your interests. 
 
 Want to learn Python? Dip your toe in by taking that introductory class. Curious about Statistics? Check out Khan Academy videos. Want to learn from those in the know? Read a blog. Go to a Meetup. Attend a conference. Get involved.  
 
