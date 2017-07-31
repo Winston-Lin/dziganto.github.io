@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Do You Even Data Science?
 categories: [Data Science]
 ---
