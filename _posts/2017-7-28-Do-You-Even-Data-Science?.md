@@ -63,7 +63,7 @@ Want to learn Python? Dip your toe in by taking that introductory class. Curious
 And if you're a grizzled veteran, share your expertise - blog, create tutorials, give talks, mentor newcomers, or contribute in whatever way makes sense for you. 
 
 ## Takeaway
-The one thing I want you to take away from this post is that regardless of your current skill set, regardless of your gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling. There's room for everyone. 
+The one thing I want you to take away from this post is that regardless of your current skill set, regardless of your gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling and there's room for everyone. 
 
 ---
 Image credits:  
