@@ -60,7 +60,7 @@ If you're new to data science, don't fret. Figuring out where to even start is d
 
 Want to learn Python? Dip your toe in by taking that introductory class. Curious about Statistics? Check out Khan Academy videos. Want to learn from those in the know? Read a blog. Go to a Meetup. Attend a conference. Get involved.  
 
-And if you're a grizzled veteran, share your expertise - blog, create tutorials, give talks, mentor newcomers, or contribute in whatever way makes sense for you. 
+And if you're a grizzled veteran, share your expertise by blogging, creating tutorials, giving talks, mentoring newcomers, or contributing in whatever way makes sense for you. 
 
 ## Takeaway
 The one thing I want you to take away from this post is that regardless of your current skill set, regardless of your gender or race or anything else for that matter, you can learn, share, and contribute to data science. The field is sprawling and there's room for everyone. 
