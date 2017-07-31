@@ -16,7 +16,7 @@ Run a Google search. You'll find innumerable opinions on the matter. In fact, yo
 
 And it never ends. It seems every week there's a new post delineating what a data scientist *is* and what a data scientist *is not*. Some weeks you have to be an expert in Statistics and others you have to know Scala. Some weeks you have to be an expert in software development, machine learning, big data technologies, and visualization tools. And some weeks you have to actually know how to talk to people and clearly articulate your ideas, in addition to all the other technical skills. Every week I read these posts, and every week I cringe. 
 
- ## The Myth of Boxes
+ ## The Myth of Boxes  
  
  ![boxes](/assets/images/boxes.jpg?raw=true){: .center-image }  
  
@@ -32,7 +32,6 @@ This is lazy thinking, a mental shortcut. To assume everyone must share my exper
 
 ## A Shift in Thinking
 ![spectrum](/assets/images/spectrum.png?raw=true){: .center-image }  
-Credit: [GRlMGOR on DeviantArt](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Ffc04.deviantart.net%2Ffs26%2Fi%2F2008%2F092%2F5%2Fe%2FSpectrum_by_GRlMGOR.png&f=1){: .center-image }
 
 Rather than focusing on who we should admit into our special little club and who we should exclude, let's focus on bringing more people into the fold. Instead of arguing about which algorithms, which tools, and which programming languages a *real* data scientist should know, let's focus our energy on real problems. 
 
@@ -72,4 +71,5 @@ The one thing I want you to take away from this post is that regardless of your 
 Image credits:  
 [Slippery Words](https://images.duckduckgo.com/iu/?u=https%3A%2F%2Ffarm3.staticflickr.com%2F2876%2F9711837104_c82f29ac48_z.jpg&f=1)  
 [Boxes](http://www.movingboxestoronto.net/portals/562/images/maintenance.jpg)  
+[Color Spectrum](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Ffc04.deviantart.net%2Ffs26%2Fi%2F2008%2F092%2F5%2Fe%2FSpectrum_by_GRlMGOR.png&f=1){: .center-image }
 [Scientific Method](https://en.wikipedia.org/wiki/Scientific_method)
