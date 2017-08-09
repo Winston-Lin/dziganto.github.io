@@ -18,4 +18,4 @@ author_profile: true
 ## Past
 [PyOhio (7/30/2017) - Abstract & Talk Details](https://www.pyohio.org/schedule/presentation/295/)  
 
-[![PyOH Vid](/assets/images/PyOH.png?raw=true)](http://www.youtube.com/watch?v=https://youtu.be/PFGUOfPEtJM "Rapid Prototyping In Data Science With Big Data & Python"){: .center-image }
+[![PyOH Vid](/assets/images/PyOH.png?raw=true)](https://youtu.be/PFGUOfPEtJM "Rapid Prototyping In Data Science With Big Data & Python"){: .center-image }
