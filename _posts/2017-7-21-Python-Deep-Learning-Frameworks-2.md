@@ -25,7 +25,7 @@ I'm going to make some key assumptions to keep this post as brief as possible. I
 ## Installation 
 On to the installation process. We'll begin with PyTorch, transition to TensorFlow, and conclude with Theano. 
 
-### PyTorch (version 0.1.12)
+### PyTorch (version 0.2.0)
 Source installation instructions can be found [here](http://pytorch.org/) but here are the steps you need to know to get up and running:
 1. Create PyTorch conda environment: `conda create --name pytorch numpy`
 2. Activate PyTorch conda env: `source activate pytorch`
