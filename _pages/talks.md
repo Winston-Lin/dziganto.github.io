@@ -11,7 +11,7 @@ author_profile: true
 ## Upcoming
 [9/22-24 2017 - MHacks X Talk](https://mhacks.org/)
 
-[9/22-24 2017 - Workshop](https://mhacks.org/)
+[9/22-24 2017 - MHacks X Workshop](https://mhacks.org/)
 
 [10/20/2017 - National Academies of Sciences, Engineering, and Medicine’s Roundtable on Data Science Education](http://sites.nationalacademies.org/DEPS/BMSA/DEPS_178020)
 
