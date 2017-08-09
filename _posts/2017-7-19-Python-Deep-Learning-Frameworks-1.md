@@ -26,7 +26,7 @@ The three deep learning frameworks that I'll investigate are:
 
 Let's begin by looking at a brief description of each framework.
 
-### PyTorch (version 0.1.12)
+### PyTorch (version 0.2.0)
 ![pytorch](/assets/images/pytorch.png?raw=true){: .center-image }
 
 According to [PyTorch's website](http://pytorch.org/about/):
