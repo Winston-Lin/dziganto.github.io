@@ -26,7 +26,7 @@ Converting a three-channel RGB image to a 1-channel grayscale image is often not
 Note that there are several ways to convert from RGB to grayscale. For the purposes of this tutorial, however, I decided to leverage Matlab's formula.
 
 A simple one-liner is all we need:  
-`grayscale = np.dot(img[...,:3], [0.2989, 0.5870, 0.1140])`
+`grayscale = np.dot(img, [0.2989, 0.5870, 0.1140])`
 
 ## Downsample an Image
 Clearly, the size of an image strongly correlates with processing time. What if there were a way to maintain the key structure found in an image but also decrease computation time? There is! It's called downsampling (aka max pooling).
