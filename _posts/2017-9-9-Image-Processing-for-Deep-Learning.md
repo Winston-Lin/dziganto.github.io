@@ -3,7 +3,7 @@ published: true
 title: Image Processing for Deep Learning
 categories: [Deep Learning, Image Processing, Python]
 ---
-![image](/assets/images/img_processing.png?raw=true){: .center-image }
+![image](/assets/images/image_processing.jpg?raw=true){: .center-image }
 
 **Audience:** anyone that uses python and/or deep learning.
 
