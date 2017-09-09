@@ -9,7 +9,7 @@ categories: [Deep Learning, Image Processing, Python]
 
 **Notebook:** a concrete example can be found in [this](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Image_Processing_for_Deep_Nets.ipynb) Jupyter notebook.
 
-Many deep learning frameworks come pre-packaged with image transformers like flipping and rotating. However, they may not include preprocessing tools that can significantly decrease computation time. Even if they do, its worth your while to understand at a fundamental level how they work. Thus, I created this short tutorial that I hope you find useful. 
+Many deep learning frameworks come pre-packaged with image transformers that do things like flip, crop, and rotate images. However, they may not include preprocessing tools that can significantly decrease computation time. Even if they do, its worth knowing at a basic level how they work. Thus, I created this short tutorial that I hope you find useful. 
 
 Specifically, I'll show you how to: 
 1. Convert an RGB image to Grayscale.
@@ -43,4 +43,4 @@ You may be wondering why there's an extra term in the denominator. The *1e-5* is
 ## Summary
 This brief tutorial showed three image processing techniques, often used together, that can dramatically speed up your Deep Nets. While many frameworks include functions that handle one or more of these techniques, it's always good to know what's going on under the hood. Furthermore, understanding the nuts and bolts of these techniques allows you to code your own implementation should a deep learning framework lack a particular function. 
 
-Anyway, I hope you found this tutorial useful.  
+Anyway, I hope you found this tutorial helpful.  
