@@ -18,7 +18,7 @@ Specifically, I'll show you how to:
 
 To set the stage, let's say we're using a Convolutional Neural Network to classify images. We'll feed this ConvNet RGB images, which are 3D tensors. In other words, we have 3 two-by-two matrices that comprise each image.
 
-To kickoff this example, let's tackle a single RGB image called *img*. We'll assume it has been loaded and *NumPy* has been imported.
+For this example, I'll demostrate these techniques on a single RGB image called *img*. We'll assume it has been loaded and *NumPy* has been imported.
 
 ## Convert RGB to Grayscale
 Converting a three-channel RGB image to a 1-channel grayscale image is often not only sufficient for classification tasks but also less computationally expensive. The good news is that we need do nothing more than apply a simple dot product to get the desired result. 
