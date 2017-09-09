@@ -14,7 +14,7 @@ Many deep learning frameworks come pre-packaged with image transformers that do 
 Specifically, I'll show you how to: 
 1. Convert an RGB image to Grayscale.
 2. Downsample the image.
-3. Standardize your image data.
+3. Standardize the image data.
 
 To set the stage, let's say we're using a Convolutional Neural Network to classify images. One way to proceed is to feed the ConvNet RGB images, which are 3D tensors (three 2x2 matrices). Another more efficient method is to feed it preprocessed images using the techniques outlined below. 
 
