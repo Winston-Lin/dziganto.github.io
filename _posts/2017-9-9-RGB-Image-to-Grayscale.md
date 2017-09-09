@@ -1,0 +1,44 @@
+---
+published: true
+title: Image Processing for Deep Learning
+categories: [Deep Learning, Image Processing, Python]
+---
+![image](/assets/images/img_processing.png?raw=true){: .center-image }
+
+**Audience:** anyone that uses python and/or deep learning.
+
+**Notebook:** a concrete example can be found in [this](https://github.com/dziganto/dziganto.github.io/blob/master/_notebooks/Image_Processing_for_Deep_Nets.ipynb) Jupyter notebook.
+
+Many deep learning frameworks come pre-packaged with image transformation tools - transformations like flipping and rotating for instance. However, there are some tricks in the prepocessing stage contained here that can significantly decrease computation time. Thus, you may find them useful. 
+
+Specifically, I'll show you how to: 
+1. Convert an RGB image to Grayscale.
+2. Downsample the image.
+3. Standardize your image data.
+
+For the sake of argument, let's say we read in a png image called *img*. Let's also assume numpy is loaded.
+
+## Convert RGB to Grayscale
+Consider a Convolutional Neural Network. It is common to have RGB images as inputs. This means 3-channel images. In many cases, 1-channel grayscale images are not only sufficient but clearly less computationally expensive. The good news is that we need nothing more than a simple dot product to get the desired result. 
+
+Note that there are several ways to convert from RGB to grayscale. For the purposes of this tutorial, I decided to leverage Matlab's formula.
+
+A simple one-liner is all we need:  
+`grayscale = np.dot(img[...,:3], [0.2989, 0.5870, 0.1140])`
+
+## Downsample an Image
+Clearly, the size of an image strongly correlates with processing time. What if there were a way to maintain the key structure found in an image but also decrease computation time? There is! It's called downsampling (aka max pooling).
+
+It, too, is a simple one-liner. Note that I'm using the skimage.measure library here:  
+`downsample = skimage.measure.block_reduce(grayscale, (2,2), np.max)`
+
+## Standardize Data
+Lastly, in deep learning we leverage some form of Stochastic Gradient Descent. This means we want our data standardized (mean 0, std 1). While there are typically functions contained in a deep learning framework that do this for us, here's a simple implementation worth understanding:  
+`standardize = (data - data.mean()) / np.sqrt(data.var() + 1e-5)`
+
+You may be wondering why there's an extra term in the denominator. The 1e-5 is included for numerical stability. Image what happens if data.var() equals 0. This is a way to prevent that scenario.
+
+## Summary
+This brief tutorial showed three image processing techniques that can dramatically speed up your Deep Nets. While many frameworks include functions that handle one or more of these techniques, it's always good to know what's going on under the hood. Furthermore, understanding the nuts and bolts allows you to code your own implementation should a deep learning framework lack a particular function. 
+
+Anyway, I hope you found this tutorial useful.  
