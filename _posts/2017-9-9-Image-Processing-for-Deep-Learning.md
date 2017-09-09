@@ -16,7 +16,7 @@ Specifically, I'll show you how to:
 2. Downsample the image.
 3. Standardize your image data.
 
-To set the stage, let's say we're using a Convolutional Neural Network to classify images. We'll feed this ConvNet RGB images, which are 3D tensors. In other words, we have 3 two-by-two matrices that comprise each image.
+To set the stage, let's say we're using a Convolutional Neural Network to classify images. We'll feed this ConvNet RGB images, which are 3D tensors. In other words, we have (3) 2x2 matrices that comprise each image.
 
 For this example, I'll demostrate these techniques on a single RGB image called *img*. We'll assume it has been loaded and *NumPy* has been imported.
 
