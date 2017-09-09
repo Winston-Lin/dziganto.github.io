@@ -34,7 +34,7 @@ It, too, is a simple one-liner. Note that I'm using the skimage.measure library 
 
 ## Standardize Data
 Lastly, in deep learning we leverage some form of Stochastic Gradient Descent. This means we want our data standardized (mean 0, std 1). While there are typically functions contained in a deep learning framework that do this for us, here's a simple implementation worth understanding:  
-`standardize = (data - data.mean()) / np.sqrt(data.var() + 1e-5)`
+`standardize = (downsample - downsample.mean()) / np.sqrt(downsample.var() + 1e-5)`
 
 You may be wondering why there's an extra term in the denominator. The 1e-5 is included for numerical stability. Image what happens if data.var() equals 0. This is a way to prevent that scenario.
 
