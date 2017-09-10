@@ -5,7 +5,7 @@ categories: [AWS, CUDA, Deep Learning, GPU, Python, PyTorch]
 ---
 ![image](/assets/images/nvidia_gpu.jpg?raw=true){: .center-image }
 
-**Objective:** a no frills tutorial showing you how to setup CUDA on AWS for Deep Learning using GPUs.
+**Objective:** a no frills tutorial showing you how to setup CUDA on AWS for Deep Learning using GPUs. Includes PyTorch configuration w/CUDA 8.0.
 
 **Audience:** anyone with basic command line and AWS skills. 
 
