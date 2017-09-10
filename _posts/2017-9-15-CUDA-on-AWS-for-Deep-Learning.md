@@ -38,4 +38,6 @@ categories: [AWS, CUDA, Deep Learning, Python, PyTorch]
 5. Install PyTorch w/CUDA 8.0 support: `conda install pytorch torchvision cuda80 -c soumith`
 6. Check that CUDA is configure properly by opening python, importing torch, and typing: `torch.cuda.is_available()`. Result should be *True*.
 
+---
+
 That's it. Happy deep learning!
