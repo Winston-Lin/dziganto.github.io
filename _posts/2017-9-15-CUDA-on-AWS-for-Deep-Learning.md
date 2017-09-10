@@ -29,7 +29,6 @@ categories: [AWS, CUDA, Deep Learning, Python, PyTorch]
 10. Hit `enter` to accept the default Toolkit location.
 11. Type `yes` to install a symbolic link at /usr/local/cuda.
 12. Type `no` to install the CUDA 8.0 Samples.
-13.
 
 ## PyTorch Configuration
 1. Download key libraries: `sudo apt-get install -y cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev swig libgl1-mesa-dev libglu1-mesa freeglut3 build-essential g++`
