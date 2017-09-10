@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Configuring CUDA on AWS for Deep Learning with GPUs
 categories: [AWS, CUDA, Deep Learning, GPU, Python, PyTorch]
 ---
