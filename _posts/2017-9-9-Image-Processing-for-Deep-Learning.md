@@ -29,7 +29,7 @@ A simple one-liner is all we need:
 `grayscale = np.dot(img, [0.2989, 0.5870, 0.1140])`
 
 ## Downsample an Image
-Clearly, the size of an image strongly correlates with processing time. What if there were a way to maintain the key structure found in an image but also decrease computation time? There is! It's called downsampling (aka max pooling).
+Clearly, the size of an image strongly correlates with processing time. What if there were a way to maintain the key structure found in an image but also decrease computation time? There is! It's called downsampling.
 
 It, too, is a simple one-liner. Note that I'm using the skimage.measure library here:  
 `downsample = skimage.measure.block_reduce(grayscale, (2,2), np.max)`
