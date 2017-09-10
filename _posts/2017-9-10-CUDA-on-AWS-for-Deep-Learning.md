@@ -9,6 +9,8 @@ categories: [AWS, CUDA, Deep Learning, GPU, Python, PyTorch]
 
 **Audience:** those comfortable at the command line and familiar with AWS. 
 
+**Note:** you'll have to request access to GPUs on AWS prior to completing this tutorial. 
+
 ## Instance Setup
 1. On AWS, select **Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-43391926** as your Amazon Machine Image (AMI)
 2. Choose **p2.xlarge** as your instance type. 
