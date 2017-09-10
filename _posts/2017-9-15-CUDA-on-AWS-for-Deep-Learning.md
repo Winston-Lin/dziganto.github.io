@@ -21,7 +21,7 @@ categories: [AWS, CUDA, Deep Learning, Python, PyTorch]
 3. Type: `sudo apt-get install dkms`
 3. Download CUDA by typing: `wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run`
 4. Run CUDA script: `sudo sh cuda_8.0.61_375.26_linux-run`
-5. An agreement will follow. Use spacebar to page to the end and accept.
+5. An agreement will follow. Use spacebar to page to the end and type `accept`.
 6. Type `yes` to install NVIDIA Graphics Driver.
 7. Type `yes` to install OpenGL libraries.
 8. Type `yes` to run nvidia-xconfig.
