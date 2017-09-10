@@ -12,9 +12,9 @@ categories: [AWS, CUDA, Deep Learning, GPU, Python, PyTorch]
 **Note:** you'll have to request access to GPUs on AWS prior to completing this tutorial. 
 
 ## Instance Setup
-1. On AWS, select **Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-43391926** as your Amazon Machine Image (AMI)
+1. On AWS, select **Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-43391926** as your Amazon Machine Image (AMI).
 2. Choose **p2.xlarge** as your instance type. 
-3. Configure storage, tags, and security group however you like. The defaults are just fine. The only exception is security group. Make sure you set source to **My IP** so only you have SSH access.
+3. Configure storage, tags, and security group however you like. The defaults are just fine. The only exception is security group. Make sure you set source to **My IP** so only you have access.
 4. Then launch the instance.
 
 ## CUDA Configuration
@@ -38,7 +38,7 @@ categories: [AWS, CUDA, Deep Learning, GPU, Python, PyTorch]
 3. Install MiniConda: `bash ~/anaconda.sh -b -p $HOME/anaconda`
 4. Update path: `echo -e '\nexport PATH=$HOME/anaconda/bin:$PATH' >> $HOME/.bashrc && source $HOME/.bashrc`
 5. Install PyTorch w/CUDA 8.0 support: `conda install pytorch torchvision cuda80 -c soumith`
-6. Check that CUDA is configure properly by opening python, importing torch, and typing: `torch.cuda.is_available()`. Result should be *True*.
+6. Check that CUDA is configured properly by opening python, importing torch, and typing: `torch.cuda.is_available()`. Result should be *True*.
 
 ---
 
