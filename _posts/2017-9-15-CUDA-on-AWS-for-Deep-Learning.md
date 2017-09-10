@@ -18,7 +18,7 @@ categories: [AWS, CUDA, Deep Learning, Python, PyTorch]
 ## CUDA Configuration
 1. SSH into your AWS instance.
 2. Type: `sudo apt-get update`
-3. Type: `sudo apt-get install dkms
+3. Type: `sudo apt-get install dkms`
 3. Download CUDA: `wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run`
 4. Run CUDA script: `sudo sh cuda_8.0.61_375.26_linux-run`
 5. An agreement will follow. Use spacebar to page to the end and accept.
