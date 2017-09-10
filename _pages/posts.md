@@ -16,7 +16,8 @@ author_profile: true
 
 ### Deep Learning
 [Python Deep Learning Frameworks (1) - Introduction](https://dziganto.github.io/deep%20learning/python/pytorch/tensorflow/theano/Python-Deep-Learning-Frameworks-1/)  
-[Python Deep Learning Frameworks (2) - Installation](https://dziganto.github.io/deep%20learning/python/pytorch/tensorflow/theano/Python-Deep-Learning-Frameworks-2/)
+[Python Deep Learning Frameworks (2) - Installation](https://dziganto.github.io/deep%20learning/python/pytorch/tensorflow/theano/Python-Deep-Learning-Frameworks-2/)  
+[Image Processing for Deep Learning](https://dziganto.github.io/deep%20learning/image%20processing/python/Image-Processing-for-Deep-Learning/)
 
 ### Machine Learning
 [An Introduction To Online Machine Learning](https://dziganto.github.io/data%20science/online%20learning/python/scikit-learn/An-Introduction-To-Online-Machine-Learning/)  
