@@ -3,7 +3,7 @@ published: false
 title: Configuring CUDA on AWS for Deep Learning
 categories: [AWS, CUDA, Deep Learning, Python, PyTorch]
 ---
-![image](/assets/images/name.jpeg?raw=true)
+![image](/assets/images/nvidia_gpu.jpg?raw=true){: .center-image }
 
 **Objective:** a no frills tutorial showing you how to setup CUDA on AWS for deep learning using GPUs.
 
@@ -37,3 +37,5 @@ categories: [AWS, CUDA, Deep Learning, Python, PyTorch]
 4. Update path: `echo -e '\nexport PATH=$HOME/anaconda/bin:$PATH' >> $HOME/.bashrc && source $HOME/.bashrc`
 5. Install PyTorch w/CUDA 8.0 support: `conda install pytorch torchvision cuda80 -c soumith`
 6. Check that CUDA is configure properly by opening python, importing torch, and typing: `torch.cuda.is_available()`. Result should be *True*.
+
+That's it. Happy deep learning!
