@@ -37,3 +37,4 @@ categories: [AWS, CUDA, Deep Learning, Python, PyTorch]
 3. Install MiniConda: `bash ~/anaconda.sh -b -p $HOME/anaconda`
 4. Update path: `echo -e '\nexport PATH=$HOME/anaconda/bin:$PATH' >> $HOME/.bashrc && source $HOME/.bashrc`
 5. Install PyTorch w/CUDA 8.0 support: `conda install pytorch torchvision cuda80 -c soumith`
+6. Check that CUDA is configure properly by opening python, importing torch, and typing: `torch.cuda.is_available()`. Result should be *True*.
