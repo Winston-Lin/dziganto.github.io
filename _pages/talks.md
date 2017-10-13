@@ -16,6 +16,6 @@ author_profile: true
 
 [![PyOH Vid](/assets/images/PyOH.png?raw=true)](https://youtu.be/PFGUOfPEtJM "Rapid Prototyping In Data Science With Big Data & Python"){: .center-image }
 
-[9/23 2017 - MHacks X Talk: Introduction to Online Machine Learning](https://mhacks.org/)
+[MHacks X Talk - Introduction to Online Machine Learning (9/23 2017)](https://mhacks.org/)
 
-[9/23 2017 - MHacks X Workshop: Introduction to Deep Learning in PyTorch](https://mhacks.org/)
+[MHacks X Workshop - Introduction to Deep Learning in PyTorch (9/23 2017)](https://mhacks.org/)
