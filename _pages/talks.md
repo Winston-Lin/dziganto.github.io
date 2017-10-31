@@ -21,3 +21,5 @@ author_profile: true
 [MHacks X Workshop (9/23 2017) - Introduction to Deep Learning in PyTorch](https://mhacks.org/)
 
 [National Academies of Sciences, Engineering, and Medicine (10/20/2017) - Roundtable on Data Science Education](http://sites.nationalacademies.org/DEPS/BMSA/DEPS_178020)
+
+[![NAS Vid](/assets/images/NAS.png?raw=true)](https://www.youtube.com/watch?v=Y--KerX_D4w "Roundtable on Postsecondary Data Science Education"){: .center-image }
