@@ -28,7 +28,11 @@ author_profile: true
 ### Research Papers
 [A Few Useful Things To Know About Machine Learning - Pedro Domingos](http://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)  
 [Progressive Cross-Validation - Blum, Kalai, Langford](http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf)  
-[Deep Forest, Towards an Alternative to Deep Neural Networks - Feng, Zhou](https://arxiv.org/pdf/1702.08835.pdf)
+[Deep Forest, Towards an Alternative to Deep Neural Networks - Feng, Zhou](https://arxiv.org/pdf/1702.08835.pdf)  
+[GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/pubs/glove.pdf)  
+[Random Cut Forest for Anomaly Detection](https://d0.awsstatic.com/whitepapers/kinesis-anomaly-detection-on-streaming-data.pdf)  
+[Impossibility Theorem for Clustering](http://machinelearning.wustl.edu/mlpapers/paper_files/LT17.pdf)  
+[Spark Cluster Computing](https://amplab.cs.berkeley.edu/wp-content/uploads/2011/06/Spark-Cluster-Computing-with-Working-Sets.pdf)
 
 ### Videos
 [15 Hours of ML](https://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/)  
