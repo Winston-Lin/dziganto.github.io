@@ -24,6 +24,6 @@ author_profile: true
 
 [(8/15/2017) Meetup - Ask a Data Scientist Anything](https://livestream.com/accounts/23925505/events/7615768)  
 
-[(7/30/2017)PyOhio - Abstract & Talk Details](https://www.pyohio.org/schedule/presentation/295/)  
+[(7/30/2017) PyOhio - Abstract & Talk Details](https://www.pyohio.org/schedule/presentation/295/)  
 
 [![PyOH Vid](/assets/images/PyOH.png?raw=true)](https://youtu.be/PFGUOfPEtJM "Rapid Prototyping In Data Science With Big Data & Python"){: .center-image }
