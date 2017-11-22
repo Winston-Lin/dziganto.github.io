@@ -26,9 +26,9 @@ author_profile: true
 [Elements of Statistical Learning](https://www.amazon.com/Elements-Statistical-Learning-Prediction-Statistics/dp/0387848576)
 
 ### Research Papers
-[A Few Useful Things To Know About Machine Learning - Pedro Domingos](http://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)  
-[Progressive Cross-Validation - Blum, Kalai, Langford](http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf)  
-[Deep Forest, Towards an Alternative to Deep Neural Networks - Feng, Zhou](https://arxiv.org/pdf/1702.08835.pdf)  
+[A Few Useful Things To Know About Machine Learning](http://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)  
+[Progressive Cross-Validation](http://hunch.net/~jl/projects/prediction_bounds/progressive_validation/coltfinal.pdf)  
+[Deep Forest, Towards an Alternative to Deep Neural Networks](https://arxiv.org/pdf/1702.08835.pdf)  
 [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/pubs/glove.pdf)  
 [Random Cut Forest for Anomaly Detection](https://d0.awsstatic.com/whitepapers/kinesis-anomaly-detection-on-streaming-data.pdf)  
 [Impossibility Theorem for Clustering](http://machinelearning.wustl.edu/mlpapers/paper_files/LT17.pdf)  
