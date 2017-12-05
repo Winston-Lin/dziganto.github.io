@@ -36,4 +36,6 @@ Sure we borrowed language from more mature disciplines, but if data science is t
 
 In sum, data science cannot declare itself a separate domain until it unambiguously and uniquely standardizes its language. Until then, the scuffles with statisticians and computer scientists and all the others we borrow from will rage on. 
 
-What are your thoughts? Agree or disagree?
+What are your thoughts? 
+
+Agree or disagree?
