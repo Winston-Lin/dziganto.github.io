@@ -32,10 +32,10 @@ Think about what's universal to law, medicine, and physics. The major theme boil
 
 This is not the case in data science. We can't even agree on what a data scientist is let alone simplify the dizzying language we use. Is the proper term *column*, *feature*, *independent variable*, or *field*? Is it a *model* or an *algorithm*? A *row*, a *sample*, an *observation*, or a *record*? 
 
-Sure we borrowed language from more mature disciplines, but if data science is to become a domain all its own, it desperately needs to standardize its language. Let's avoid the countless hours spent violently agreeing but using different terminology and instead focus our efforts on AGI and ethics and the gender gap and reproducibility and opaque algorithms - the problems that really matter!
+Sure we borrowed language from more mature disciplines, but if data science is to become a domain all its own, it desperately needs to standardize its language. Let's avoid the countless hours spent using different terminology just to find out we violently agree and instead focus our efforts on AGI, ethics, the gender gap, reproducibility, and opaque algorithms - the problems that really matter!
 
-In sum, data science cannot declare itself a separate domain until it unambiguously and uniquely standardizes its language. Until then, the scuffles with statisticians and computer scientists and all the others we borrow from will rage on. 
+In sum, data science cannot declare itself a separate domain until it unambiguously and uniquely standardizes its language. Until then, the scuffles with statisticians, computer scientists, and all the others we borrow from will rage on. 
 
 What are your thoughts? 
 
-Agree or disagree?
+Drop me a line and let me know.
