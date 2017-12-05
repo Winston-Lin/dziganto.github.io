@@ -35,3 +35,5 @@ This is not the case in data science. We can't even agree on what a data scienti
 Sure we borrowed language from more mature disciplines, but if data science is to become a domain all its own, it desperately needs to standardize its language. Let's avoid the countless hours spent violently agreeing but using different terminology and instead focus our efforts on AGI and ethics and the gender gap and reproducibility and opaque algorithms - the problems that really matter!
 
 In sum, data science cannot declare itself a separate domain until it unambiguously and uniquely standardizes its language. Until then, the scuffles with statisticians and computer scientists and all the others we borrow from will rage on. 
+
+What are your thoughts? Agree or disagree?
