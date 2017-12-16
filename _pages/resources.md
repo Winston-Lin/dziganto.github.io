@@ -4,7 +4,7 @@ permalink: /resources/
 author_profile: true
 ---  
 
-All things machine learning.
+All Things Machine Learning
 
 ### Articles
 [How to Become a Data Scientist - Brandon Rohrer](https://brohrer.github.io/one_step_program_become_data_scientist.html)  
