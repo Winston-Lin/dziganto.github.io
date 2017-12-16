@@ -4,7 +4,7 @@ permalink: /misc/
 author_profile: true
 ---
 
-General advice, hashing, and RNGs.
+General Advice, Hashing, and RNGs
 
 # General Advice
 [How To Ace The Data Science Interview](https://dziganto.github.io/data%20science/interview/How-To-Ace-The-Data-Science-Interview/)  
