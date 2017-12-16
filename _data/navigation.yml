@@ -10,10 +10,8 @@ main:
     url: /information theory/
   - title: "Python"
     url: /python/   
-  - title: "RNGs"
-    url: /random number generators/
-  - title: "General"
-    url: /general/
+  - title: "Misc"
+    url: /misc/
   - title: "Talks"
     url: /talks/
   - title: "Resources"
