@@ -16,6 +16,8 @@ main:
     url: /posts/
   - title: "Tutorials"
     url: /tutorials/
+  - title: "General"
+    url: /general/
   - title: "Talks"
     url: /talks/
   - title: "Resources"
