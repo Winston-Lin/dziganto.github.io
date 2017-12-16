@@ -4,14 +4,11 @@ permalink: /talks/
 author_profile: true
 ---
 
-Upcoming and past talks including links.
+Upcoming & Past Talks w/Links
 
 ## Upcoming
----
-
 
 ## Past
----
 [(11/18/2017) Workshop - Python & Data Modeling](https://www.meetup.com/Metis-Chicago-Data-Science/events/244672898/)  
 
 [(10/20/2017) National Academies of Sciences, Engineering, and Medicine - Roundtable on Data Science Education](http://sites.nationalacademies.org/DEPS/BMSA/DEPS_178020)
