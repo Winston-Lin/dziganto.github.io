@@ -4,7 +4,7 @@ main:
     url: /big data/
   - title: "Crypto"
     url: /cryptography/
-  - title: "DL"
+  - title: "DL/ML"
     url: /deep learning/
   - title: "Info Theory"
     url: /information theory/
