@@ -12,10 +12,6 @@ main:
     url: /python/   
   - title: "RNGs"
     url: /random number generators/
-  - title: "Posts"
-    url: /posts/
-  - title: "Tutorials"
-    url: /tutorials/
   - title: "General"
     url: /general/
   - title: "Talks"
