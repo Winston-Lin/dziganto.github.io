@@ -8,8 +8,6 @@ main:
     url: /deep learning/
   - title: "Info Theory"
     url: /information theory/
-  - title: "ML"
-    url: /machine learning/  
   - title: "Python"
     url: /python/   
   - title: "RNGs"
