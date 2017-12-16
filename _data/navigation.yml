@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Big Data"
+    url: /big data/
   - title: "Crypto"
     url: /cryptography/
   - title: "DL"
