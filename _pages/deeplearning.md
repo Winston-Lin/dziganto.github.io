@@ -3,6 +3,7 @@ layout: single
 permalink: /deep learning/
 author_profile: true
 ---  
+Deep Learning & Machine Learning Posts
 
 ### Deep Learning
 [Configuring CUDA on AWS for Deep Learning with GPUs](https://dziganto.github.io/aws/cuda/deep%20learning/gpu/python/pytorch/CUDA-on-AWS-for-Deep-Learning/)
