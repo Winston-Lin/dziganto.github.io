@@ -2,12 +2,9 @@
 layout: single
 permalink: /resources/
 author_profile: true
-
 ---  
 
-**ALL THINGS MACHINE LEARNING**  
-
----
+All things machine learning.
 
 ### Articles
 [How to Become a Data Scientist - Brandon Rohrer](https://brohrer.github.io/one_step_program_become_data_scientist.html)  
