@@ -6,6 +6,8 @@ categories: [Data Science, Python, Anaconda]
 
 ![Anaconda](/assets/images/anaconda_continuum.png?raw=true){: .center-image }
 
+## Introduction
+
 What's a *virtual environment* and why would I ever use one?
 
 Simply put, you can think of a virtual environment as a container which houses some software. Great, so what? Well it turns out these containers have a number of useful properties. For example, imagine you created the world's most perfect demo that uses NumPy and Matplotlib under the hood. Your code is beautiful, efficient, and the visualizations are mind boggling. Then a few months go by. You **conda update --all** and notice newer versions of NumPy and Matplotlib so you update. No big deal, right? 
@@ -16,9 +18,44 @@ You have a few options. You could search for a substitute function in the new ve
 
 What you do is this. You use conda to create a new environment called *demo* that is built with which software packages and versions you need to run your demo. That's it. Create a new environment and life is good. Nothing breaks and everything works. Oh, did I mention it takes maybe a minute or two to set all this up. Easy peasy!
 
+## Details
+
 Alright, let's see how to actually do this.
 
 It's no secret that I'm a big fan of PyTorch. Sure, it's a great deep learning framework but it's also a GPU-enabled beast that picks up where NumPy leaves off. In fact, it's perfectly integrated with the PyData stack and if you know NumPy you can learn the majority of the functionality sans deep learning in a few minutes. To get PyTorch on your machine, let's create a *pytorch* environment using conda. 
 
 > Note: I'm using conda version 4.4.6 and PyTorch version 0.3.0. Mileage may vary if you're using different versions.
 
+Here are the steps:
+1. create environment with specific Python and package versions
+2. activate the environment
+3. list packages in environment
+4. install PyTorch
+5. deactivate enviroment
+6. list environments
+
+### Create Environment
+Enter this command in Terminal to install Python 3.6, NumPy 1.13.3, and the newest version of SciPy.
+> conda create -n pytorch python=3.6 numpy=1.13.3 scipy
+
+### Activate Environment
+You have to activate the environment to actually use it. Do it like so:
+> source activate pytorch
+
+### List Packages
+Now we're inside the pytorch container (notice *pytorch* in parantheses?). We can see which packages are installed by typing:
+> conda list
+
+### Install PyTorch
+Let's install PyTorch while we're here.
+> conda install pytorch torchvision -c pytorch 
+
+### Deactivate Environment
+We can return to the root environment by typing:
+> source deactivate
+
+### List Environments
+We can also see which environments are installed.
+> conda info --envs
+
+There's much more you can do with virtual environments but that gives you a taste. Check [managing environments](https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) in the docs for more details.
