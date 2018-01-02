@@ -8,7 +8,7 @@ categories: [Data Science, Python, Anaconda]
 
 ## Introduction
 
-What's a *virtual environment* and why would I ever use one?
+What's a *virtual environment* and why would you ever use one?
 
 Simply put, you can think of a virtual environment as a container which houses some software. Great, so what? Well it turns out these containers have a number of useful properties. For example, imagine you created the world's most perfect demo that uses NumPy and Matplotlib under the hood. Your code is beautiful, efficient, and the visualizations are mind boggling. Then a few months go by. You **conda update --all** and notice newer versions of NumPy and Matplotlib so you update. No big deal, right? 
 
