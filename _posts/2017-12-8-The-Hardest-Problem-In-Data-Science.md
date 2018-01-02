@@ -18,7 +18,7 @@ I have a question for you: **What's the hardest problem in all of data science r
  
 Given your particular set of core values and whether you're personally affected by particular issues (e.g. the gender gap), you may rank certain issues as more or less important than someone else. That's completely understandable. However, there is, at least in my opinion, a more universal problem at large - one that creeps, overtly or implicitly, into the vast majority of conversations and articles about data science. It's an issue we dance around, often without knowing it. And it's one that in some senses is the most easily solvable.  
 
-But before I get to that, I want to make one thing crystal clear: my goal is not to minimize the importance of the aforementioned problems. On the contrary, I'm of the mind that we should strive first to be cognizant of them and then, at the very least, do our part within our small spheres of influence to affect change at the micro-level. 
+\I want to make one thing crystal clear before moving on: my goal is not to minimize the importance of the aforementioned problems. Instead, I'm of the mind that we should strive first to be cognizant of them and then, at the very least, do our part within our small spheres of influence to affect change. 
 
 Now take three well-known industries: law, medicine, and physics. I imagine few people would struggle differentiating a lawyer, a doctor, and a physicist. Go down a level. I doubt many would have difficulties delineating a paralegal and a lawyer, a nurse and a doctor, or a theoretical physicist from an experimental physicist. Ok, maybe the last one is a little tricky. But you get the point. 
 
