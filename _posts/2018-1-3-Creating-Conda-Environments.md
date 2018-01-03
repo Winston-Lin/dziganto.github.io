@@ -22,9 +22,9 @@ Then it happens. You get the infamous error message that some key function impor
 
 You have a few options. You could search for a substitute function in the new version. It may or may not exist. Not the worst option but definitely requires a bit of effort without a guarantee of success. Alternatively, you could write your own function to substitute in. This likely requies some heavy lifting, though it could make your code a little more robust. All in all this is not a great option either. 
 
-At this point you're starting to sweat. You expected to devote a few minutes to knocking off the rust but now you're reconfiguring old code. 
+At this point you're starting to sweat. You expected to devote a few minutes to knocking off the rust but now you're contemplating reconfiguring old code. Not fun.
 
-There is another option and it's particularly enticing.  If you were smart, you enumerated package versions in your code so you know exactly what made it go so many months ago. If only you could revert your packages then all would be well, right? 
+There is another option and it's particularly enticing.  Because you're whip smart, you enumerated package versions in your code so you know exactly what made it go many months ago. If only you could revert your packages then all would be well, right? 
 
 Not so fast! You've written code recently for another project that leverages new functions from the updated libraries. You break that code by reverting. 
 
@@ -32,7 +32,7 @@ Seems like a catch-22.
 
 Alas, there is another option that solves all your problems. Enter **virtual environments**. 
 
-What you do is this. You use conda to create a new environment called *demo* that is built with whichever software packages and versions you need to run your demo. That's it. Create a new environment and life is good. You have your root environment for you new projects and the demo environment for your demo. Nothing breaks and everything works. Oh, did I mention it takes maybe a minute or two to set all this up? Easy peasy! Problem solved.
+What you do is this. You use conda to create a new environment called *demo* that is built with whichever software packages and versions you need to run your demo. That's it. Create a new environment and life is good. You have your root environment for your new projects and the demo environment for your demo. Nothing breaks and everything works. Oh, did I mention it takes maybe a minute or two to set all this up? Easy peasy! Problem solved.
 
 ## Details
 
@@ -51,7 +51,7 @@ Here are the steps:
 6. list environments
 
 ### Create Environment
-Enter this command in Terminal to install Python 3.6, NumPy 1.13.3, and the newest version of SciPy.  
+Enter this command in Terminal to install Python 3.6, NumPy 1.13.3, and the newest version of SciPy. Note: including a conda package without a version number installs the latest and greatest by default.   
 `conda create -n pytorch python=3.6 numpy=1.13.3 scipy`
 
 ### Activate Environment
