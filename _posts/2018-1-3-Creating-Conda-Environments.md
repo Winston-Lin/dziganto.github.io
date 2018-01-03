@@ -16,7 +16,7 @@ Great, so what?
 
 Well it turns out these containers have a number of useful properties. For example, imagine you created the world's most perfect Python demo that uses the NumPy and Matplotlib packages. Your code is beautiful, efficient, and the visualizations are mind boggling. Then a few months go by. You `conda update --all` and notice newer versions of NumPy and Matplotlib. So you update. No big deal, right? 
 
-But then a friend of yours is in a pinch. Someone was supposed to give a demo at her conference but backed out last minute. Lo and behold your old demo is the perfect substitute. Yay! You agree to run a one-hour session because, hey, the work is all done and you just need to brush up. So you dust off the old code and give it a run. 
+A friend of yours reaches out because she's in a pinch. Someone was supposed to give a demo at her conference but backed out last minute. Lo and behold your old demo is the perfect substitute. Yay! You agree to run a one-hour session because, hey, the work is all done and you just need to brush up. So you dust off the old code and give it a run. 
 
 Then it happens. You get the infamous error message that some key function imported from Matplotlib was deprecated. Now your code doesn't work. What do you do? 
 
@@ -38,7 +38,7 @@ What you do is this. You use conda to create a new environment called *demo* tha
 
 Alright, let's see how to do this in practice.
 
-Anyone who knows me knows that I'm a HUGE fan of PyTorch. Sure, it's a great deep learning framework but it's also a GPU-enabled beast that picks up where NumPy leaves off. In fact, it's perfectly integrated with the PyData stack and if you know NumPy you can learn the functionality of PyTorch - sans deep learning - in a few minutes. To get PyTorch on your machine, let's create a *pytorch* environment using conda. 
+Anyone who knows me knows that I'm a HUGE fan of PyTorch. Sure, it's a great deep learning framework but it's also a GPU-enabled beast that picks up where NumPy leaves off. In fact, it's perfectly integrated with the PyData stack, and if you know NumPy you can learn the functionality of PyTorch - sans deep learning - in a few minutes. To get PyTorch on your machine, let's create a *pytorch* environment using conda. 
 
 > Note: I'm using conda version 4.4.6 and PyTorch version 0.3.0. Mileage may vary if you're using different versions.
 
