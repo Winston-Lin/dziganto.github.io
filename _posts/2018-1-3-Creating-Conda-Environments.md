@@ -14,7 +14,7 @@ Simply put, you can think of a virtual environment as a container which houses s
 
 Great, so what? 
 
-Well it turns out these containers have a number of useful properties. For example, imagine you created the world's most perfect Python demo that uses the NumPy and Matplotlib packages. Your code is beautiful, efficient, and the visualizations are mind boggling. Then a few months go by. You **conda update --all** and notice newer versions of NumPy and Matplotlib so you update. No big deal, right? 
+Well it turns out these containers have a number of useful properties. For example, imagine you created the world's most perfect Python demo that uses the NumPy and Matplotlib packages. Your code is beautiful, efficient, and the visualizations are mind boggling. Then a few months go by. You `conda update --all` and notice newer versions of NumPy and Matplotlib so you update. No big deal, right? 
 
 But then a friend of yours is in a pinch. Someone was supposed to give a demo at her conference but backed out last minute. Lo and behold your old demo is the perfect substitute. Yay! You agree to run a one-hour session because, hey, the work is all done and you just need to brush up. So you dust off the old code and give it a run. 
 
@@ -45,27 +45,27 @@ Here are the steps:
 6. list environments
 
 ### Create Environment
-Enter this command in Terminal to install Python 3.6, NumPy 1.13.3, and the newest version of SciPy.
-> conda create -n pytorch python=3.6 numpy=1.13.3 scipy
+Enter this command in Terminal to install Python 3.6, NumPy 1.13.3, and the newest version of SciPy.  
+`conda create -n pytorch python=3.6 numpy=1.13.3 scipy`
 
 ### Activate Environment
-You have to activate the environment to actually use it. Do this like so:
-> source activate pytorch
+You have to activate the environment to actually use it. Do this like so:  
+`source activate pytorch`
 
 ### List Packages
-Now we're inside the pytorch container (notice *pytorch* in parantheses?). We can see which packages are installed by typing:
-> conda list
+Now we're inside the pytorch container (notice *pytorch* in parantheses?). We can see which packages are installed by typing:  
+`conda list`
 
 ### Install PyTorch
-Let's install PyTorch while we're here.
-> conda install pytorch torchvision -c pytorch 
+Let's install PyTorch while we're here.  
+`conda install pytorch torchvision -c pytorch`
 
 ### Deactivate Environment
-We can return to the root environment by typing:
-> source deactivate
+We can return to the root environment by typing:  
+`source deactivate`
 
 ### List Environments
-We can also see which environments are installed.
-> conda info --envs
+We can also see which environments are installed.  
+`conda info --envs`
 
 There's so much more you can do with virtual environments but that gives you a taste. Check [managing environments](https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) in the docs for more details.
