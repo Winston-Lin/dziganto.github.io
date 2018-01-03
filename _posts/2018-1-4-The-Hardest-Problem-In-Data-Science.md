@@ -29,7 +29,9 @@ Now let's try something a little more challenging. What's the difference between
 
 No doubt, it's easy to separate the statistician from the computer scientist, but the statisitician or the computer scientist from the data scientist? Not such an easy feat! Why is that and why is it so easy to separate the other professions? 
 
-Data science is clearly an interdisciplinary profession, one that borrows ideas from other domains. But that's certainly not unique to data science. Domains steal ideas from one all the time. So what's the real problem?
+Data science is clearly an interdisciplinary profession, one that borrows ideas from other domains. But that's certainly not unique to data science. Domains steal ideas from one another all the time. 
+
+So what's the real problem?
 
 Think about what's universal to law, medicine, and physics. Each has its own explicitly defined vernacular. Each is comprised of unique, unambiguous terms. Two lawyers can discuss *torts* or *mens rea* without so much as a second thought. One doctor can use the word *sternocleidomastoid* during a presentation and every other doctor will know exactly what he/she means. A group of physicists can discuss *torque*, *angular momentum*, and *force* effortlessly. In every single case, the terms are unique, unambiguous, and allow for efficient communication.
 
@@ -37,7 +39,7 @@ Sadly, this is far from the case in data science. We can't even agree on what a 
 
 No wonder outsiders look at us as rebranded statisticians, computer scientists, analysts, etc.
 
-Sure we borrowed language from more mature disciplines, but if data science is to finally become a domain all its own, it desperately needs to standardize its language. Let's avoid the countless hours spent using different terminology just to find out we violently agree and instead focus our efforts on the problems that really matter - AGI, ethics, the gender gap, reproducibility, and opaque algorithms.
+Sure we borrowed language from more mature disciplines, but if data science is to finally become a domain all its own, it desperately needs to standardize its language. Let's avoid the countless hours using different terminology just to find out we violently agree and instead focus our efforts on the problems that really matter - AGI, ethics, the gender gap, reproducibility, and opaque algorithms.
 
 It's time for data science to grow up. It's time to standardize our language. Until it does, the scuffles with statisticians, computer scientists, and all the others we borrow from will rage on. 
 
