@@ -43,6 +43,8 @@ Sure we borrowed language from more mature disciplines, but if data science is t
 
 It's time for data science to grow up. It's time to standardize our language. Until it does, the scuffles with statisticians, computer scientists, and all the others we borrow from will rage on. 
 
+---
+
 What are your thoughts? 
 
 Drop me a line and let me know.
