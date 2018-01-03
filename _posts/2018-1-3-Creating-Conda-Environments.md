@@ -51,8 +51,9 @@ Here are the steps:
 6. list environments
 
 ### Create Environment
-Enter this command in Terminal to install Python 3.6, NumPy 1.13.3, and the newest version of SciPy. Note: including a conda package without a version number installs the latest and greatest by default.   
-`conda create -n pytorch python=3.6 numpy=1.13.3 scipy`
+Enter this command in Terminal to install Python 3.6, NumPy 1.13.3, and the newest version of SciPy. 
+`conda create -n pytorch python=3.6 numpy=1.13.3 scipy`  
+Note: including a conda package without a version number installs the latest and greatest by default.   
 
 ### Activate Environment
 You have to activate the environment to actually use it. Do this like so:  
