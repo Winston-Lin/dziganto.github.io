@@ -4,7 +4,12 @@ title: The Hardest Problem in Data Science
 categories: [Data Science]
 ---
 
-I have a question for you: **What's the hardest problem in all of data science right now?** 
+![Cartoon](/assets/images/complicating_equations.jpeg?raw=true){: .center-image }
+)
+
+### What's the hardest problem in all of data science right now? 
+
+Is it:
 
 * [Artificial General Intelligence (AGI)](https://en.wikipedia.org/wiki/Artificial_general_intelligence)? 
 
