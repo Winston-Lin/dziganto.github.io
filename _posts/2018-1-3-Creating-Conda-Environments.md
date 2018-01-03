@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Creating Conda Environments
 categories: [Data Science, Python, Anaconda]
 ---
