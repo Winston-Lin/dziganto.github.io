@@ -19,7 +19,7 @@ Is it:
 
 * Reproducibility?
 
-* Ubiquitous, opaque algorithms that drive nearly all facets of our lives (see [Weapons of Math Destruction](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418815))? 
+* Ubiquitous, opaque algorithms that drive nearly all facets of our lives? (see [Weapons of Math Destruction](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418815)) 
  
 Given your particular set of core values and whether you're personally affected by particular issues (e.g. the gender gap), you may rank certain issues as more or less important than someone else. That's completely understandable. However, there is, at least in my opinion, a more universal problem at large - one that creeps, overtly or implicitly, into the vast majority of conversations and articles about data science. It's an issue we dance around, often without knowing it. And it's one that in some senses is the most easily solvable.  
 
