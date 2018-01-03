@@ -38,7 +38,7 @@ What you do is this. You use conda to create a new environment called *demo* tha
 
 Alright, let's see how to do this in practice.
 
-Anyone who knows me knows that I'm a HUGE fan of PyTorch. Sure, it's a great deep learning framework but it's also a GPU-enabled beast that picks up where NumPy leaves off. In fact, it's perfectly integrated with the PyData stack, and if you know NumPy you can learn the functionality of PyTorch - sans deep learning - in a few minutes. To get PyTorch on your machine, let's create a *pytorch* environment using conda. 
+Anyone who knows me knows that I'm a HUGE fan of PyTorch. Sure, it's a great deep learning framework but it's also a CPU/GPU-enabled beast that picks up where NumPy leaves off. In fact, it's perfectly integrated with the PyData stack, and if you know NumPy you can learn PyTorch functionality - sans deep learning - in a few minutes. To get PyTorch on your machine, let's create a *pytorch* environment using conda. 
 
 > Note: I'm using conda version 4.4.6 and PyTorch version 0.3.0. Mileage may vary if you're using different versions.
 
