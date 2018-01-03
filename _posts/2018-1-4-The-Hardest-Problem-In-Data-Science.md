@@ -27,7 +27,7 @@ Let's start with an example. Take three well-known domains: law, medicine, and p
 
 Now let's try something a little more challenging. What's the difference between a statistician, a computer scientist, and a data scientist?
 
-No doubt, it's easy to separate the statistician from the computer scientist, but the statisitician or the computer scientist from the data scientist? Not such an easy feat! Why is that and why is it so easy to separate the other professions? 
+No doubt, it's easy to separate the statistician from the computer scientist, but the statisitician or the computer scientist from the data scientist? Not such an easy feat. Why is that and why is it so easy to separate the other professions? 
 
 Data science is clearly an interdisciplinary profession, one that borrows ideas from other domains. But that's certainly not unique to data science. Domains steal ideas from one another all the time. 
 
