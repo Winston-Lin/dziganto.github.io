@@ -4,7 +4,7 @@ title: Creating Conda Environments
 categories: [Data Science, Python, Anaconda]
 ---
 
-![Anaconda](/assets/images/anaconda_continuum.png?raw=true){: .center-image }
+![Anaconda](/assets/images/anaconda_continuum.jpg?raw=true){: .center-image }
 
 ## Introduction
 
