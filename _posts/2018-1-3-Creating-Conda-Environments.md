@@ -24,8 +24,6 @@ You have a few options. You could search for a substitute function in the new ve
 
 At this point you're starting to sweat. You expected to devote a few minutes to knocking off the rust but now you're contemplating reconfiguring old code. Not fun.
 
-## Next Steps
-
 There is another option and it's particularly enticing.  Because you're whip smart, you enumerated package versions in your code so you know exactly what made it go many months ago. If only you could revert your packages then all would be well, right? 
 
 Not so fast! You've written code recently for another project that leverages new functions from the updated libraries. You break that code by reverting. 
@@ -75,5 +73,7 @@ We can return to the root environment by typing:
 ### List Environments
 We can also see which environments are installed.  
 `conda info --envs`
+
+## Next Steps
 
 There's so much more you can do with virtual environments but that gives you a taste. Check [managing environments](https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) in the docs for more details.
