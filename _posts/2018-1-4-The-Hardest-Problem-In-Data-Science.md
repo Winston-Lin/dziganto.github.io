@@ -41,7 +41,7 @@ No wonder outsiders look at us as rebranded statisticians, computer scientists, 
 
 Sure we borrowed language from more mature disciplines, but if data science is to finally become a domain all its own, it desperately needs to standardize its language. Let's avoid the countless hours using different terminology just to find out we violently agree and instead focus our efforts on the problems that really matter - AGI, ethics, the gender gap, reproducibility, and opaque algorithms.
 
-It's time for data science to grow up. It's time to standardize our language. Until it does, the scuffles with statisticians, computer scientists, and all the others we borrow from will rage on. 
+It's time for data science to grow up. It's time to standardize our language. Until then, the scuffles with statisticians, computer scientists, and all the others we borrow from will rage on. 
 
 ---
 
