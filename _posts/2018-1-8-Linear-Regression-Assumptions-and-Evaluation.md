@@ -276,7 +276,154 @@ Pretty big difference!
 
 ### Possible Solutions
 1. Investigate the outlier(s). Do NOT assume these cases are just bad data. Some outliers are true examples while others are data entry errors. You need to know which it is before proceeding.  
-2. Consider imputing or removing bad data outliers if you can't get true data from source
+2. Consider imputing or removing bad data outliers if you can't get true data from source.
 
 ---
 
+## #3 No High-Leverage Points
+You know the drill by now - generate data, transform *x* array, plot, check residuals, and discuss.
+
+#### Generate Dummy Data
+```
+np.random.seed(20)
+x = np.arange(20)
+y_linear_leverage = [x*2 + np.random.rand(1)*4 for x in range(20)]
+y_linear_leverage[18] = np.array([55])  ## high-leverage point
+y_linear_leverage[19] = np.array([58])  ## high-leverage point
+```
+
+#### Reshape x
+```
+x_reshape = x.reshape(-1,1)
+```
+
+#### Fit Model
+```
+linear_leverage = LinearRegression()
+linear_leverage.fit(x_reshape, y_linear_leverage)
+```
+
+#### Plot
+![image](/assets/images/linear_w_leverage_pts.png?raw=true){: .center-image }
+
+#### Stats
+```
+# linear (no leverage)
+sse:     24.3975
+sst:     2502.9934
+r^2:     0.9903
+adj_r^2: 0.9897
+
+# linear (w/leverage)
+sse:     438.7579
+sst:     4373.2096
+r^2:     0.8997
+adj_r^2: 0.8941
+```
+
+#### Residual Plots
+![image](/assets/images/residual_plots_w_leverage_pts.png?raw=true){: .center-image }
+
+#### Normal Test
+```
+normaltest(y_outlier-linear_leverage.predict(x_reshape))
+```
+
+With output:
+```
+NormaltestResult(statistic=array([ 25.3995098]), pvalue=array([  3.05187348e-06]))
+```
+
+Fails! The residuals are not normally distributed, statistically speaking that is. This is a key assumption of Linear Regression and we have violated it. 
+
+### Takeaway
+The high-leverage points not only act as outliers, they also greatly affect our model's ability to generalize and our confidence in the model itself.
+
+### Solutions
+1. Explore the data to understand why these data points exist. Are they true data points or outliers of some kind?
+2. Consider imputing or removing them if truly outliers
+3. Consider a more robust loss function (e.g. Huber)
+4. Consider a more robust algorithm (e.g. RANSAC)
+
+---
+
+## #4 Homoscedasticity of Error Terms
+Same old pattern. Here goes.
+
+#### Generate Dummy Data
+```
+np.random.seed(20)
+x = np.arange(20)
+y_homo = [x*2 + np.random.rand(1) for x in range(20)]  ## homoscedastic error
+y_hetero = [x*2 + np.random.rand(1)*2*x for x in range(20)]  ## heteroscedastic error
+```
+
+#### Reshape x
+```
+x_reshape = x.reshape(-1,1)
+```
+
+#### Fit Model
+```
+linear_homo = LinearRegression()
+linear_homo.fit(x_reshape, y_homo);
+
+linear_hetero = LinearRegression()
+linear_hetero.fit(x_reshape, y_hetero);
+```
+
+#### Plot
+![image](/assets/images/heteroscedasticity.png?raw=true){: .center-image }
+
+### Residual Plot
+![image](/assets/images/residual_plot_homo_vs_heterscedasticity_1.png?raw=true){: .center-image }
+
+#### Normal Test
+```
+# homoscedastic data
+normaltest(y_homo-linear_homo.predict(x_reshape))
+
+# heteroscedastic data
+normaltest(y_hetero-linear_hetero.predict(x_reshape))
+```
+
+With outputs, respectively:
+```
+NormaltestResult(statistic=array([ 1.71234546]), pvalue=array([ 0.42478474]))
+
+NormaltestResult(statistic=array([ 1.04126656]), pvalue=array([ 0.59414417]))
+```
+
+### Takeaway
+Standard errors, confidence intervals, and hypothesis tests rely on the assumption that errors are homoscedastic. If this assumption is violated, you cannot trust values for the previous metrics!!!
+
+### Possible Solution
+1. Consider log transforming the target values
+
+```
+y_hetero_log = np.log10(np.array(y_hetero) + 1e1)
+x_reshape_log = np.log10(np.array(x_reshape) + 1e1)
+
+linear_hetero_log = LinearRegression()
+linear_hetero_log.fit(x_reshape, y_hetero_log)
+
+linear_hetero_log_log = LinearRegression()
+linear_hetero_log_log.fit(x_reshape_log, y_hetero_log)
+```
+
+![image](/assets/images/residual_plot_homo_vs_heterscedasticity_2.png?raw=true){: .center-image }
+
+```
+normaltest(y_hetero_log - linear_hetero_log.predict(x_reshape))
+```
+
+Output:
+```
+NormaltestResult(statistic=array([ 0.96954754]), pvalue=array([ 0.6158365]))
+```
+
+The plot on the right shows we addressed heteroscedasticity but there'a a fair amount of correlation amongst the errors, which brings us to our next assumption.
+
+---
+
+## #5 Uncorrelated Error Terms
