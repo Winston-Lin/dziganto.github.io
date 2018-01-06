@@ -149,5 +149,7 @@ The output is: `[ 95.46395681  24.63320421   5.6979177 ]`
 Final plot:  
 ![Model Baby Weights by Gender](/assets/images/baby_weights_gender_plane.png?raw=true){: .center-image }
 
+The red dots indicate actual observations while the black dots indicate our model's predictions by gender. Actually, the light blue plane shows the solution space of our model. If we swapped the indicator feature gender with a continuous one, the plane would represent the full range of solutions. Because we have gender which can only take values 0 or 1, our solution ends up being two lines, subsets of the plane, indicated by the black dots.
+
 ## Where To Go From Here?
 We talked about Linear Regression terminology and how to find its model parameters, at least analytically. What we haven't talked about yet is metrics, model assumptions, potential pitfalls, and how to handle them. We'll pick up next time with metrics so stay tuned!
