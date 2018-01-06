@@ -7,6 +7,8 @@ categories: [Data Science, Linear Regression, Machine Learning]
 ![image](/assets/images/linear_regression_1.jpg?raw=true){: .center-image }
 
 ## Introduction
+This is the first post in a 3-part series.
+
 Pretend you're a pediatrician and that your patients come in for monthly checkups. You've been keeping a log of each child's weight at each checkup for the first 12 months. You've accumulated a good bit of data that looks like this.
 
 ![Baby Weights](/assets/images/baby_weights.png?raw=true){: .center-image }
