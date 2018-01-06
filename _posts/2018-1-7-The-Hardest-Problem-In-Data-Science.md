@@ -23,7 +23,7 @@ Is it:
  
 Given your particular set of core values and whether you're personally affected by particular issues (e.g. the gender gap), you may rank certain issues as more or less important than someone else. That's completely understandable. However, there is, at least in my opinion, a more universal problem at large - one that creeps, overtly or implicitly, into the vast majority of conversations and articles about data science. It's an issue we dance around, often without knowing it. And it's one that in some senses is the most easily solvable.  
 
-Let's start with an example. Take three well-known domains: law, medicine, and physics. I imagine few people would struggle differentiating a lawyer, a doctor, and a physicist. Let's drill down a level. How many people would struggle delineating a paralegal and a lawyer, a nurse and a doctor, or a theoretical physicist from an experimental physicist? Ok, maybe the last one is a little tricky but you get the point. 
+Let's start with an example. Take three well-known domains: law, medicine, and physics. I imagine few people would struggle differentiating a lawyer, a doctor, and a physicist. 
 
 Now let's try something a little more challenging. What's the difference between a statistician, a computer scientist, and a data scientist?
 
@@ -39,7 +39,7 @@ Sadly, this is far from the case in data science. We can't even agree on what a 
 
 No wonder outsiders look at us as rebranded statisticians, computer scientists, analysts, etc.
 
-Sure we borrowed language from more mature disciplines, but if data science is to finally become a domain all its own, it desperately needs to standardize its language. Let's avoid the countless hours using different terminology just to find out we violently agree and instead focus our efforts on the problems that really matter - AGI, ethics, the gender gap, reproducibility, and opaque algorithms.
+Sure we borrowed language from more mature disciplines, but if data science is to finally become a domain all its own, it desperately needs to standardize its language. Let's avoid the countless hours using different terminology just to find out we violently agree, and instead focus our efforts on the problems that really matter - AGI, ethics, the gender gap, reproducibility, and opaque algorithms.
 
 It's time for data science to grow up. It's time to standardize our language. Until then, the scuffles with statisticians, computer scientists, and all the others we borrow from will rage on. 
 
