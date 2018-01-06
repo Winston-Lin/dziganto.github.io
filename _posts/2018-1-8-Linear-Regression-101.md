@@ -75,6 +75,8 @@ Now let's write some Python code to find the parameters using a little bit of Nu
 
 First, I'll show you how I generated the data above:
 ```
+import numpy as np
+
 # reproducibility
 np.random.seed(10)
 
