@@ -7,7 +7,7 @@ categories: [Data Science, Linear Regression, Machine Learning]
 ![image](/assets/images/linear_regression_3.png?raw=true){: .center-image }
 
 ## Introduction
-This post covers the basic assumptions of Linear Regression, how to investigate whether those assumptions are met, and how to address key problems. 
+This is the thrid post in a 3-part series that covers the basic assumptions of Linear Regression, how to investigate whether those assumptions are met, and how to address key problems. 
 
 ## Linear Regression Assumptions
 1. Linear relationship between target and features
