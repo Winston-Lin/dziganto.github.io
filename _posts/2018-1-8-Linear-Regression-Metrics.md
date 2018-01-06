@@ -157,7 +157,6 @@ If you think about what squaring does to large numbers you'll realize that we're
 
 **Adjusted $R^{2}$** is the same as standard $R^{2}$ except that it penalizes models when additional features are added. This naturally leads to the next section about why $R^{2}$ is a poor metric to use.
 
----
 
 ## Why $R^{2}$ is a Poor Metric
 $R^{2}$ will only go up as additional features are added, even if they provide the model no new predictive power. See the example below.
