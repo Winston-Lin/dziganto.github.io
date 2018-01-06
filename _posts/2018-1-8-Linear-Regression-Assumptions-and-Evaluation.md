@@ -7,7 +7,7 @@ categories: [Data Science, Linear Regression, Machine Learning]
 ![image](/assets/images/linear_regression_3.png?raw=true){: .center-image }
 
 ## Introduction
-This post covers the basic assumptions of Linear Regression. Additionally, how to investigate whether assumptions are met, how to diagnose problems, and how to address those problems are covered. 
+This post covers the basic assumptions of Linear Regression, how to investigate whether those assumptions are met, and how to address key problems. 
 
 ## Linear Regression Assumptions
 1. Linear relationship between target and features
@@ -17,3 +17,153 @@ This post covers the basic assumptions of Linear Regression. Additionally, how t
 5. Uncorrelated error terms 
 6. Independent features
 
+Let's dig deeper into each of these assumptions one at a time.
+
+## #1 Linear Relationship Between Target & Features
+The first thing we need to do is to generate some linear data. Here's the code:
+```
+import numpy as np
+np.random.seed(20)
+x = np.arange(20)
+y = [x*2 + np.random.rand(1)*4 for x in range(20)]
+```
+
+Next, we need to reshape the array named *x* because Sklearn requires a 2D array. Note that we're faking a 2D array here by using the .reshape(-1,1) method.
+```
+x_reshape = x.reshape(-1,1)
+```
+
+On to fitting the model with Sklearn
+```
+from sklearn.linear_model import LinearRegression
+linear = LinearRegression()
+linear.fit(x_reshape, y)
+```
+
+And now a plot of the data and resulting Linear Regression line.
+![image](/assets/images/linear_w_noise.png?raw=true){: .center-image }
+
+It certainly looks pretty good but let's capture key metrics as discussed in the previous post. To do that, we'll borrow the Stats class from the last post. Here's the code:
+```
+class Stats:
+    
+    def __init__(self, X, y, model):
+        self.data = X
+        self.target = y
+        self.model = model
+        ## degrees of freedom population dep. variable variance
+        self._dft = X.shape[0] - 1   
+        ## degrees of freedom population error variance
+        self._dfe = X.shape[0] - X.shape[1] - 1  
+    
+    def sse(self):
+        '''returns sum of squared errors (model vs actual)'''
+        squared_errors = (self.target - self.model.predict(self.data)) ** 2
+        return np.sum(squared_errors)
+        
+    def sst(self):
+        '''returns total sum of squared errors (actual vs avg(actual))'''
+        avg_y = np.mean(self.target)
+        squared_errors = (self.target - avg_y) ** 2
+        return np.sum(squared_errors)
+    
+    def r_squared(self):
+        '''returns calculated value of adjusted r^2'''
+        return 1 - self.sse()/self.sst()
+    
+    def adj_r_squared(self):
+        '''returns calculated value of adjusted r^2'''
+        return 1 - (self.sse()/self._dfe) / (self.sst()/self._dft)
+```
+
+If you read that post, you'll remember we created a pretty print function that will generate a nice looking report. Here's that bit of code:
+```
+def pretty_print_stats(stats_obj):
+    '''returns report of statistics for a given model object'''
+    items = ( ('sse:', stats_obj.sse()), ('sst:', stats_obj.sst()), 
+             ('r^2:', stats_obj.r_squared()), ('adj_r^2:', stats_obj.adj_r_squared()) )
+    for item in items:
+        print('{0:8} {1:.4f}'.format(item[0], item[1]))
+```
+
+Alright, we're all set. Time to instantiate and generate that report.
+```
+s1 = Stats(x_reshape, y, linear)
+pretty_print_stats(s1)
+```
+
+The output is:
+```
+sse:     24.3975
+sst:     2502.9934
+r^2:     0.9903
+adj_r^2: 0.9897
+```
+
+Not surprisingly, our results look good across the board. 
+
+#### Potential Problem: Data w/Non-Linear Pattern
+```
+y_nonlinear = [x**3 + np.random.rand(1)*10 for x in range(20)]
+nonlinear = LinearRegression()
+nonlinear.fit(x_reshape, y_nonlinear)
+```
+
+![image](/assets/images/nonlinear.png?raw=true){: .center-image }
+
+Capturing stats on the non-linear data gives us:
+```
+sse:     14702044.1585
+sst:     87205080.0323
+r^2:     0.8314
+adj_r^2: 0.8220
+```
+
+No surprise. We see a substantial increases in both SSE and SST as well as substantial decreases in $R^2$ and adjusted $R^2$.
+
+#### Considerations
+We can check to see if our model is capturing the underlying pattern effectively. Specifically, let's generate side-by-side **Residual Plots** for the linear case and the nonlinear case. 
+```
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(1, 2, sharex=False, sharey=False)
+fig.suptitle('[Residual Plots]')
+fig.set_size_inches(12,5)
+axes[0].plot(linear.predict(x_reshape), y-linear.predict(x_reshape), 'bo')
+axes[0].axhline(y=0, color='k')
+axes[0].grid()
+axes[0].set_title('Linear')
+axes[0].set_xlabel('predicted values')
+axes[0].set_ylabel('residuals')
+axes[1].plot(nonlinear.predict(x_reshape), y_nonlinear-nonlinear.predict(x_reshape), 'ro')
+axes[1].axhline(y=0, color='k')
+axes[1].grid()
+axes[1].set_title('Non-Linear')
+axes[1].set_xlabel('predicted values')
+```
+
+![image](/assets/images/linear_vs_nonlinear_residual_plots.png?raw=true){: .center-image }
+
+The non-linear pattern is overwhelmingly obvious in the residual plots. You may be wondering why we bothered at all since we saw the non-linear trend in when plotting the observed data. That works for low dimensional cases that are easy to visualize but how will you know if you have more than a few features? The residual plot is a powerful tool in that case and something you should leverage often.
+
+Let's now plot a histogram of residuals to see if they're Normally distributed for the linear case.
+
+```
+import seaborn as sns
+
+residuals_linear = y - linear.predict(x_reshape)
+residuals_nlinear = y_nonlinear - nonlinear.predict(x_reshape)
+
+sns.distplot(residuals_linear);
+plt.title('Linear')
+```
+
+![image](/assets/images/linear_histogram.png?raw=true){: .center-image }
+
+And now for the non-linear case.
+```
+sns.distplot(residuals_nlinear)
+plt.title('Non-Linear')
+```
+
+![image](/assets/images/nonlinear_histogram.png?raw=true){: .center-image }
