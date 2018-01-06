@@ -134,7 +134,7 @@ gender = np.random.binomial(n=1, p=0.5, size=len(babies)*len(months)) ## male=0,
 X = np.c_[X, gender]
 ```
 
-Here's the plot:
+Here's the plot:  
 ![Baby Weights by Gender](/assets/images/baby_weights_gender.png?raw=true){: .center-image }
 
 Instead of finding a best fitting line of the data, we're looking for the best fitting plane. We solve the same way. Watch this.
