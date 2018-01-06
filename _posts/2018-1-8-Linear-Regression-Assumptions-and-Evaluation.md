@@ -102,7 +102,7 @@ adj_r^2: 0.9897
 
 Not surprisingly, our results look good across the board. 
 
-#### Potential Problem: Data w/Non-Linear Pattern
+### Potential Problem: Data w/Non-Linear Pattern
 ```
 y_nonlinear = [x**3 + np.random.rand(1)*10 for x in range(20)]
 nonlinear = LinearRegression()
@@ -121,7 +121,7 @@ adj_r^2: 0.8220
 
 No surprise. We see a substantial increases in both SSE and SST as well as substantial decreases in $R^2$ and adjusted $R^2$.
 
-#### Considerations
+### Considerations
 We can check to see if our model is capturing the underlying pattern effectively. Specifically, let's generate side-by-side **Residual Plots** for the linear case and the nonlinear case. 
 ```
 import matplotlib.pyplot as plt
@@ -193,10 +193,10 @@ NormaltestResult(statistic=array([ 2.20019716]), pvalue=array([ 0.33283827]))
 
 Turns out the residuals for the non-linear function are Normally distributed as well, in this case.
 
-#### Takeaway
+### Takeaway
 The linear data exhibits a fair amount of randomness centered around 0 in the residual plot indicating our model has captured nearly all the discernable pattern. On the other hand, the non-linear data shows a clear non-linear trend. In other words, using the non-linear data as-is with our linear model will result in a relatively poor model fit.
 
-#### Possible Solutions to Non-Linear Data
+### Possible Solutions to Non-Linear Data
 1. Consider transforming the features 
 2. Consider applying a different algorithm
 
