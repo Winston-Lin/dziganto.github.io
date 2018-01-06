@@ -517,4 +517,4 @@ adj_r^2: 0.9378
 ## Wrap Up
 Thus concludes our whirlwind tour of Linear Regression. By no means did we cover everything. We didn't talk about QQ-plots or Maximum Likelihood Estimation and how it drives Ordinary Least Squares. However, this post and the two prior should give you a deep enough fluency to build models effectively, to know when things go wrong, to know what those things are, and what to do about them. 
 
-Lastly, please let me know if you found any errors along the way. I tried my best to catch them all but inevitably a few tend to fly under the radar, so to speak. 
+I hope you found this series helpful and please let me know if you found any errors along the way. I tried my best to catch them all but inevitably a few tend to fly under the radar, so to speak. 
