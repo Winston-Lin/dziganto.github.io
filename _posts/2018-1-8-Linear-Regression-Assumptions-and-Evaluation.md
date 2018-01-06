@@ -366,10 +366,10 @@ x_reshape = x.reshape(-1,1)
 #### Fit Model
 ```
 linear_homo = LinearRegression()
-linear_homo.fit(x_reshape, y_homo);
+linear_homo.fit(x_reshape, y_homo)
 
 linear_hetero = LinearRegression()
-linear_hetero.fit(x_reshape, y_hetero);
+linear_hetero.fit(x_reshape, y_hetero)
 ```
 
 #### Plot
@@ -427,3 +427,94 @@ The plot on the right shows we addressed heteroscedasticity but there'a a fair a
 ---
 
 ## #5 Uncorrelated Error Terms
+Same pattern...
+
+#### Generate Dummy Data
+```
+np.random.seed(20)
+x = np.arange(20)
+y_uncorr = [2*x + np.random.rand(1) for x in range(20)]
+y_corr = np.sin(x)
+```
+
+#### Reshape x
+```
+x_reshape = x.reshape(-1,1)
+```
+
+#### Fit Model
+```
+linear_uncorr = LinearRegression()
+linear_uncorr.fit(x_reshape, y_uncorr)
+
+linear_corr = LinearRegression()
+linear_corr.fit(x_reshape, y_corr)
+```
+
+### Residual Plot
+![image](/assets/images/residual_plot_uncorr_vs_corr_1.png?raw=true){: .center-image }
+
+It's not easy to see if any patterns exist. Let's try plotting another way.
+
+![image](/assets/images/residual_plot_uncorr_vs_corr_2.png?raw=true){: .center-image }
+
+Now we can see the correlated errors.
+
+### Possible Solution
+1. Forget linear regression. Use time series modeling instead.
+
+Much more on this when we get to time series in another post. For now, just know it's a problem and Linear Regression does not address it. Linear Regression expects records to be i.i.d.
+
+---
+
+## #6 Independent features
+
+### Generate Dummy Data
+```
+np.random.seed(39)
+x1 = np.arange(20) * 2
+x2 = np.random.randint(low=0, high=50, size=20)
+x_idp = np.vstack((x1,x2))
+y = np.add( np.sum(x_idp, axis=0), np.random.randn(20)*5 )  ## y = x1 + x2 + noise
+```
+
+### Plot
+![image](/assets/images/independent_features.png?raw=true){: .center-image }
+
+### Create Linearly Dependent Feature
+```
+import pandas as pd
+dp_df = pd.DataFrame([x1,x2,(x1+x2)]).T
+```
+
+### Heatmap of Feature Correlations
+![image](/assets/images/heatmap_correlation.png?raw=true){: .center-image }
+
+### Fit Models
+```
+lr_idp = LinearRegression()
+lr_idp.fit(x_idp.T, y)
+
+lr_dp = LinearRegression()
+lr_dp.fit(dp_df, y)
+```
+
+### Stats
+```
+# linearly independent features
+sse:     361.5308
+sst:     6898.6751
+r^2:     0.9476
+adj_r^2: 0.9414
+
+# linearly dependent features
+sse:     361.5308
+sst:     6898.6751
+r^2:     0.9476
+adj_r^2: 0.9378
+```
+
+## Wrap Up
+Thus concludes our whirlwind tour of Linear Regression. By no means did we cover everything. We didn't talk about QQ-plots or Maximum Likelihood Estimation and how it drives Ordinary Least Squares. However, this post and the two prior should give you a deep enough fluency to build models effectively, to know when things go wrong, to know what those things are, and what to do about them. 
+
+Lastly, please let me know if you found any errors along the way. I tried my best to catch them all but inevitably a few tend to fly under the radar, so to speak. 
