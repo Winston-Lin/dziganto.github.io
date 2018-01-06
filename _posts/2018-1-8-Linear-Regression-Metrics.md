@@ -7,7 +7,7 @@ categories: [Data Science, Linear Regression, Machine Learning]
 ![image](/assets/images/linear_regression_2.png?raw=true){: .center-image }
 
 ## Introduction
-We left off last time discussing the basics of Linear Regression. Specifically, we learned key terminology and how to find parameters for both univariate and multivariate Linear Regression. Now we'll turn our focus to metrics about our model. 
+This is the second post in a 3-part series. We left off last time discussing the basics of Linear Regression. Specifically, we learned key terminology and how to find parameters for both univariate and multivariate Linear Regression. Now we'll turn our focus to metrics about our model. 
 
 We'll look at the following key metrics:
 1. Sum of Squared Errors (SSE)
