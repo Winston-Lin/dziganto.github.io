@@ -224,4 +224,59 @@ r^2:     1.0000
 adj_r^2: 1.0000
 ```
 
+---
+
 ## #2 No outliers
+As always, let's start by generating our data, including an outlier.
+
+```
+np.random.seed(20)
+x = np.arange(20)
+y = [x*2 + np.random.rand(1)*4 for x in range(20)]
+y_outlier = y.copy()
+y_outlier[8] = np.array([38])  ## insert outlier
+```
+
+We'll do the customary reshaping of our 1D *x* array and fit two models: one with the outlier and one without. Then we'll investigate the impact on the various stats.
+
+```
+# sklearn expects 2D array so have to reshape x
+x_reshape = x.reshape(-1,1)
+
+# fit model w/standard data
+linear_nooutlier = LinearRegression()
+linear_nooutlier.fit(x_reshape, y);
+
+# fit model w/outlier data
+linear_outlier = LinearRegression()
+linear_outlier.fit(x_reshape, y_outlier);
+```
+
+A plot for comparison:
+
+![image](/assets/images/linear_w_outlier.png?raw=true){: .center-image }
+
+There doesn't appear to be much difference in the lines but looks can be deceiving. Let's look at the key stats.
+
+```
+# no outlier
+sse:     24.3975
+sst:     2502.9934
+r^2:     0.9903
+adj_r^2: 0.9897
+
+# w/outlier
+sse:     396.3144
+sst:     2764.0028
+r^2:     0.8566
+adj_r^2: 0.8487
+```
+
+Pretty big difference! 
+
+### Possible Solutions
+1. Investigate the outlier(s). Do NOT assume these cases are just bad data. Some outliers are true examples while others are data entry errors. You need to know which it is before proceeding.  
+2. Consider imputing or removing bad data outliers if you can't get true data from source
+
+---
+
