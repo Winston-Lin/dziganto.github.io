@@ -167,3 +167,61 @@ plt.title('Non-Linear')
 ```
 
 ![image](/assets/images/nonlinear_histogram.png?raw=true){: .center-image }
+
+The histogram of the linear model on linear data looks approximately Normal (aka Gaussian) while the 2nd shows a clear skew. But is there a more quantitative method to test for Normality? Absolutely.
+
+```
+from scipy.stats import normaltest
+normaltest(residuals_linear)
+```
+
+Which outputs:
+```
+NormaltestResult(statistic=array([ 1.71234546]), pvalue=array([ 0.42478474]))
+```
+
+The null hypothesis is that the residual distribution is Normally distributed. Since the p-value > 0.05, we cannot reject the null. In other words, the residuals are Normally distributed.
+
+```
+normaltest(residuals_nlinear)
+```
+
+Which outputs:
+```
+NormaltestResult(statistic=array([ 2.20019716]), pvalue=array([ 0.33283827]))
+```
+
+Turns out the residuals for the non-linear function are Normally distributed as well, in this case.
+
+#### Takeaway
+The linear data exhibits a fair amount of randomness centered around 0 in the residual plot indicating our model has captured nearly all the discernable pattern. On the other hand, the non-linear data shows a clear non-linear trend. In other words, using the non-linear data as-is with our linear model will result in a relatively poor model fit.
+
+#### Possible Solutions to Non-Linear Data
+1. Consider transforming the features 
+2. Consider applying a different algorithm
+
+Let's see what we can do with polynomial regression in this scenario.
+
+#### Polynomial Regression
+```
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import PolynomialFeatures
+
+poly = Pipeline([('poly', PolynomialFeatures(degree=3)),
+                  ('linear', LinearRegression(fit_intercept=False))])
+poly.fit(x_reshape, y_nonlinear)
+```
+
+Now our plot looks like this:
+
+![image](/assets/images/polynomial_regression.png?raw=true){: .center-image }
+
+Checking the stats results in:
+```
+sse:     80.6927
+sst:     87205080.0323
+r^2:     1.0000
+adj_r^2: 1.0000
+```
+
+## #2 No outliers
