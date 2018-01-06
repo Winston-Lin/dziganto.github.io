@@ -1,6 +1,6 @@
 ---
 published: false
-title: Cross-Validation
+title: Validation Set and Cross-Validation
 categories: [Cross-Validation, Data Science, Machine Learning, Python]
 ---
 
