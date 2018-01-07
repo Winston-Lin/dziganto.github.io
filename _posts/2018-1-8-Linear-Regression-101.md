@@ -17,11 +17,11 @@ There appears to be a strong linear pattern here. It'd be nice if you could crea
 
 But how to build the model?
 
-Linear Regression to the rescue!
+With Linear Regression of course!
 
 ## Overview
 
-Linear Regression is really quite simple and surprisingly powerful. In this simple case, we have a single predictor variable called *month*. Linear Regression with a single variable (aka feature) is called Univariate Linear Regression. The output of Linear Regression is an estimate of the outcome variable (aka target), which in this case is a baby's weight in ounces.
+Linear Regression is really quite simple yet surprisingly powerful. In this simple case, we have a single predictor variable called *month*. Linear Regression with a single variable (aka feature) is called Univariate Linear Regression. The output of Linear Regression is an estimate of the outcome variable (aka target), which in this case is a baby's weight in ounces.
 
 The equation of our model looks like this:
 
@@ -33,24 +33,19 @@ The intercept is the expected value of child at birth. This is the same as sayin
 
 For nonbirth weights, we simply add the month number times the slope to the intercept. 
 
-You may be wondering about that funny looking *e* called epsilon. That signifies error. Error comes in two flavors: reducible and irreducible. Reducible error is error that results when your model is not extracting all the structure or pattern in the data. Irreducible error is what's left over. For nontrivial datasets, there will always be irreducible error, so don't expect to create a model that perfectly predicts every example.
+You may be wondering about that funny looking *e* called *epsilon*. That signifies error. Error comes in two flavors: reducible and irreducible. Reducible error is error that results when your model is not extracting all the structure or pattern in the data. Irreducible error is what's left over. For nontrivial datasets, there will always be irreducible error, so don't expect to create a model that perfectly predicts every example.
 
-It's important to keep in mind that models are an **approximation** of reality. Rarely does a model take all factors into account. In the case of babies, we're using months as a way to estimate a baby's weight in ounces. Obviously, genetics and environmental factors play a major role in a baby's weight but using age in months is a great proxy in this contrived case.
+It's important to keep in mind that models are an **approximation** of reality. Rarely does a model take all factors into account. In the case of babies, we're using age in months as a way to estimate a baby's weight in ounces. Obviously, genetics and environmental factors play a major role in a baby's weight but using age in months is a great proxy in this case.
 
-Famous mathematician George E. P. Box said it best when he said:
-> All models are wrong; some models are useful.
-
-At this point you should have a burning question on the tip of your mind: how the heck do we find the intercept and slope?
-
-Great question!
+At this point you should have a burning question zipping around in your mind: just how the heck do we find the intercept and slope?
 
 The short answer is there are two ways. There is an **analytical solution**. This means there is an exact solution like solving 2x=6. There is also a **numerical approximation** method known as *Gradient Descent*. 
 
-Now you're likely wondering why anyone would choose to use a numerical approximation method like Gradient Descent when there exists an exact solution, but it turns out there is a good reason for this. 
+Now you're likely wondering why anyone would choose to use a numerical approximation method like Gradient Descent when there exists an exact solution, but it turns out there is good reason for this. 
 
-If your data is relatively small meaning it will fit into memory, then the analytical solution is your best bet. If, however, your data is large and will not fit into memory, you're stuck unless you use a numerical approach like Gradient Descent. 
+If your data is relatively small, meaning it will fit into memory, then the analytical solution is your best bet. If, however, your data is large and will not fit into memory, you're stuck unless you use a numerical approach like Gradient Descent. 
 
-I won't go into any more detail on Gradient Descent here as that will be a discussion for another time. However, we can now discuss how to find the intercept and slope terms.
+I won't go into any more detail on Gradient Descent here as that will be a discussion for another time. However, with that information we can now discuss how to find the intercept and slope terms.
 
 ## Terminology
 It's time to get more formal. 
@@ -75,7 +70,7 @@ I'm assuming you're comfortable with linear algebra. If you're unfamiliar with v
 
 Now let's write some Python code to find the parameters using a little bit of NumPy.
 
-First, I'll show you how I generated the data above:
+First, I'll show you how I generated the data in the first plot above:
 ```
 import numpy as np
 
@@ -99,7 +94,7 @@ X = np.c_[np.ones(X.shape[0]), X] # little trick to add vector of 1's
 y = np.array(weight_data)
 ```
 
-Next, let's create a function to find the parameters.
+Next, let's create a function to find the parameters. Pay special attention because this is the key bit of code; this is where the magic happens.
 ```
 def ols(X, y):
     '''returns parameters based on Ordinary Least Squares.'''
@@ -120,7 +115,7 @@ print('intercept: {} | slope: {}'.format(params[0], params[1]))
 
 The result looks like this: `intercept: 97.94349022705887 | slope: 24.680165065438715`
 
-Now's as a good a time as any to plot our line over our data to see how we did.
+Now's as a good a time as any to plot the regression line over our data to see how we did.
 
 ![Model Baby Weights](/assets/images/baby_weights_model.png?raw=true){: .center-image }
 
