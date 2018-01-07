@@ -7,7 +7,7 @@ categories: [Data Science, Linear Regression, Machine Learning]
 ![image](/assets/images/linear_regression_2.png?raw=true){: .center-image }
 
 ## Introduction
-This is the second post in a 3-part series. We left off last time discussing the basics of Linear Regression. Specifically, we learned key terminology and how to find parameters for both univariate and multivariate Linear Regression. Now we'll turn our focus to metrics about our model. 
+This is the second post in a 3-part series. We left off last time discussing the basics of Linear Regression. Specifically, we learned key terminology and how to find parameters for both univariate and multivariate Linear Regression. Now we'll turn our focus to metrics pertaining to our model. 
 
 We'll look at the following key metrics:
 1. Sum of Squared Errors (SSE)
@@ -133,7 +133,7 @@ adj_r^2: 0.9563
 ```
 
 #### Interpretation
-**SSE** is measure of how far off our model's predictions are from the observed values. A value of 0 indicates perfect predictions. A non-zero value indicates errors. We expect a non-zero value. Why? Because there is almost always irreducible error that we just can't get around unless we're dealing with some trivial problem. 
+**SSE** is measure of how far off our model's predictions are from the observed values. A value of 0 indicates perfect predictions. A non-zero value indicates errors. We expect a non-zero value. Why? Because there is always irreducible error that we just can't get around unless we're dealing with some trivial problem. 
 
 **Keep in mind the errors are squared**
 
@@ -143,15 +143,15 @@ Answer: squaring the values makes them all positive. If we didn't square them, t
 
 *But why not use absolute error instead of squared error?*
 
-If you think about what squaring does to large numbers you'll realize that we're really penalizing large errors. A single point that deviates from the general trend can cause large squared errors. These anomalous points are called outliers. Much more on this in the next notebook.
+If you think about what squaring does to large numbers you'll realize that we're really penalizing large errors. It's like saying, it's okay to miss on the close points but don't allow large deviations between the model and the farthest points. This makes sense for some data sets but not others. Consider the converse of this approach. There's a data point or points that deviate from the general trend, causing large squared errors. These anomalous data points are often called outliers, and they can wreak havoc on the performance of our model. Much more on this in the next post.
 
 ---
 
-**SST** is a measure of the variance in the target variable. It is measured simply as the sum of each observation from the target mean.
+**SST** is a measure of the variance in the target variable. It is measured simply as the sum of the squared difference between each observation and the target mean.
 
 ---
 
-**$R^{2}$** measures how much variance is captured by the model. The range for Ordinary Least Squares is [0,1]. It is possible to get negative values for $R^{2}$ but that would require a fitting procedure other than OLS or non-linear data. 
+**$R^{2}$** measures how much variance is captured by the model. The range for Ordinary Least Squares is [0,1]. It is possible to get negative values for $R^{2}$ but that would require a fitting procedure other than OLS or non-linear data. Always know your assumptions! 
 
 ---
 
