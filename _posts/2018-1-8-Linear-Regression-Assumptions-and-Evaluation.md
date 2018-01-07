@@ -7,7 +7,7 @@ categories: [Data Science, Linear Regression, Machine Learning]
 ![image](/assets/images/linear_regression_3.png?raw=true){: .center-image }
 
 ## Introduction
-This is the thrid post in a 3-part series that covers the basic assumptions of Linear Regression, how to investigate whether those assumptions are met, and how to address key problems. 
+This is the third post in a 3-part series that covers the basic assumptions of Linear Regression, how to investigate whether those assumptions are met, and how to address key problems. 
 
 ## Linear Regression Assumptions
 1. Linear relationship between target and features
@@ -119,7 +119,7 @@ r^2:     0.8314
 adj_r^2: 0.8220
 ```
 
-No surprise. We see a substantial increases in both SSE and SST as well as substantial decreases in $R^2$ and adjusted $R^2$.
+No surprise, we see a substantial increases in both SSE and SST as well as substantial decreases in $R^2$ and adjusted $R^2$.
 
 ### Considerations
 We can check to see if our model is capturing the underlying pattern effectively. Specifically, let's generate side-by-side **Residual Plots** for the linear case and the nonlinear case. 
@@ -144,7 +144,7 @@ axes[1].set_xlabel('predicted values')
 
 ![image](/assets/images/linear_vs_nonlinear_residual_plots.png?raw=true){: .center-image }
 
-The non-linear pattern is overwhelmingly obvious in the residual plots. You may be wondering why we bothered at all since we saw the non-linear trend in when plotting the observed data. That works for low dimensional cases that are easy to visualize but how will you know if you have more than a few features? The residual plot is a powerful tool in that case and something you should leverage often.
+The non-linear pattern is overwhelmingly obvious in the residual plots. You may be wondering why we bothered plotting at all since we saw the non-linear trend when plotting the observed data. That works well for low dimensional cases that are easy to visualize but how will you know if you have more than 2-3 features? The residual plot is a powerful tool in that case and something you should leverage often.
 
 Let's now plot a histogram of residuals to see if they're Normally distributed for the linear case.
 
@@ -168,7 +168,7 @@ plt.title('Non-Linear')
 
 ![image](/assets/images/nonlinear_histogram.png?raw=true){: .center-image }
 
-The histogram of the linear model on linear data looks approximately Normal (aka Gaussian) while the 2nd shows a clear skew. But is there a more quantitative method to test for Normality? Absolutely.
+The histogram of the linear model on linear data looks approximately Normal (aka Gaussian) while the 2nd shows a skew. But is there a more quantitative method to test for Normality? Absolutely.
 
 ```
 from scipy.stats import normaltest
@@ -272,7 +272,7 @@ r^2:     0.8566
 adj_r^2: 0.8487
 ```
 
-Pretty big difference! 
+Pretty big difference in all metrics! 
 
 ### Possible Solutions
 1. Investigate the outlier(s). Do NOT assume these cases are just bad data. Some outliers are true examples while others are data entry errors. You need to know which it is before proceeding.  
@@ -340,8 +340,8 @@ Fails! The residuals are not normally distributed, statistically speaking that i
 The high-leverage points not only act as outliers, they also greatly affect our model's ability to generalize and our confidence in the model itself.
 
 ### Solutions
-1. Explore the data to understand why these data points exist. Are they true data points or outliers of some kind?
-2. Consider imputing or removing them if truly outliers
+1. Explore the data to understand why these data points exist. Are they true data points or mistakes of some kind?
+2. Consider imputing or removing them if truly outliers but have good reason to do so
 3. Consider a more robust loss function (e.g. Huber)
 4. Consider a more robust algorithm (e.g. RANSAC)
 
@@ -515,6 +515,6 @@ adj_r^2: 0.9378
 ```
 
 ## Wrap Up
-Thus concludes our whirlwind tour of Linear Regression. By no means did we cover everything. We didn't talk about QQ-plots or Maximum Likelihood Estimation and how it drives Ordinary Least Squares. However, this post and the two prior should give you a deep enough fluency to build models effectively, to know when things go wrong, to know what those things are, and what to do about them. 
+Thus concludes our whirlwind tour of Linear Regression. By no means did we cover everything. We didn't talk about Q-Q plots or Maximum Likelihood Estimation and how it drives Ordinary Least Squares. However, this post and the two prior should give you a deep enough fluency to build models effectively, to know when things go wrong, to know what those things are, and what to do about them. 
 
-I hope you found this series helpful and please let me know if you found any errors along the way. I tried my best to catch them all but inevitably a few tend to fly under the radar, so to speak. 
+I hope you found this series helpful. And if you found errata, please let me know. 
