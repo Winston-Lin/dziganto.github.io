@@ -5,7 +5,6 @@ categories: [Data Science]
 ---
 
 ![Cartoon](/assets/images/complicating_equations.jpeg?raw=true){: .center-image }
-)
 
 ### What's the hardest problem in all of data science right now? 
 
