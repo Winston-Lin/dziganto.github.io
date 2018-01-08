@@ -13,7 +13,7 @@ Imagine you run a company with 20,000 employees. Also imagine you have an up-to-
 
 Turns out it depends on how you stored the table. If you stored it as a list of lists where your master list is the table and the sublists include key information about each individual employee, then your lookup time can be very long. But how long? You have to consider the worst case scenario. Here, there are 20,000 employees. Let's assume the table is sorted alphabetically by last name. Therefore, *Ziganto* is somewhere at the end, maybe even the last entry. The best we can do with this type of table is a *linear search*, meaning we check to see if the first last name is *Ziganto*. If it is, great, we can stop. If not, move on to the next and check. You keep doing this until you find the last name *Ziganto* or you exhaust your list. The worst case scenario if a full search of the table. If you're familiar with Big O notation, then you know the time complexity is O(n). 
 
-Given modern computing systems, this process of searching 20,000 last names is not a big deal. But imagine you had a million or a billion values. The time to search for a given last name grows linearly with the number of employees, hence the term *linear search*. Clearly, this is not optimal.
+Given modern computing systems, this process of searching 20,000 last names is not a big deal. But imagine you had millions or billions of items to search through employees. The time to search grows linearly with the number of items, hence the term *linear search*. Clearly, this is not optimal. In fact, it's extraordinarily bad. 
 
 The good news is that there's a MUCH better way to do this and it's called **hashing**.
 
