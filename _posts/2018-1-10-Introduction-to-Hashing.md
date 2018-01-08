@@ -158,4 +158,153 @@ index: 41 | hash: 11
 
 We still get two collisions in this case but there far fewer of them. We could easily correct this by using larger primes.
 
-**Side note:** you should clearly see how this relates to the **dictionary** data structure, which is nothing more than a hash table. It also explains why order is not **guaranteed**. If a collision occurs, the hash function is recomputed with a larger prime to create more memory slots (aka buckets). Therefore, a new hash function almost always leads to new indices. 
+**Side note:** you should clearly see how this relates to the **dictionary** data structure, which is nothing more than a hash table. It also explains why order is not **guaranteed**. If a collision occurs, the hash function is recomputed with a larger prime to create more memory slots (aka buckets). Therefore, a new hash function almost always leads to new indices for your initial data. 
+
+## Addressing Collisions
+There are ways to extend our hash function to handle collisions more gracefully. Here, I will present two methods known as **linear probing** and **chaining**. By no means are they the only methods. However, they should give you some idea how collisions can be handled. 
+
+### Linear Probing
+The idea of linear probing is simple. When a collision occurs, try the next index. If it's empty, is it. If not, try the next and the next and the next until you find one that works.
+
+We'll need some code to automate this process. Here goes:
+```
+def updater(table, ix, value):
+    '''Runs the linear search.
+    
+    Input: 
+        table: numpy array initialized with all zeros the size of num_slots
+        ix: (int) initial index to try
+        value: (int) value to store
+    '''
+    while True:
+        if np.all(table) != 0:
+            print('all slots taken')
+            break
+        else:
+            if table[ix] == 0:
+                table[ix] = value
+                break
+            else:
+                print('{} taken, linear searching...'.format(int(ix)))
+                if ix+1 == table.size:  ## reset index if ix   
+                    ix = 0               ## is last index value
+                else:
+                    ix += 1        
+    return table
+    
+def linear_probe_hasher(table, value, key, num_slots):
+    '''
+    Input:
+        table: numpy array initialized with all zeros the size of num_slots
+        value: (int) value to store
+        key: (int or str) thing to hash
+        num_slots: (int) number of memory slots to allocate
+    Output:
+        (int) hash value
+    '''
+    
+    assert len(table) == num_slots, "your table length does not match the number of slots!"
+    assert type(key) == int or type(key) == str, "key must be an integer or string!"
+    
+    if type(key) == int:
+        idx = key % num_slots
+        return updater(table2, idx, value)
+    elif type(key) == str:
+        # sum the ASCII values to convert string to integer
+        str2int = [ord(char) for char in list(key)]
+        idx = np.sum(str2int) % num_slots
+        return updater(table2, idx, 1)
+```
+The first function *updater* is a helper function that runs linear search. Simply put, *updater* checks to see if all slots are taken. If not, it will insert a value where the table (aka array) has a zero. Otherwise it will check the next index until it's exhausted all options.
+
+The second function *linear_probe_hasher* acts just like *hasher* from earlier. The only difference is that it leverages linear probing when a collision occurs.
+
+Running it with several collisions should clarify what's going on.
+```
+table2 = np.zeros(5).astype('int')
+
+keys = [99, 94, 94, 94, 94, 94, 94]
+for i, key in enumerate(keys, 1):
+    print('hash key: {}'.format(hasher(key=key, num_slots=5)))
+    print('table:', linear_probe_hasher(table2, value=i, key=key, num_slots=5))
+    print()
+```
+
+Output:
+```
+hash key: 4
+table: [0 0 0 0 1]
+
+hash key: 4
+4 taken, linear searching...
+table: [2 0 0 0 1]
+
+hash key: 4
+4 taken, linear searching...
+0 taken, linear searching...
+table: [2 3 0 0 1]
+
+hash key: 4
+4 taken, linear searching...
+0 taken, linear searching...
+1 taken, linear searching...
+table: [2 3 4 0 1]
+
+hash key: 4
+4 taken, linear searching...
+0 taken, linear searching...
+1 taken, linear searching...
+2 taken, linear searching...
+table: [2 3 4 5 1]
+
+hash key: 4
+all slots taken
+table: [2 3 4 5 1]
+
+hash key: 4
+all slots taken
+table: [2 3 4 5 1]
+```
+
+You can see the procedure prevents collisions once all memory slots are taken.
+
+### Chaining
+Chaining uses linked lists to append values in order when collisions occur.
+```
+def chain_hasher(table, value, key, num_slots):
+    '''
+    Input:
+        table: list of lists
+        value: (int) value to store
+        key: (int or str) thing to hash
+        num_slots: (int) number of memory slots to allocate
+    Output:
+        (int) hash value
+    '''
+    
+    assert len(table) == num_slots, "your table length does not match the number of slots!"
+    assert type(key) == int or type(key) == str, "key must be an integer or string!"
+    
+    if type(key) == int:
+        idx = key % num_slots
+        
+    elif type(key) == str:
+        # sum the ASCII values to convert string to integer
+        str2int = [ord(char) for char in list(key)]
+        idx = np.sum(str2int) % num_slots
+        
+    return table[idx].append(value)
+```
+A bit of code to simulate populating the table. We'll round this out by creating a collision on purpose by passing the same key 'abc' twice.
+```
+table3 = [[],[],[],[],[]]
+keys = [0, 1, 'abc', 'abc']
+for i, key in enumerate(keys,1):
+    chain_hasher(table3, i, key, 5)
+```
+Printing *table3* with `print(table3)` returns `[[1], [2], [], [], [3, 4]]`. You can see the 4 causes a collision but was handled effortlessly.
+
+## Now What?
+This was just the beginning. I hope you have a high-level understanding of how hashing works and some basic use cases. If you found this interesting, take a look at other hashing strategies, other ways to handle collisions, and algorithms like MD5, SHA-1, and othe cryptographic hashes.
+
+Happy hashing!
