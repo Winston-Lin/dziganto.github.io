@@ -123,9 +123,185 @@ For now let's pretend we're in good shape. Let's model.
 
 #### Fit Model
 ```
+from sklearn.linear_model import LinearRegression
+
 data = df.copy()
 target = data.pop('area')
 
 lr = LinearRegression(fit_intercept=True)
 lr.fit(data, target)
 ```
+
+#### How'd we do?
+Let's look at $R^2$ and Root Mean Squared Error (RMSE) to see how our model performed. 
+```
+from sklearn.metrics import mean_squared_error
+
+# R^2
+lr.score(data, target) 
+
+predictions = lr.predict(data)
+mse = mean_squared_error(target, predictions)
+rmse = np.sqrt(mse)
+print(rmse)
+```
+
+Which returns, respectively:
+```
+0.045782096508085179
+
+62.121433117927239
+```
+
+#### Interpretation
+Right away we can see the $R^2$ is abysmal. It's really not too surprising because if you look at the documentation on UCI you'll notice that the target variable is highly skewed with several high leverage points. This is worthy of investigation and could yield substantial performance gains. Review SSE, SST, and $R^2$ if you're unclear as to why.
+
+The RMSE is a measure of how far off on average our model is from ground truth. I'm using the term *average* loosely here because it's really the average square root of the squared residuals. Yikes, that's a mouthful. Said another way, it's one way to measure the magnitude of errors, though it's not the only one. Mean Absolute Error is another. They will give you different answers, so you should ponder on that.
+
+Here's the thing: our model is rubbish no matter what. We could have had an $R^2$ approaching 1 or an RMSE close to 0 but that's totally and completely meaningless in the real-world. We have no idea how this model would generalize to data it hasn't seen. We merely have a measure of how well it's doing on the data it sees. This is a major problem for predictive analytics. You can have what seems like an incredible model but then you unleash it in the wild and it performs horribly. Understanding why this is the case is absolutely essential.
+
+## Why This Model Sucks
+In the most extreme case, I can create a model that is really a lookup table. You give me an input and I give you the output. Another way to say this is take a model and let it memorize the data it can see. The result: an $R^2$ of 1 and an RMSE of 0. 
+
+Clearly nobody thinks that's a great model. The point of building a model is to predict something interesting. You can't do that with a lookup table. Yet, that's exactly how we tried to assess our Linear Regression model above - give it some data and then see how well it does predicting that SAME data. That is why it's rubbish. PLEASE DO NOT EVER DO THIS!
+
+What we've done is look at something called *in-sample error* (ISE). It is a useful metric but only tells one half of the story. 
+
+## Out-of-Sample Error
+The other half of the story is something called *out-of-sample error* which I'll denote henceforth at OSE. Simply put, OSE is how well the model performs on data it's never seen. 
+
+But where do we get this data? 
+
+Easy, holdout some data at the beginning. Don't let the model see it until the very end. Then make predictions and see how well it performs. This gives you an indication as to how well your model will do in the wild.
+
+This process we just discussed is called *Train/Test split*. You determine how much data to holdout at the beginning, split the data into a training dataset and a test dataset, model on the training set, and then calculate ISE and OSE.
+
+Let's see how to do this with Sklearn.
+
+#### Train/Test Split
+```
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(data, target, shuffle=True,
+                                                    test_size=0.5, random_state=49)
+```
+
+#### Fit Model on Training Data
+```
+lr_split = LinearRegression(fit_intercept=True)
+lr_split.fit(X_train, y_train)
+```
+
+#### Functions to Calculate ISE and OSE
+```
+def calc_ISE(X_train, y_train, model):
+    '''returns the in-sample R^2 and RMSE; assumes model already fit.'''
+    predictions = lr.predict(X_train)
+    mse = mean_squared_error(y_train, predictions)
+    rmse = np.sqrt(mse)
+    return model.score(X_train, y_train), rmse
+    
+def calc_OSE(X_test, y_test, model):
+    '''returns the out-of-sample R^2 and RMSE; assumes model already fit.'''
+    predictions = lr.predict(X_test)
+    mse = mean_squared_error(y_test, predictions)
+    rmse = np.sqrt(mse)
+    return model.score(X_test, y_test), rmse
+```
+
+#### Calculate In-Sample and Out-of-Sample $R^2$ and Error
+```
+is_r2, ise = calc_ISE(X_train, y_train, lr_split)
+os_r2, ose = calc_OSE(X_test, y_test, lr_split)
+
+# show dataset sizes
+data_list = (('R^_in', is_r2), ('R^2_out', os_r2), 
+             ('ISE', ise), ('OSE', ose))
+for item in data_list:
+    print('{:10}: {}'.format(item[0], item[1]))
+```
+
+The output is:
+```
+R^_in     : 0.07513974961762804
+R^2_out   : -0.005167798223800313
+ISE       : 27.50204577364648
+OSE       : 83.36547731820247
+```
+
+#### Interpretation
+We can see that the in-sample $R^2$ is pretty low but what's interesting here is that the out-of-sample $R^2$ is lower. In fact, it's slightly below zero. Even more telling is the RMSE values. The RMSE for the data the model saw (ISE) is significantly lower (by a factor of 3) than the RMSE for the data the model has never seen (OSE). In machine learning speak our model is *overfitting* meaning it's doing a much better job on the data it has seen but does not generalize well. The greater the gap between between in-sample and out-of-sample, the greater the overfitting. You can equate overfitting with "memorizing" the data. It becomes more and more like creating a lookup table.
+
+So the big takeaway here is that you *must* calculate ISE and OSE to get an accurate picture as to how your model is doing. This necessiates holding out some data at the beginning so you can test your model on data it's never seen. I showed you show to do that with sklearn's *train_test_split*. 
+
+Now you may be wondering how to address overfitting. To understand that, we need to discuss something called the **Bias-Variance Tradeoff**, which is a topic for another day.
+
+Before we wrap up, there's one more subtle item we need to address: the downside of train/test split.
+
+## Downside of Train/Test Split
+I just told you that train/test split gives you both sides of the story - how well your model performs on data it's seen and data it hasn't. That's true to an extent but there's something subtle you need to be aware of. Let me show you be example before explaining it. Let's try a few different train/test splits and check ISE and OSE values.
+
+#### Multiple Train/Test Splits
+```
+# create array of random_state values
+random_states = np.random.randint(1, 100, size=5)
+random_states
+
+for random_state in random_states:
+    # split data according to random state
+    X_train, X_test, y_train, y_test = train_test_split(data, target, 
+                                                        shuffle=True,
+                                                        test_size=0.5, 
+                                                        random_state=random_state)
+    # instantiate mmodel
+    lr = LinearRegression(fit_intercept=True)
+    # fit model
+    lr.fit(X_train, y_train)
+    # capture key metrics
+    is_r2, ise = calc_ISE(X_train, y_train, lr)
+    os_r2, ose = calc_OSE(X_test, y_test, lr)
+    # round values
+    is_r2, os_r2 = round(is_r2, 4), round(os_r2, 4)
+    ise, ose = round(ise, 4), round(ose, 4)
+    
+    # print key metrics
+    print('Random State: {}'.format(random_state))
+    print('IS_R^2: {} | IS_RMSE: {}'.format(is_r2, ise))
+    print('OS_R^2: {} | OS_RMSE: {}'.format(os_r2, ose))
+    print('-'*34)
+```
+
+Output looks like this:
+```
+Random State: 93
+IS_R^2: 0.0747 | IS_RMSE: 82.3296
+OS_R^2: -0.6624 | OS_RMSE: 35.326
+----------------------------------
+Random State: 98
+IS_R^2: 0.1051 | IS_RMSE: 51.0612
+OS_R^2: -0.0676 | OS_RMSE: 74.2931
+----------------------------------
+Random State: 61
+IS_R^2: 0.075 | IS_RMSE: 83.5672
+OS_R^2: -1.3045 | OS_RMSE: 34.0928
+----------------------------------
+Random State: 45
+IS_R^2: 0.0865 | IS_RMSE: 71.3173
+OS_R^2: -0.193 | OS_RMSE: 54.8203
+----------------------------------
+Random State: 75
+IS_R^2: 0.0793 | IS_RMSE: 80.9714
+OS_R^2: -0.7537 | OS_RMSE: 41.286
+----------------------------------
+```
+
+#### Takeaways
+* $R^2$ is always higher in-sample as opposed to out-of-sample
+* RMSE show great variability in-sample vs out-of-sample
+
+#### Discussion
+It's no surprise that $R^2$ is higher in-sample. The surprise here is RMSE. What's particularly interesting is that sometimes ISE is higher than OSE and sometimes it's the other way around. This is a small dataset so the skewed distribution in the target variable is having major consequences. A much larger dataset would still be affected but to a smaller degree. With that in mind, you'll almost always see OSE's that are higher than ISE's. If not, there's something funky going on in your data like we have here. It's a good red flag to keep in mind when doing EDA. Anyway, we get very different results depending on how we split the data. In this case, I didn't change the proportion of data that's selected, merely how it's split. So that's good to know. How you split can dramatically affect your model. In some cases it generalizes well and other times it doesn't. 
+
+An obvious question you're probably asking is how do I best split my data? Trial and error?
+
+No, there's a better method for small to medium-sized datasets and it's called Cross-Validation. We'll pickup that discussion next time.
