@@ -4,7 +4,7 @@ permalink: /misc/
 author_profile: true
 ---
 
-General Advice, Hashing, and RNGs
+General Posts, Hashing, and RNGs
 
 # General
 [The Hardest Problem in Data Science](https://dziganto.github.io/data%20science/The-Hardest-Problem-In-Data-Science/)   
