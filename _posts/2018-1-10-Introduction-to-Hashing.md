@@ -17,3 +17,25 @@ Given modern computing systems, this process of searching 20,000 last names is n
 
 The good news is that there's a MUCH better way to do this and it's called **hashing**.
 
+First, a bit of terminology.
+
+## Terminology
+You should walk away from this post knowing what the following terms mean and how they work:
+* hashing
+* key
+* hash key 
+* hash function 
+* collision 
+* linear probing 
+* chaining
+
+#### Definitions
+**Hashing:** to convert a key to a numeric value with the goal of saving or returning a specific record in an array, table, database, etc.
+
+**Key:** any unique, immutable value (e.g. string, integer, tuple).
+
+**Hash Key:** the numeric value returned from a hash function.
+
+**Hash Function:** the process of converting a key to a hash key.
+
+> Note: collision, linear probing, and chaining will be covered later.
