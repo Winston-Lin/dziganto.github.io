@@ -36,6 +36,10 @@ You should walk away from this post knowing what the following terms mean and ho
 
 **Hash Key:** the numeric value returned from a hash function.
 
-**Hash Function:** the process of converting a key to a hash key.
+**Hash Function:** the process of converting a key to a hash key (used whenever access to an array, table, or database is needed).
 
 > Note: collision, linear probing, and chaining will be covered later.
+
+## Disclaimer
+This is only an introduction to hashing. It's a jumping off point really. There are so many cool things you can do with it but for now just get the general idea.
+
