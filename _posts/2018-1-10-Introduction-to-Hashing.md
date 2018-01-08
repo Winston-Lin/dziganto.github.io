@@ -43,3 +43,38 @@ You should walk away from this post knowing what the following terms mean and ho
 ## Disclaimer
 This is only an introduction to hashing. It's a jumping off point really. There are so many cool things you can do with it but for now just get the general idea.
 
+## Our Very Own Hash Function
+The best way to learn about hash functions is to build our own. Let's create a little function called *hasher*. I'll explain what it does in a second.
+
+```
+import numpy as np
+
+def hasher(key, num_slots):
+    '''Simple hashing function that returns hash key.
+    Input:
+        key: (int or str) thing to hash
+        num_slots: (int) number of memory slots to allocate
+    Output:
+        (int) hash key
+    '''
+    
+    assert type(key) == int or type(key) == str, "key must be an integer or string!"
+    assert type(num_slots) == int, "num_slots must be an integer!"
+    
+    if type(key) == int:
+        return key % num_slots
+    elif type(key) == str:
+        # sum the ASCII values to convert string to integer
+        str2int = [ord(char) for char in list(key)]
+        return np.sum(str2int) % num_slots
+```
+
+The first bit in triple quotes is just a lengthy docstring. It tells us what *key* and *num_slots* are and the expected data types. It also tells us the output of this function, which is an integer representing the hash key.
+
+The assert statements are a quick and dirty way to ensure inputs are of the right type. Specifically, the key must be an integer or string while num_slots must be an integer. Otherwise an assertion error is thrown alerting the user.
+
+Great, now on to the main logic. 
+
+We start with a simple logical check to see if the key is an integer or string. If it's an integer, simply return $key \mod num_slots$. If it's a string, we need to process the text to convert it into numbers. One way to do that is by simply parsing the string into individual characters, returning the ASCII integer for each character, summing all ASCII integers, and applying the mod function. That's precisely what happened in our hasher function with `str2int = [ord(char) for char in list(key)]` and then `np.sum(str2int) % num_slots`. That's all there is to it.
+
+## Examples
