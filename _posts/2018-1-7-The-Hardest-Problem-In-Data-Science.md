@@ -32,7 +32,7 @@ Data science is clearly an interdisciplinary profession, one that borrows ideas 
 
 So what's the real problem?
 
-Think about what's universal to law, medicine, and physics. Each has its own explicitly defined vernacular. Each is comprised of unique, unambiguous terminology. Two lawyers can discuss *torts* or *mens rea* without so much as a second thought. One doctor can use the word *sternocleidomastoid* during a presentation and every other doctor will know exactly what he/she means. A group of physicists can discuss *torque*, *angular momentum*, and *force* effortlessly. In every single case, the terms are unique, unambiguous, and allow for efficient communication.
+Think about what's universal to law, medicine, and physics. Each has its own explicitly defined vernacular. Each is comprised of unique, unambiguous terminology. Two lawyers can discuss *torts* or *mens rea* without so much as a second thought. One doctor can use the word *sternocleidomastoid* during a presentation and every other doctor will know exactly what he/she means. A group of physicists can discuss *force*, *torque*, and *angular momentum* effortlessly. In every single case, the terms are unique, unambiguous, and allow for efficient communication.
 
 Sadly, this is far from the case in data science. We can't even agree on what a data scientist is let alone simplify the dizzying language we use. Is the proper term *column*, *feature*, *independent variable*, or *field*? Is it a *model* or an *algorithm*? A *row*, a *sample*, an *observation*, or a *record*? 
 
