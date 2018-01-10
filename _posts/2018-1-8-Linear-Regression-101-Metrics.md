@@ -131,7 +131,6 @@ adj_r^2: 0.9563
 ```
 
 ### Interpretation
-
 ### [SSE]
 **SSE** is measure of how far off our model's predictions are from the observed values. A value of 0 indicates perfect predictions. A non-zero value indicates errors. We expect a non-zero value. Why? Because there is always irreducible error that we just can't get around unless we're dealing with some trivial problem. 
 
