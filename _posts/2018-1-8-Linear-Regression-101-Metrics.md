@@ -57,9 +57,9 @@ We will investigate four key metrics:
 1. Sum of Squared Errors (SSE)
 2. Total Sum of Squares (SST)
 3. R^2 
-4. adj R^2
+4. adjusted R^2
 
-First, the formulas. Keep in mind that *y* is the observed value whereas y-hat is the predicted value. Here, *m* represents the total number of observations. For example, if there are 25 baby weigths, then m equals 25. Lastly, *df_t* is the degrees of freedom of the estimate of the population variance of the dependent variable and df_e is the degrees of freedom of the estimate of the underlying population error variance. 
+First, the formulas. Keep in mind that *y* is the observed value whereas *y-hat* is the predicted value. Here, *m* represents the total number of observations. For example, if there are 25 baby weigths, then m equals 25. Lastly, *df_t* is the degrees of freedom of the estimate of the population variance of the dependent variable and df_e is the degrees of freedom of the estimate of the underlying population error variance. 
 
 ![image](/assets/images/linear_regression_metric_equations.png?raw=true){: .center-image }
 
