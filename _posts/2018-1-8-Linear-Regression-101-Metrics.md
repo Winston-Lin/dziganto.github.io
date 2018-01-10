@@ -59,11 +59,13 @@ We will investigate four key metrics:
 3. R^2 
 4. Adjusted R^2
 
-First, the formulas.  
+First, the formulas:  
 
 ![image](/assets/images/linear_regression_metric_equations.png?raw=true){: .center-image }
 
-Keep in mind that *y* is the observed value whereas *y-hat* is the predicted value. Here, *m* represents the total number of observations. For example, if there are 25 baby weigths, then m equals 25. Lastly, *df_t* is the degrees of freedom of the estimate of the population variance of the dependent variable and df_e is the degrees of freedom of the estimate of the underlying population error variance.
+Keep in mind that *y_i* is the observed value whereas *y-hat_i* is the predicted value. Here, *m* represents the total number of observations. For example, if there are 25 baby weigths, then m equals 25. 
+
+Lastly, *df_t* is the degrees of freedom of the estimate of the population variance of the dependent variable and *df_e* is the degrees of freedom of the estimate of the underlying population error variance.
 
 ---
 
@@ -114,13 +116,13 @@ def pretty_print_stats(stats_obj):
         print('{0:8} {1:.4f}'.format(item[0], item[1]))
 ```
 
-Now to view the report.
+Now the report.
 ```
 stats = Stats(X, y, lr)
 pretty_print_stats(stats)
 ```
 
-The output is:
+And the output:
 ```
 sse:     50253.0180
 sst:     1158834.2148
@@ -139,7 +141,7 @@ adj_r^2: 0.9563
 
 *But why not use absolute error instead of squared error?*
 
-If you think about what squaring does to large numbers you'll realize that we're really penalizing large errors. It's like saying, it's okay to miss on the close points but don't allow large deviations between the model and the farthest points. This makes sense for some data sets but not others. Consider the converse of this approach. There's a data point or points that deviate from the general trend, causing large squared errors. These anomalous data points are often called outliers, and they can wreak havoc on the performance of our model. Much more on this in the next post.
+If you think about what squaring does to large numbers you'll realize that we're really penalizing large errors. It's like saying, it's okay to miss on the close points but don't allow large deviations between the model and the most distant points. This makes sense for some data sets but not others. Consider the converse, though. There's a data point or points that deviate from the general trend, causing large squared errors. These anomalous data points are often called outliers, and they can wreak havoc on the performance of your model. Much more on this in the next post.
 
 ---
 
@@ -151,7 +153,7 @@ If you think about what squaring does to large numbers you'll realize that we're
 
 ---
 
-**Adjusted R^2** is the same as standard R^2 except that it penalizes models when additional features are added. This naturally leads to the next section about why R^2$ is a poor metric to use.
+**Adjusted R^2** is the same as standard R^2 except that it penalizes models when additional features are added. This naturally leads to the next section about why R^2 is a poor metric to use.
 
 
 ## Why R^2 is a Poor Metric
@@ -192,11 +194,11 @@ for features in range(min_features, max_features+1):
 #### Plot Varying Number of Features
 ![R2 vs Adjusted R2](/assets/images/r2_vs_adjr2.png?raw=true){: .center-image })
 
-Ouch! That's bad news. We generated random data. There's absolutely no reason why including more features should lead to a better model. Yet, it's clear from the plot above that $R^{2}$ only increases under these conditions. However, **Adjusted R^2** levels out because of the penalty involved. 
+Ouch! That's bad news. We generated random data. There's absolutely no reason why including more features should lead to a better model. Yet, it's clear from the plot above that R^2 only increases under these conditions. However, **Adjusted R^2** levels out because of the penalty involved. 
 
-The big takeaway here is that you cannot compare two Linear Regression models with differing numbers of features using R^2 alone. It just cannot be done. Adjusted R^2 works, though.
+The big takeaway here is that you cannot compare two linear regression models with differing numbers of features using R^2 alone. It just cannot be done. Adjusted R^2 works, though.
 
 ## Wrap Up
-As we'll see later on, there are better ways to assess machine learning models, namely in-sample vs out-of-sample metrics and cross-validation. More on those in a future post about train/test split and cross-validation.
+As we'll see in a future post, there are better ways to assess machine learning models, namely in-sample vs out-of-sample metrics and cross-validation. More on those in a future post about train/test split and cross-validation.
 
-Next time we'll dive into Linear Regression assumptions, pitfalls, and ways to address problems.
+Next time we'll dive into linear regression assumptions, pitfalls, and ways to address problems.
