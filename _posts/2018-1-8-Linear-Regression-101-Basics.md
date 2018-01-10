@@ -91,7 +91,7 @@ X = np.array(month_data)
 X = np.c_[np.ones(X.shape[0]), X] # little trick to add vector of 1's
 y = np.array(weight_data)
 ```
-> **Technical note:** I add the vector of ones so we can find the intercept. Without this step, only the parameters associated with the features are returned. Think of it as the intercept coefficient times 1 (the vector of ones). The vector of ones acts like a fake feature, in other words. It's really just a simple linear algebra trick.
+> **Technical note:** I add the vector of ones so we can find the intercept. Without this step, only the parameters associated with the features are returned. Think of it as the intercept coefficient times 1. The vector of ones acts like a fake feature, in other words. It's really just a simple linear algebra trick.
 
 Next, let's create a function to find the parameters. Pay special attention because this is the key bit of code; this is where the magic happens.
 ```
