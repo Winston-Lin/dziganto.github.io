@@ -7,13 +7,13 @@ categories: [Data Science, Linear Regression, Machine Learning]
 ![image](/assets/images/linear_regression_2.png?raw=true){: .center-image }
 
 ## Introduction
-This is the second post in a 3-part series. We left off last time discussing the basics of Linear Regression. Specifically, we learned key terminology and how to find parameters for both univariate and multivariate Linear Regression. Now we'll turn our focus to metrics pertaining to our model. 
+We left off last time discussing the basics of linear regression. Specifically, we learned key terminology and how to find parameters for both univariate and multivariate linear regression. Now we'll turn our focus to metrics pertaining to our model. 
 
 We'll look at the following key metrics:
 1. Sum of Squared Errors (SSE)
 2. Total Sum of Squares (SST)
-3. $R^{2}$
-4. adj $R^{2}$
+3. R^2
+4. adj R^2
 
 To keep things simple, we'll use the univariate baby weight data from the previous post and leverage sklearn to find the model parameters.
 
@@ -45,7 +45,7 @@ lr = LinearRegression(fit_intercept=True)
 lr.fit(X, y)
 ```
 
-> **Technical note:** *X* contains .reshape(-1,1) which creates a fake 2D object for fitting. This trick pops up quite frequently so you should remember it.
+> **Technical note:** *X* contains *.reshape(-1,1)* which creates a fake 2D object for fitting. This trick pops up quite frequently so you should remember it.
 
 As a reminder, the plot looks like this:
 
@@ -56,22 +56,16 @@ We will investigate four key metrics:
 
 1. Sum of Squared Errors (SSE)
 2. Total Sum of Squares (SST)
-3. $R^{2}$ 
-4. adj $R^{2}
+3. R^2 
+4. adj R^2
 
-First, the formulas. Keep in mind that $y$ is the observed value whereas $\hat{y}$ is the predicted value. Here, *m* represents the total number of observations. For example, if there are 25 baby weigths, then m equals 25. Lastly, $df_{t}$ is the degrees of freedom of the estimate of the population variance of the dependent variable and $df_{e}$ is the degrees of freedom of the estimate of the underlying population error variance. 
+First, the formulas. Keep in mind that *y* is the observed value whereas y-hat is the predicted value. Here, *m* represents the total number of observations. For example, if there are 25 baby weigths, then m equals 25. Lastly, *df_t* is the degrees of freedom of the estimate of the population variance of the dependent variable and df_e is the degrees of freedom of the estimate of the underlying population error variance. 
 
-$SSE = \sum_{i=1}^{m} {(y_{i} - \hat{y_{i}})^{2}}$ 
-
-$SST = \sum_{i=1}^{m} (y - \bar{y})^{2}$
-
-$R^{2} = 1 - \frac{SSE}{SST}$
-
-adj $R^{2} = 1 - \frac{SSE*df_{t}}{SST*df_{e}}$
+![image](/assets/images/linear_regression_metric_equations.png?raw=true){: .center-image }
 
 ---
 
-I'm going to assume you familiar with basic OOP. If not, you should still get the main idea, though some nuances may be lost. 
+I'm going to assume you're familiar with basic OOP. If not, you should still get the main idea, though some nuances may be lost. 
 
 Without further ado, let's create a class to capture the four key statistics about our data. 
 
@@ -118,7 +112,7 @@ def pretty_print_stats(stats_obj):
         print('{0:8} {1:.4f}'.format(item[0], item[1]))
 ```
 
-Now the report.
+Now to view the report.
 ```
 stats = Stats(X, y, lr)
 pretty_print_stats(stats)
@@ -139,7 +133,7 @@ adj_r^2: 0.9563
 
 *Why is that?*
 
-Answer: squaring the values makes them all positive. If we didn't square them, then we'd have some positive and some negative values. No matter how you slice it, you end up with error that looks smaller than it is in reality. 
+**Answer:** squaring the values makes them all positive. If we didn't square them, then we'd have some positive and some negative values. No matter how you slice it, you end up with error that looks smaller than it is in reality. 
 
 *But why not use absolute error instead of squared error?*
 
@@ -151,15 +145,15 @@ If you think about what squaring does to large numbers you'll realize that we're
 
 ---
 
-**$R^{2}$** measures how much variance is captured by the model. The range for Ordinary Least Squares is [0,1]. It is possible to get negative values for $R^{2}$ but that would require a fitting procedure other than OLS or non-linear data. Always know your assumptions! 
+**R^2** measures how much variance is captured by the model. The range for Ordinary Least Squares is [0,1]. It is possible to get negative values for R^2 but that would require a fitting procedure other than OLS or non-linear data. Always know your assumptions! 
 
 ---
 
-**Adjusted $R^{2}$** is the same as standard $R^{2}$ except that it penalizes models when additional features are added. This naturally leads to the next section about why $R^{2}$ is a poor metric to use.
+**Adjusted R^2** is the same as standard R^2 except that it penalizes models when additional features are added. This naturally leads to the next section about why R^2$ is a poor metric to use.
 
 
-## Why $R^{2}$ is a Poor Metric
-$R^{2}$ will only go up as additional features are added, even if they provide the model no new predictive power. See the example below.
+## Why R^2 is a Poor Metric
+R^2 will only go up as additional features are added, even if they provide the model no new predictive power. See the example below.
 
 #### Generate Dummy Data
 ```
@@ -196,9 +190,9 @@ for features in range(min_features, max_features+1):
 #### Plot Varying Number of Features
 ![R2 vs Adjusted R2](/assets/images/r2_vs_adjr2.png?raw=true){: .center-image })
 
-Ouch! That's bad news. We generated random data. There's absolutely no reason why including more features should lead to a better model. Yet, it's clear from the plot above that $R^{2}$ only increases under these conditions. However, **Adjusted $R^{2}$** levels out because of the penalty involved. 
+Ouch! That's bad news. We generated random data. There's absolutely no reason why including more features should lead to a better model. Yet, it's clear from the plot above that $R^{2}$ only increases under these conditions. However, **Adjusted R^2** levels out because of the penalty involved. 
 
-The big takeaway here is that you cannot compare two Linear Regression models with differing numbers of features using $R^{2}$ alone. It just cannot be done. Adjusted $R^{2}$ works, though.
+The big takeaway here is that you cannot compare two Linear Regression models with differing numbers of features using R^2 alone. It just cannot be done. Adjusted R^2 works, though.
 
 ## Wrap Up
 As we'll see later on, there are better ways to assess machine learning models, namely in-sample vs out-of-sample metrics and cross-validation. More on those in a future post about train/test split and cross-validation.
