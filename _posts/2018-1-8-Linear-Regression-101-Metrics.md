@@ -132,7 +132,7 @@ adj_r^2: 0.9563
 
 ### Interpretation
 
-#### [SSE]
+### [SSE]
 **SSE** is measure of how far off our model's predictions are from the observed values. A value of 0 indicates perfect predictions. A non-zero value indicates errors. We expect a non-zero value. Why? Because there is always irreducible error that we just can't get around unless we're dealing with some trivial problem. 
 
 **Keep in mind the errors are squared.**
@@ -147,13 +147,13 @@ If you think about what squaring does to large numbers you'll realize that we're
 
 Consider the converse, though. There's a data point or points that deviate from the general trend, causing large squared errors. These anomalous data points are often called outliers, and they can wreak havoc on the performance of your model. Much more on this in the next post.
 
-#### [SST]
+### [SST]
 **SST** is a measure of the variance in the target variable. It is measured simply as the sum of the squared difference between each observation and the target mean.
 
-#### [R^2]
+### [R^2]
 **R^2** measures how much variance is captured by the model. The range for Ordinary Least Squares is [0,1]. It is possible to get negative values for R^2 but that would require a fitting procedure other than OLS or non-linear data. Always know your assumptions! 
 
-#### [Adjusted R^2]
+### [Adjusted R^2]
 **Adjusted R^2** is the same as standard R^2 except that it penalizes models when additional features are added. This naturally leads to the next section about why R^2 is a poor metric to use.
 
 
