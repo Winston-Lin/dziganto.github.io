@@ -1,6 +1,6 @@
 ---
-published: false
-title: Linear Regression 101
+published: true
+title: Linear Regression 101 (Part 1/3: Basics)
 categories: [Data Science, Linear Regression, Machine Learning]
 ---
 
