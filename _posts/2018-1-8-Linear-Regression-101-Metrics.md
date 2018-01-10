@@ -1,6 +1,6 @@
 ---
 published: false
-title: Linear Regression Metrics
+title: Linear Regression 101 (Part 2 - Metrics)
 categories: [Data Science, Linear Regression, Machine Learning]
 ---
 
