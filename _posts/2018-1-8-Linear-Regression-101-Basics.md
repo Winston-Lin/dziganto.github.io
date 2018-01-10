@@ -21,9 +21,9 @@ With linear regression of course!
 
 Linear regression is quite simple yet surprisingly powerful. In this simple case, we have a single predictor variable (aka feature) called *month*. Linear regression with a single variable or feature is called univariate linear regression. The output of linear regression is an estimate of the outcome variable (aka target), which in this case is a baby's weight in ounces.
 
-The equation of our model looks like this:
+The equation of our model looks like this:  
 
-> $\hat{weight} = intercept + (month * slope) + \epsilon$
+![Model Equation](/assets/images/baby_weight_equation.png?raw=true){: .center-image })
 
 Notice the hat on weight. This signifies that our model creates an *estimate* of the target variable. It is not the actual value for a given child. It's important to remember that. 
 
@@ -52,17 +52,17 @@ Let *X* signify the data in matrix form. Unsurprisingly, it is known as the **da
 
 Let *y* signify observed values in vector form. It is known as the **target** (aka the thing we're trying to predict).
 
-The intercept and slope are known as **parameters** or **coefficients**. You will often see them labeled as $\beta$ or $\theta$. The machine learning literature tends to use $\theta's$ so that's what I'm partial to. Hence, I will use $\theta's$ from here on out. Just know that statistians and others use $\beta's$ in the same way.
+The intercept and slope are known as **parameters** or **coefficients**. You will often see them labeled as *beta* or *theta*. The machine learning literature tends to use thetas so that's what I'm partial to. Hence, I will use thetas from here on out. Just know that statistians and others use betas in the same way.
 
-We can create a vector of $\theta's$ where intercept=$\theta_{0}$ and slope=$\theta_{1}$ like so:
+We can create a vector of thetas like so:  
 
->$\theta = [\theta_{0}, \theta_{1}$]
+![Theta Vector](/assets/images/theta_vector.png?raw=true){: .center-image })
 
 ## Finding Parameters
 The analytical solution to finding the values of the parameters is straight forward.
 
-The equation is:
-> $\hat{\theta}$ = $(X^{T}X)^{-1}X^{T}y$
+The equation is:  
+![OLS](/assets/images/linear_regression_equation.png?raw=true){: .center-image })
 
 I'm assuming you're comfortable with linear algebra. If you're unfamiliar with vector or matrix transposes, vector or matrix multiplication, or matrix inverses, please review those topics separately.
 
