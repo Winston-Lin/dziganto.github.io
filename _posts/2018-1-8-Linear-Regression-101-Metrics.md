@@ -133,7 +133,7 @@ adj_r^2: 0.9563
 #### Interpretation
 **SSE** is measure of how far off our model's predictions are from the observed values. A value of 0 indicates perfect predictions. A non-zero value indicates errors. We expect a non-zero value. Why? Because there is always irreducible error that we just can't get around unless we're dealing with some trivial problem. 
 
-**Keep in mind the errors are squared**
+**Keep in mind the errors are squared.**
 
 *Why is that?*
 
@@ -194,7 +194,7 @@ for features in range(min_features, max_features+1):
 #### Plot Varying Number of Features
 ![R2 vs Adjusted R2](/assets/images/r2_vs_adjr2.png?raw=true){: .center-image })
 
-Ouch! That's bad news. We generated random data. There's absolutely no reason why including more features should lead to a better model. Yet, it's clear from the plot above that R^2 only increases under these conditions. However, **Adjusted R^2** levels out because of the penalty involved. 
+Ouch! That's bad news. We generated random data. There's absolutely no reason why including more features should lead to a better model. Yet, it's clear from the plot above that R^2 only increases under these conditions. However, **adjusted R^2** levels out because of the penalty involved. 
 
 The big takeaway here is that you cannot compare two linear regression models with differing numbers of features using R^2 alone. It just cannot be done. Adjusted R^2 works, though.
 
