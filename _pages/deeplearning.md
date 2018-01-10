@@ -12,6 +12,7 @@ Deep Learning & Machine Learning Posts
 [Python Deep Learning Frameworks (2) - Installation](https://dziganto.github.io/deep%20learning/python/pytorch/tensorflow/theano/Python-Deep-Learning-Frameworks-2/)  
 
 ### Machine Learning
+[Linear Regression 101 (Part 1 - Basics)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/Linear-Regression-101-Basics/)  
 [An Introduction To Online Machine Learning](https://dziganto.github.io/data%20science/online%20learning/python/scikit-learn/An-Introduction-To-Online-Machine-Learning/)  
 [HDF5 Or How I Learned To Love Data Compression And Partial I/O](https://dziganto.github.io/out-of-core%20computation/HDF5-Or-How-I-Learned-To-Love-Data-Compression-And-Partial-Input-Output/)  
 [Sparse Matrices For Efficient Machine Learning](https://dziganto.github.io/Sparse-Matrices-For-Efficient-Machine-Learning/)
