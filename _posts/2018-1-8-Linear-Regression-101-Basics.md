@@ -25,9 +25,9 @@ The equation of our model looks like this:
 
 ![Model Equation](/assets/images/baby_weight_equation.png?raw=true){: .center-image }
 
-Notice the hat on weight. This signifies that our model creates an *estimate* of the target variable. It is not the actual value for a given child. It's important to remember that. 
+Notice the hat on weight. This signifies that our model creates an *estimate* of the target variable. It is not the actual value for a given baby. It's important to remember that. 
 
-The intercept is the expected value of a newborn. This is the same as saying a child at month 0 is expected to weigh the value of the intercept. Another way to think about it is by looking at the equation of the model. The slope is nonzero. We can see that in the graph above. Therefore, when month is 0, the intercept is the model's estimate for a baby's weight at birth because 0 times slope equals 0 which leaves us with the intercept and another term we'll get to shortly. 
+The intercept is the expected value of a newborn. This is the same as saying a baby at month 0 is expected to weigh the value of the intercept. Another way to think about it is by looking at the equation of the model. The slope is nonzero. We can see that in the graph above. Therefore, when month is 0, the intercept is the model's estimate for a baby's weight at birth because 0 times slope equals 0 which leaves us with the intercept and another term we'll get to shortly. 
 
 For nonbirth weights, we simply sum the intercept with the product of month and slope. 
 
