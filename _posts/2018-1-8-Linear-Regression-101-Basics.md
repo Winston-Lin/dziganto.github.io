@@ -23,7 +23,7 @@ Linear regression is quite simple yet surprisingly powerful. In this simple case
 
 The equation of our model looks like this:  
 
-![Model Equation](/assets/images/baby_weight_equation.png?raw=true){: .center-image })
+![Model Equation](/assets/images/baby_weight_equation.png?raw=true){: .center-image }
 
 Notice the hat on weight. This signifies that our model creates an *estimate* of the target variable. It is not the actual value for a given child. It's important to remember that. 
 
@@ -33,7 +33,7 @@ For nonbirth weights, we simply sum the intercept with the product of month and 
 
 You may be wondering about that funny looking *e* called *epsilon*. That signifies error. Error comes in two flavors: reducible and irreducible. Reducible error is error that results when your model is not extracting all the structure or pattern in the data. Irreducible error is what's left over. For nontrivial datasets, there will always be irreducible error, so don't expect to create a model that perfectly predicts every example.
 
-> **Side note:** it's important to keep in mind that a model is an **approximation** of reality. Rarely if ever does a model take all factors into account. In the case of babies, we're using age in months as a way to estimate a baby's weight in ounces. Obviously, genetics and environmental factors play a major role in a baby's weight, but using age in months is a great proxy in this case.
+> **Side note:** it's important to keep in mind that a model is an ***approximation*** of reality. Rarely if ever does a model take all factors into account. In the case of babies, we're using age in months as a way to estimate a baby's weight in ounces. Obviously, genetics and environmental factors play a major role in a baby's weight, but using age in months is a great proxy in this case.
 
 At this point you should have a burning question zipping around in your brain: just how the heck do we find values for the intercept and slope?
 
@@ -56,13 +56,13 @@ The intercept and slope are known as **parameters** or **coefficients**. You wil
 
 We can create a vector of thetas like so:  
 
-![Theta Vector](/assets/images/theta_vector.png?raw=true){: .center-image })
+![Theta Vector](/assets/images/theta_vector.png?raw=true){: .center-image }
 
 ## Finding Parameters
 The analytical solution to finding the values of the parameters is straight forward.
 
 The equation is:  
-![OLS](/assets/images/linear_regression_equation.png?raw=true){: .center-image })
+![OLS](/assets/images/linear_regression_equation.png?raw=true){: .center-image }
 
 I'm assuming you're comfortable with linear algebra. If you're unfamiliar with vector or matrix transposes, vector or matrix multiplication, or matrix inverses, please review those topics separately.
 
