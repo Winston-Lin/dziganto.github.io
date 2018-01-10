@@ -19,7 +19,7 @@ With linear regression of course!
 
 ## Overview
 
-Linear regression is quite simple yet surprisingly powerful. In this simple case, we have a single predictor variable (aka feature) called *month*. Linear regression with a single variable or feature is called univariate linear regression. The output of linear regression is an estimate of the outcome variable (aka target), which in this case is a baby's weight in ounces.
+Linear regression is simple yet surprisingly powerful. In this simple case, we have a single predictor variable (aka feature) called *month*. Linear regression with a single variable or feature is called univariate linear regression. The output of linear regression is an estimate of the outcome variable (aka target), which in this case is a baby's weight in ounces.
 
 The equation of our model looks like this:  
 
