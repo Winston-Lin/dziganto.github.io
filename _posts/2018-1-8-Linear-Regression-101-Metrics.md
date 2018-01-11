@@ -34,7 +34,7 @@ month_data = [element[0] for element in data]
 weight_data = [element[1] for element in data]
 ```
 
-Let's fit the model. Instead of using the from scratch linear algebra code from the first post, we can use SkLearn to do the heavy lifting for us. Here's how you do that:
+Let's fit the model. Instead of using the from scratch linear algebra code from the first post, we can use the scikit-learn (sklearn) module to do the heavy lifting for us. Here's how you do that:
 ```
 from sklearn.linear_model import LinearRegression
 
