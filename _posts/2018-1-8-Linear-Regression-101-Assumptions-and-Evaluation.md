@@ -110,7 +110,7 @@ nonlinear = LinearRegression()
 nonlinear.fit(x_reshape, y_nonlinear)
 ```
 
-![image](/assets/images/nonlinear.png?raw=true){: .center-image }
+INSERT IMAGE
 
 Capturing stats on the non-linear data gives us:
 ```
