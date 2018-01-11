@@ -34,7 +34,7 @@ x_reshape = x.reshape(-1,1)
 ```
 > **Technical note:** we're faking a 2D array here by using the *.reshape(-1,1)* method.
 
-On to fitting the model with Sklearn
+On to fitting the model with Sklearn:
 ```
 from sklearn.linear_model import LinearRegression
 linear = LinearRegression()
