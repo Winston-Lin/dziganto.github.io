@@ -63,7 +63,7 @@ First, the formulas:
 
 ![image](/assets/images/linear_regression_metric_equations.png?raw=true){: .center-image }
 
-Keep in mind that *y_i* is the observed value whereas *y-hat_i* is the predicted value. Here, *m* represents the total number of observations. For example, if there are 25 baby weigths, then m equals 25. 
+Keep in mind that *y_i* is the observed target value, *y-hat_i* is the predicted value, and *y-bar* is the mean value. Here, *m* represents the total number of observations. For example, if there are 25 baby weigths, then m equals 25. 
 
 Lastly, *df_t* is the degrees of freedom of the estimate of the population variance of the dependent variable and *df_e* is the degrees of freedom of the estimate of the underlying population error variance.
 
@@ -162,7 +162,7 @@ R^2 will only go up as additional features are added, even if they provide the m
 #### Generate Dummy Data
 ```
 def generate_random_data(num_rows, num_features, random_state=None):
-    '''returns 2D numpy based on user-defined inputs with random features.'''
+    '''returns 2D numpy array based on user-defined inputs with random features.'''
     if random_state:
         np.random.seed(random_state)
     for feature in range(num_features):
