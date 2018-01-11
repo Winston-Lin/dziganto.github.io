@@ -110,7 +110,7 @@ nonlinear = LinearRegression()
 nonlinear.fit(x_reshape, y_nonlinear)
 ```
 
-INSERT IMAGE
+![image](/assets/images/nonlinear.png?raw=true){: .center-image }
 
 Capturing stats on the non-linear data gives us:
 ```
@@ -167,7 +167,7 @@ sns.distplot(residuals_nlinear)
 plt.title('Non-Linear')
 ```
 
-![image](/assets/images/nonlinear_histogram.png?raw=true){: .center-image }
+INSERT HERE
 
 The histogram of the linear model on linear data looks approximately Normal (aka Gaussian) while the second histogram shows a skew. But is there a more quantitative method to test for Normality? Absolutely. SciPy has a *normaltest* method. Let's see it in action.
 
