@@ -1,6 +1,6 @@
 ---
 published: false
-title: Validation Set and Cross-Validation
+title: Tuning Model Parameters (Part 1 - Validation Set)
 categories: [Cross-Validation, Data Science, Machine Learning, Python]
 ---
 
