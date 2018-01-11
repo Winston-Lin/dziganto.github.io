@@ -167,7 +167,7 @@ sns.distplot(residuals_nlinear)
 plt.title('Non-Linear')
 ```
 
-INSERT HERE
+![image](/assets/images/nonlinear_histogram.png?raw=true){: .center-image }
 
 The histogram of the linear model on linear data looks approximately Normal (aka Gaussian) while the second histogram shows a skew. But is there a more quantitative method to test for Normality? Absolutely. SciPy has a *normaltest* method. Let's see it in action.
 
