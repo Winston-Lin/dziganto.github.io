@@ -7,7 +7,7 @@ categories: [Data Science, Linear Regression, Machine Learning]
 ![image](/assets/images/linear_regression_3.png?raw=true){: .center-image }
 
 ## Introduction
-This is the third post in a 3-part series that covers the basic assumptions of Linear Regression, how to investigate whether those assumptions are met, and how to address key problems. 
+This is the third and final post in a 3-part series, It covers the basic assumptions of linear regression, how to investigate whether those assumptions are met, and how to address key problems. 
 
 ## Linear Regression Assumptions
 1. Linear relationship between target and features
@@ -28,7 +28,7 @@ x = np.arange(20)
 y = [x*2 + np.random.rand(1)*4 for x in range(20)]
 ```
 
-Next, we need to reshape the array named *x* because Sklearn requires a 2D array. Note that we're faking a 2D array here by using the .reshape(-1,1) method.
+Next, we need to reshape the array named *x* because Sklearn requires a 2D array. Note that we're faking a 2D array here by using the *.reshape(-1,1)* method.
 ```
 x_reshape = x.reshape(-1,1)
 ```
@@ -43,7 +43,7 @@ linear.fit(x_reshape, y)
 And now a plot of the data and resulting Linear Regression line.
 ![image](/assets/images/linear_w_noise.png?raw=true){: .center-image }
 
-It certainly looks pretty good but let's capture key metrics as discussed in the previous post. To do that, we'll borrow the Stats class from the last post. Here's the code:
+It certainly looks pretty good but let's capture key metrics as discussed in the previous post. To do that, we'll borrow the Stats class from the last post. Here's the code again:
 ```
 class Stats:
     
@@ -102,7 +102,7 @@ adj_r^2: 0.9897
 
 Not surprisingly, our results look good across the board. 
 
-### Potential Problem: Data w/Non-Linear Pattern
+### Potential Problem: Data w/Nonlinear Pattern
 ```
 y_nonlinear = [x**3 + np.random.rand(1)*10 for x in range(20)]
 nonlinear = LinearRegression()
@@ -119,7 +119,7 @@ r^2:     0.8314
 adj_r^2: 0.8220
 ```
 
-No surprise, we see a substantial increases in both SSE and SST as well as substantial decreases in $R^2$ and adjusted $R^2$.
+No surprise, we see a substantial increases in both SSE and SST as well as substantial decreases in R^2 and adjusted R^2.
 
 ### Considerations
 We can check to see if our model is capturing the underlying pattern effectively. Specifically, let's generate side-by-side **Residual Plots** for the linear case and the nonlinear case. 
@@ -144,7 +144,7 @@ axes[1].set_xlabel('predicted values')
 
 ![image](/assets/images/linear_vs_nonlinear_residual_plots.png?raw=true){: .center-image }
 
-The non-linear pattern is overwhelmingly obvious in the residual plots. You may be wondering why we bothered plotting at all since we saw the non-linear trend when plotting the observed data. That works well for low dimensional cases that are easy to visualize but how will you know if you have more than 2-3 features? The residual plot is a powerful tool in that case and something you should leverage often.
+The nonlinear pattern is overwhelmingly obvious in the residual plots. You may be wondering why we bothered plotting at all since we saw the nonlinear trend when plotting the observed data. That works well for low dimensional cases that are easy to visualize but how will you know if you have more than 2-3 features? The residual plot is a powerful tool in that case and something you should leverage often.
 
 Let's now plot a histogram of residuals to see if they're Normally distributed for the linear case.
 
@@ -160,7 +160,7 @@ plt.title('Linear')
 
 ![image](/assets/images/linear_histogram.png?raw=true){: .center-image }
 
-And now for the non-linear case.
+And now for the nonlinear case.
 ```
 sns.distplot(residuals_nlinear)
 plt.title('Non-Linear')
@@ -168,39 +168,41 @@ plt.title('Non-Linear')
 
 ![image](/assets/images/nonlinear_histogram.png?raw=true){: .center-image }
 
-The histogram of the linear model on linear data looks approximately Normal (aka Gaussian) while the 2nd shows a skew. But is there a more quantitative method to test for Normality? Absolutely.
+The histogram of the linear model on linear data looks approximately Normal (aka Gaussian) while the second histogram shows a skew. But is there a more quantitative method to test for Normality? Absolutely. SciPy has a *normaltest* method. Let's see it in action.
 
 ```
 from scipy.stats import normaltest
 normaltest(residuals_linear)
 ```
 
-Which outputs:
+The output:
 ```
 NormaltestResult(statistic=array([ 1.71234546]), pvalue=array([ 0.42478474]))
 ```
 
-The null hypothesis is that the residual distribution is Normally distributed. Since the p-value > 0.05, we cannot reject the null. In other words, the residuals are Normally distributed.
+The null hypothesis is that the residual distribution is Normally distributed. Since the p-value > 0.05, we cannot reject the null. In other words, we can confidently say the residuals are Normally distributed.
+
+And for the nonlinear data?
 
 ```
 normaltest(residuals_nlinear)
 ```
 
-Which outputs:
+The output:
 ```
 NormaltestResult(statistic=array([ 2.20019716]), pvalue=array([ 0.33283827]))
 ```
 
-Turns out the residuals for the non-linear function are Normally distributed as well, in this case.
+Turns out the residuals for the nonlinear function are Normally distributed as well.
 
 ### Takeaway
-The linear data exhibits a fair amount of randomness centered around 0 in the residual plot indicating our model has captured nearly all the discernable pattern. On the other hand, the non-linear data shows a clear non-linear trend. In other words, using the non-linear data as-is with our linear model will result in a relatively poor model fit.
+The linear data exhibits a fair amount of randomness centered around 0 in the residual plot indicating our model has captured nearly all the discernable pattern. On the other hand, the non-linear data shows a clear non-linear trend. In other words, using the nonlinear data as-is with our linear model will result in a poor model fit.
 
-### Possible Solutions to Non-Linear Data
+### Possible Solutions to Nonlinear Data
 1. Consider transforming the features 
 2. Consider applying a different algorithm
 
-Let's see what we can do with polynomial regression in this scenario.
+Say we have a single feature *x*. Assuming we see a nonlinear pattern in the data, we can transform *x* such that linear regression can pickpu the pattern. For example, perhaps there's a quadratic relationship between *x* and *y*. We can model that simply by including *x^2* in our data. The *x^2* feature now gets its own parameter in the model. This process of modeling transformed features with polynomial terms is called **polynomial regression**. Let's see it in action.
 
 #### Polynomial Regression
 ```
@@ -223,6 +225,8 @@ sst:     87205080.0323
 r^2:     1.0000
 adj_r^2: 1.0000
 ```
+
+Much better and it only took a few lines of code.
 
 ---
 
@@ -256,7 +260,7 @@ A plot for comparison:
 
 ![image](/assets/images/linear_w_outlier.png?raw=true){: .center-image }
 
-There doesn't appear to be much difference in the lines but looks can be deceiving. Let's look at the key stats.
+There doesn't appear to be much difference in the lines, but looks can be deceiving. Let's look at the key stats.
 
 ```
 # no outlier
@@ -272,11 +276,11 @@ r^2:     0.8566
 adj_r^2: 0.8487
 ```
 
-Pretty big difference in all metrics! 
+That's a pretty big difference in all metrics! 
 
 ### Possible Solutions
 1. Investigate the outlier(s). Do NOT assume these cases are just bad data. Some outliers are true examples while others are data entry errors. You need to know which it is before proceeding.  
-2. Consider imputing or removing bad data outliers if you can't get true data from source.
+2. Consider imputing or removing outliers that are really just bad data.
 
 ---
 
@@ -334,14 +338,14 @@ With output:
 NormaltestResult(statistic=array([ 25.3995098]), pvalue=array([  3.05187348e-06]))
 ```
 
-Fails! The residuals are not normally distributed, statistically speaking that is. This is a key assumption of Linear Regression and we have violated it. 
+Fails! The residuals are not Normally distributed, statistically speaking that is. This is a key assumption of linear regression and we have violated it. 
 
 ### Takeaway
 The high-leverage points not only act as outliers, they also greatly affect our model's ability to generalize and our confidence in the model itself.
 
 ### Solutions
 1. Explore the data to understand why these data points exist. Are they true data points or mistakes of some kind?
-2. Consider imputing or removing them if truly outliers but have good reason to do so
+2. Consider imputing or removing them if outliers but only if you have good reason to do so
 3. Consider a more robust loss function (e.g. Huber)
 4. Consider a more robust algorithm (e.g. RANSAC)
 
@@ -395,7 +399,7 @@ NormaltestResult(statistic=array([ 1.04126656]), pvalue=array([ 0.59414417]))
 ```
 
 ### Takeaway
-Standard errors, confidence intervals, and hypothesis tests rely on the assumption that errors are homoscedastic. If this assumption is violated, you cannot trust values for the previous metrics!!!
+Standard errors, confidence intervals, and hypothesis tests rely on the assumption that errors are homoscedastic. If this assumption is violated, you cannot trust values for the previous metrics!
 
 ### Possible Solution
 1. Consider log transforming the target values
@@ -463,11 +467,12 @@ Now we can see the correlated errors.
 ### Possible Solution
 1. Forget linear regression. Use time series modeling instead.
 
-Much more on this when we get to time series in another post. For now, just know it's a problem and Linear Regression does not address it. Linear Regression expects records to be i.i.d.
+We'll discuss much more on this when we get to time series modeling in another post. For now, just know it's a problem and linear regression does not address it. Linear regression expects records to be i.i.d.
 
 ---
 
 ## #6 Independent features
+Same pattern. Need I say more?
 
 ### Generate Dummy Data
 ```
@@ -514,7 +519,9 @@ r^2:     0.9476
 adj_r^2: 0.9378
 ```
 
-## Wrap Up
-Thus concludes our whirlwind tour of Linear Regression. By no means did we cover everything. We didn't talk about Q-Q plots or Maximum Likelihood Estimation and how it drives Ordinary Least Squares. However, this post and the two prior should give you a deep enough fluency to build models effectively, to know when things go wrong, to know what those things are, and what to do about them. 
+We see no difference in SSE, SST, or R^2. As we learned in the previous post about metrics, adjusted R^2 is telling us that the additional feature in the linearly dependent feature set adds no new information, which is why we see a decrease in that value. Be careful because linear regression assumes independent features, and looking at simple metrics like SSE, SST, and R^2 alone won't tip you have that your features are correlated. There are a number of methods you can leverage to investigate feature-feature correlation. Calculate the rank of your data matrix or take the dot product of any two given features. The latter will result in 0 if two features are truly independent and some nonzero value if they are not. The larger the magnitude of the dot product, the greater the correlation.
 
-I hope you found this series helpful. And if you found errata, please let me know. 
+## Wrap Up
+Thus concludes our whirlwind tour of linear regression. By no means did we cover everything. We didn't talk about Q-Q plots or Maximum Likelihood Estimation (MLE) and how it drives Ordinary Least Squares (OLS). However, this post and the two prior should give you a deep enough fluency to effectively build models, to know when things go wrong, to know what those things are, and what to do about them. 
+
+Lastly, I hope you found this series helpful. If you found errata, please do let me know. 
