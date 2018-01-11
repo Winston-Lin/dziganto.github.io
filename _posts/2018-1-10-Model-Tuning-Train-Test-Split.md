@@ -1,7 +1,7 @@
 ---
 published: false
-title: Train-Test Split
-categories: [Data Science, Machine Learning, Python]
+title: Model Tuning (Part 1 - Train-Test Split)
+categories: [Data Science, Machine Learning, Model Tuning, Python]
 ---
 
 ![image](/assets/images/train_test_split.jpeg?raw=true){: .center-image }
