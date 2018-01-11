@@ -28,10 +28,11 @@ x = np.arange(20)
 y = [x*2 + np.random.rand(1)*4 for x in range(20)]
 ```
 
-Next, we need to reshape the array named *x* because Sklearn requires a 2D array. Note that we're faking a 2D array here by using the *.reshape(-1,1)* method.
+Next, we need to reshape the array named *x* because Sklearn requires a 2D array. 
 ```
 x_reshape = x.reshape(-1,1)
 ```
+> **Technical note:** we're faking a 2D array here by using the *.reshape(-1,1)* method.
 
 On to fitting the model with Sklearn
 ```
@@ -43,7 +44,7 @@ linear.fit(x_reshape, y)
 And now a plot of the data and resulting Linear Regression line.
 ![image](/assets/images/linear_w_noise.png?raw=true){: .center-image }
 
-It certainly looks pretty good but let's capture key metrics as discussed in the previous post. To do that, we'll borrow the Stats class from the last post. Here's the code again:
+It certainly looks pretty good but let's capture key metrics as discussed in the previous post. To do that, we'll borrow the *Stats* class from that post. Here's the code again:
 ```
 class Stats:
     
