@@ -34,7 +34,7 @@ month_data = [element[0] for element in data]
 weight_data = [element[1] for element in data]
 ```
 
-Let's fit the model:
+Let's fit the model. Instead of using the from scratch linear algebra code from the first post, we can use SkLearn to do the heavy lifting for us. Here's how you do that:
 ```
 from sklearn.linear_model import LinearRegression
 
@@ -65,7 +65,7 @@ First, the formulas:
 
 Keep in mind that *y_i* is the observed target value, *y-hat_i* is the predicted value, and *y-bar* is the mean value. Here, *m* represents the total number of observations. For example, if there are 25 baby weigths, then m equals 25. 
 
-Lastly, *df_t* is the degrees of freedom of the estimate of the population variance of the dependent variable and *df_e* is the degrees of freedom of the estimate of the underlying population error variance.
+Lastly, *df_t* is the degrees of freedom of the estimate of the population variance of the dependent variable and *df_e* is the degrees of freedom of the estimate of the underlying population error variance. If *df_t* and *df_e* don't make much sense, don't worry about it. They are simply used to calculate adjusted R^2.
 
 ---
 
