@@ -34,7 +34,7 @@ month_data = [element[0] for element in data]
 weight_data = [element[1] for element in data]
 ```
 
-Let's fit the model. Instead of using the from scratch linear algebra code from the first post, we can use the scikit-learn (sklearn) module to do the heavy lifting for us. Here's how you do that:
+Let's fit the model. Instead of using the linear algebra code from the first post, we can use the scikit-learn (sklearn) module to do the heavy lifting for us. Here's how you do that:
 ```
 from sklearn.linear_model import LinearRegression
 
@@ -45,7 +45,7 @@ lr = LinearRegression(fit_intercept=True)
 lr.fit(X, y)
 ```
 
-> **Technical note:** *X* contains *.reshape(-1,1)* which creates a fake 2D object for fitting. This trick pops up quite frequently so you should remember it.
+> **Technical note:** *X* contains *.reshape(-1,1)* which creates a fake 2D array for fitting. This trick pops up quite frequently so you should remember it.
 
 As a reminder, the plot looks like this:
 
@@ -65,7 +65,7 @@ First, the formulas:
 
 Keep in mind that *y_i* is the observed target value, *y-hat_i* is the predicted value, and *y-bar* is the mean value. Here, *m* represents the total number of observations. For example, if there are 25 baby weigths, then m equals 25. 
 
-Lastly, *df_t* is the degrees of freedom of the estimate of the population variance of the dependent variable and *df_e* is the degrees of freedom of the estimate of the underlying population error variance. If *df_t* and *df_e* don't make much sense, don't worry about it. They are simply used to calculate adjusted R^2.
+Lastly, *df_t* is the degrees of freedom of the estimate of the population variance of the dependent variable and *df_e* is the degrees of freedom of the estimate of the underlying population error variance. If *df_t* and *df_e* don't make much sense, don't worry about it. They're simply used to calculate adjusted R^2.
 
 ---
 
@@ -132,7 +132,7 @@ adj_r^2: 0.9563
 
 ### Interpretation
 ### (SSE)
-**SSE** is measure of how far off our model's predictions are from the observed values. A value of 0 indicates perfect predictions. A non-zero value indicates errors. We expect a non-zero value. Why? Because there is always irreducible error that we just can't get around unless we're dealing with some trivial problem. 
+**SSE** is measure of how far off our model's predictions are from the observed values. A value of 0 indicates that all predications are spot on. A non-zero value indicates errors. We expect a non-zero value. Why? Because there is always irreducible error that we just can't get around, unless we're dealing with some trivial problem. 
 
 **Keep in mind the errors are squared.**
 
@@ -142,7 +142,7 @@ adj_r^2: 0.9563
 
 *But why not use absolute error instead of squared error?*
 
-If you think about what squaring does to large numbers you'll realize that we're really penalizing large errors. It's like saying, it's okay to miss on the close points but don't allow large deviations between the model and the most distant points. This makes sense for some datasets but not others. 
+If you think about what squaring does to large numbers, you'll realize that we're really penalizing large errors. It's like saying, it's okay to miss on the close points but don't allow large deviations between the model and the most distant points. This makes sense for some datasets but not others. 
 
 Consider the converse, though. There's a data point or points that deviate from the general trend, causing large squared errors. These anomalous data points are often called outliers, and they can wreak havoc on the performance of your model. Much more on this in the next post.
 
@@ -157,7 +157,7 @@ Consider the converse, though. There's a data point or points that deviate from 
 
 
 ## Why R^2 is a Poor Metric
-R^2 will only go up as additional features are added, even if they provide the model no new predictive power. See the example below.
+R^2 will only go up as additional features are added, even if those features provide the model no new predictive power. See the example below.
 
 #### Generate Dummy Data
 ```
@@ -175,6 +175,8 @@ def generate_random_data(num_rows, num_features, random_state=None):
             data = np.hstack((data, np.random.uniform(size=num_rows).reshape(-1,1)))
     return data
 ```
+
+#### Compare R^2 and Adjusted R^2
 ```
 min_features = 1
 max_features = 100
