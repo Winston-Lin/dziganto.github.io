@@ -20,7 +20,7 @@ This is the third and final post in a 3-part series, It covers the basic assumpt
 Let's dig deeper into each of these assumptions one at a time.
 
 ## #1 Linear Relationship Between Target & Features
-The first thing we need to do is to generate some linear data. Here's the code:
+The first thing we need to do is generate some linear data. Here's the code:
 ```
 import numpy as np
 np.random.seed(20)
@@ -28,20 +28,20 @@ x = np.arange(20)
 y = [x*2 + np.random.rand(1)*4 for x in range(20)]
 ```
 
-Next, we need to reshape the array named *x* because Sklearn requires a 2D array. 
+Next, we need to reshape the array named *x* because sklearn requires a 2D array. 
 ```
 x_reshape = x.reshape(-1,1)
 ```
 > **Technical note:** we're faking a 2D array here by using the *.reshape(-1,1)* method.
 
-On to fitting the model with Sklearn:
+On to fitting the model with sklearn:
 ```
 from sklearn.linear_model import LinearRegression
 linear = LinearRegression()
 linear.fit(x_reshape, y)
 ```
 
-And now a plot of the data and resulting Linear Regression line.
+And now a plot of the data and resulting linear regression line.
 ![image](/assets/images/linear_w_noise.png?raw=true){: .center-image }
 
 It certainly looks pretty good but let's capture key metrics as discussed in the previous post. To do that, we'll borrow the *Stats* class from that post. Here's the code again:
@@ -112,7 +112,7 @@ nonlinear.fit(x_reshape, y_nonlinear)
 
 ![image](/assets/images/nonlinear.png?raw=true){: .center-image }
 
-Capturing stats on the non-linear data gives us:
+Capturing stats on the nonlinear data gives us:
 ```
 sse:     14702044.1585
 sst:     87205080.0323
@@ -197,13 +197,13 @@ NormaltestResult(statistic=array([ 2.20019716]), pvalue=array([ 0.33283827]))
 Turns out the residuals for the nonlinear function are Normally distributed as well.
 
 ### Takeaway
-The linear data exhibits a fair amount of randomness centered around 0 in the residual plot indicating our model has captured nearly all the discernable pattern. On the other hand, the non-linear data shows a clear non-linear trend. In other words, using the nonlinear data as-is with our linear model will result in a poor model fit.
+The linear data exhibits a fair amount of randomness centered around 0 in the residual plot indicating our model has captured nearly all the discernable pattern. On the other hand, the nonlinear data shows a clear nonlinear trend. In other words, using the nonlinear data as-is with our linear model will result in a poor model fit.
 
 ### Possible Solutions to Nonlinear Data
 1. Consider transforming the features 
 2. Consider applying a different algorithm
 
-Say we have a single feature *x*. Assuming we see a nonlinear pattern in the data, we can transform *x* such that linear regression can pickpu the pattern. For example, perhaps there's a quadratic relationship between *x* and *y*. We can model that simply by including *x^2* in our data. The *x^2* feature now gets its own parameter in the model. This process of modeling transformed features with polynomial terms is called **polynomial regression**. Let's see it in action.
+Say we have a single feature *x*. Assuming we see a nonlinear pattern in the data, we can transform *x* such that linear regression can pickup the pattern. For example, perhaps there's a quadratic relationship between *x* and *y*. We can model that simply by including *x^2* in our data. The *x^2* feature now gets its own parameter in the model. This process of modeling transformed features with polynomial terms is called **polynomial regression**. Let's see it in action.
 
 #### Polynomial Regression
 ```
@@ -231,7 +231,7 @@ Much better and it only took a few lines of code.
 
 ---
 
-## #2 No outliers
+## #2 No Outliers
 As always, let's start by generating our data, including an outlier.
 
 ```
@@ -261,7 +261,7 @@ A plot for comparison:
 
 ![image](/assets/images/linear_w_outlier.png?raw=true){: .center-image }
 
-There doesn't appear to be much difference in the lines, but looks can be deceiving. Let's look at the key stats.
+There doesn't appear to be much difference in the lines, but are looks deceiving us? Let's look at the key stats.
 
 ```
 # no outlier
@@ -281,7 +281,7 @@ That's a pretty big difference in all metrics!
 
 ### Possible Solutions
 1. Investigate the outlier(s). Do NOT assume these cases are just bad data. Some outliers are true examples while others are data entry errors. You need to know which it is before proceeding.  
-2. Consider imputing or removing outliers that are really just bad data.
+2. Consider imputing or removing outliers.
 
 ---
 
@@ -344,16 +344,16 @@ Fails! The residuals are not Normally distributed, statistically speaking that i
 ### Takeaway
 The high-leverage points not only act as outliers, they also greatly affect our model's ability to generalize and our confidence in the model itself.
 
-### Solutions
+### Possible Solutions
 1. Explore the data to understand why these data points exist. Are they true data points or mistakes of some kind?
-2. Consider imputing or removing them if outliers but only if you have good reason to do so
-3. Consider a more robust loss function (e.g. Huber)
-4. Consider a more robust algorithm (e.g. RANSAC)
+2. Consider imputing or removing them if outliers, but only if you have good reason to do so!
+3. Consider a more robust loss function (e.g. Huber).
+4. Consider a more robust algorithm (e.g. RANSAC).
 
 ---
 
 ## #4 Homoscedasticity of Error Terms
-Same old pattern. Here goes.
+Homescedasticity means the errors exhibit constant variance. This is a key assumption of linear regression. Heteroscedasticity, on the other hand, is what happens when errors show some sort of growth. The tell tale sign you have heteroscedasticity is a fan-like shape in your residual plot. Let's take a look.
 
 #### Generate Dummy Data
 ```
@@ -381,7 +381,8 @@ linear_hetero.fit(x_reshape, y_hetero)
 ![image](/assets/images/heteroscedasticity.png?raw=true){: .center-image }
 
 ### Residual Plot
-![image](/assets/images/residual_plot_homo_vs_heterscedasticity_1.png?raw=true){: .center-image }
+![image](/assets/images/residual_plot_homo_vs_heterscedasticity_1.png?raw=true){: .center-image }  
+The fan-like shape is readily apparent in the plot to the right. That's bad news for linear regression.
 
 #### Normal Test
 ```
@@ -398,9 +399,10 @@ NormaltestResult(statistic=array([ 1.71234546]), pvalue=array([ 0.42478474]))
 
 NormaltestResult(statistic=array([ 1.04126656]), pvalue=array([ 0.59414417]))
 ```
+There's no reason to reject the null that both residual distributions are Normally distributed.
 
 ### Takeaway
-Standard errors, confidence intervals, and hypothesis tests rely on the assumption that errors are homoscedastic. If this assumption is violated, you cannot trust values for the previous metrics!
+Standard errors, confidence intervals, and hypothesis tests rely on the assumption that errors are homoscedastic. If this assumption is violated, you cannot trust values for the those metrics!
 
 ### Possible Solution
 1. Consider log transforming the target values
@@ -427,7 +429,7 @@ Output:
 NormaltestResult(statistic=array([ 0.96954754]), pvalue=array([ 0.6158365]))
 ```
 
-The plot on the right shows we addressed heteroscedasticity but there'a a fair amount of correlation amongst the errors, which brings us to our next assumption.
+The plot on the right shows we addressed heteroscedasticity but there'a a fair amount of correlation amongst the errors. That brings us to our next assumption.
 
 ---
 
@@ -468,12 +470,12 @@ Now we can see the correlated errors.
 ### Possible Solution
 1. Forget linear regression. Use time series modeling instead.
 
-We'll discuss much more on this when we get to time series modeling in another post. For now, just know it's a problem and linear regression does not address it. Linear regression expects records to be i.i.d.
+We'll discuss time series modeling in detail in another post. For now, just know correlated errors is a problem for linear regression because linear regression expects records to be i.i.d.
 
 ---
 
 ## #6 Independent features
-Same pattern. Need I say more?
+Independent features means no feature is an any way derived from the other features. For example, imagine a simple dataset with three features. The first two features are in no way related. However, the third is simply the sum of the first two features. That means this ficitonal dataset has one linearly dependent feature. That's a problem for linear regression. Let's take a look.
 
 ### Generate Dummy Data
 ```
@@ -523,6 +525,6 @@ adj_r^2: 0.9378
 We see no difference in SSE, SST, or R^2. As we learned in the previous post about metrics, adjusted R^2 is telling us that the additional feature in the linearly dependent feature set adds no new information, which is why we see a decrease in that value. Be careful because linear regression assumes independent features, and looking at simple metrics like SSE, SST, and R^2 alone won't tip you off that your features are correlated. There are a number of methods you can leverage to investigate feature-feature correlation. Calculate the rank of your data matrix or take the dot product of any two given features. The latter will result in 0 if two features are truly independent and some nonzero value if they are not. The larger the magnitude of the dot product, the greater the correlation.
 
 ## Wrap Up
-Thus concludes our whirlwind tour of linear regression. By no means did we cover everything. We didn't talk about Q-Q plots or Maximum Likelihood Estimation (MLE) and how it drives Ordinary Least Squares (OLS). However, this post and the two prior should give you a deep enough fluency to effectively build models, to know when things go wrong, to know what those things are, and what to do about them. 
+Thus concludes our whirlwind tour of linear regression. By no means did we cover everything. For example, we didn't talk about Q-Q plots or Maximum Likelihood Estimation (MLE) and how it drives Ordinary Least Squares (OLS). However, this post and the two prior should give you a deep enough fluency to effectively build models, to know when things go wrong, to know what those things are, and what to do about them. 
 
 Lastly, I hope you found this series helpful. If you found errata, please do let me know. 
