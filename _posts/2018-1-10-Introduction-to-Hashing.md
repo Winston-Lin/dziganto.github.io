@@ -11,9 +11,9 @@ Unless your background is in Computer Science, **hashing** is likely one of thos
 
 Imagine you run a company with 20,000 employees. Also imagine you have an up-to-date table called *Employees* that contains key personal information like first name, last name, address, salary, and so on. If you were to run a query to find out if the last name *Ziganto* is in your table, how long would it take? 
 
-Turns out it depends on how you stored the table. If you stored it as a list of lists where your master list is the table and the sublists include key information about each individual employee, then your lookup time can be very long. But how long? You have to consider the worst case scenario. Here, there are 20,000 employees. Let's assume the table is sorted alphabetically by last name. Therefore, *Ziganto* is somewhere at the end, maybe even the last entry. The best we can do with this type of table is a *linear search*, meaning we check to see if the first last name is *Ziganto*. If it is, great, we can stop. If not, move on to the next and check. You keep doing this until you find the last name *Ziganto* or you exhaust your list. The worst case scenario if a full search of the table. If you're familiar with Big O notation, then you know the time complexity is O(n). 
+Turns out it depends on how you stored the table. If you stored it as a list of lists where your master list is the table and the sublists include key information about each individual employee, then your lookup time can be very long. But how long? You have to consider the worst case scenario. Here, there are 20,000 employees. Let's assume the table is sorted alphabetically by last name. Therefore, *Ziganto* is somewhere near the end, maybe even the last entry. The best we can do with this type of table is a *linear search*, meaning we check to see if the first entry for last name is *Ziganto*. If it is, great, we can stop. If not, move on to the next last name and check. You keep doing this until you find the last name *Ziganto* or you exhaust your list. The worst case scenario if a full search of the table. If you're familiar with Big O notation, then you know the time complexity is O(n). 
 
-Given modern computing systems, this process of searching 20,000 last names is not a big deal. But imagine you had millions or billions of items to search through employees. The time to search grows linearly with the number of items, hence the term *linear search*. Clearly, this is not optimal. In fact, it's extraordinarily bad. 
+Given modern computing systems, this process of searching 20,000 last names is not a big deal. But imagine you had millions or billions of values to search through. The time to search grows linearly with the number of items, hence the term *linear search*. Clearly, this is not optimal. In fact, it's extraordinarily bad. 
 
 The good news is that there's a MUCH better way to do this and it's called **hashing**.
 
@@ -30,7 +30,7 @@ You should walk away from this post knowing what the following terms mean and ho
 * chaining
 
 #### Definitions
-**Hashing:** to convert a key to a numeric value with the goal of saving or returning a specific record in an array, table, database, etc.
+**Hashing:** the conversion of a key to a numeric value with the goal of saving or returning a specific record in an array, table, database, etc.
 
 **Key:** any unique, immutable value (e.g. string, integer, tuple).
 
@@ -38,7 +38,7 @@ You should walk away from this post knowing what the following terms mean and ho
 
 **Hash Function:** the process of converting a key to a hash key (used whenever access to an array, table, or database is needed).
 
-> Note: collision, linear probing, and chaining will be covered later.
+> Note: collision, linear probing, and chaining will be discussed later.
 
 ## Disclaimer
 This is only an introduction to hashing. It's a jumping off point really. There are so many cool things you can do with it but for now just get the general idea.
@@ -69,50 +69,50 @@ def hasher(key, num_slots):
         return np.sum(str2int) % num_slots
 ```
 
-The first bit in triple quotes is just a lengthy docstring. It tells us what *key* and *num_slots* are and the expected data types. It also tells us the output of this function, which is an integer representing the hash key.
+The first bit in triple quotes is just a lengthy docstring. It tells us what *key* and *num_slots* are and the expected data types. It also describes the output of this function, which is an integer representing the hash key.
 
-The assert statements are a quick and dirty way to ensure inputs are of the right type. Specifically, the key must be an integer or string while num_slots must be an integer. Otherwise an assertion error is thrown alerting the user.
+The assert statements are a quick and dirty way to ensure inputs are of the right type. Specifically, the *key* must be an integer or string while *num_slots* must be an integer. Otherwise an assertion error is thrown alerting the user.
 
 Great, now on to the main logic. 
 
-We start with a simple logical check to see if the key is an integer or string. If it's an integer, simply return $key \mod num_slots$. If it's a string, we need to process the text to convert it into numbers. One way to do that is by simply parsing the string into individual characters, returning the ASCII integer for each character, summing all ASCII integers, and applying the mod function. That's precisely what happened in our hasher function with `str2int = [ord(char) for char in list(key)]` and then `np.sum(str2int) % num_slots`. That's all there is to it.
+We start with a simple logical check to see if the *key* is an integer or string. If it's an integer, simply return *key* mod *num_slots*. If it's a string, we need to process the text to convert it into numbers. One way to do that is by simply parsing the string into individual characters, returning the ASCII integer for each character, summing all ASCII integers, and applying the mod function. That's precisely what happened in our hasher function with `str2int = [ord(char) for char in list(key)]` and then `np.sum(str2int) % num_slots`. That's all there is to it.
 
 ## Example
-Let's simulate a table called *Employees* like above but which only has eight employees, not 20,000. The table has the following last names:
+Let's simulate a table called *Employees*. To keep things simple, *Employees* will only contain eight employees, not 20,000. The table has the following last names:
 ```
 # employees last names
 last_names = ['Eisenhower', 'Harding', 'Kennedy', 'Lincoln', 
               'Obama', 'Roosevelt', 'Washington', 'Ziganto']
 ```
 
-The table itself is simulated as an array like so (note num_slots=8 here):
+The table itself is simulated as an array like so (note *num_slots*=8 here):
 ```
 table = np.zeros(8).astype('int')
 for i, name in enumerate(last_names, 1):
     table[hasher(name, 8)] = i
 ```
 
-Printing the table with `print(table)` gives us the output `[5 1 7 6 8 2 3 4]`. It's important to understand what those numbers mean because ultimately it describes how the hash function works. What happened in the code above is that we fed elements of our names list into our function *hasher*. The result is a hash key which maps a key to a memory block. Now that we can efficiently map a key to memory block, we save the index of a name from *last_names* into the *Employees* table to simulate a hash table. 
+Printing the table gives us the output `[5 1 7 6 8 2 3 4]`. It's important to understand what those numbers mean because ultimately it describes how the hash function works. What happened in the code above is that we fed elements of our list called *last_names* into our function called *hasher*. The result is a hash key. The hash key simply says, when you feed *Eisenhower* into this particular hash faction, store/retrieve any associated data in/from memory block #5. When you feed *Harding* into this hash function, store,retrieve its associated data in/from memory block #1. The process continues until we reach the end, *Ziganto* in this case. So what the hash function does is it maps a key (i.e. last name) to a specific memory block where we can save or retrieve data. In other words, we've created a hash table. 
 
 Remember our goal was to investigate whether *Ziganto* is stored in our table. Let's simplify things a bit for the moment and assume *Ziganto* is in the table. Now we just want to pull up the record. How do we do so? Merely apply `hasher('ziganto', 8)`
-which returns 4. This means the record for *Ziganto* is stored in the 4th index of our table. Notice the time complexity. It's constant or O(1). The hash function acts like any old mathematical function. Give it an input and it will spit out an output. 
+which returns 4. This means the record for *Ziganto* is stored in the 4th index of our table. Notice the time complexity. It's constant or O(1). The hash function acts like any old mathematical function. Give it an input and it will spit out an output. That's the simple case. What if we don't assume *Ziganto* is in the table. How can we check? Assuming we setup our hash table properly (more on this shortly), we simply feed *Ziganto* as the key to our hashing function. Since we're conducting a search, we just want to know what data is associated with this key. If data is stored in the memory block associated with *Ziganto*, then the record exists. If, on the other hand, the memory block is empty or returns a null value, then *Ziganto* does not exist.
 
-But now all our buckets are full. What happens if we try to add another name?
+Ok, so we've got eight employees and we see that all our memory slots are full. What happens if we try to add another name?
 
-Answer: we get a collision.
+**Answer:** we get a collision.
 
-A **collision** happens when two different keys map to the same bucket. Often this is a problem but not always. This time it is. 
+A **collision** happens when two different keys map to the same bucket. It's not a problem for some situations, but often times it is. It's definitely problem in our scenario. We certainly don't want to different employees mapping to the same memory block. There'd be no way to keep their records separate given our discussion thus far. But there are ways to handle collisions. Let's look at them now.
 
 #### Addressing Collisions
 What can we do about collisions?
 
-1. change divisor to a prime number
-2. increase divisor to create more buckets
-3. extend hashing by adding additional functionality
+1. Change divisor to a prime number
+2. Increase divisor to create more buckets
+3. Extend hashing by adding additional functionality
 
-Question: why would changing the divisor to a prime number help avoid collisions?
+**Question #1:** Why would changing the divisor to a prime number help avoid collisions?
 
-Answer: a prime is divisible only by itself and 1 so you do not have to worry about common factors.
+**Answer #1:** Because a prime is divisible only by itself and 1 so you do not have to worry about common factors.
 
 #### Quick Example
 ```
@@ -158,13 +158,20 @@ index: 41 | hash: 11
 
 We still get two collisions in this case but there far fewer of them. We could easily correct this by using larger primes.
 
-**Side note:** you should clearly see how this relates to the **dictionary** data structure, which is nothing more than a hash table. It also explains why order is not **guaranteed**. If a collision occurs, the hash function is recomputed with a larger prime to create more memory slots (aka buckets). Therefore, a new hash function almost always leads to new indices for your initial data. 
+>**Side note:** You should clearly see how this relates to the **dictionary** data structure, which is nothing more than a hash table. It also explains why order is not **guaranteed**. If a collision occurs, the hash function is recomputed with a larger prime to create more memory slots (aka buckets). Therefore, a new hash function almost always leads to new indices for your initial data. 
 
-## Addressing Collisions
-There are ways to extend our hash function to handle collisions more gracefully. Here, I will present two methods known as **linear probing** and **chaining**. By no means are they the only methods. However, they should give you some idea how collisions can be handled. 
+**Question #2:** Why would changing the divisor to a larger number help avoid collisions?
+
+**Answer #2:** Because a larger divisor allocates more buckets or memory slots, decreasing the chances of a collision.
+
+>**Side note:** Your best bet is to use primer numbers and if you run out of memory slots leading to collisions, use larger primes. That way you get the best of both worlds - no common factors and large number of memory slots. 
+
+**Question #3:** How can we extend hashing by adding additional functionality
+
+**Answer #3:** There are ways to extend the hash function to handle collisions gracefully. Here, I will present two methods known as **linear probing** and **chaining**. By no means are they the only methods. However, they should give you some idea how collisions can be handled. 
 
 ### Linear Probing
-The idea of linear probing is simple. When a collision occurs, try the next index. If it's empty, is it. If not, try the next and the next and the next until you find one that works.
+The idea of linear probing is simple. When a collision occurs, try the next memory slot. If that memory slot is empty, use it. If not, try the next and the next and the next until you find one that works or you've exhausted your search by checking all slots.
 
 We'll need some code to automate this process. Here goes:
 ```
@@ -215,7 +222,7 @@ def linear_probe_hasher(table, value, key, num_slots):
         idx = np.sum(str2int) % num_slots
         return updater(table2, idx, 1)
 ```
-The first function *updater* is a helper function that runs linear search. Simply put, *updater* checks to see if all slots are taken. If not, it will insert a value where the table (aka array) has a zero. Otherwise it will check the next index until it's exhausted all options.
+The first function *updater* is a helper function that runs linear search. Simply put, *updater* checks to see if all slots are taken. If they are, it returns "all slots taken" and stops. If there's at least one opening, *updater* will insert a value check the slot provided by the hash key. If that slot is not available, it will check each memory slot in sequential order until it finds an open slot.
 
 The second function *linear_probe_hasher* acts just like *hasher* from earlier. The only difference is that it leverages linear probing when a collision occurs.
 
@@ -266,7 +273,7 @@ all slots taken
 table: [2 3 4 5 1]
 ```
 
-You can see the procedure prevents collisions once all memory slots are taken.
+You can see the procedure prevents additional collisions once all memory slots are taken.
 
 ### Chaining
 Chaining uses linked lists to append values in order when collisions occur.
@@ -302,7 +309,7 @@ keys = [0, 1, 'abc', 'abc']
 for i, key in enumerate(keys,1):
     chain_hasher(table3, i, key, 5)
 ```
-Printing *table3* with `print(table3)` returns `[[1], [2], [], [], [3, 4]]`. You can see the 4 causes a collision but was handled effortlessly.
+Printing *table3* with `print(table3)` returns `[[1], [2], [], [], [3, 4]]`. You can see the 4 causes a collision but was handled effortlessly. This is equivalent to storing information about two employees in the same record; however, it allows you to keep their records separate for updates or retrieval. It's certainly not elegant but it works in a pinch. 
 
 ## Now What?
 This was just the beginning. I hope you have a high-level understanding of how hashing works and some basic use cases. If you found this interesting, take a look at other hashing strategies, other ways to handle collisions, and algorithms like MD5, SHA-1, and othe cryptographic hashes.
