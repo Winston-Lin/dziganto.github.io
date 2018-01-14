@@ -1,7 +1,7 @@
 ---
 published: true
 title: Linear Regression 101 (Part 3 - Assumptions & Evaluation)
-categories: [Data Science, Linear Regression, Machine Learning]
+categories: [Data Science, Linear Regression, Machine Learning, Python]
 ---
 
 ![image](/assets/images/linear_regression_3.png?raw=true){: .center-image }
