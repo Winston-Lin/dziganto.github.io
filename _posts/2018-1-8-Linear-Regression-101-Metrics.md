@@ -1,7 +1,7 @@
 ---
 published: true
 title: Linear Regression 101 (Part 2 - Metrics)
-categories: [Data Science, Linear Regression, Machine Learning]
+categories: [Data Science, Linear Regression, Machine Learning, Python]
 ---
 
 ![image](/assets/images/linear_regression_2.png?raw=true){: .center-image }
