@@ -1,7 +1,7 @@
 ---
 published: true
 title: Linear Regression 101 (Part 1 - Basics)
-categories: [Data Science, Linear Regression, Machine Learning]
+categories: [Data Science, Linear Regression, Machine Learning, Python]
 ---
 
 ![image](/assets/images/linear_regression_1.jpg?raw=true){: .center-image }
