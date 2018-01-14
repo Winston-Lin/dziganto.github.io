@@ -12,7 +12,7 @@ General Posts, Hashing, and RNGs
 [Do You Even Data Science?](https://dziganto.github.io/data%20science/Do-You-Even-Data-Science/)
 
 # Hashing
-Coming Soon!
+[An Introduction to Hashing](https://dziganto.github.io/computer%20science/data%20science/hashing/machine%20learning/python/Introduction-to-Hashing/)
 
 # Random Number Generators
 Coming Soon!
