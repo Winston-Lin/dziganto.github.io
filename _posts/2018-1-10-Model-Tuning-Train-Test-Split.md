@@ -11,11 +11,11 @@ Building a model is simple but assessing your model and tuning it require care a
 
 Let's motivate the discussion with a real-world example.
 
-The [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/index.php) contains many wonderful datasets that you can download and experiment on. Datasets usually come with at least some description. Furthermore, the datasets are grouped according to a number of attributes like Classification, Regression, Clustering or Multivariate, Time Series, Text. It really is a great resource to hone your modeling skills.
+The [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/index.php) contains many wonderful datasets that you can download and experiment on. Datasets usually come with at least some description. Furthermore, the datasets are grouped according to a number of attributes like *Classification*, *Regression*, *Clustering*, *Time Series*, or *Text*. It really is a great resource to hone your modeling skills.
 
 Anyway, for the purposes of this demonstration, we'll use the [Forest Fires](http://archive.ics.uci.edu/ml/datasets/Forest+Fires) dataset.
 
-The task is this: predict the burned area of forest fires, in the northeast region of Portugal, by using meteorological and other data.
+The task is this: predict the area burned by forest fires in the northeast region of Portugal by using meteorological and other data.
 
 A bit of information about the features:
 1. X - x-axis spatial coordinate within the Montesinho park map: 1 to 9 
@@ -32,7 +32,7 @@ A bit of information about the features:
 12. rain - outside rain in mm/m2 : 0.0 to 6.4 
 13. area - the burned area of the forest (in ha): 0.00 to 1090.84 
 
-Ok, let's get the data, clean it up, and then build a Linear Regression model.
+Ok, let's get the data, clean it up, and then build a linear regression model.
 
 #### Get Data
 ```
@@ -53,9 +53,9 @@ X	Y	month	day	FFMC	DMC	  DC	  ISI	 temp	 RH	 wind	 rain	 area
 8	6	 mar	sun	89.3	51.3	102.2	9.6	 11.4	 99	 1.8	 0.0	 0.0
 ```
 
-Right away we see a problem. The columns *month* and *day* are coded as text, not numbers. This is a problem for our Linear Regression model. We need to convert those categorical features. There are many ways to do this but for the purposes of Linear Regression we are going to do something called one-hot encoding. What this does is take a single categorical feature like day, which consists of Sunday through Saturday, and splits it into numerous indicator features. Specifically, a column will be created for each day of the week in this example. So one column will parse into seven. 
+Right away we see a problem. The columns *month* and *day* are coded as text, not numbers. This is a problem for our linear regression model that only understands numbers. We need to convert those categorical features. There are many ways to do this but for the purposes of linear regression we are going to do something called *one-hot encoding*. What this does is it takes a single categorical feature like day, which consists of Sunday, Monday, and so on, and splits it into numerous indicator features. Specifically, a column will be created for each day of the week in this example. So one column will parse into seven. 
 
-You may be wondering how many columns result from one-hot encoding. It's simply the number of categories within a feature. Of course you can one-hot encode multiple categorical features. Just keep in mind that your data matrix can expand wide very quickly using this schema. 
+You may be wondering how many columns result from one-hot encoding. It's simply the number of categories within a feature. Of course you can one-hot encode multiple categorical features. Just keep in mind that your data matrix can expand wide very quickly using this approach. 
 
 #### Clean Data
 Pandas has a very nice method called *get_dummies* that will one-hot encode the categorical features for us automatically. It'll even delete the original feature, which is a nice touch. Here we go!
@@ -63,7 +63,7 @@ Pandas has a very nice method called *get_dummies* that will one-hot encode the 
 df = pd.get_dummies(df)
 ```
 
-We can look at the columns by typing `df.columns`. The result is:
+We can look at the columns by typing `df.columns`. The result looks like:
 ```
 Index(['X', 'Y', 'FFMC', 'DMC', 'DC', 'ISI', 'temp', 'RH', 'wind', 'rain',
        'area', 'month_apr', 'month_aug', 'month_dec', 'month_feb', 'month_jan',
@@ -81,7 +81,7 @@ Think about what's happening for the day of week indicator features. We have a c
 
 Ok, so what's the problem?
 
-Think about the coding. Common convention states a week starts on Sunday. So we have features for Sunday through Saturday. But I don't need an indicator feature for Saturday. That's already encoded implicity when Sunday=0, Monday=0, Tuesday=0, Wednesday=0, Thursday=0, and Friday=0. If you're up on your linear algebra you realize that adding Saturday causes linear dependence, which is a no-no for Linear Regression which assumes independent features. Therefore, we **must** drop one column of each one-hot encoded feature. In this case we need to drop one column from month and one from day of week. Then we'll be in good shape. We do that with this bit of code: `df.drop(labels=['month_dec', 'day_sat'], axis=1, inplace=True)`
+Think about the coding. Common convention states a week starts on Sunday. So we have features for Sunday through Saturday. But I don't need an indicator feature for Saturday. That's already encoded implicity when Sunday=0, Monday=0, Tuesday=0, Wednesday=0, Thursday=0, and Friday=0. If you're up on your linear algebra, you realize that adding Saturday causes linear dependence, which is a no-no for linear regression which assumes independent features. Therefore, we **must** drop one column of each one-hot encoded feature. In this case we need to drop one column from *month* and one from *day* - it doesn't matter which specific month and which specific day we choose. Then we'll be in good shape. We do that with this bit of code: `df.drop(labels=['month_dec', 'day_sat'], axis=1, inplace=True)`
 
 It's always worthwhile to check the range of values for each feature. That's as simple as `df.max() - df.min()`.
 
@@ -117,9 +117,9 @@ day_tue         1.00
 day_wed         1.00
 ```
 
-Some of the variables have relatively high variance, like *DMC* and *DC*, whereas others are constrained between 0 and 1, like day of week. Linear Regression can adjust with the magnitude of its coefficients, but it's really good practice to normalize or standardize first, especially when we use regularization or Gradient Descent. We won't normalize/standardize here. You'll understand why shortly. 
+Some of the variables have relatively high variance, like *DMC* and *DC*, whereas others are constrained between 0 and 1, like day of week. Linear regression can adjust to this variance with the magnitude of its coefficients, but it's really good practice to normalize or standardize first. If you leverage *regularization* or *Gradient Descent*, you must normalize/standardize. We won't normalize/standardize here. You'll understand why shortly. 
 
-For now let's pretend we're in good shape. Let's model.
+For now let's pretend we're in good shape. On to the modeling.
 
 #### Fit Model
 ```
@@ -133,7 +133,7 @@ lr.fit(data, target)
 ```
 
 #### How'd we do?
-Let's look at $R^2$ and Root Mean Squared Error (RMSE) to see how our model performed. 
+Let's look at R^2 and Root Mean Squared Error (RMSE) to see how our model performed. 
 ```
 from sklearn.metrics import mean_squared_error
 
@@ -154,27 +154,27 @@ Which returns, respectively:
 ```
 
 #### Interpretation
-Right away we can see the $R^2$ is abysmal. It's really not too surprising because if you look at the documentation on UCI you'll notice that the target variable is highly skewed with several high leverage points. This is worthy of investigation and could yield substantial performance gains. Review SSE, SST, and $R^2$ if you're unclear as to why.
+Right away we can see the R^2 is abysmal. It's really not too surprising because if you look at the documentation on UCI you'll notice that the target variable is highly skewed with several high leverage points. This is worthy of investigation and could yield substantial performance gains. Review SSE, SST, and R^2 if you're unclear as to why.
 
-The RMSE is a measure of how far off on average our model is from ground truth. I'm using the term *average* loosely here because it's really the average square root of the squared residuals. Yikes, that's a mouthful. Said another way, it's one way to measure the magnitude of errors, though it's not the only one. Mean Absolute Error is another. They will give you different answers, so you should ponder on that.
+The RMSE is a measure of how far off on average our model is from ground truth. I'm using the term *average* loosely here because it's really the average square root of the squared residuals. Yikes, that's a mouthful. Said another way, it's one way to measure the magnitude of errors, though it's not the only one. Mean Absolute Error is another. The two measures will give you different answers, so you should ponder on that.
 
-Here's the thing: our model is rubbish no matter what. We could have had an $R^2$ approaching 1 or an RMSE close to 0 but that's totally and completely meaningless in the real-world. We have no idea how this model would generalize to data it hasn't seen. We merely have a measure of how well it's doing on the data it sees. This is a major problem for predictive analytics. You can have what seems like an incredible model but then you unleash it in the wild and it performs horribly. Understanding why this is the case is absolutely essential.
+But here's the thing: our model is rubbish no matter what. We could have had an R^2 approaching 1 or an RMSE close to 0 but that's totally and completely meaningless in the real-world. We have no idea how this model would generalize to data it hasn't seen. We merely have a measure of how well it's doing on the data it sees. This is a major problem for predictive analytics. You can have what seems like an incredible model but then you unleash it in the wild and it performs poorly. Understanding why this is the case is absolutely essential.
 
 ## Why This Model Sucks
-In the most extreme case, I can create a model that is really a lookup table. You give me an input and I give you the output. Another way to say this is take a model and let it memorize the data it can see. The result: an $R^2$ of 1 and an RMSE of 0. 
+In the most extreme case, I can create a model that is really a lookup table. You give me an input and I give you the output. Another way to say this is take a model and let it memorize the data it can see. The result: an R^2 of 1 and an RMSE of 0. 
 
-Clearly nobody thinks that's a great model. The point of building a model is to predict something interesting. You can't do that with a lookup table. Yet, that's exactly how we tried to assess our Linear Regression model above - give it some data and then see how well it does predicting that SAME data. That is why it's rubbish. PLEASE DO NOT EVER DO THIS!
+Clearly, nobody thinks that's a great model. The point of building a model is to predict something interesting. You can't do that with a lookup table. Yet, that's exactly how we tried to assess our linear regression model above - give it some data and then see how well it does predicting that SAME data. That's why it's rubbish. PLEASE DO NOT EVER DO THIS!
 
-What we've done is look at something called *in-sample error* (ISE). It is a useful metric but only tells one half of the story. 
+What we've done is look at something called *in-sample error* (ISE) or *train error*. It is a useful metric but only tells one half of the story. 
 
 ## Out-of-Sample Error
-The other half of the story is something called *out-of-sample error* which I'll denote henceforth at OSE. Simply put, OSE is how well the model performs on data it's never seen. 
+The other half of the story is something called *out-of-sample error*, which I'll denote henceforth as OSE or *test error*. Simply put, OSE is how well the model performs on data it's never seen. 
 
 But where do we get this data? 
 
 Easy, holdout some data at the beginning. Don't let the model see it until the very end. Then make predictions and see how well it performs. This gives you an indication as to how well your model will do in the wild.
 
-This process we just discussed is called *Train/Test split*. You determine how much data to holdout at the beginning, split the data into a training dataset and a test dataset, model on the training set, and then calculate ISE and OSE.
+This process we just discussed is called *train/test split*. You determine how much data to holdout at the beginning, split the data into a training dataset and a test dataset, model on the training set, and then calculate ISE and OSE.
 
 Let's see how to do this with Sklearn.
 
@@ -230,16 +230,16 @@ OSE       : 83.36547731820247
 ```
 
 #### Interpretation
-We can see that the in-sample $R^2$ is pretty low but what's interesting here is that the out-of-sample $R^2$ is lower. In fact, it's slightly below zero. Even more telling is the RMSE values. The RMSE for the data the model saw (ISE) is significantly lower (by a factor of 3) than the RMSE for the data the model has never seen (OSE). In machine learning speak our model is *overfitting* meaning it's doing a much better job on the data it has seen but does not generalize well. The greater the gap between between in-sample and out-of-sample, the greater the overfitting. You can equate overfitting with "memorizing" the data. It becomes more and more like creating a lookup table.
+We can see that the in-sample R^2 is pretty low but what's interesting here is that the out-of-sample R^2 is lower. In fact, it's slightly below zero. Even more telling is the RMSE values. The RMSE for the data the model saw (ISE or train error) is significantly lower (by a factor of 3) than the RMSE for the data the model has never seen (OSE or test error). In machine learning speak our model is *overfitting* meaning it's doing a much better job on the data it has seen (i.e. it does not generalize well). The greater the gap between between in-sample and out-of-sample, the greater the overfitting. You can equate overfitting with memorizing the data. It becomes more and more like creating a lookup table.
 
-So the big takeaway here is that you *must* calculate ISE and OSE to get an accurate picture as to how your model is doing. This necessiates holding out some data at the beginning so you can test your model on data it's never seen. I showed you show to do that with sklearn's *train_test_split*. 
+So the big takeaway here is that you *must* calculate train error and test error to get an accurate picture as to how your model is doing. This necessiates holding out some data at the beginning so you can test your model on data it's never seen. I showed you show to do that with sklearn's *train_test_split*. 
 
-Now you may be wondering how to address overfitting. To understand that, we need to discuss something called the **Bias-Variance Tradeoff**, which is a topic for another day.
+Now you may be wondering how to address overfitting. To fully understand that, we need to discuss something called the **Bias-Variance Tradeoff**, which is a topic for another post. For now, understanding what overfitting is and knowing it's a problem is a big first step.
 
 Before we wrap up, there's one more subtle item we need to address: the downside of train/test split.
 
 ## Downside of Train/Test Split
-I just told you that train/test split gives you both sides of the story - how well your model performs on data it's seen and data it hasn't. That's true to an extent but there's something subtle you need to be aware of. Let me show you be example before explaining it. Let's try a few different train/test splits and check ISE and OSE values.
+I just told you that train/test split gives you both sides of the story - how well your model performs on data it's seen and data it hasn't. That's true to an extent but there's something subtle you need to be aware of. Let me show you be example. Let's try a few different train/test splits and check train error and test error values.
 
 #### Multiple Train/Test Splits
 ```
@@ -296,12 +296,12 @@ OS_R^2: -0.7537 | OS_RMSE: 41.286
 ```
 
 #### Takeaways
-* $R^2$ is always higher in-sample as opposed to out-of-sample
+* R^2 is always higher in-sample as opposed to out-of-sample
 * RMSE show great variability in-sample vs out-of-sample
 
 #### Discussion
-It's no surprise that $R^2$ is higher in-sample. The surprise here is RMSE. What's particularly interesting is that sometimes ISE is higher than OSE and sometimes it's the other way around. This is a small dataset so the skewed distribution in the target variable is having major consequences. A much larger dataset would still be affected but to a smaller degree. With that in mind, you'll almost always see OSE's that are higher than ISE's. If not, there's something funky going on in your data like we have here. It's a good red flag to keep in mind when doing EDA. Anyway, we get very different results depending on how we split the data. In this case, I didn't change the proportion of data that's selected, merely how it's split. So that's good to know. How you split can dramatically affect your model. In some cases it generalizes well and other times it doesn't. 
+It's no surprise that R^2 is higher in-sample. The surprise here is RMSE. What's particularly interesting is that sometimes train error is higher than test error and sometimes it's the other way around. This is a small dataset so the skewed distribution in the target variable is having major consequences. A much larger dataset would still be affected but to a smaller degree. With that in mind, you'll almost always see train errors that are higher than test error. If not, there's something funky going on in your data like we have here. It's a good red flag to keep in mind when doing EDA. Anyway, we get very different results depending on how we split the data. In this case, I didn't change the proportion of data that's selected, merely how it's split. So that's good to know. How you split can dramatically affect your model. In some cases it generalizes well and other times it doesn't. 
 
 An obvious question you're probably asking is how do I best split my data? Trial and error?
 
-No, there's a better method for small to medium-sized datasets and it's called Cross-Validation. We'll pickup that discussion next time.
+No, there's a better method. For large datasets, it's called train/validation/test split and for small to medium-sized datasets, it's called Cross-Validation. We'll pickup that discussion next time.
