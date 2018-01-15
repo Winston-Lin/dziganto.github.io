@@ -7,9 +7,10 @@ author_profile: true
 Upcoming & Past Talks w/Links
 
 ## Upcoming
-Workshop - Pandas & ML Crash Course @ [Elmhurst College for M.S. Data Science Students](https://www.elmhurst.edu/academics/departments/computer-science-information-systems/programs/m-s-data-science/) (1/11/2018, 2 hours)
+None
 
 ## Past
+Workshop - Pandas & ML Crash Course @ [Elmhurst College for M.S. Data Science Students](https://www.elmhurst.edu/academics/departments/computer-science-information-systems/programs/m-s-data-science/) (1/11/2018, 2 hours)  
 Workshop - Python Crash Course @ [Elmhurst College for M.S. Data Science Students](https://www.elmhurst.edu/academics/departments/computer-science-information-systems/programs/m-s-data-science/) (1/4/2018, 2 hours)
 
 [Workshop - Python & Data Modeling](https://www.meetup.com/Metis-Chicago-Data-Science/events/244672898/) (11/18/2017, 5 hours) 
