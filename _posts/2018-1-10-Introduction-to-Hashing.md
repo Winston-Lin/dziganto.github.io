@@ -11,7 +11,7 @@ Unless your background is in Computer Science, **hashing** is likely one of thos
 
 Imagine you run a company with 20,000 employees. Also imagine you have an up-to-date table called *Employees* that contains key personal information like first name, last name, address, salary, and so on. If you were to run a query to retrieve personal information for the employee with the last name *Ziganto*, how long would it take? 
 
-Turns out it depends how you stored the table. If you stored it as a list of lists where your master list is the table and the sublists include key information about each individual employee, then your lookup time can be very long. How long exactly? You have to consider the worst case scenario. Here, there are 20,000 employees. Let's assume the table is sorted alphabetically by last name. Therefore, *Ziganto* is somewhere near the end, maybe even the last entry. The best we can do with this type of table is a *linear search*, meaning we check to see if the first entry for last name is *Ziganto*. If it is, great, we can stop. If not, move on to the next last name and check it. You keep doing this until you find the last name *Ziganto* or you exhaust your list. The worst case scenario if a full search of the table. If you're familiar with Big O notation, then you know the time complexity is O(n). 
+Turns out it depends how you stored the table. If you stored it as a list of lists where your master list is the table and the sublists include key information about each individual employee, then your lookup time can be very long. How long exactly? You have to consider the worst case scenario. Here, there are 20,000 employees. Let's assume the table is sorted alphabetically by last name. Therefore, *Ziganto* is somewhere near the end, maybe even the last entry. The best we can do with this type of table is a *linear search*, meaning we check to see if the first entry for last name is *Ziganto*. If it is, great, we can stop. If not, move on to the next last name and check it. You keep doing this until you find the last name *Ziganto* or you exhaust your list. The worst case scenario is a full search of the table. If you're familiar with Big O notation, then you know the time complexity is O(n). 
 
 Given modern computing systems, this process of searching 20,000 last names is not a big deal. But imagine you had millions or billions of values to search through. The search time grows linearly with the number of items, hence the term *linear search*. Clearly, this is not optimal. In fact, it's extraordinarily bad. 
 
@@ -69,13 +69,13 @@ def hasher(key, num_slots):
         return np.sum(str2int) % num_slots
 ```
 
-The first bit in triple quotes is just a lengthy docstring. It explains *key* and *num_slots* and data types are expected. It also describes the output of this function, which is an integer representing the hash key.
+The first bit in triple quotes is just a lengthy docstring. It explains the function parameters *key* and *num_slots* as well as the data types expected. It also describes the output of this function, which is an integer representing the hash key.
 
 The assert statements are a quick and dirty way to ensure inputs are of the right type. Specifically, the *key* must be an integer or string while *num_slots* must be an integer. Otherwise an assertion error is thrown alerting the user to a problem.
 
 Great, now on to the main logic. 
 
-We start with a simple logical check to see if the *key* is an integer or string. If it's an integer, simply return **key mod num_slots**. If it's a string, we need to first process the text to convert it into numbers. One way to do that is by simply parsing the string into individual characters, returning the ASCII integer for each character, summing all ASCII integers, and applying the mod function. That's precisely what's happening in our hasher function with `str2int = [ord(char) for char in list(key)]` and then `np.sum(str2int) % num_slots`. That's all there is to it.
+We start with a simple logical check to see if the *key* is an integer or string. If it's an integer, simply return ***key* mod *num_slots***. If it's a string, we need to first process the text to convert it into numbers. One way to do that is by simply parsing the string into individual characters, returning the ASCII integer for each character, summing all ASCII integers, and applying the mod function. That's precisely what's happening in our hasher function with `str2int = [ord(char) for char in list(key)]` and then `np.sum(str2int) % num_slots`. That's all there is to it.
 
 ## Example
 Let's simulate a table called *Employees*. To keep things simple, *Employees* will only contain eight employees, not 20,000. The table has the following last names:
@@ -95,32 +95,36 @@ for i, name in enumerate(last_names, 1):
 Printing the table gives us the output `[5 1 7 6 8 2 3 4]`. It's important to understand what those numbers mean because ultimately it describes how the hash function works. What happened in the code above is that we fed elements of our list called *last_names* into our function called *hasher*. The result is a hash key. The hash key simply says, when you feed *Eisenhower* into this particular hash faction, store/retrieve any associated data in/from memory block #5. When you feed *Harding* into this hash function, store/retrieve its associated data in/from memory block #1. The process continues until we reach the end, *Ziganto* in this case. So what the hash function does is it maps a key (i.e. last name) to a specific memory block where we can save or retrieve data. In other words, we've created a hash table. 
 
 Remember our original goal was to retrieve data on *Ziganto*. How do we do that? Merely apply `hasher('ziganto', 8)`
-which returns 4. This means the record for *Ziganto* is stored in the 4th index of our table. Notice the time complexity. It's constant or O(1). The hash function acts like any old mathematical function. Give it an input and it will spit out an output. 
+which returns 4. This means the record for *Ziganto* is stored in the 4th index of our table. Notice the time complexity. It's constant or O(1). 
 
-Ok, so we've got eight employees and we see that all our memory slots are full. What happens if we try to add another name?
+Ok, so we've got eight employees and we see that all the memory slots are full. 
 
-**Answer:** we get a collision.
+**Question:** What happens if we try to add another name?
+
+**Answer:** We get a collision.
 
 A **collision** happens when two different keys map to the same memory block. It's not a problem for some situations, but often times it is. It's definitely problem in our scenario. We certainly don't want two different employees mapping to the same memory block. There'd be no way to keep their records separate given our discussion thus far. But there are ways to handle collisions. Let's look at them now.
 
-#### Addressing Collisions
+### Addressing Collisions
 What can we do about collisions?
 
 1. Change divisor to a prime number
-2. Increase divisor to create more memory block
+2. Increase divisor to create more memory blocks
 3. Extend hashing by adding additional functionality
 
 **Question #1:** Why would changing the divisor to a prime number help avoid collisions?
 
 **Answer #1:** Because a prime is divisible only by itself and 1 so you do not have to worry about common factors.
 
-#### Quick Example
+### Quick Example
 ```
 for i in range(8,88,8):
     print('index: {:2} | hash: {}'.format(i, hasher('hello world+', i)))
 ```
 
-This code runs through the multiples of 8 for the divisor and prints the multiple as well as the hash key. The output looks like this:
+This code runs through the multiples of 8 for the divisor and prints the multiple called *index* as well as the hash key called *hash*. It's important to note that the *key* remains constant throughout. The primary goal is to show that even with the same *key*, we can control the number of collisions if we're smart about it. 
+
+The output looks like this:
 ```
 index:  8 | hash: 7
 index: 16 | hash: 7
@@ -134,7 +138,7 @@ index: 72 | hash: 7
 index: 80 | hash: 39
 ```
 
-That's a lot of collisions. Not cool.
+That's a lot of collisions. Not cool. 
 
 Let's try that again with prime numbers.
 ```
@@ -164,7 +168,7 @@ We still get two collisions in this case but there far fewer of them. We could e
 
 **Answer #2:** Because a larger divisor allocates more memory slots, decreasing the probability of a collision.
 
->**Side note:** Your best bet is to use prime numbers and if you run out of memory slots leading to collisions, use larger primes. That way you get the best of both worlds - no common factors and a large number of memory slots. 
+>**Side note:** Your best bet is to use prime numbers, and if you run out of memory slots leading to collisions, use larger primes. That way you get the best of both worlds - no common factors and a large number of memory slots. 
 
 **Question #3:** How can we extend hashing by adding additional functionality
 
@@ -222,7 +226,7 @@ def linear_probe_hasher(table, value, key, num_slots):
         idx = np.sum(str2int) % num_slots
         return updater(table2, idx, 1)
 ```
-The first function *updater* is a helper function that runs linear search. Simply put, *updater* checks to see if all slots are taken. If they are, it returns "all slots taken" and stops. If there's at least one opening, *updater* will check the slot provided by the hash key. If that slot is not available, it will check each memory slot in sequential order until it finds an open slot.
+The first function *updater* is a helper function that runs linear search. Simply put, *updater* checks to see if all memory slots are taken. If they are, it returns "all slots taken" and stops. If there's at least one opening, *updater* will check the slot provided by the hash key. If that slot is not available, it will check each memory slot in sequential order until it finds an open slot.
 
 The second function *linear_probe_hasher* acts just like *hasher* from earlier. The only difference is that it leverages linear probing when a collision occurs.
 
