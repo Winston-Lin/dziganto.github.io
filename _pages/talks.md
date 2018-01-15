@@ -7,7 +7,7 @@ author_profile: true
 Upcoming & Past Talks w/Links
 
 ## Upcoming
-None
+TBD
 
 ## Past
 Workshop - Pandas & ML Crash Course @ [Elmhurst College for M.S. Data Science Students](https://www.elmhurst.edu/academics/departments/computer-science-information-systems/programs/m-s-data-science/) (1/11/2018, 2 hours)  
