@@ -15,6 +15,7 @@ Deep Learning & Machine Learning Posts
 [Linear Regression 101 (Part 1 - Basics)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Basics/)  
 [Linear Regression 101 (Part 2 - Metrics)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Metrics/)  
 [Linear Regression 101 (Part 3 - Assumptions & Evaluation)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Assumptions-and-Evaluation/)   
+[Model Tuning (Part 1 - Train/Test Split)](https://dziganto.github.io/data%20science/machine%20learning/model%20tuning/python/Model-Tuning-Train-Test-Split/)  
 [Sparse Matrices For Efficient Machine Learning](https://dziganto.github.io/Sparse-Matrices-For-Efficient-Machine-Learning/)  
 [An Introduction To Online Machine Learning](https://dziganto.github.io/data%20science/online%20learning/python/scikit-learn/An-Introduction-To-Online-Machine-Learning/)  
 [HDF5 Or How I Learned To Love Data Compression And Partial I/O](https://dziganto.github.io/out-of-core%20computation/HDF5-Or-How-I-Learned-To-Love-Data-Compression-And-Partial-Input-Output/)  
