@@ -34,7 +34,7 @@ A bit of information about the features:
 
 Ok, let's get the data, clean it up, and then build a linear regression model.
 
-#### Get Data
+### Get Data
 ```
 import pandas as pd
 url = 'http://archive.ics.uci.edu/ml/machine-learning-databases/forest-fires/forestfires.csv'
@@ -57,7 +57,7 @@ Right away we're confronted with a problem. The columns *month* and *day* are co
 You may be wondering how many columns result from one-hot encoding. It's simply the number of categories within a feature. 
 > **Technical note:** You can one-hot encode multiple categorical features. Just keep in mind that your data matrix can expand in width very quickly using this approach. That may or not be a problem for you depending on a number of factors like which machine learning algorithm you plan to use, memory constraints, and so on.
 
-#### Clean Data
+### Clean Data
 Pandas has a very nice method called *get_dummies* that will one-hot encode the categorical features for us automatically. It'll even delete the original feature, which is a nice touch. Here we go!
 ```
 df = pd.get_dummies(df)
@@ -121,7 +121,7 @@ Some of the variables have relatively high variance, like *DMC* and *DC*, wherea
 
 For now let's pretend we're in good shape. On to the modeling.
 
-#### Fit Model
+### Fit Model
 ```
 from sklearn.linear_model import LinearRegression
 
@@ -132,7 +132,7 @@ lr = LinearRegression(fit_intercept=True)
 lr.fit(data, target)
 ```
 
-#### How'd we do?
+### How'd we do?
 Let's look at R^2 and Root Mean Squared Error (RMSE) to see how our model performed. 
 ```
 from sklearn.metrics import mean_squared_error
@@ -153,7 +153,7 @@ Which returns, respectively:
 62.121433117927239
 ```
 
-#### Interpretation
+### Interpretation
 Right away we can see the R^2 is abysmal. It's really not too surprising because if you look at the documentation on UCI you'll notice that the target variable is highly skewed with several high leverage points. This is worthy of investigation and could yield substantial performance gains. Review SSE, SST, and R^2 if you're unclear as to why.
 
 The RMSE is a measure of how far off on average our model is from ground truth. I'm using the term *average* loosely here because it's really the average square root of the squared residuals. Yikes, that's a mouthful. Said another way, it's one way to measure the magnitude of errors, though it's not the only one. Mean Absolute Error (MAE) is another. The two measures will give you different answers, so you should ponder on that.
@@ -178,7 +178,7 @@ This process we just discussed is called *train/test split*. You determine how m
 
 Let's see how to do this with Sklearn.
 
-#### Train/Test Split
+### Train/Test Split
 ```
 from sklearn.model_selection import train_test_split
 
@@ -186,13 +186,13 @@ X_train, X_test, y_train, y_test = train_test_split(data, target, shuffle=True,
                                                     test_size=0.5, random_state=49)
 ```
 
-#### Fit Model on Training Data
+### Fit Model on Training Data
 ```
 lr_split = LinearRegression(fit_intercept=True)
 lr_split.fit(X_train, y_train)
 ```
 
-#### Functions to Calculate ISE and OSE
+### Functions to Calculate ISE and OSE
 ```
 def calc_ISE(X_train, y_train, model):
     '''returns the in-sample R^2 and RMSE; assumes model already fit.'''
@@ -209,7 +209,7 @@ def calc_OSE(X_test, y_test, model):
     return model.score(X_test, y_test), rmse
 ```
 
-#### Calculate In-Sample and Out-of-Sample $R^2$ and Error
+### Calculate In-Sample and Out-of-Sample R^2 and Error
 ```
 is_r2, ise = calc_ISE(X_train, y_train, lr_split)
 os_r2, ose = calc_OSE(X_test, y_test, lr_split)
@@ -229,7 +229,7 @@ ISE       : 27.50204577364648
 OSE       : 83.36547731820247
 ```
 
-#### Interpretation
+### Interpretation
 We can see that the in-sample R^2 is pretty low but what's interesting here is that the out-of-sample R^2 is lower. In fact, it's slightly below zero. Even more telling is the RMSE values. The RMSE for the data the model saw (ISE or train error) is significantly lower (by a factor of 3) than the RMSE for the data the model has never seen (OSE or test error). In machine learning speak our model is *overfitting*, meaning it's doing a much better job on the data it has seen. In other words, the trained model does not generalize well. The greater the gap between between train error and test error, the greater the overfitting. You can equate overfitting with memorizing the data. It becomes more and more like creating a lookup table.
 
 So the big takeaway here is that you *must* calculate train error and test error to get an accurate picture as to how your model is doing. This necessiates holding out some data at the beginning so you can test your model on data it's never seen. I showed you show to do that with sklearn's *train_test_split*. 
@@ -241,7 +241,7 @@ Before we wrap up, there's one more subtle item we need to address: The downside
 ## Downside of Train/Test Split
 I just told you that train/test split gives you both sides of the story - how well your model performs on data it's seen and data it hasn't. That's true to an extent but there's something subtle you need to be aware of. Let me show you be example. Let's try a few different train/test splits and check train error and test error values.
 
-#### Multiple Train/Test Splits
+### Multiple Train/Test Splits
 ```
 # create array of random_state values
 random_states = np.random.randint(1, 100, size=5)
@@ -295,11 +295,11 @@ OS_R^2: -0.7537 | OS_RMSE: 41.286
 ----------------------------------
 ```
 
-#### Takeaways
+### Takeaways
 * R^2 is always higher in-sample as opposed to out-of-sample
 * RMSE show great variability in-sample vs out-of-sample
 
-#### Discussion
+### Discussion
 It's no surprise that R^2 is higher in-sample. The surprise here is RMSE. What's particularly interesting is that sometimes train error is higher than test error and sometimes it's the other way around. This is a small dataset so the skewed distribution in the target variable is having major consequences. A much larger dataset would still be affected but to a considerably smaller degree. With that in mind, you'll almost always see train errors that are higher than test error. If not, there's something funky going on in your data like we have here. It's a red flag to keep in mind when doing EDA. Anyway, we get very different results depending on how we split the data. In this case, I didn't change the proportion of data that's selected, merely how it's split. So that's good to know. How you split can dramatically affect your model. In some cases it generalizes well and other times it doesn't. 
 
 An obvious question you're probably asking is how do I best split my data? Trial and error?
