@@ -313,7 +313,7 @@ table3 = [[],[],[],[],[]]
 keys = [0, 1, 'abc', 'abc']
 for i, key in enumerate(keys,1):
     chain_hasher(table3, i, key, 5)
-```
+```  
 Printing *table3* with returns `[[1], [2], [], [], [3, 4]]`. You can see the 4 causes a collision but was handled gracefully. This is equivalent to storing information about two employees in the same record; however, it allows you to keep their records separate for updates or retrieval. It's certainly not elegant but it works in a pinch. 
 
 ## Now What?
