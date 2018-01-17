@@ -307,14 +307,17 @@ def chain_hasher(table, value, key, num_slots):
         
     return table[idx].append(value)
 ```
+
 A bit of code to simulate populating the table. We'll round this out by creating a collision on purpose by passing the same key *abc* twice.
+
 ```
 table3 = [[],[],[],[],[]]
 keys = [0, 1, 'abc', 'abc']
 for i, key in enumerate(keys,1):
     chain_hasher(table3, i, key, 5)
 ```  
-Printing *table3* with returns `[[1], [2], [], [], [3, 4]]`. You can see the 4 causes a collision but was handled gracefully. This is equivalent to storing information about two employees in the same record; however, it allows you to keep their records separate for updates or retrieval. It's certainly not elegant but it works in a pinch. 
+
+Printing *table3* returns `[[1], [2], [], [], [3, 4]]`. You can see the 4 causes a collision but was handled gracefully. This is equivalent to storing information about two employees in the same record; however, it allows you to keep their records separate for updates or retrieval. It's certainly not elegant but it works in a pinch. 
 
 ## Now What?
 This was just the beginning. I hope you have a high-level understanding of how hashing works and some basic use cases. If you found this interesting, take a look at other hashing strategies, other ways to handle collisions, and algorithms like MD5, SHA-1, and othe cryptographic hashes.
