@@ -127,3 +127,51 @@ The **High Bias/Low Variance** portion of the graph represent underfitting. Our 
 
 The **High Bias/High Variance** portion of the graph actually has no analog in machine learning. There exists a tradeoff between bias and variance. Therefore, I'm not aware of a situtation where both can be high. 
 
+Alright, now that we've got the theory down, let's shift gears to see this in practice.
+
+## Application
+With theory behind us, let's build a linear regression model of the [Forest Fire](http://archive.ics.uci.edu/ml/datasets/Forest+Fires) dataset. We'll investigate whether our model is underfitting, overfitting, or fitting just right. If it's under or overfitting, we'll look at one way we can correct that.
+
+Time to build the model.
+> Note: I'll use **train error** to represent *train_error* and **test error** to represent *validation_error* to make this easier to follow. You can use either term and people should know what you're talking about.
+
+```
+lr = LinearRegression(fit_intercept=True)
+
+train_error, test_error = calc_metrics(X_train, y_train, X_test, y_test, lr)
+train_error, test_error = round(train_error, 3), round(test_error, 3)
+
+print('train error: {} | test error: {}'.format(train_error, test_error))
+print('train/test: {}'.format(round(test_error/train_error, 1)))
+```
+
+Output looks like:
+
+```
+train error: 21.874 | test error: 23.817
+train/test: 1.1
+```
+
+Hmm, our training error is considerably lower than the test error. In fact, the test error is 1.5 times worse. 
+
+Which region does that put us in? 
+
+That's right, it's in the High Variance region, which means our model is overfitting. Again, that means our model has too much complexity. 
+
+Unfortunately, we're stuck at this point. 
+
+You're probably thinking, *"Hey wait, no we're not. I can drop a feature or two and then recalculate train error and test error."* 
+
+My response is simply: *NO, DON'T EVER DO THAT. NEVER. FOR ANY REASON. PERIOD.*
+
+Why not?
+
+Because if you do that then your test set is no longer a test set. You are using it to train your model. It's the same as if you trained your model on the all the data from the outset. Seriously, don't do this. Unfortunately, practicing data scientists do this sometimes; it's one of the worst things you can do. You're almost guaranteed to produce a model that cannot generalize. 
+
+So what do we do?
+
+We need to go back to the beginning. We need to split our data into three datasets: training, validation, test.
+
+Remember, the test set is data you don't touch until you're happy with your model. The test set is used only **ONE** time to see how your model will generalize. That's it.
+
+Okay, let's take a look at this thing called a **Validation Set**.
