@@ -317,3 +317,66 @@ This technique is appropriately named *K-fold cross-validation*. Again, K repres
 
 Here's the general idea for 10-fold CV:
 
+![Cross-Validation](/assets/images/kfold-cross-validation.png?raw=true){: .center-image }
+
+You segment off a percentage of your training data as a validation fold. 
+
+> **Technical note:** be careful with terminology. Some people will refer to the validation fold as the test fold. Unfortunately, they use the terms interchangeably, which is confusing and therefore not correct. Don't do that. The test set is the pure data that only gets consumed at the end, if it exists at all.
+
+Once data has been segmented off in the validation fold, you fit a fresh model on the remaining training data. Ideally, you calculate train and validation error. Some people only look at validation error, however. 
+
+The data included in the first validation fold will never be part of a validation fold again. A new validation fold is created, segmenting off the same percentage of data as happened in the first iteration. Then the process repeats. Fit a fresh model, calculate key metrics, and iterate. The algorithm concludes when this process has happened K times. Therefore, you end up with K estimates of the validation error, having visited all the data points in the validation set once and numerous times in training sets. The last step is to average the validation errors. This gives a good estimate as to how well a particular model performed.
+
+Again, this method is invaluable for tuning hyperparameters on small to medium-sized datasets. You technically don't even need a test set. That's great if you just don't have the data. For large datasets, use a simple train/validation/test split strategy and tune your hyperparameters like we did in the previous section. 
+
+Alright, let's see K-fold CV in action.
+
+## Sklearn & CV
+
+There's two ways to do this in sklearn, pending what you want to get out of it. 
+
+The first method I'll show you is `cross_val_score`, which works beautifully if all you care about is validation error.
+
+The second method is `KFold`, which is perfect if you want train and validation errors.
+
+Let's try a new model called **LASSO** just to keep things interesting. 
+
+### cross_val_score
+
+```
+from sklearn.model_selection import cross_val_score
+
+alphas = [1e-4, 1e-3, 1e-2, 1e-1, 1, 1e1]
+
+val_errors = []
+for alpha in alphas:
+    lasso = Lasso(alpha=alpha, fit_intercept=True, random_state=77)
+    errors = np.sum(-cross_val_score(lasso, 
+                                     data, 
+                                     y=target, 
+                                     scoring='neg_mean_squared_error', 
+                                     cv=10, 
+                                     n_jobs=-1))
+    val_errors.append(np.sqrt(errors))
+```
+
+Let's checkout the validation errors associated with each alpha.
+
+```
+# RMSE
+print(val_errors)
+```
+
+Which returns:
+
+```
+[18.64401379981868, 18.636528438323769, 18.578057471596566, 18.503285318281634, 18.565586130742307, 21.412874355105991]
+```
+
+Which value of alpha gave us the smallest validation error?
+
+```
+print('best alpha: {}'.format(alphas[np.argmin(val_errors)]))
+```
+
+Which returns: `best alpha: 0.1`
