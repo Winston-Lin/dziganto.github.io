@@ -50,7 +50,6 @@ The best way to learn about hash functions is to build our own. Let's create a l
 import numpy as np
 
 def hasher(key, num_slots):
-    
     ```
     Simple hashing function that returns hash key.
     
@@ -182,8 +181,7 @@ The idea of linear probing is simple. When a collision occurs, try the next memo
 
 We'll need some code to automate this process. Here goes:
 ```
-def updater(table, ix, value):
-    
+def updater(table, ix, value):  
     ```
     Runs the linear search.
     
@@ -209,8 +207,7 @@ def updater(table, ix, value):
                     ix += 1        
     return table
     
-def linear_probe_hasher(table, value, key, num_slots):
-    
+def linear_probe_hasher(table, value, key, num_slots):   
     ```
     Input:
         table: numpy array initialized with all zeros the size of num_slots
@@ -291,7 +288,6 @@ Instead of sequentially searching through memory slots, chaining uses linked lis
 > **Side note:* Obviously, using first and last name as your key would be much more effective here but hopefully you get the idea behind chaining.
 ```
 def chain_hasher(table, value, key, num_slots):
-    
     ```
     Input:
         table: list of lists
