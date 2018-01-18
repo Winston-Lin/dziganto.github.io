@@ -288,6 +288,7 @@ Instead of sequentially searching through memory slots, chaining uses linked lis
 > **Side note:* Obviously, using first and last name as your key would be much more effective here but hopefully you get the idea behind chaining.
 ```
 def chain_hasher(table, value, key, num_slots):
+    
     ```
     Input:
         table: list of lists
