@@ -175,3 +175,145 @@ We need to go back to the beginning. We need to split our data into three datase
 Remember, the test set is data you don't touch until you're happy with your model. The test set is used only **ONE** time to see how your model will generalize. That's it.
 
 Okay, let's take a look at this thing called a **Validation Set**.
+
+## Validation Set
+Three datasets from one seems like a lot of work but I promise it's worth it. First, let's see how to do this in practice.
+
+```
+# intermediate/test split (gives us test set)
+X_intermediate, X_test, y_intermediate, y_test = train_test_split(data, 
+                                                                  target, 
+                                                                  shuffle=True,
+                                                                  test_size=0.2, 
+                                                                  random_state=15)
+
+# train/validation split (gives us train and validation sets)
+X_train, X_validation, y_train, y_validation = train_test_split(X_intermediate,
+                                                                y_intermediate,
+                                                                shuffle=False,
+                                                                test_size=0.25,
+                                                                random_state=2018)
+```
+
+Now for a little cleanup and some output:
+
+```
+# delete intermediate variables
+del X_intermediate, y_intermediate
+
+# print proportions
+print('train: {}% | validation: {}% | test {}%'.format(round(len(y_train)/len(target),2),
+                                                       round(len(y_validation)/len(target),2),
+                                                       round(len(y_test)/len(target),2)))
+```
+
+Which outputs:
+
+```
+train: 0.6% | validation: 0.2% | test 0.2%
+```
+
+If you're a visual person, this is how our data has been segmented.
+
+![Train-Validate-Test Sets](/assets/images/train-validate-test.png?raw=true){: .center-image }
+
+We have now three datasets depicted by the graphic above where the training set constitutes 60% of all data, the validation set 20%, and the test set 20%. Do notice that I haven't changed the actual test set in any way. I used the same initial split and the same random state. That way we can compare the model we're about to fit and tune to the Linear Regression model we built earlier. 
+
+> Side note: there is no hard and fast rule about how to proportion your data. Just know that your model is limited in what it can learn if you limit the data you feed it. However, if your test set is too small, it won't provide an accurate estimate as to how your model will perform. Cross-validation allows us to handle this situation with ease but more on that later. 
+
+Time to fit and tune our model. 
+
+## Model Tuning
+We need to decrease complexity. One way to do this is by using *regularization*. I won't go into the nitty gritty now because that will be a future post. Just know that regularization is constrained optimization that imposes limits on determining model parameters. It effectively allows me to add bias to a model that's overfitting. I can control the amount of bias with a hyperparameter called *lambda* or *alpha* (you'll see both, though sklearn uses alpha because lambda is a Python keyword) that defines regularization strength.
+
+The code:
+
+```
+alphas = [0.001, 0.01, 0.1, 1, 10]
+print('All errors are RMSE')
+print('-'*76)
+for alpha in alphas:
+    # instantiate and fit model
+    ridge = Ridge(alpha=alpha, fit_intercept=True, random_state=99)
+    ridge.fit(X_train, y_train)
+    # calculate errors
+    new_train_error = mean_squared_error(y_train, ridge.predict(X_train))
+    new_validation_error = mean_squared_error(y_validation, ridge.predict(X_validation))
+    new_test_error = mean_squared_error(y_test, ridge.predict(X_test))
+    # print errors as report
+    print('alpha: {:7} | train error: {:5} | val error: {:6} | test error: {}'.
+          format(alpha,
+                 round(new_train_error,3),
+                 round(new_validation_error,3),
+                 round(new_test_error,3)))
+```
+
+And the output:
+
+```
+All errors are RMSE
+----------------------------------------------------------------------------
+alpha:   0.001 | train error: 22.93 | val error: 19.796 | test error: 23.959
+alpha:    0.01 | train error: 22.93 | val error: 19.792 | test error: 23.944
+alpha:     0.1 | train error: 22.945 | val error: 19.779 | test error: 23.818
+alpha:       1 | train error: 23.324 | val error: 20.135 | test error: 23.522
+alpha:      10 | train error: 24.214 | val error: 20.958 | test error: 23.356
+```
+
+There are a few key takeaways here. First, notice the U-shaped behavior exhibited by the validation error. It starts at 19.796, goes down for two steps and then back up. Also notice that validation error and test error tend to move together, but by no means is the relationship perfect. We see both errors decrease as alpha increase initially but then test error keeps going down while validation error rises again. It's not perfect. It actually has a whole lot to do with the fact that we're dealing with a very small dataset. Each sample represents a much larger proportion of the data than say if we had a dataset with a million or more records. Anyway, validation error is a good proxy for test error, especially as dataset size increases. With small to medium-sized datasets, we can do better by leveraging cross-validation. We'll talk about that shortly.
+
+Now that we've tuned our model (i.e. decreased complexity which initially led to overfitting), let's fit a new ridge regression model on all data except the test data. Then we'll check the test error and compare it to that of our original linear regression model with all features.
+
+#### Setup Data, Model, & Calculate Errors
+
+```
+# train/test split
+X_train, X_test, y_train, y_test = train_test_split(data, 
+                                                    target, 
+                                                    shuffle=True,
+                                                    test_size=0.2, 
+                                                    random_state=15)
+
+# instantiate model
+ridge = Ridge(alpha=0.11, fit_intercept=True, random_state=99)
+
+# fit and calculate errors
+new_train_error, new_test_error = calc_metrics(X_train, y_train, X_test, y_test, ridge)
+new_train_error, new_test_error = round(new_train_error, 3), round(new_test_error, 3)
+```
+
+#### Report Errors
+
+```
+print('ORIGINAL ERROR')
+print('-' * 40)
+print('train error: {} | test error: {}\n'.format(train_error, test_error))
+print('ERROR w/REGULARIZATION')
+print('-' * 40)
+print('train error: {} | test error: {}'.format(new_train_error, new_test_error))
+```
+
+Here's that output:
+
+```
+ORIGINAL ERROR
+----------------------------------------
+train error: 21.874 | test error: 23.817
+
+ERROR w/REGULARIZATION
+----------------------------------------
+train error: 21.883 | test error: 23.673
+```
+
+A very small increase in training error coupled with a small but larger in magnitude decrease in test error. We're definitely moving in the right direction. Perhaps not quite the magnitude of change we expected, but we're simply trying to prove a point here. Remember this is a tiny dataset. Also remember I said we can do better by using something called *Cross-Validation*. Now's the time to talk about that.
+
+## Cross-Validation
+
+Let me say this upfront: this method works great on small to medium-sized datasets. This is absolutely not the kind of thing you'd want to try on a massive dataset (think hundreds of millions of rows and/or columns). Alright, now that that's out of the way, let's dig in. 
+
+As we saw in the post about train/test split, how you split smaller datasets makes a significant difference. The results can vary tremendously. As the random state is not a hyperparameter (please don't do that), we need a way to extract every last bit of signal from the data that we can. So instead of just one train/validation split, let's do K of them. 
+
+This technique is appropriately named *K-fold cross-validation*. Again, K represents how many train/validation splits you need. There's no hard and fast rule about how to choose K but there are better and worse choices. As the size of your dataset grows, you can get away with smaller values for K, like 3 or 5. When your dataset is small, it's common to select a larger number like 10. Again, these are just rules of thumb. 
+
+Here's the general idea for 10-fold CV:
+
