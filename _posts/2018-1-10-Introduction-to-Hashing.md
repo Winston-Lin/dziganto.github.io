@@ -286,9 +286,9 @@ You can see the procedure prevents additional collisions once all memory slots a
 ### Chaining
 Instead of sequentially searching through memory slots, chaining uses linked lists to append values in the same memory slot when collisions occur. Say we have a record for *David Ziganto*. Since we're merely using *Ziganto* as our key to lookup key personal information, we can easily have a collision if there's another employee with the same last name. Perhaps *Benjamin Ziganto* is also an employee. Therefore, two employees map to the same memory slot. Chaining allows us to keep their records separate even though they map to the same place. 
 > **Side note:* Obviously, using first and last name as your key would be much more effective here but hopefully you get the idea behind chaining.
+
 ```
 def chain_hasher(table, value, key, num_slots):
-    
     ```
     Input:
         table: list of lists
