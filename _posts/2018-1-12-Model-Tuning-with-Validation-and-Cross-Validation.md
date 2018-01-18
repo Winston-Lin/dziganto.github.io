@@ -380,3 +380,54 @@ print('best alpha: {}'.format(alphas[np.argmin(val_errors)]))
 ```
 
 Which returns: `best alpha: 0.1`
+
+### K-Fold
+
+```
+from sklearn.model_selection import KFold
+
+K = 10
+kf = KFold(n_splits=K, shuffle=True, random_state=42)
+
+for alpha in alphas:
+    train_errors = []
+    validation_errors = []
+    for train_index, val_index in kf.split(data, target):
+        
+        # split data
+        X_train, X_val = data[train_index], data[val_index]
+        y_train, y_val = target[train_index], target[val_index]
+
+        # instantiate model
+        lasso = Lasso(alpha=alpha, fit_intercept=True, random_state=77)
+        
+        #calculate errors
+        train_error, val_error = calc_metrics(X_train, y_train, X_val, y_val, lasso)
+        
+        # append to appropriate list
+        train_errors.append(train_error)
+        validation_errors.append(val_error)
+    
+    # generate report
+    print('alpha: {:6} | mean(train_error): {:7} | mean(val_error): {}'.
+          format(alpha,
+                 round(np.mean(train_errors),4),
+                 round(np.mean(validation_errors),4)))
+```
+
+Here's that output:
+
+```
+alpha: 0.0001 | mean(train_error): 21.8217 | mean(val_error): 23.3633
+alpha:  0.001 | mean(train_error): 21.8221 | mean(val_error): 23.3647
+alpha:   0.01 | mean(train_error): 21.8583 | mean(val_error): 23.4126
+alpha:    0.1 | mean(train_error): 22.9727 | mean(val_error): 24.6014
+alpha:      1 | mean(train_error): 26.7371 | mean(val_error): 28.236
+alpha:   10.0 | mean(train_error):  40.183 | mean(val_error): 40.9859
+```
+
+Comparing the output of *cross_val_score* to that of *KFold*, we can see that the general trend holds - an alpha of 10 results in the largest validation error. You may wonder why we get different values. The reason is that the data was split differently. We can control the splitting procedure with KFold but not cross_val_score. Therefore, there's not way I know of to perfectly sync the two procedures without an exhaustive search of splits. The important thing is that each gives us a viable method to calculate whatever we need, whether it be purely validation error or a combination of training and validation error. 
+
+## Summary
+
+We discussed the Bias-Variance Tradeoff where a high bias model is one that is underfit while a high variance model is one that is overfit. We also learned that we can split data into three groups for tuning purposes. Specifically, the three groups are train, validation, test. Remember the test set is used only one time to check how well a model generalizes on data it's never seen. This three-group split works exceedingly well for large datasets, not for small to medium-sized datasets, though. In that case, use cross-validation. CV can help you tune your models and extract as much signal as possible from the small data sample. Remember, with CV you don't need a test set. By using a K-fold approach, you get the equivalent of K-test sets by which to check validation error. This helps you diagnose where you're at in the Bias-Variance regime.
