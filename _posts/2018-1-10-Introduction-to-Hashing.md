@@ -50,7 +50,7 @@ The best way to learn about hash functions is to build our own. Let's create a l
 import numpy as np
 
 def hasher(key, num_slots):
-    \```
+    ```
     Simple hashing function that returns hash key.
     
     Input:
@@ -58,7 +58,7 @@ def hasher(key, num_slots):
         num_slots: (int) number of memory slots to allocate
     Output:
         (int) hash key
-    \```
+    ```
     
     assert type(key) == int or type(key) == str, "key must be an integer or string!"
     assert type(num_slots) == int, "num_slots must be an integer!"
