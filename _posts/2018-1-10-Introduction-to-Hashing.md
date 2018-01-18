@@ -50,6 +50,7 @@ The best way to learn about hash functions is to build our own. Let's create a l
 import numpy as np
 
 def hasher(key, num_slots):
+    
     ```
     Simple hashing function that returns hash key.
     
@@ -183,12 +184,14 @@ We'll need some code to automate this process. Here goes:
 ```
 def updater(table, ix, value):
     
+    ```
     Runs the linear search.
     
     Input: 
         table: numpy array initialized with all zeros the size of num_slots
         ix: (int) initial index to try
         value: (int) value to store
+    ```
     
     while True:
         if np.all(table) != 0:
@@ -208,6 +211,7 @@ def updater(table, ix, value):
     
 def linear_probe_hasher(table, value, key, num_slots):
     
+    ```
     Input:
         table: numpy array initialized with all zeros the size of num_slots
         value: (int) value to store
@@ -215,7 +219,7 @@ def linear_probe_hasher(table, value, key, num_slots):
         num_slots: (int) number of memory slots to allocate
     Output:
         (int) hash value
-    
+    ```
     
     assert len(table) == num_slots, "your table length does not match the number of slots!"
     assert type(key) == int or type(key) == str, "key must be an integer or string!"
@@ -288,6 +292,7 @@ Instead of sequentially searching through memory slots, chaining uses linked lis
 ```
 def chain_hasher(table, value, key, num_slots):
     
+    ```
     Input:
         table: list of lists
         value: (int) value to store
@@ -295,7 +300,7 @@ def chain_hasher(table, value, key, num_slots):
         num_slots: (int) number of memory slots to allocate
     Output:
         (int) hash value
-    
+    ```
     
     assert len(table) == num_slots, "your table length does not match the number of slots!"
     assert type(key) == int or type(key) == str, "key must be an integer or string!"
