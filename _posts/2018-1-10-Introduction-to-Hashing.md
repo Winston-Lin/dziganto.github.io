@@ -105,7 +105,7 @@ Ok, so we've got eight employees and we see that all the memory slots are full.
 
 **Answer:** We get a collision.
 
-A **collision** happens when two different keys map to the same memory block. It's not a problem for some situations, but often times it is. It's definitely problem in our scenario. We certainly don't want two different employees mapping to the same memory block. There'd be no way to keep their records separate given our discussion thus far. But there are ways to handle collisions. Let's look at them now.
+A **collision** happens when two different keys map to the same memory block. It's not a problem for some situations, but often times it is. It's definitely a problem in our scenario. We certainly don't want two different employees mapping to the same memory block. There'd be no way to keep their records separate given our discussion thus far. But there are ways to handle collisions. Let's look at them now.
 
 ### Addressing Collisions
 What can we do about collisions?
@@ -325,6 +325,6 @@ for i, key in enumerate(keys,1):
 Printing *table3* returns `[[1], [2], [], [], [3, 4]]`. You can see the 4 causes a collision but was handled gracefully. This is equivalent to storing information about two employees in the same record; however, it allows you to keep their records separate for updates or retrieval. It's certainly not elegant but it works in a pinch. 
 
 ## Now What?
-This was just the beginning. I hope you have a high-level understanding of how hashing works and some basic use cases. If you found this interesting, take a look at other hashing strategies, other ways to handle collisions, and algorithms like MD5, SHA-1, and othe cryptographic hashes.
+This was just the beginning. I hope you have a high-level understanding of how hashing works and some basic use cases. If you found this interesting, take a look at other hashing strategies, other ways to handle collisions, and algorithms like MD5, SHA-1, and other cryptographic hashes.
 
 Happy hashing!
