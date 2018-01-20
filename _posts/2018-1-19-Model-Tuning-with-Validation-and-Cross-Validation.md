@@ -1,6 +1,6 @@
 ---
 published: true
-title: Model Tuning with Validation & Cross-Validation
+title: Model Tuning (Part 2 - Validation & Cross-Validation)
 categories: [Cross-Validation, Data Science, Machine Learning, Model Tuning, Python]
 ---
 
