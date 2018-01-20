@@ -12,8 +12,10 @@ There are myriad ways to encrypt text. One of the simplest and easiest to unders
 ## How It Works
 The setup is pretty simple. You start with a message that you want to codify so someone else cannot read it. Say the message is `I hope you cannot read this.`. This is called the **plaintext**. Now we need to apply some algorithm to our text so the output is incoherent. For example, the output may be `O nuvk eua igttuz xkgj znoy.`. What we did in this case is shift every letter six places to the right: A becomes G, B becomes H, Z becomes F, and so on.
 
-> plaintext: I hope you cannot read this.
+> plaintext: I hope you cannot read this.  
 > ciphertext: O nuvk eua igttuz xkgj znoy.
+
+![Caesar Cipher gif](https://i.stack.imgur.com/D3ypD.gif){: .center-image }
 
 Hopefully you can see right away why this cipher is very easy to crack. It includes capitalization and the words are clearly split. By converting all the text to lowercase and removing all spacees, we can make it a bit more difficult. However, there are only 25 different ways to shift the letters. That means a brute force attack is trivial.
 
