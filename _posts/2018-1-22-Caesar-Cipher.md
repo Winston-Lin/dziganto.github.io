@@ -10,7 +10,7 @@ categories: [Cipher, Cryptography, Python]
 There are myriad ways to encrypt text. One of the simplest and easiest to understand is the **Caesar cipher**. It's extremely easy to crack but it's a great place to start for the purposes of introducing ciphers.
 
 ## A Bit of Terminology
-The setup is pretty simple. You start with a message that you want to codify so someone else cannot read it. Say the message is `I hope you cannot read this`. This is called the **plaintext**. Now we need to apply some algorithm to our text so the output is incoherent. For example, the output may be `O nuvk eua igttuz xkgj znoy`. This is called the **ciphertext**. Mapping the plaintext to ciphertext is called **encryption**. Mapping the ciphertext back to plaintext is called **decryption**. The algorithm used to encrypt or decrypt is called a **cipher**. 
+The setup is pretty simple. You start with a message you want to codify so someone else cannot read it. Say the message is `I hope you cannot read this`. This is called the **plaintext**. Now we need to apply some algorithm to our text so the output is incoherent. For example, the output may be `O nuvk eua igttuz xkgj znoy`. This is called the **ciphertext**. Mapping the plaintext to ciphertext is called **encryption**. Mapping the ciphertext back to plaintext is called **decryption**. The algorithm used to encrypt or decrypt is called a **cipher**. 
 
 ## Caesar Cipher: How it Works
 Mapping `I hope you cannot read this` to `O nuvk eua igttuz xkgj znoy` with the Caesar cipher works like this. First, you start by deciding how much you want to shift the alphabet. Say you choose a shift of six so A becomes G, B becomes H, C becomes I, and so on until you get to the end where Z becomes F. Now you have a way to map any plaintext character to ciphertext. In fact, that's exactly how I encoded this message: 
@@ -24,7 +24,7 @@ Here's a gif that shows the various mappings:
 
 The outer circle represents plaintext letters while the inner circle represents the ciphertext equivalent. 
 
-Hopefully you can see right away why this particular cipher is very easy to crack. It includes capitalization and the words are clearly split. By converting all the text to lowercase and removing all spaces, we can make it a bit more difficult. But that barely increases the challenge. There are only 25 different ways to shift the letters, which means a brute force attack is trivial.
+Hopefully you can see right away why this particular cipher is very easy to crack. Just mapping the plaintext to ciphertext while maintaining word lengths and spaces makes the process fairly easy. By converting all the text to lowercase and removing all spaces, we can make it a bit more challenging. But just barely. There are only 25 different ways to shift the letters, which means a brute force attack is trivial.
 
 Let's see what this looks like in code. 
 
@@ -110,7 +110,7 @@ class CaesarCipher:
 ```
 
 ## Code Breakdown
-The **CaesarCipher** class contains a number of methods. The first is a method called **_clean_text** which makes all letters lower case, removes spaces, and removes punctuation. The second, third, and fourth methods called **_string2characters**, **_chars2nums**, and **_nums2chars** should be self-explanatory. The **_preprocessing** method is a meta-function that incorporates and applies all the aforementioned methods in one sequential process. The last two methods are the most interesting: **encrypt** and **decrypt**. They perform as advertised. 
+The **CaesarCipher** class contains a number of methods. The first is a method called **\_clean_text** which converts all letters to lower case, removes spaces, and removes punctuation. The second, third, and fourth methods called **\_string2characters**, **\_chars2nums**, and **\_nums2chars** should be self-explanatory. The **\_preprocessing** method is a meta-function that incorporates and applies all the aforementioned methods in one sequential process. The last two methods are the most interesting: **encrypt** and **decrypt**. They perform as advertised. 
 
 ## Setup
 
@@ -118,7 +118,7 @@ Great, now let's instantiate our class and put it through its paces.
 
 To instantiate, we're merely type `cc = CaesarCipher()`. 
 
-Noew to encrypt a message: `print(cc.encrypt('I hope you cannot read this.', shift=6))`.
+Now to encrypt a message: `print(cc.encrypt('I hope you cannot read this.', shift=6))`.
 
 The *shift* parameter tells the class by how much to shift the letters to encrypt the plaintext. In this case I arbitrarily chose 6. The output is `onuvkeuaigttuzxkgjznoy`. That sure doesn't look like anything I can make out. 
 
@@ -134,11 +134,11 @@ The output is `ymjvznhpgwtbsktcozruxtajwymjqfeditl`.
 
 ## Discussion
 
-Now if you've given this a little thought, you can still see a way to crack this cipher wide open. Did you notice that certain letters repeat more often. With a little knowledge of the English language, for example the frequency of each letter, we can deduce plaintext-to-ciphertext letter mappings. 
+Now if you've given this a little thought, you can see a way to crack this cipher wide open. The English language is replete with structure. Certain letters appear far more frequently than others. The letter *e*, for example, is the most common letter in the English language. Another giveaway is double letters of which only so pairings exist. So given longer snippets of text, you can deduce plaintext-to-ciphertext letter mappings with ease. 
 
 ![Letter Frequency](/assets/images/letter_frequency.png?raw=true){: .center-image }
 
-The letter *e* is the most common letter in the English language. Using that fact alone can help us break the Caesar cipher given enough text. Another giveaway is double letters. Only so many double letter pairings exist, so that's yet another way of deducing plaintext-to-cipher mappings. If all else fails or you just want to find the answer very quickly, a brute force search will expose the plaintext with little effort. 
+If all else fails or you just want to find the answer quickly, a brute force search will expose the plaintext. 
 
 Let's see how that works.
 
@@ -208,4 +208,6 @@ A quick scan gives away the plaintext: `shift 5: thequickbrownfoxjumpsoverthelaz
 
 ## Wrap Up
 
-Hopefully you found this a fun introduction to cryptography. It's a rich and rewarding field with endless applications. Next time, we'll build upon what we learned here as we explore a more challenging cipher known as the **Vigenere cipher**.
+Hopefully you found this a fun introduction to cryptography. It's a rich and rewarding field with endless applications. 
+
+Next time, we'll build upon what we learned here as we explore a more challenging cipher known as the **Vigenere cipher**.
