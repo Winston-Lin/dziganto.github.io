@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Caesar Cipher
 categories: [Cipher, Cryptography, Python]
 ---
@@ -24,7 +24,7 @@ Here's a gif that shows the various mappings:
 
 The outer circle represents plaintext letters while the inner circle represents the ciphertext equivalent. 
 
-Hopefully you can see right away why this particular cipher is very easy to crack. Just mapping the plaintext to ciphertext while maintaining word lengths and spaces makes the process fairly easy. By converting all the text to lowercase and removing all spaces, we can make it a bit more challenging. But just barely. There are only 25 different ways to shift the letters, which means a brute force attack is trivial.
+Hopefully you can see right away why this particular cipher is very easy to crack. Just mapping the plaintext to ciphertext while maintaining word lengths and spaces makes the process fairly easy. By converting all the text to lowercase and removing all spaces and punctuation, we can make it a bit more challenging. But just barely. There are only 25 different ways to shift the letters, which means a brute force attack is trivial.
 
 Let's see what this looks like in code. 
 
@@ -110,7 +110,7 @@ class CaesarCipher:
 ```
 
 ## Code Breakdown
-The **CaesarCipher** class contains a number of methods. The first is a method called **\_clean_text** which converts all letters to lower case, removes spaces, and removes punctuation. The second, third, and fourth methods called **\_string2characters**, **\_chars2nums**, and **\_nums2chars** should be self-explanatory. The **\_preprocessing** method is a meta-function that incorporates and applies all the aforementioned methods in one sequential process. The last two methods are the most interesting: **encrypt** and **decrypt**. They perform as advertised. 
+The **CaesarCipher** class contains a number of methods. The first is a method called **\_clean_text** which converts all letters to lower case and removes spaces and punctuation. The second, third, and fourth methods called **\_string2characters**, **\_chars2nums**, and **\_nums2chars** should be self-explanatory. The **\_preprocessing** method is a meta-function that incorporates and applies all the aforementioned methods in one sequential process. The last two methods are the most interesting: **encrypt** and **decrypt**. They perform as advertised. 
 
 ## Setup
 
@@ -134,7 +134,9 @@ The output is `ymjvznhpgwtbsktcozruxtajwymjqfeditl`.
 
 ## Discussion
 
-Now if you've given this a little thought, you can see a way to crack this cipher wide open. The English language is replete with structure. Certain letters appear far more frequently than others. The letter *e*, for example, is the most common letter in the English language. Another giveaway is double letters of which only so pairings exist. So given longer snippets of text, you can deduce plaintext-to-ciphertext letter mappings with ease. 
+Now if you've given this a little thought, you should see ways to crack this cipher wide open. 
+
+The English language is replete with structure. Certain letters appear far more frequently than others. The letter *e*, for example, is the most common letter in the English language. Therefore, using letter frequencies is a very effective strategy. Another giveaway is double letters of which only so pairings exist. So given longer snippets of text, you can deduce plaintext-to-ciphertext letter mappings with ease. 
 
 ![Letter Frequency](/assets/images/letter_frequency.png?raw=true){: .center-image }
 
