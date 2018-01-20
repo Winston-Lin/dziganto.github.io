@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Model Tuning with Validation & Cross-Validation
 categories: [Cross-Validation, Data Science, Machine Learning, Model Tuning, Python]
 ---
@@ -123,7 +123,7 @@ The top **Low Bias/Low Variance** portion of the graph represents the ideal case
 
 The **Low Bias/High Variance** portion of the graph represents *overfitting*. Our model does well on the training data, at least from an aggregate perspective, but we see high variance for specific datasets. This is analagous to an archer who has trained under very stringent conditions - perhaps indoors where there is no wind, the distance is consistent, and the lighting is always the same. Any variation in any of those attributes throws off the archer's accuracy for a particular arrow. In other words, the archer lacks consistency. 
 
-The **High Bias/Low Variance** portion of the graph represent *underfitting*. Our model does poorly on any given dataset. In fact, it's so bad that it does just about as poorly regardless of the data you feed it, hence the small variance. As an analog, consider an archer who with little to no training that performs poorly regardless of wind speed, distance, or lighting conditions. 
+The **High Bias/Low Variance** portion of the graph represent *underfitting*. Our model does poorly on any given dataset. In fact, it's so bad that it does just about as poorly regardless of the data you feed it, hence the small variance. As an analog, consider an archer with modest training. He or she has learned to fire with consistency (like always predicting an average value) but hasn't learned to hit the target.  
 
 The **High Bias/High Variance** portion of the graph actually has no analog in machine learning that I'm aware of. There exists a tradeoff between bias and variance. Therefore, it's not possible to have both be high. 
 
