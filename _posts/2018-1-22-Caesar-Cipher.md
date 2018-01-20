@@ -19,6 +19,8 @@ Hopefully you can see right away why this cipher is very easy to crack. It inclu
 
 Let's see what this looks like in code. 
 
+## The Code 
+
 We'll create a class called CaesarCipher that can encrypt or decrypt text.
 
 ```
@@ -194,5 +196,7 @@ shift25: znkwaoiqhxuctludpasvyubkxznkrgfejum
 ```
 
 A quick scan gives away the plaintext: `shift 5: thequickbrownfoxjumpsoverthelazydog`. 
+
+## Wrap Up
 
 Hopefully you found that a fun introduction to cryptography. Next time we'll explore a more challenging cipher known as the **Vigenere cipher**.
