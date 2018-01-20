@@ -1,6 +1,6 @@
 ---
 published: true
-title: Model Tuning (Part 1 - Train-Test Split)
+title: Model Tuning (Part 1 - Train/Test Split)
 categories: [Data Science, Machine Learning, Model Tuning, Python]
 ---
 
