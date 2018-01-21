@@ -41,7 +41,7 @@ The short answer is there are two ways. There is an **analytical solution**. Thi
 
 Now you're likely wondering why anyone would choose to use a numerical approximation method like Gradient Descent when there exists an exact solution, but it turns out there is good reason for this. 
 
-If your data is relatively small, meaning it will fit into memory, then the analytical solution is your best bet. If, however, your data is large and will not fit into memory, you're stuck unless you use a numerical approach like Gradient Descent. 
+If your data is relatively small, meaning it will fit in memory, then the analytical solution is your best bet. If, however, your data is large and will not fit in memory, you're stuck unless you use a numerical approach like Gradient Descent. 
 
 I won't go into any more detail on Gradient Descent here as that will be a discussion for another post. However, with the foundation of knowledge we have now, we can discuss how to find the intercept and slope terms.
 
