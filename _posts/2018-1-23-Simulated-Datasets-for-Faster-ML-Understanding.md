@@ -1,6 +1,6 @@
 ---
 published: false
-title: Simulated Datasets for Faster ML Understanding
+title: Simulated Datasets for Faster ML Understanding (Part 1/2)
 categories: [Data Science, EDA, Machine Learning, Python, Simulated Data]
 ---
 
