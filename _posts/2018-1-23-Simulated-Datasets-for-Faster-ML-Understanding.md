@@ -116,3 +116,143 @@ One may also assume that **major** and **GPA** are strong predictors. That may b
 On the other hand, **years of experience**, **bootcamp experience**, **number of projects on GitHub**, and **blog experience** are all strong predictors. Specifically, the dataset was designed such that candidates with light experience, bootcamp experience, numerous independent GitHub projects, and a data science blog are preferred. Surprisingly perhaps, the number of blog articles one writes is irrelevant. This was by design.
 
 One last thing to note: Whether a candidate was hired is not based on any one of the 5 important features. Rather, five target flags were generated probabilistically based on the values of those features and a simple majority results in being hired. To add a bit more complexity, I randomly flipped 5% of hiring decisions so that learning the hiring decision rule would be more difficult. 
+
+Great, so now we have all that background behind us which means it's time to actually generate the data. 
+
+## Generate Data
+There are many ways to efficiently create datasets using NumPy and Pandas. I tried to keep things simple and understandable, not necessarily efficient. Please bare with me here. 
+
+```
+import numpy as np
+import pandas as pd
+
+# reproducibility
+np.random.seed(10)
+
+# number of observations
+size = 5000
+
+# feature setup
+degree = np.random.choice(a=range(4), size=size)
+age = np.random.choice(a=range(18,61), size=size)
+gender = np.random.choice(a=range(2), size=size)
+major = np.random.choice(a=range(8), size=size)
+gpa = np.round(np.random.normal(loc=2.90, scale=0.5, size=size), 2)
+experience = None  
+bootcamp = np.random.choice(a=range(2), size=size)
+github = np.random.choice(a=range(21), size=size)
+blogger = np.random.choice(a=range(2), size=size)
+articles = 0  
+t1, t2, t3, t4, t5 = None, None, None, None, None
+hired = 0
+```
+
+Now to create a pandas dataframe.
+
+```
+mydict = {"degree":degree, "age":age, 
+          "gender":gender, "major":major, 
+          "gpa":gpa, "experience":experience, 
+          "github":github, "bootcamp":bootcamp, 
+          "blogger":blogger, "articles":articles,
+          "t1":t1, "t2":t2, "t3":t3, "t4":t4, "t5":t5, "hired":hired}
+
+df = pd.DataFrame(mydict,
+                  columns=["degree", "age", "gender", "major", "gpa", 
+                           "experience", "bootcamp", "github", "blogger", "articles",
+                           "t1", "t2", "t3", "t4", "t5", "hired"])
+```
+
+We're not quite there yet. We still need to update some columns. Here's an inefficient but hopefully understandable way to do that:
+
+```
+np.random.seed(42)
+
+for i, _ in df.iterrows(): 
+    
+    # Constrain GPA
+    if df.loc[i, 'gpa'] < 1.00 or df.loc[i, 'gpa'] > 4.00:
+        if df.loc[i, 'gpa'] < 1.00:
+            df.loc[i, 'gpa'] = 1.00
+        else:
+            df.loc[i, 'gpa'] = 4.00
+    
+    # Set experience based on age
+    df.loc[i, 'experience'] = np.random.choice(a=range(0, df.loc[i, 'age']-17))    
+    
+    # Set number of articles if blogger flag
+    if df.loc[i, 'blogger']:
+        df.loc[i, 'articles'] = np.random.choice(a=range(1, 21), size=1) 
+    
+    # Set target flags
+    for feature in ['degree', 'experience', 'bootcamp', 'github', 'blogger']:
+        if feature == 'degree':  
+            if df.loc[i, feature] == 0:
+                df.loc[i, 't1'] = int(np.random.choice(a=range(2), size=1, p=[0.92, 0.08])) ## no bachelors
+            elif df.loc[i, feature] == 1:
+                df.loc[i, 't1'] = int(np.random.choice(a=range(2), size=1, p=[0.30, 0.70])) ## bachelors
+            elif df.loc[i, feature] == 2:
+                df.loc[i, 't1'] = int(np.random.choice(a=range(2), size=1, p=[0.20, 0.80])) ## masters
+            else:
+                df.loc[i, 't1'] = int(np.random.choice(a=range(2), size=1, p=[0.80, 0.20])) ## PhD
+        elif feature == 'experience':
+            if df.loc[i, feature] <= 10:
+                df.loc[i, 't2'] = int(np.random.choice(a=range(2), size=1, p=[0.10, 0.90])) ## <= 10 yrs exp
+            elif df.loc[i, feature] <= 25:
+                df.loc[i, 't2'] = int(np.random.choice(a=range(2), size=1, p=[0.80, 0.20])) ## 11-25 yrs exp
+            else:
+                df.loc[i, 't2'] = int(np.random.choice(a=range(2), size=1, p=[0.95, 0.05])) ## >= 26 yrs exp
+        elif feature == 'bootcamp':
+            if df.loc[i, feature]:
+                df.loc[i, 't3'] = int(np.random.choice(a=range(2), size=1, p=[0.25, 0.75])) ## bootcamp
+            else:
+                df.loc[i, 't3'] = int(np.random.choice(a=range(2), size=1, p=[0.50, 0.50])) ## no bootcamp
+        elif feature == 'github':
+            if df.loc[i, feature] == 0:
+                df.loc[i, 't4'] = int(np.random.choice(a=range(2), size=1, p=[0.95, 0.05])) ## 0 projects
+            elif df.loc[i, feature] <= 5:
+                df.loc[i, 't4'] = int(np.random.choice(a=range(2), size=1, p=[0.35, 0.65])) ## 1-5 projects
+            else:
+                df.loc[i, 't4'] = int(np.random.choice(a=range(2), size=1, p=[0.05, 0.95])) ## > 5 projects
+        else:
+            if df.loc[i, feature]:
+                df.loc[i, 't5'] = int(np.random.choice(a=range(2), size=1, p=[0.30, 0.70])) ## blogger
+            else:
+                df.loc[i, 't5'] = int(np.random.choice(a=range(2), size=1, p=[0.50, 0.50])) ## !blogger
+    
+    # Set hired value
+    if (df.loc[i, 't1'] + df.loc[i, 't2'] + df.loc[i,'t3'] + df.loc[i,'t4'] + df.loc[i, 't5']) >= 3:
+        df.loc[i, 'hired'] = 1
+```
+
+The big takeaway is the last *if* statement. That's where the target variable (aka *hired*) is set. This is the generative process. It simply states that if the temporary flag variable t1-t5 sum to at least three, then set hired equal to one, otherwise zero. It's a simple decision based on a simple summation - probably not too far off of many real hiring decisions!
+
+It's worthwhile to apply just a bit more processing. Specifically, we want to remove those temporary flag variables t1-t5 and convert *experience* from an object type to numeric.
+
+```
+# Drop target flags        
+df.drop(df[['t1', 't2', 't3', 't4', 't5']], axis=1, inplace=True)
+
+# Set 'experience' to numeric (was object type)
+df['experience'] = df['experience'].apply(pd.to_numeric)
+```
+
+Great, we're almost there. We just need to add the last bit of complexity where we flip a few hiring decisions. Again, the aim is not efficiency but ease of understanding here.
+
+```
+np.random.seed(15)
+
+percent_to_flip = 0.03  ## % of hired values to flip
+num_to_flip = int(np.floor(percent_to_flip * len(df)))  ## determine number of hired values to flip
+flip_idx = np.random.randint(low=0, high=len(df), size=num_to_flip)  ## randomly select indices
+
+for i, _ in df.loc[flip_idx].iterrows(): 
+    if df.loc[i, 'hired'] == 1:
+        df.loc[i, 'hired'] = 0
+    else:
+        df.loc[i, 'hired'] = 1
+```
+## Wrap Up
+We covered lots of ground already. I introduced the idea of generating your own datasets from scratch. This process is known as simulating datasets. The reason for doing this is simple: You want to truly understand the generative process so you can apply various Exploratory Data Analysis (EDA) and machine learning techniques for the express purposes of building your intuition into which techniques work best on different types of data. That easily takes you from novice to expert and all it requires is a little time and practice.
+
+Next time we'll dig a bit deeper into the data. We'll apply some basic EDA and then round out the discussion with a few traditional machine learning models to understand a bit better why one performs better than another. 
