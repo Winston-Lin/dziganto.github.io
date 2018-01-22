@@ -9,18 +9,18 @@ categories: [Data Science, EDA, Machine Learning, Python, Simulated Data]
 ## Introduction
 Oftentimes, the most difficult part of gaining expertise in machine learning is developing intuition about the strengths and weaknesses of the various algorithms. Common pedagogy follows a familiar pattern: theoretical exposition followed by application to a contrived dataset. For example, suppose you're learning a classification algorithm for supervised machine learning. For specificity, let's assume the algorithm du jour is [Gaussian Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Gaussian_naive_Bayes) (GNB). You learn the mechanics and the fundamental assumptions, as a natural starting point. That gives you the big idea. Maybe you even code GNB from scratch to gain deeper insight. Great. Now comes time to apply GNB to real data. A canonical example is often presented, for example the [Iris](https://en.wikipedia.org/wiki/Iris_flower_data_set) dataset. You learn to connect theory and application. Powerful. So what's the problem?
 
-The problem is simply this: You don't know the generative process underlying the Iris dataset. Sure, you're trying to deduce a proxy by fitting your GNB model. That's the point of modeling. But that's not what I'm getting at. Instead, I want to pull back the curtain. I want to show you how to understand machine learning algorithms at a much deeper level, the level of intuition. How you get there and how quickly you get there is a matter of technique, and it's this technique that I'll share with you so you too can gain deep expertise and intuition about machine learning algorithms with great alacrity. 
+The problem is simply this: You don't know the generative process underlying the Iris dataset. Sure, you're trying to deduce a proxy by fitting your GNB model. That's the point of modeling. But that's not what I'm getting at. No, what I want to help you understand faster is knowing where and when certain algorithms shine and where and when they don't. In sum, I want to pull back the curtain. I want to show you how to understand machine learning algorithms at a much deeper level, the level of intuition. How you get there and how quickly you get there is a matter of technique, and it's this technique that I'll share with you so you too can gain deep expertise and intuition about machine learning algorithms with great alacrity. 
 
 ## Baby Steps
-Imagine you knew the generative process underlying a dataset. In other words, imagine you knew exactly how data was generated and how all the pieces fit together. In short, imagine you have perfect information. Now imagine running GNB on your data. Because you know precisely how the data was generated and because you know how GNB works, you can start piecing together where GNB performs well and in what situations it struggles. Now imagine you knew the generative process of not one but many datasets. Furthermore, imagine applying not just GNB but Logistic Regression, Random Forest, Support Vector Machines, and a slew of other classification algorithms you have at your disposal. All of a sudden you have the ability to garner deep insights into each of the algorithms and fast. 
+Imagine you knew the generative process underlying a dataset - you knew exactly how data was generated and how all the pieces fit together. In short, imagine you have perfect information. Now imagine running GNB on your data. Because you know precisely how the data was generated and because you know how GNB works, you can start piecing together where GNB performs well and in what situations it struggles. Now imagine you knew the generative process of not one but many datasets. Furthermore, imagine applying not just GNB but Logistic Regression, Random Forest, Support Vector Machines, and a slew of other classification algorithms you have at your disposal. All of a sudden you have the ability to garner deep insights into each of the algorithms and fast. 
 
 But how do you move from imagination to reality?
 
 ## On the Road to Something Greater
-The answer may surprise you. Create your own datasets! That may sound daunting but really it's not. Let me walk you through one of my earliest incarnations. I even created a little backstory just to keep things interesting. Without further ado, allow me to introduce my first dataset.
+The answer may surprise you. Create your own datasets! That may sound daunting but really it's not. Let me walk you through one of my earliest incarnations. I even created a little backstory just to keep things interesting. Without further ado, here are the details.
 
 ## Dataset Description
-What follows is a full on description of the very first dataset I created. Industry tends to call this process this type of dataset a **simulated dataset**. 
+What follows is a full on description of the very first dataset I created. By the way, industry tends to call this type of dataset a **simulated dataset**. 
 
 ### Introduction
 This dataset is built from scratch. It has the following properties: 
@@ -32,10 +32,10 @@ This dataset is built from scratch. It has the following properties:
 **Missing Values:** Yes  
 **Nonsensical Data Types:** Yes  
 
-Furthermore, the dataset is designed in such a way that relying on intuition alone will lead the data science practitioner astray. 
+Furthermore, the dataset is designed in such a way that relying on intuition alone will lead you astray if you rely on gut feel alone. 
 
 ### Problem Description
-InstaFace (IF) is a cutting edge startup specializing in facial recognition. As a hot tech startup, IF is constantly on the lookout for identifying and hiring the best talent. Because they are the best at what they do, their applicant pool is massive and growing. In fact, the number of applicants has grown so large and so fast that Human Resources just can't keep up, so they need your help to create an automated way to identify the most promising candidates. In particular, they asked that you create a model that can take a number of predefined inputs and output a probability that a particular candidate will be hired. The good news is IF has hired scores of data scientists, so the dataset is relatively rich. One thing to note is that IF has automated some of their information collecting processes but also relies on human data entry for the remainder. The latter has been a source of error in the past. 
+InstaFace (IF) is a cutting edge startup specializing in facial recognition. As a hot tech startup, IF is constantly on the lookout for identifying and hiring the best talent. Because they are the best at what they do, their applicant pool is massive and growing. In fact, the number of applicants has grown so large and so fast that Human Resources just can't keep up. So they need your help to create an automated way to identify the most promising candidates. In particular, they asked that you create a model that can take a number of predefined inputs and output a probability that a particular candidate will be hired. The good news is IF has hired scores of data scientists in the past, so the dataset is relatively rich.
 
 ### Features
 Below I describe the various features, whether that feature has any importance on the target variable, and if so the likelihood of someone being hired for a specific value of that feature
@@ -109,13 +109,13 @@ Below I describe the various features, whether that feature has any importance o
 ### More Details
 Without looking at the data, many people would likely assume that a PhD would have better chances of getting hired than someone with a Master's, that a Master's candidate would have better chances of getting hired than someone with a Bachelor's, and so on. This is simply not true in this case. I specifically created this dataset in such a way that people with Bachelor's and Master's degrees are far more likely to get hired than PhD's or those without a degree.
 
-Regarding **age** and **gender**, one may reasonably conjecture that these attributes would have high impact with regard to hiring decisions since this is a well-known bias in many real companies. However, I specifically created this dataset so that hiring decisions were made independently of these two attributes. Again, the goal is to let the data speak for itself, not to rely on intuition. There is an interesting result lurking beneath the surface, however. **Age** is correlated with **experience** so it exhibits some signal, but the true source is *experience*.
+Regarding **age** and **gender**, one may reasonably conjecture that these attributes would have high impact with regard to hiring decisions since this is a well-known bias in many real companies. However, I specifically created this dataset so that hiring decisions were made independently of these two attributes. Again, the goal is to let the data speak for itself, not to rely on intuition. There is an interesting result lurking beneath the surface, however. **Age** is correlated with **experience** so it exhibits some signal, but the true source of the signal is **experience**.
 
 One may also assume that **major** and **GPA** are strong predictors. That may be the case at some real-world companies but not in this case. They have no impact whatsoever. Any signal present is purely due to chance.
 
 On the other hand, **years of experience**, **bootcamp experience**, **number of projects on GitHub**, and **blog experience** are all strong predictors. Specifically, the dataset was designed such that candidates with light experience, bootcamp experience, numerous independent GitHub projects, and a data science blog are preferred. Surprisingly perhaps, the number of blog articles one writes is irrelevant. This was by design.
 
-One last thing to note: Whether a candidate was hired is not based on any one of the 5 important features. Rather, five target flags were generated probabilistically based on the values of those features and a simple majority results in being hired. To add a bit more complexity, I randomly flipped 5% of hiring decisions so that learning the hiring decision rule would be more difficult. 
+One last thing to note: Whether a candidate was hired is not based on any one of the five important features. Rather, five target flags were generated probabilistically based on the values of those features and a simple majority results in being hired. To add a bit more complexity, I randomly flipped 5% of hiring decisions so that learning the hiring decision rule would be more difficult. 
 
 Great, so now we have all that background behind us which means it's time to actually generate the data. 
 
@@ -225,9 +225,9 @@ for i, _ in df.iterrows():
         df.loc[i, 'hired'] = 1
 ```
 
-The big takeaway is the last *if* statement. That's where the target variable (aka *hired*) is set. This is the generative process. It simply states that if the temporary flag variable t1-t5 sum to at least three, then set hired equal to one, otherwise zero. It's a simple decision based on a simple summation - probably not too far off of many real hiring decisions!
+The big takeaway is the last *if* statement. That's where the target variable (aka *hired*) is set. *This is the generative process*. It simply states that if the temporary flag variable t1-t5 sum to three or or more, then set hired equal to one, otherwise zero. It's a simple decision based on a simple summation - probably not too far off of many real hiring decisions!
 
-It's worthwhile to apply just a bit more processing. Specifically, we want to remove those temporary flag variables t1-t5 and convert *experience* from an object type to numeric.
+It's worthwhile to apply just a bit more processing. Specifically, we want to remove those temporary flag variables t1-t5 and convert **experience** from an object type to numeric.
 
 ```
 # Drop target flags        
@@ -253,6 +253,6 @@ for i, _ in df.loc[flip_idx].iterrows():
         df.loc[i, 'hired'] = 1
 ```
 ## Wrap Up
-We covered lots of ground already. I introduced the idea of generating your own datasets from scratch. This process is known as simulating datasets. The reason for doing this is simple: You want to truly understand the generative process so you can apply various Exploratory Data Analysis (EDA) and machine learning techniques for the express purposes of building your intuition into which techniques work best on different types of data. That easily takes you from novice to expert and all it requires is a little time and practice.
+We covered lots of ground already. I introduced the idea of generating your own datasets from scratch. This process is known as simulating datasets. The reason for doing this is simple: You want to truly understand the generative process so you can apply various *Exploratory Data Analysis (EDA)* and machine learning techniques for the express purposes of building your intuition into which techniques work best on different types of data. That easily elevates you from novice to expert, and all it requires is a little time and practice.
 
 Next time we'll dig a bit deeper into the data. We'll apply some basic EDA and then round out the discussion with a few traditional machine learning models to understand a bit better why one performs better than another. 
