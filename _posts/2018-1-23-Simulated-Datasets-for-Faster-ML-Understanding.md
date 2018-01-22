@@ -7,12 +7,14 @@ categories: [Data Science, EDA, Machine Learning, Python, Simulated Data]
 ![image](/assets/images/innovative_approach.jpg?raw=true){: .center-image }
 
 ## Introduction
-Oftentimes, the most difficult part of gaining expertise in machine learning is developing intuition about the strengths and weaknesses of the various algorithms. Common pedagogy follows a familiar pattern: theoretical exposition followed by application to a contrived dataset. For example, suppose you're learning a classification algorithm for supervised machine learning. For specificity, let's assume the algorithm du jour is [Gaussian Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Gaussian_naive_Bayes) (GNB). You learn the mechanics and the fundamental assumptions, as a natural starting point. That gives you the big idea. Maybe you even code GNB from scratch to gain deeper insight. Great. Now comes time to apply GNB to real data. A canonical example is often presented, for example the [Iris](https://en.wikipedia.org/wiki/Iris_flower_data_set) dataset. You learn to connect theory and application. Powerful. So what's the problem?
+Oftentimes, the most difficult part of gaining expertise in machine learning is developing intuition about the strengths and weaknesses of the various algorithms. Common pedagogy follows a familiar pattern: theoretical exposition followed by application on a contrived dataset. For example, suppose you're learning a classification algorithm for supervised machine learning. For specificity, let's assume the algorithm du jour is [Gaussian Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Gaussian_naive_Bayes) (GNB). You learn, as a natural starting point, the mechanics and the fundamental assumptions. That gives you the big idea. Maybe you even code GNB from scratch to gain deeper insight. Great. Now comes time to apply GNB to "real" data. A canonical example is often presented, for example the [Iris](https://en.wikipedia.org/wiki/Iris_flower_data_set) dataset. You learn to connect theory and application. Makes perfect sense.
 
-The problem is simply this: You don't know the generative process underlying the Iris dataset. Sure, you're trying to deduce a proxy by fitting your GNB model. That's the point of modeling. But that's not what I'm getting at. No, what I want to help you understand faster is knowing where and when certain algorithms shine and where and when they don't. In sum, I want to pull back the curtain. I want to show you how to understand machine learning algorithms at a much deeper level, the level of intuition. How you get there and how quickly you get there is a matter of technique, and it's this technique that I'll share with you so you too can gain deep expertise and intuition about machine learning algorithms with great alacrity. 
+So what's the problem?
+
+The problem is that you don't know the generative process underlying the Iris dataset. Sure, you're trying to deduce a proxy by fitting your GNB model. That's the point of modeling. But that's not what I'm getting at. No, what I want to help you understand is knowing where and when certain algorithms shine and where and when they don't. In sum, I want to pull back the curtain; I want to show you how to understand machine learning algorithms at a much deeper level, the level of intuition. How you get there and how quickly you get there is a matter of technique, and it's this technique that I'll share with you so you too can gain deep expertise and intuition about machine learning algorithms with great alacrity. 
 
 ## Baby Steps
-Imagine you knew the generative process underlying a dataset - you knew exactly how data was generated and how all the pieces fit together. In short, imagine you have perfect information. Now imagine running GNB on your data. Because you know precisely how the data was generated and because you know how GNB works, you can start piecing together where GNB performs well and in what situations it struggles. Now imagine you knew the generative process of not one but many datasets. Furthermore, imagine applying not just GNB but Logistic Regression, Random Forest, Support Vector Machines, and a slew of other classification algorithms you have at your disposal. All of a sudden you have the ability to garner deep insights into each of the algorithms and fast. 
+Imagine you knew the generative process underlying a dataset - you knew exactly how data was generated and how all the pieces fit together. In short, imagine you have perfect information. Now imagine running GNB on your data. Because you know precisely how the data was generated and because you know how GNB works, you can start piecing together where GNB performs well and in what situations it struggles. Now imagine you knew the generative process of not one but many datasets. Furthermore, imagine applying not just GNB but Logistic Regression, Random Forest, Support Vector Machines, and a slew of other classification algorithms you have at your disposal. All of a sudden you have the ability to garner deep insights into each of the algorithms, and fast. 
 
 But how do you move from imagination to reality?
 
@@ -27,10 +29,10 @@ This dataset is built from scratch. It has the following properties:
 
 >**Type:** Classification  
 **Balanced:** No (slightly imbalanced)  
-**Outliers:** Yes  
-**Simulated Human Data Entry Errors:** Yes  
-**Missing Values:** Yes  
-**Nonsensical Data Types:** Yes  
+**Outliers:** No  
+**Simulated Human Data Entry Errors:** No  
+**Missing Values:** No  
+**Nonsensical Data Types:** No  
 
 Furthermore, the dataset is designed in such a way that relying on intuition alone will lead you astray if you rely on gut feel alone. 
 
@@ -113,7 +115,7 @@ Regarding **age** and **gender**, one may reasonably conjecture that these attri
 
 One may also assume that **major** and **GPA** are strong predictors. That may be the case at some real-world companies but not in this case. They have no impact whatsoever. Any signal present is purely due to chance.
 
-On the other hand, **years of experience**, **bootcamp experience**, **number of projects on GitHub**, and **blog experience** are all strong predictors. Specifically, the dataset was designed such that candidates with light experience, bootcamp experience, numerous independent GitHub projects, and a data science blog are preferred. Surprisingly perhaps, the number of blog articles one writes is irrelevant. This was by design.
+On the other hand, **years of experience**, **bootcamp experience**, **number of projects on GitHub**, and **blog experience** are all strong predictors. Specifically, the dataset was designed such that candidates with light experience, bootcamp experience, numerous independent GitHub projects, and a data science blog are preferred. Surprisingly perhaps, the number of blog articles one has writen is irrelevant. This was by design.
 
 One last thing to note: Whether a candidate was hired is not based on any one of the five important features. Rather, five target flags were generated probabilistically based on the values of those features and a simple majority results in being hired. To add a bit more complexity, I randomly flipped 5% of hiring decisions so that learning the hiring decision rule would be more difficult. 
 
@@ -225,7 +227,7 @@ for i, _ in df.iterrows():
         df.loc[i, 'hired'] = 1
 ```
 
-The big takeaway is the last *if* statement. That's where the target variable (aka *hired*) is set. *This is the generative process*. It simply states that if the temporary flag variable t1-t5 sum to three or or more, then set hired equal to one, otherwise zero. It's a simple decision based on a simple summation - probably not too far off of many real hiring decisions!
+The big takeaway is the last *if* statement. That's where the target variable (aka *hired*) is set. *This is the generative process*. It simply states that if the temporary flag variable t1-t5 sum to three or or more, then set hired equal to one, otherwise zero. It's a simple decision based on a simple summation - probably not too far off from many real hiring decisions!
 
 It's worthwhile to apply just a bit more processing. Specifically, we want to remove those temporary flag variables t1-t5 and convert **experience** from an object type to numeric.
 
@@ -252,6 +254,9 @@ for i, _ in df.loc[flip_idx].iterrows():
     else:
         df.loc[i, 'hired'] = 1
 ```
+
+Great, that's as far as we want to take this dataset. 
+
 ## Wrap Up
 We covered lots of ground already. I introduced the idea of generating your own datasets from scratch. This process is known as simulating datasets. The reason for doing this is simple: You want to truly understand the generative process so you can apply various *Exploratory Data Analysis (EDA)* and machine learning techniques for the express purposes of building your intuition into which techniques work best on different types of data. That easily elevates you from novice to expert, and all it requires is a little time and practice.
 
