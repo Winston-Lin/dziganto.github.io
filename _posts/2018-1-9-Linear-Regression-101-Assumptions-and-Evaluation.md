@@ -522,7 +522,17 @@ r^2:     0.9476
 adj_r^2: 0.9378
 ```
 
-We see no difference in SSE, SST, or R^2. As we learned in the previous post about metrics, adjusted R^2 is telling us that the additional feature in the linearly dependent feature set adds no new information, which is why we see a decrease in that value. Be careful because linear regression assumes independent features, and looking at simple metrics like SSE, SST, and R^2 alone won't tip you off that your features are correlated. There are a number of methods you can leverage to investigate feature-feature correlation. Calculate the rank of your data matrix or take the dot product of any two given features. The latter will result in 0 if two features are truly independent and some nonzero value if they are not. The larger the magnitude of the dot product, the greater the correlation.
+We see no difference in SSE, SST, or R^2. As we learned in the previous post about metrics, adjusted R^2 is telling us that the additional feature in the linearly dependent feature set adds no new information, which is why we see a decrease in that value. Be careful because linear regression assumes independent features, and looking at simple metrics like SSE, SST, and R^2 alone won't tip you off that your features are correlated. 
+
+So what's the big problem? 
+
+In short, interpretability. Say we have a simple model defined as: *output = 2 + 12*x1 - 3*x2*. Assuming independent features, we can interpret this model in the following way. A one unit increase in *x1* results in an increase of 12 units of *output*. Likewise, a one unit increase in *x2* results in a decrease of 3 units of *output*. This is the beauty of linear regression. However, if features are correlated, you lose the ability to interpret the linear regression model because you violate a fundamental assumption. 
+
+If all you care about is performance, then correlated features may not be a big deal. If, however, you care about interpretability, your features **must** be independent. There's no two ways about it.
+
+How do you check that features are independent?
+
+There are a number of methods you can leverage to investigate feature-feature correlation. Calculate the rank of your data matrix or take the dot product of any two given features. The latter will result in 0 if two features are truly independent and some nonzero value if they are not. The larger the magnitude of the dot product, the greater the correlation. You can also leverage a basis transformation technique like Principal Component Analysis (PCA) to ensure all features are truly independent, though you lose some interpretability.
 
 ## Wrap Up
 Thus concludes our whirlwind tour of linear regression. By no means did we cover everything. For example, we didn't talk about Q-Q plots or Maximum Likelihood Estimation (MLE) and how it drives Ordinary Least Squares (OLS). However, this post and the two prior should give you a deep enough fluency to effectively build models, to know when things go wrong, to know what those things are, and what to do about them. 
