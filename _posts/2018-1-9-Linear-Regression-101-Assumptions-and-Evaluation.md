@@ -526,7 +526,7 @@ We see no difference in SSE, SST, or R^2. As we learned in the previous post abo
 
 So what's the big problem? 
 
-In short, interpretability. Say we have a simple model defined as: *output = 2 + 12*x1 - 3*x2*. Assuming independent features, we can interpret this model in the following way. A one unit increase in *x1* results in an increase of 12 units of *output*. Likewise, a one unit increase in *x2* results in a decrease of 3 units of *output*. This is the beauty of linear regression. However, if features are correlated, you lose the ability to interpret the linear regression model because you violate a fundamental assumption. 
+In short, interpretability. Say we have a simple model defined as: *output = 2 + 12\*x1 - 3\*x2*. Assuming independent features, we can interpret this model in the following way. A one unit increase in *x1* results in an increase of 12 units of *output*. Likewise, a one unit increase in *x2* results in a decrease of 3 units of *output*. This is the beauty of linear regression. However, if features are correlated, you lose the ability to interpret the linear regression model because you violate a fundamental assumption. 
 
 If all you care about is performance, then correlated features may not be a big deal. If, however, you care about interpretability, your features **must** be independent. There's no two ways about it.
 
