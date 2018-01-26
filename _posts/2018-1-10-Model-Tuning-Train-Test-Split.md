@@ -239,7 +239,7 @@ Now you may be wondering how to address overfitting. To fully understand that, w
 Before we wrap up, there's one more subtle item we need to address: The downside of *train/test split*.
 
 ## Downside of Train/Test Split
-I just told you that train/test split gives you both sides of the story - how well your model performs on data it's seen and data it hasn't. That's true to an extent but there's something subtle you need to be aware of. Let me show you be example. Let's try a few different train/test splits and check train error and test error values.
+I just told you that train/test split gives you both sides of the story - how well your model performs on data it's seen and data it hasn't. That's true to an extent but there's something subtle you need to be aware of. Let me show you by example. Let's try a few different train/test splits and check train error and test error values.
 
 ### Multiple Train/Test Splits
 ```
@@ -300,7 +300,7 @@ OS_R^2: -0.7537 | OS_RMSE: 41.286
 * RMSE show great variability in-sample vs out-of-sample
 
 ### Discussion
-It's no surprise that R^2 is higher in-sample. The surprise here is RMSE. What's particularly interesting is that sometimes train error is higher than test error and sometimes it's the other way around. This is a small dataset so the skewed distribution in the target variable is having major consequences. A much larger dataset would still be affected but to a considerably smaller degree. With that in mind, you'll almost always see train errors that are higher than test error. If not, there's something funky going on in your data like we have here. It's a red flag to keep in mind when doing EDA. Anyway, we get very different results depending on how we split the data. In this case, I didn't change the proportion of data that's selected, merely how it's split. So that's good to know. How you split can dramatically affect your model. In some cases it generalizes well and other times it doesn't. 
+It's no surprise that R^2 is higher in-sample. The surprise here is RMSE. What's particularly interesting is that sometimes train error is higher than test error and sometimes it's the other way around. This is a small dataset so the skewed distribution in the target variable is having major consequences. A much larger dataset would still be affected but to a considerably smaller degree. With that in mind, you'll almost always see train errors that are higher than test error. If not, there's something funky going on in your data like we have here. It's a red flag to keep in mind. Anyway, we get very different results depending on how we split the data. In this case, I didn't change the proportion of data that's selected, merely how it's split. So that's good to know. How you split can dramatically affect your model. In some cases it generalizes well and other times it doesn't. 
 
 An obvious question you're probably asking is how do I best split my data? Trial and error?
 
