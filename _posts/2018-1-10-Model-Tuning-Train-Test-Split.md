@@ -215,7 +215,7 @@ is_r2, ise = calc_ISE(X_train, y_train, lr_split)
 os_r2, ose = calc_OSE(X_test, y_test, lr_split)
 
 # show dataset sizes
-data_list = (('R^_in', is_r2), ('R^2_out', os_r2), 
+data_list = (('R^2_in', is_r2), ('R^2_out', os_r2), 
              ('ISE', ise), ('OSE', ose))
 for item in data_list:
     print('{:10}: {}'.format(item[0], item[1]))
@@ -223,7 +223,7 @@ for item in data_list:
 
 The output is:
 ```
-R^_in     : 0.07513974961762804
+R^2_in     : 0.07513974961762804
 R^2_out   : -0.005167798223800313
 ISE       : 27.50204577364648
 OSE       : 83.36547731820247
