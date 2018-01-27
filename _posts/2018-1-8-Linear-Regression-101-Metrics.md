@@ -97,7 +97,7 @@ class Stats:
         return np.sum(squared_errors)
     
     def r_squared(self):
-        '''returns calculated value of adjusted r^2'''
+        '''returns calculated value of r^2'''
         return 1 - self.sse()/self.sst()
     
     def adj_r_squared(self):
