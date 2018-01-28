@@ -7,7 +7,7 @@ categories: [Data Science, Linear Regression, Machine Learning, Python]
 ![image](/assets/images/linear_regression_3.png?raw=true){: .center-image }
 
 ## Introduction
-This is the third and final post in a 3-part series, It covers the basic assumptions of linear regression, how to investigate whether those assumptions are met, and how to address key problems. 
+We covered tha basics of linear regression in [Part 1](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Basics/) and key model metrics were explored in [Part 2](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Metrics/). Now we're ready to tackle the basic assumptions of linear regression, how to investigate whether those assumptions are met, and how to address key problems in this final post of a 3-part series. 
 
 ## Linear Regression Assumptions
 1. Linear relationship between target and features
