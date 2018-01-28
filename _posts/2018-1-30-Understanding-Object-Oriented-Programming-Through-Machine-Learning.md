@@ -372,7 +372,13 @@ class MyLinearRegressionWithInheritance(ModifiedMetrics):
         return self.intercept_ + np.dot(X, self.coef_)
 ```
 
-Notice how I created **MyLinearRegressionWithInheritance** `class MyLinearRegressionWithInheritance(ModifiedMetrics):`. This means **ModifiedMetrics** acts like a base class and **MyLinearRegressionWithInheritance** can inherit from it. Why may this be helpufl? First, it's far more elegant. Secondly, imagine your wrote not just a linear regression algorithm but a decision tree and K-Nearest Neighbors, and you wanted each of those algorithms to have access to the same methods that output key regression metrics. On the one hand, you could copy all that code into each model object. On another hand, you could pass those model objects to the **Metrics** class. Or you could simply inherit **ModifiedMetrics**. While all will work, the last solution is by far the most elegant. It keeps all your code modular. It also ensures you're constructing your classes in a way that won't break your code down the line. In short, it makes your life easier and ensures quality code. It's much easier to change base class methods or add/delete without having to comb through each algorithm to see if you made the required updates. In short, it makes your code manageable at scale.
+Notice how I created **MyLinearRegressionWithInheritance**? 
+
+```
+class MyLinearRegressionWithInheritance(ModifiedMetrics): 
+```
+
+This means **ModifiedMetrics** acts like a base class and **MyLinearRegressionWithInheritance** can inherit from it. Why may this be helpufl? First, it's far more elegant. Secondly, imagine your wrote not just a linear regression algorithm but a decision tree and K-Nearest Neighbors, and you wanted each of those algorithms to have access to the same methods that output key regression metrics. On the one hand, you could copy all that code into each model object. On another hand, you could pass those model objects to the **Metrics** class. Or you could simply inherit **ModifiedMetrics**. While all will work, the last solution is by far the most elegant. It keeps all your code modular. It also ensures you're constructing your classes in a way that won't break your code down the line. In short, it makes your life easier and ensures quality code. It's much easier to change base class methods or add/delete without having to comb through each algorithm to see if you made the required updates. In short, it makes your code manageable at scale.
 
 ## Wrap Up
 Hopefully you found this a gentle but intuitive introduction to OOP. It's a powerful paradigm. It helps keep your code organized and manageable at scale. But it's not a magic bullet. Like any tool you have to know where and when it's appropriate to use it. For example, there are many wonderful resources on OOP design patterns. I highly recommend learning at least a handful. You'll be surprised how much more powerful and efficient you're code will be with a little study.
