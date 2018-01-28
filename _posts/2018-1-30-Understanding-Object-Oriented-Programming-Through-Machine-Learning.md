@@ -37,11 +37,15 @@ In other words, the variable *parameters*, an array of scalar values, defines ou
 predictions = np.dot(X_new, parameters)
 ```
 
-So now we have a model and a way to make predictions. Not too complicated. But as it turns out we can do better. We can simplify. 
+So now we have a model and a way to make predictions. Not too complicated. But as it turns out we can do better. We can simplify. Enter OOP. 
 
-Enter OOP. In the same way we abstracted away a series of calculutions that return the Ordinary Least Squares model parameters in a function called **ols**, we can abstract away *functions* and *data* in a single object called a **class**. Let me show you what I mean and then I'll explain what's going on.
+## Object-Oriented Programming Overview
 
-We'll build this class one code block at a time so as to manage the complexity. It's really not too tricky but it's easier to understand in snippets. Alright, let's get started.
+In the same way we abstracted away a series of calculutions that return the Ordinary Least Squares model parameters in a function called **ols**, we can abstract away *functions* and *data* in a single object called a **class**. Let me show you what I mean and then I'll explain what's going on.
+
+## Object-Oriented Programming Machine Learning Example
+
+We'll build a class one code block at a time so as to manage the complexity. It's really not too tricky but it's easier to understand in snippets. Alright, let's get started.
 
 ```
 import numpy as np
