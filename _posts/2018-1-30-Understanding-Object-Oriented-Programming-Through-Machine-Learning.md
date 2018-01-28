@@ -41,6 +41,84 @@ So now we have a model and a way to make predictions. Not too complicated. But a
 
 Enter OOP. In the same way we abstracted away a series of calculutions that return the Ordinary Least Squares model parameters in a function called **ols**, we can abstract away *functions* and *data* in a single object called a **class**. Let me show you what I mean and then I'll explain what's going on.
 
+We'll build this class one code block at a time so as to manage the complexity. It's really not too tricky but it's easier to understand in snippets. Alright, let's get started.
+
+```
+import numpy as np
+
+class MyLinearRegression:
+    
+    def __init__(self, fit_intercept=True):
+        self.coef_ = None
+        self.intercept_ = None
+        self._fit_intercept = fit_intercept
+```
+
+Have no fear if that looks scary or overwhelming. I'll break it down for you and you'll see it's really not that complicated. Just stay with me.
+
+The first thing to notice is that we're defining a *class* as opposed to a function. We do that, unsurprisingly, with the **class** keyword. By convention, you should capitalize your class names. Notice how I named my class **MyLinearRegression**? Starting your classes with a capital letter helps to differentiate them from functions, the latter of which is lower case by convention. 
+
+The next block of code which starts with `def __init__(self, fit_intercept=True):` is where things get more complicated. Stay with me; I promise it's not that bad. 
+
+At a high level, `__init\__` provides a recipe for how to build an *instance* of **MyLinearRegression**. Think of `init` like a factory. Let's pretend you wanted to crank out hundreds of linear regression models. You can do that one of two ways. First, you have the **ols** function that provides the instructions on how to calculate linear regression parameters. So you could, in theory, save off hundreds of copies of the **ols** function with hundreds of appropriate variable names. There's nothing inherently wrong with that. Or you could save off hundreds of *instances* of class **MyLinearRegression** with hundreds of appropriate variable names. Both accomplish very similar tasks but do so in very different ways. You'll understand why as get a little further along.
+> Technical note: the **init** block of code is optional, though it's quite common. 
+
+What the heck is *self*? Since an instance of **MyLinearRegression** can take on any name a user gives it, we need a way to link the user's name back to the class so we can accomplish certain tasks. Think of *self* as a variable whose sole job is to learn the name of a particular instance. Say we named a particular instance of **MyLinearRegression** *mlr* like so:
+
+```
+mlr = MyLinearRegression()
+```
+
+Again, the class **MyLinearRegression** provides instructions on how to build a linear regression model. What we did here by attaching the variable *mlr* to the **MyLinearRegression** class is to create an instance, a specific object called *mlr*, which will have its own data and "functions". You'll understand why I placed functions in quotes shortly. Anyway, *mlr* is a unique model with a unique name, much like you're a unique person with your own name. The class object **MyLinearRegression** now sets *self* to *mlr*. If it's still not clear why that's important, hang tight because it will when we get to the next code block.
+
+Now this business about `self.coef_`, `self.intercept_`, and `self._fit_intercept`. All three are simply variables, technically called *attributes*, attached to the class object. When we build *mlr*, our class provides a blueprint that calls for the creation of three *attributes*. `self.coef_` and `self.intercept_` are placeholders. We haven't calculated model parameters but when we do we'll place those values into these attributes. `self._fit_intercept` is a boolean (True or False) that is set to True by the keyword argument. A user can define whether to calculate the intercept by setting this argument to True or avoid it by setting the argument to False. Since we didn't set *fit_intercept* to False when we created *mlr*, *mlr* will provide the intercept parameter once it's calculated.
+
+Great, let's add a "function" called **fit** which will take an array of data and a vector of ground truth values to calculate and return linear regression model parameters. 
+> Note: We're building this class one piece at a time. I'm doing this simply for pedagogical reasons.
+
+```
+class MyLinearRegression:
+    
+    def __init__(self, fit_intercept=True):
+        self.coef_ = None
+        self.intercept_ = None
+        self._fit_intercept = fit_intercept
+
+    
+    def fit(self, X, y):
+        """
+        Fit model coefficients.
+
+        Arguments:
+        X: 1D or 2D numpy array 
+        y: 1D numpy array
+        """
+        
+        # check if X is 1D or 2D array
+        if len(X.shape) == 1:
+            X = X.reshape(-1,1)
+            
+        # add bias if fit_intercept is True
+        if self._fit_intercept:
+            X = np.c_[np.ones(X.shape[0]), X]
+        
+        # closed form solution
+        xTx = np.dot(X.T, X)
+        inverse_xTx = np.linalg.inv(xTx)
+        xTy = np.dot(X.T, y)
+        coef = np.dot(inverse_xTx, xTy)
+        
+        # set attributes
+        if self._fit_intercept:
+            self.intercept_ = coef[0]
+            self.coef_ = coef[1:]
+        else:
+            self.intercept_ = 0
+            self.coef_ = coef
+```
+
+stuff here...........
+
 ```
 import numpy as np
 
@@ -65,7 +143,7 @@ class MyLinearRegression:
         if len(X.shape) == 1:
             X = X.reshape(-1,1)
             
-        # add bias if fit_intercept
+        # add bias if fit_intercept is True
         if self._fit_intercept:
             X = np.c_[np.ones(X.shape[0]), X]
         
@@ -90,9 +168,11 @@ class MyLinearRegression:
         Arguments:
         X: 1D or 2D numpy array 
         """
+        
         # check if X is 1D or 2D array
         if len(X.shape) == 1:
             X = X.reshape(-1,1) 
         return self.intercept_ + np.dot(X, self.coef_) 
 ```
 
+more stuff here...
