@@ -1,7 +1,7 @@
 ---
 published: false
 title: Understanding Object-Oriented Programming Through Machine Learning
-categories: [Classes, Data Science, Linear Regression, Machine Learning, Python]
+categories: [Classes, Data Science, Linear Regression, Machine Learning, Object-Oriented Programming, Python]
 ---
 
 ![image](/assets/images/classes.png?raw=true){: .center-image }
@@ -65,7 +65,7 @@ The first thing to notice is that we're defining a *class* as opposed to a funct
 The next block of code which starts with `def __init__(self, fit_intercept=True):` is where things get more complicated. Stay with me; I promise it's not that bad. 
 
 At a high level, `__init\__` provides a recipe for how to build an *instance* of **MyLinearRegression**. Think of `init` like a factory. Let's pretend you wanted to crank out hundreds of linear regression models. You can do that one of two ways. First, you have the **ols** function that provides the instructions on how to calculate linear regression parameters. So you could, in theory, save off hundreds of copies of the **ols** function with hundreds of appropriate variable names. There's nothing inherently wrong with that. Or you could save off hundreds of *instances* of class **MyLinearRegression** with hundreds of appropriate variable names. Both accomplish very similar tasks but do so in very different ways. You'll understand why as get a little further along.
-> Technical note: the **init** block of code is optional, though it's quite common. 
+> Technical note: the **\__init\__** block of code is optional, though it's quite common. 
 
 What the heck is *self*? Since an instance of **MyLinearRegression** can take on any name a user gives it, we need a way to link the user's name back to the class so we can accomplish certain tasks. Think of *self* as a variable whose sole job is to learn the name of a particular instance. Say we named a particular instance of **MyLinearRegression** *mlr* like so:
 
@@ -121,7 +121,35 @@ class MyLinearRegression:
             self.coef_ = coef
 ```
 
-stuff here...........
+Our focus now is on the **fit** function. Technically a class function is called a **method**. That's the term I'll use from here on out. The **fit** method is quite simple. 
+
+First comes the docstring which tells us what the method does and what the expected inputs are for *X* and *y*. 
+
+Next up is a check on the dimensions of the incoming *X* array. NumPy complains if you perform certain calculations on a 1D array. If a 1D array is passed, it is reshaped so as to fake a 2D array. 
+> Technical note: this does not change the output in any way. It simply anticipates and solves a problem for the user.
+
+The next block of code checks if `fit_intercept=True`. If so, then a vector of ones is added to the *X* array. 
+> I'll assume you've read my post on linear regression to understand why we need to do this. 
+
+The next block simply calculates the model parameters using linear algebra. The parameters are stored in a class variable called *coef*. 
+
+The final block of code parses *coef* appropriately. If `fit_intercept=True`, then the intercept value is copied to `self.intercept_`. Otherwise, `self.intercept_` is set to 0. The remaining parameters are stored in `self.coef_`. 
+
+Let's see how this works.
+
+```
+mlr = MyLinearRegression()
+mlr.fit(X_data, y_target)
+```
+
+We instantiate a model object called *mlr* and then find its model parameters on data (X_data and y_target) passed by the user. Once that's done, we can access the intercept and remaining parameters like so:
+
+```
+intercept = mlr.intercept_
+parameters = mlr.coef_
+```
+
+So clean. So elegant. Let's keep going. Let's add a **predict** method.
 
 ```
 import numpy as np
@@ -179,4 +207,172 @@ class MyLinearRegression:
         return self.intercept_ + np.dot(X, self.coef_) 
 ```
 
-more stuff here...
+The **predict** method is quite simple. Pass in some data *X* formatted exactly as *X_data* in our case, and the model spits out its predictions. 
+
+```
+predictions = mlr.predict(X_new_data)
+```
+
+See how everything, data and methods, is contained or encapsulated in a single class object. It's a wonderful way to keep everything organized. But wait, there's more.
+
+Say we had another class called **Metrics**. This class captures a number of key metrics associated with linear regression models. It looks like this:
+
+```
+class Metrics:
+    
+    def __init__(self, X, y, model):
+        self.data = X
+        self.target = y
+        self.model = model
+        # degrees of freedom population dep. variable variance
+        self._dft = X.shape[0] - 1   
+        # degrees of freedom population error variance
+        self._dfe = X.shape[0] - X.shape[1] - 1  
+    
+    def sse(self):
+        '''returns sum of squared errors (model vs actual)'''
+        squared_errors = (self.target - self.model.predict(self.data)) ** 2
+        self.sq_error_ = np.sum(squared_errors)
+        return self.sq_error_
+        
+    def sst(self):
+        '''returns total sum of squared errors (actual vs avg(actual))'''
+        avg_y = np.mean(self.target)
+        squared_errors = (self.target - avg_y) ** 2
+        self.sst_ = np.sum(squared_errors)
+        return self.sst_
+    
+    def r_squared(self):
+        '''returns calculated value of r^2'''
+        self.r_sq_ = 1 - self.sse()/self.sst()
+        return self.r_sq_
+    
+    def adj_r_squared(self):
+        '''returns calculated value of adjusted r^2'''
+        self.adj_r_sq_ = 1 - (self.sse()/self._dfe) / (self.sst()/self._dft)
+        return self.adj_r_sq_
+    
+    def mse(self):
+        '''returns calculated value of mse'''
+        self.mse_ = np.mean( (self.model.predict(self.data) - self.target) ** 2 )
+        return self.mse_
+    
+    def pretty_print_stats(self):
+        '''returns report of statistics for a given model object'''
+        items = ( ('sse:', self.sse()), ('sst:', self.sst()), 
+                 ('mse:', self.mse()), ('r^2:', self.r_squared()), 
+                  ('adj_r^2:', self.adj_r_squared()))
+        for item in items:
+            print('{0:8} {1:.4f}'.format(item[0], item[1]))
+```
+
+The **Metrics** class requires *X*, *y*, and a model object to calculate the key metrics. It's certainly not a bad solution. However, we can do even better. With a little tweaking, we can give **MyLinearRegression** access to **Metrics** in a simple yet intuitive way. Let me show you how:
+
+```
+class ModifiedMetrics:
+    
+    def sse(self):
+        '''returns sum of squared errors (model vs actual)'''
+        squared_errors = (self.target - self.predict(self.data)) ** 2
+        self.sq_error_ = np.sum(squared_errors)
+        return self.sq_error_
+        
+    def sst(self):
+        '''returns total sum of squared errors (actual vs avg(actual))'''
+        avg_y = np.mean(self.target)
+        squared_errors = (self.target - avg_y) ** 2
+        self.sst_ = np.sum(squared_errors)
+        return self.sst_
+    
+    def r_squared(self):
+        '''returns calculated value of r^2'''
+        self.r_sq_ = 1 - self.sse()/self.sst()
+        return self.r_sq_
+    
+    def adj_r_squared(self):
+        '''returns calculated value of adjusted r^2'''
+        self.adj_r_sq_ = 1 - (self.sse()/self._dfe) / (self.sst()/self._dft)
+        return self.adj_r_sq_
+    
+    def mse(self):
+        '''returns calculated value of mse'''
+        self.mse_ = np.mean( (self.predict(self.data) - self.target) ** 2 )
+        return self.mse_
+    
+    def pretty_print_stats(self):
+        '''returns report of statistics for a given model object'''
+        items = ( ('sse:', self.sse()), ('sst:', self.sst()), 
+                 ('mse:', self.mse()), ('r^2:', self.r_squared()), 
+                  ('adj_r^2:', self.adj_r_squared()))
+        for item in items:
+            print('{0:8} {1:.4f}'.format(item[0], item[1]))
+```
+
+Notice **ModifiedMetrics** no longer has **\__init\__**. Now for a slightly modified version of **MyLinearRegression**.
+
+```
+class MyLinearRegressionWithInheritance(ModifiedMetrics):
+    
+    
+    def __init__(self, fit_intercept=True):
+        self.coef_ = None
+        self.intercept_ = None
+        self._fit_intercept = fit_intercept
+          
+        
+    def fit(self, X, y):
+        """
+        Fit model coefficients.
+
+        Arguments:
+        X: 1D or 2D numpy array 
+        y: 1D numpy array
+        """
+        
+        # training data & ground truth data
+        self.data = X
+        self.target = y
+        
+        # degrees of freedom population dep. variable variance 
+        self._dft = X.shape[0] - 1  
+        # degrees of freedom population error variance
+        self._dfe = X.shape[0] - X.shape[1] - 1
+        
+        # check if X is 1D or 2D array
+        if len(X.shape) == 1:
+            X = X.reshape(-1,1)
+            
+        # add bias if fit_intercept
+        if self._fit_intercept:
+            X = np.c_[np.ones(X.shape[0]), X]
+        
+        # closed form solution
+        xTx = np.dot(X.T, X)
+        inverse_xTx = np.linalg.inv(xTx)
+        xTy = np.dot(X.T, y)
+        coef = np.dot(inverse_xTx, xTy)
+        
+        # set attributes
+        if self._fit_intercept:
+            self.intercept_ = coef[0]
+            self.coef_ = coef[1:]
+        else:
+            self.intercept_ = 0
+            self.coef_ = coef
+            
+    def predict(self, X):
+        """Output model prediction.
+
+        Arguments:
+        X: 1D or 2D numpy array 
+        """
+        # check if X is 1D or 2D array
+        if len(X.shape) == 1:
+            X = X.reshape(-1,1) 
+        return self.intercept_ + np.dot(X, self.coef_)
+```
+
+Notice how I created **MyLinearRegressionWithInheritance** `class MyLinearRegressionWithInheritance(ModifiedMetrics):`. This means **ModifiedMetrics** acts like a base class and **MyLinearRegressionWithInheritance** can inherit from it. Why may this be helpufl? First, it's far more elegant. Secondly, imagine your wrote not just a linear regression algorithm but a decision tree and K-Nearest Neighbors, and you wanted each of those algorithms to have access to the same methods that output key regression metrics. On the one hand, you could copy all that code into each model object. On another hand, you could pass those model objects to the **Metrics** class. Or you could simply inherit **ModifiedMetrics**. While all will work, the last solution is by far the most elegant. It keeps all your code modular. It also ensures you're constructing your classes in a way that won't break your code down the line. In short, it makes your life easier and ensures quality code. It's much easier to change base class methods or add/delete without having to comb through each algorithm to see if you made the required updates. In short, it makes your code manageable at scale.
+
+## Wrap Up
+Hopefully you found this a gentle but intuitive introduction to OOP. It's a powerful paradigm. It helps keep your code organized and manageable at scale. But it's not a magic bullet. Like any tool you have to know where and when it's appropriate to use it. For example, there are many wonderful resources on OOP design patterns. I highly recommend learning at least a handful. You'll be surprised how much more powerful and efficient you're code will be with a little study.
