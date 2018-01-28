@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Understanding Object-Oriented Programming Through Machine Learning
 categories: [Classes, Data Science, Linear Regression, Machine Learning, Object-Oriented Programming, Python]
 ---
