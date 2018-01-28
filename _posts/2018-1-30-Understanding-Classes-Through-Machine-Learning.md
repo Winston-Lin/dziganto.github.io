@@ -14,7 +14,7 @@ When I first started learning OOP, I read about bicycles and bank accounts and f
 I always felt as though the eureka moment took longer than it should have. I doubt I'm alone. Therefore, this post is my attempt to explain the basics of OOP through the lens of my favorite subject - machine learning. I hope you find it helpful.
 
 ## Setup
-I discussed the basics of [linear regression](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Basics/) in a previous post. If you're unfamiliar, please start there because I'm going to assume you're up to speed. Anyway, in that discussion, I showed how to find the parameters of a linear regression model using nothing more than simple linear algebra. We defined a function called **ols**, short for Ordinary Least Squares, that looks like this:
+I discussed the basics of linear regression in a previous post entitled [Linear Regression 101 (Part 1 - Basics)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Basics/). If you're unfamiliar, please start there because I'm going to assume you're up to speed. Anyway, in that discussion, I showed how to find the parameters of a linear regression model using nothing more than simple linear algebra. We defined a function called **ols**, short for Ordinary Least Squares, that looks like this:
 
 ```
 def ols(X, y):
