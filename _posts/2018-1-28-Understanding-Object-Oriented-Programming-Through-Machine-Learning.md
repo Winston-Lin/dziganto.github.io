@@ -136,7 +136,7 @@ The next block of code checks if `fit_intercept=True`. If so, then a vector of o
 > I'll assume you've read my post on linear regression to understand why we need to do this. 
 
 The next block of code simply calculates the model parameters using linear algebra. The parameters are stored in a class variable called *coef*. 
-> Yes, *coef* is technically a variable, not an attribute. A variable-like object attached to a class via *self* is called an attribute whereas a variable contained within a class is simply a variable. 
+> Yes, **coef** is technically a variable, not an attribute. A variable-like object attached to a class via **self** is called an attribute whereas a variable contained within a class is simply a variable. 
 
 The final block of code parses *coef* appropriately. If `fit_intercept=True`, then the intercept value is copied to `self.intercept_`. Otherwise, `self.intercept_` is set to 0. The remaining parameters are stored in `self.coef_`. 
 
@@ -222,7 +222,7 @@ See how everything (data and methods) is contained or encapsulated in a single c
 
 But wait, there's more.
 
-Say we had another class called **Metrics**. This class captures a number of key metrics associated with linear regression models (see [Linear Regression 101 (Part 2 - Metrics)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Metrics/) for details). It looks like this:
+Say we had another class called **Metrics**. This class captures a number of key metrics associated with regression models (see [Linear Regression 101 (Part 2 - Metrics)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Metrics/)). It looks like this:
 
 ```
 class Metrics:
