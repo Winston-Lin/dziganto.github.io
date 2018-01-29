@@ -68,7 +68,7 @@ The first thing to notice is that we're defining a *class* as opposed to a funct
 
 The next block of code which starts with `def __init__(self, fit_intercept=True):` is where things get more complicated. Stay with me; I promise it's not that bad. 
 
-At a high level, `__init\__` provides a recipe for how to build an *instance* of **MyLinearRegression**. Think of `__init__` like a factory. Let's pretend you wanted to crank out hundreds of linear regression models. You can do that one of two ways. First, you have the **ols** function that provides the instructions on how to calculate linear regression parameters. So you could, in theory, save off hundreds of copies of the **ols** function with hundreds of appropriate variable names. There's nothing inherently wrong with that. Or you could save off hundreds of *instances* of class **MyLinearRegression** with hundreds of appropriate variable names. Both accomplish very similar tasks but do so in very different ways. You'll understand why as we get a little further along.
+At a high level, `__init__` provides a recipe for how to build an *instance* of **MyLinearRegression**. Think of `__init__` like a factory. Let's pretend you wanted to crank out hundreds of linear regression models. You can do that one of two ways. First, you have the **ols** function that provides the instructions on how to calculate linear regression parameters. So you could, in theory, save off hundreds of copies of the **ols** function with hundreds of appropriate variable names. There's nothing inherently wrong with that. Or you could save off hundreds of *instances* of class **MyLinearRegression** with hundreds of appropriate variable names. Both accomplish very similar tasks but do so in very different ways. You'll understand why as we get a little further along.
 > Technical note: the **\__init\__** block of code is optional, though it's quite common. You'll know when you need it and when you don't with a bit more practice with OOP.
 
 What the heck is *self*? Since an instance of **MyLinearRegression** can take on any name a user gives it, we need a way to link the user's instance name back to the class so we can accomplish certain tasks. Think of *self* as a variable whose sole job is to learn the name of a particular instance. Say we named a particular instance of **MyLinearRegression** *mlr* like so:
@@ -222,7 +222,7 @@ See how everything (data and methods) is contained or encapsulated in a single c
 
 But wait, there's more.
 
-Say we had another class called **Metrics**. This class captures a number of key metrics associated with linear regression models. It looks like this:
+Say we had another class called **Metrics**. This class captures a number of key metrics associated with linear regression models (see [Linear Regression 101 (Part 2 - Metrics)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Metrics/) for details). It looks like this:
 
 ```
 class Metrics:
