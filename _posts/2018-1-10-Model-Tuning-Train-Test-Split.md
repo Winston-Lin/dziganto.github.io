@@ -196,14 +196,14 @@ lr_split.fit(X_train, y_train)
 ```
 def calc_ISE(X_train, y_train, model):
     '''returns the in-sample R^2 and RMSE; assumes model already fit.'''
-    predictions = lr.predict(X_train)
+    predictions = model.predict(X_train)
     mse = mean_squared_error(y_train, predictions)
     rmse = np.sqrt(mse)
     return model.score(X_train, y_train), rmse
     
 def calc_OSE(X_test, y_test, model):
     '''returns the out-of-sample R^2 and RMSE; assumes model already fit.'''
-    predictions = lr.predict(X_test)
+    predictions = model.predict(X_test)
     mse = mean_squared_error(y_test, predictions)
     rmse = np.sqrt(mse)
     return model.score(X_test, y_test), rmse
