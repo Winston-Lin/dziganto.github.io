@@ -7,7 +7,7 @@ categories: [Cross-Validation, Data Science, Machine Learning, Model Tuning, Pyt
 ![Comic](/assets/images/cv_image.png?raw=true){: .center-image }
 
 ## Introduction
-Last time we discussed train error (aka in-sample error), validation or test error (aka out-of-sample error), and train/test split. We learned that training a model on all the available data and then testing on that very same data is an awful way to build models because we have no indication as to how well that model will perform on unseen data. In other words, we don't know if the model is essentially memorizing the data it has seen or if it's truly picking up the pattern inherent in the data (i.e. its ability to generalize). 
+Last time we discussed training error (aka in-sample error), test error (aka out-of-sample error), and train/test split. We learned that training a model on all the available data and then testing on that very same data is an awful way to build models because we have no indication as to how well that model will perform on unseen data. In other words, we don't know if the model is essentially memorizing the data it'ss seen or if it's truly picking up the pattern inherent in the data (i.e. its ability to generalize). 
 
 To remedy that situation, we implemented train/test split that effectively holds some data aside from the model building process for testing at the very end when the model is fully trained. This allows us to see how the model performs on unseen data. This gives us some indication as to whether the model generalizes or not. 
 
@@ -43,7 +43,7 @@ X_train, X_test, y_train, y_test = train_test_split(data,
 ```
 
 ## Setup
-We know we'll need to calculate train and validation error, so let's go ahead and create functions to do just that. Let's include a meta-function that will generate a nice report for us. Root Mean Squared Error (RMSE) will be our metric of choice.
+We know we'll need to calculate training and test error , so let's go ahead and create functions to do just that. Let's include a meta-function that will generate a nice report for us. Root Mean Squared Error (RMSE) will be our metric of choice.
 
 ```
 def calc_train_error(X_train, y_train, model):
@@ -74,9 +74,9 @@ Time to dive into a little theory. Stay with it because we'll come back around t
 ### Bias-Variance Tradeoff
 Pay very close attention to this section. It is one of the most important concepts in all of machine learning. Understanding this concept will help you diagnose all types of models, be they linear regression, XGBoost, or Convolutional Neural Networks.
 
-We already know how to calculate *train_error* and *validation_error*. So far we've simply been using *validation_error* as a way to gauge how well our model will generalize. That was a good first step but it's not good enough. We can do better. We can tune our model. Let's drill down.
+We already know how to calculate training error and test error. So far we've simply been using test error as a way to gauge how well our model will generalize. That was a good first step but it's not good enough. We can do better. We can tune our model. Let's drill down.
 
-We can compare *train_error* and *validation_error* to figure out what's going on with our model. Depending on the values of each, our model can be in one of three regions:
+We can compare training error and something called *validation error* to figure out what's going on with our model - more on that in a minute. Depending on the values of each, our model can be in one of three regions:
 
 1) **High Bias** - underfitting  
 2) **Goldilocks Zone** - just right (something I made up; not an industry term FYI)  
@@ -89,7 +89,7 @@ The x-axis represents model complexity. This has to do with how flexible your mo
 
 The y-axis indicates model error. It's often measured as *Mean-Squared Error (MSE)* for Regression and *Cross-Entropy* or *Accuracy* for Classification. 
 
-The blue curve *Training Error*. Notice that it only decreases. What should be painfully obvious is that adding model complexity leads to smaller and smaller training errors. That's a key finding.
+The blue curve is *Training Error*. Notice that it only decreases. What should be painfully obvious is that adding model complexity leads to smaller and smaller training errors. That's a key finding.
 
 The green curve forms a U-shape. This curve represents *Validation Error*. Notice the trend. First it decreases, hits a minimum, and then increases. We'll talk in more detail about what exactly *Validation Error* is and how to calculate it.
 
@@ -133,7 +133,7 @@ Alright, now that we've got the theory down, let's shift gears to see this in pr
 With theory behind us, let's build a linear regression model of the [Forest Fire](http://archive.ics.uci.edu/ml/datasets/Forest+Fires) dataset. We'll investigate whether our model is underfitting, overfitting, or fitting just right. If it's under or overfitting, we'll look at one way we can correct that.
 
 Time to build the model.
-> Note: I'll use **train_error** to represent **train error** and **test_error** to represent **validation error**.
+> Note: I'll use **train_error** to represent **training error** and **test_error** to represent **validation error**.
 
 ```
 lr = LinearRegression(fit_intercept=True)
@@ -160,9 +160,9 @@ That's right, it's in the *High Variance* region, which means our model is overf
 
 Unfortunately, we're stuck at this point. 
 
-You're probably thinking, *"Hey wait, no we're not. I can drop a feature or two and then recalculate train error and test error."* 
+You're probably thinking, *"Hey wait, no we're not. I can drop a feature or two and then recalculate training error and test error."* 
 
-My response is simply: *NOPE. DON'T. PLEASE. JUST DON'T EVER DO THAT. NEVER. FOR ANY REASON. PERIOD.*
+My response is simply: *NOPE. DON'T. PLEASE. JUST DON'T EVER DO THAT. EVER. FOR ANY REASON. PERIOD.*
 
 Why not?
 
