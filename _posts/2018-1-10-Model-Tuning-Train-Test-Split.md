@@ -118,7 +118,7 @@ day_wed         1.00
 ```
 
 Some of the variables have relatively high variance, like *DMC* and *DC*, whereas others are constrained between 0 and 1, like day of week. Linear regression can adapt to this variance by adjusting the magnitude of its coefficients, but it's really good practice to scale your data first. 
-> Technical note: To scale your data means to set the range of reach variable to be roughly the same (e.g. all features are bounded by values between 0 and 1. Normalization and standardization are common methods to scale data but there are others as well. If you leverage *Regularization* or *Gradient Descent*, you must scale your data. 
+> Technical note: To scale your data means to set the range of each variable to be roughly the same (e.g. all features are bounded by values between 0 and 1). Normalization and standardization are common methods to scale data but there are others as well. Know that if you leverage *Regularization* or *Gradient Descent*, you must scale your data. 
 
 We won't scale the data here. You'll understand why shortly. 
 
