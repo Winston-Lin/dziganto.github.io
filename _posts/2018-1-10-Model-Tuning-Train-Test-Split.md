@@ -11,7 +11,7 @@ Building a model is simple but assessing your model and tuning it require care a
 
 Let's motivate the discussion with a real-world example.
 
-The [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/index.php) contains many wonderful datasets that you can download and experiment on. Datasets usually come with at least some description. Furthermore, the datasets are grouped according to a number of attributes like *Classification*, *Regression*, *Clustering*, *Time Series*, or *Text*. It really is a great resource to hone your modeling skills.
+The [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/index.php) contains many wonderful datasets that you can download and experiment on. Datasets usually come with a description. Furthermore, the datasets are grouped according to a number of attributes like *Classification*, *Regression*, *Clustering*, *Time Series*, or *Text*. It really is a great resource to hone your modeling skills.
 
 Anyway, for the purposes of this demonstration, we'll use the [Forest Fires](http://archive.ics.uci.edu/ml/datasets/Forest+Fires) dataset.
 
@@ -81,7 +81,7 @@ Think about what's happening for the day of week indicator features. We have a c
 
 Ok, so what's the problem?
 
-Think about the coding. Common convention states a week starts on Sunday. So we have features for Sunday through Saturday. But I don't need an indicator feature for Saturday. That's already encoded implicity when Sunday=0, Monday=0, Tuesday=0, Wednesday=0, Thursday=0, and Friday=0. If you're up on your linear algebra, you realize that adding Saturday causes linear dependence, which is a no-no for linear regression which assumes independent features. Therefore, we **must** drop one column of each one-hot encoded feature. In this case we need to drop one column from *month* and one from *day* - it doesn't matter which specific month and which specific day we choose. Then we'll be in good shape. We do that with this bit of code: `df.drop(labels=['month_dec', 'day_sat'], axis=1, inplace=True)`
+Think about the coding. Common convention states a week starts on Sunday. So we have features for Sunday through Saturday. But I don't need an indicator feature for Saturday. That's already encoded implicity when Sunday=0, Monday=0, Tuesday=0, Wednesday=0, Thursday=0, and Friday=0. If you're up on your Statistics, you realize that adding the Saturday column causes [multicollinearity](https://en.wikipedia.org/wiki/Multicollinearity), which is a no-no for linear regression. Therefore, we **must** drop one column of each one-hot encoded feature. In this case we need to drop one column from *month* and one from *day* - it doesn't matter which specific month and which specific day we choose. Then we'll be in good shape. We do that with this bit of code: `df.drop(labels=['month_dec', 'day_sat'], axis=1, inplace=True)`
 
 It's always worthwhile to check the range of values for each feature. That's as simple as `df.max() - df.min()`.
 
@@ -117,7 +117,10 @@ day_tue         1.00
 day_wed         1.00
 ```
 
-Some of the variables have relatively high variance, like *DMC* and *DC*, whereas others are constrained between 0 and 1, like day of week. Linear regression can adjust to this variance with the magnitude of its coefficients, but it's really good practice to normalize or standardize first. If you leverage *regularization* or *Gradient Descent*, you must normalize/standardize. We won't normalize/standardize here. You'll understand why shortly. 
+Some of the variables have relatively high variance, like *DMC* and *DC*, whereas others are constrained between 0 and 1, like day of week. Linear regression can adapt to this variance by adjusting the magnitude of its coefficients, but it's really good practice to scale your data first. 
+> Technical note: To scale your data means to set the range of reach variable to be roughly the same (e.g. all features are bounded by values between 0 and 1. Normalization and standardization are common methods to scale data but there are others as well. If you leverage *Regularization* or *Gradient Descent*, you must scale your data. 
+
+We won't scale the data here. You'll understand why shortly. 
 
 For now let's pretend we're in good shape. On to the modeling.
 
@@ -163,18 +166,18 @@ But here's the thing: our model is rubbish no matter what. We could have had an 
 ## Why This Model Sucks
 In the most extreme case, I can create a model that is really a lookup table. You give me an input and I give you the output. Another way to say this is take a model and let it memorize the data it can see. The result: an R^2 of 1 and an RMSE of 0. 
 
-Clearly, nobody thinks that's a great model. The point of building a model is to predict something interesting. You can't do that with a lookup table. Yet, that's exactly how we tried to assess our linear regression model above - give it some data and then see how well it does predicting that SAME data. That's why it's rubbish. PLEASE DO NOT EVER DO THIS!
+Clearly, nobody thinks that's a great model. The point of building a model is to predict something interesting. You can't do that with a lookup table. Yet, that's exactly how we tried to assess our linear regression model above - give it some data and then see how well it does predicting that SAME data. That's why it's rubbish. DON'T EVER DO THIS!
 
-What we've done is look at something called *in-sample error* (ISE) or *train error*. It is a useful metric but only tells half the story. 
+What we've done is look at something called *in-sample error* (ISE) or *training error*. It is a useful metric but only tells half the story. 
 
 ## Out-of-Sample Error
 The other half of the story is something called *out-of-sample error*, which I'll denote henceforth as *OSE* or *test error*. Simply put, OSE or test error is how well the model performs on data it's never seen. 
 
 But where do we get this data? 
 
-Easy, holdout some data at the beginning. Don't let the model see during the modeling phase. Once you're happy with your model, make predictions on the unseen data and see how well it performs. This gives you an indication as to how well your model will do in the wild.
+Easy, holdout some data at the beginning. Don't let the model see it during the modeling phase. Once you're happy with your model, make predictions on the unseen data and see how well it performs. This gives you an indication as to how well your model will do in the wild.
 
-This process we just discussed is called *train/test split*. You determine how much data to holdout at the beginning, split the data into a training dataset and a test dataset, model on the training set, and then calculate train error and test error.
+This process we just discussed is called *train/test split*. You determine how much data to holdout at the beginning, split the data into a training dataset and a test dataset, model on the training set, and then calculate training error and test error.
 
 Let's see how to do this with Sklearn.
 
@@ -230,16 +233,16 @@ OSE       : 83.36547731820247
 ```
 
 ### Interpretation
-We can see that the in-sample R^2 is pretty low but what's interesting here is that the out-of-sample R^2 is lower. In fact, it's slightly below zero. Even more telling is the RMSE values. The RMSE for the data the model saw (ISE or train error) is significantly lower (by a factor of 3) than the RMSE for the data the model has never seen (OSE or test error). In machine learning speak our model is *overfitting*, meaning it's doing a much better job on the data it has seen. In other words, the trained model does not generalize well. The greater the gap between between train error and test error, the greater the overfitting. You can equate overfitting with memorizing the data. It becomes more and more like creating a lookup table.
+We can see that the in-sample R^2 is pretty low but what's interesting here is that the out-of-sample R^2 is lower. In fact, it's slightly below zero. Even more telling is the RMSE values. The RMSE for the data the model saw (ISE or training error) is significantly lower (by a factor of 3) than the RMSE for the data the model has never seen (OSE or test error). In machine learning speak our model is *overfitting*, meaning it's doing a much better job on the data it has seen (i.e. the trained model does not generalize well). The greater the gap between between training error and test error, the greater the overfitting. You can equate overfitting with memorizing the data. It becomes more and more like creating a lookup table.
 
-So the big takeaway here is that you *must* calculate train error and test error to get an accurate picture as to how your model is doing. This necessiates holding out some data at the beginning so you can test your model on data it's never seen. I showed you show to do that with sklearn's *train_test_split*. 
+So the big takeaway here is that you *must* calculate training error and test error to get an accurate picture as to how your model is doing. This necessiates holding out some data at the beginning so you can test your model on data it's never seen. I showed you show to do that with sklearn's *train_test_split*. 
 
-Now you may be wondering how to address overfitting. To fully understand that, we need to discuss something called the **Bias-Variance Tradeoff**, which is a topic for another post. For now, understanding what overfitting is and knowing it's a problem is a big first step.
+Now you may be wondering how to address overfitting. To fully understand that, we need to discuss something called the **Bias-Variance Tradeoff**, a topic for the next post. For now, understanding what overfitting is and knowing it's a problem is a great first step.
 
 Before we wrap up, there's one more subtle item we need to address: The downside of *train/test split*.
 
 ## Downside of Train/Test Split
-I just told you that train/test split gives you both sides of the story - how well your model performs on data it's seen and data it hasn't. That's true to an extent but there's something subtle you need to be aware of. Let me show you by example. Let's try a few different train/test splits and check train error and test error values.
+I just told you that train/test split gives you both sides of the story - how well your model performs on data it's seen and data it hasn't. That's true to an extent but there's something subtle you need to be aware of. Let me show you by example. Let's try a few different train/test splits and check training error and test error values.
 
 ### Multiple Train/Test Splits
 ```
@@ -300,8 +303,8 @@ OS_R^2: -0.7537 | OS_RMSE: 41.286
 * RMSE show great variability in-sample vs out-of-sample
 
 ### Discussion
-It's no surprise that R^2 is higher in-sample. The surprise here is RMSE. What's particularly interesting is that sometimes train error is higher than test error and sometimes it's the other way around. This is a small dataset so the skewed distribution in the target variable is having major consequences. A much larger dataset would still be affected but to a considerably smaller degree. With that in mind, you'll almost always see train errors that are higher than test error. If not, there's something funky going on in your data like we have here. It's a red flag to keep in mind. Anyway, we get very different results depending on how we split the data. In this case, I didn't change the proportion of data that's selected, merely how it's split. So that's good to know. How you split can dramatically affect your model. In some cases it generalizes well and other times it doesn't. 
+It's no surprise that R^2 is higher in-sample. The surprise here is RMSE. What's particularly interesting is that sometimes training error is higher than test error and sometimes it's the other way around. This is a small dataset so the skewed distribution in the target variable is producing this effect. A much larger dataset would be affected to a much smaller degree. With that in mind, you'll almost always see test errors that are higher than training errors. If not, there's something funky going on in your data like we have here. It's a red flag to keep in mind. Anyway, we get very different results depending on how we split the data. In this case, I didn't change the proportion of data that's selected, merely how it's split. So that's good to know. How you split can dramatically affect your model. In some cases it generalizes well and other times it doesn't. 
 
 An obvious question you're probably asking is how do I best split my data? Trial and error?
 
-No, there's a better method. For large datasets, it's called train/validation/test split and for small to medium-sized datasets, it's called Cross-Validation. We'll pickup that discussion next time.
+No, there are better methods: For large datasets, it's called train/validation/test split and for small to medium-sized datasets, it's called Cross-Validation. We'll pickup that discussion next time.
