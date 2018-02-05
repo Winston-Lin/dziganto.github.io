@@ -7,9 +7,9 @@ categories: [Cross-Validation, Data Science, Machine Learning, Model Tuning, Pyt
 ![Comic](/assets/images/cv_image.png?raw=true){: .center-image }
 
 ## Introduction
-Last time we discussed training error (aka in-sample error), test error (aka out-of-sample error), and train/test split. We learned that training a model on all the available data and then testing on that very same data is an awful way to build models because we have no indication as to how well that model will perform on unseen data. In other words, we don't know if the model is essentially memorizing the data it'ss seen or if it's truly picking up the pattern inherent in the data (i.e. its ability to generalize). 
+Last time we discussed training error (aka in-sample error), test error (aka out-of-sample error), and train/test split. We learned that training a model on all the available data and then testing on that very same data is an awful way to build models because we have no indication as to how well that model will perform on unseen data. In other words, we don't know if the model is essentially memorizing the data it's seen or if it's truly picking up the pattern inherent in the data (i.e. its ability to generalize). 
 
-To remedy that situation, we implemented train/test split that effectively holds some data aside from the model building process for testing at the very end when the model is fully trained. This allows us to see how the model performs on unseen data. This gives us some indication as to whether the model generalizes or not. 
+To remedy that situation, we implemented train/test split that effectively holds some data aside from the model building process for testing at the very end when the model is fully trained. This allows us to see how the model performs on unseen data and gives us some indication as to whether the model generalizes or not. 
 
 Now that we have a solid foundation, we can move on to more advanced topics that will take our model-building skills to the next level. Specifically, we'll dig in to the following topics:
 * Bias-Variance Tradeoff
@@ -76,7 +76,7 @@ Pay very close attention to this section. It is one of the most important concep
 
 We already know how to calculate training error and test error. So far we've simply been using test error as a way to gauge how well our model will generalize. That was a good first step but it's not good enough. We can do better. We can tune our model. Let's drill down.
 
-We can compare training error and something called *validation error* to figure out what's going on with our model - more on that in a minute. Depending on the values of each, our model can be in one of three regions:
+We can compare training error and something called *validation error* to figure out what's going on with our model - more on validation error in a minute. Depending on the values of each, our model can be in one of three regions:
 
 1) **High Bias** - underfitting  
 2) **Goldilocks Zone** - just right (something I made up; not an industry term FYI)  
@@ -156,7 +156,7 @@ Hmm, our training error is somewhat lower than the test error. In fact, the test
 
 Which region does that put us in? 
 
-That's right, it's in the *High Variance* region, which means our model is overfitting slightly. Again, that means our model has too much complexity. 
+That's right, it's every so slightly in the *High Variance* region, which means our model is overfitting somewhat. Again, that means our model has too much complexity. 
 
 Unfortunately, we're stuck at this point. 
 
