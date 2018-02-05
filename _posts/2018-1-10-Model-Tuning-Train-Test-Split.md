@@ -166,7 +166,7 @@ But here's the thing: our model is rubbish no matter what. We could have had an 
 ## Why This Model Sucks
 In the most extreme case, I can create a model that is really a lookup table. You give me an input and I give you the output. Another way to say this is take a model and let it memorize the data it can see. The result: an R^2 of 1 and an RMSE of 0. 
 
-Clearly, nobody thinks that's a great model. The point of building a model is to predict something interesting. You can't do that with a lookup table. Yet, that's exactly how we tried to assess our linear regression model above - give it some data and then see how well it does predicting that SAME data. That's why it's rubbish. DON'T EVER DO THIS!
+Clearly, nobody thinks that's a great model. The point of building a model is to predict something interesting. You can't do that with a lookup table. Yet, that's exactly how we tried to assess our linear regression model above - give it some data and then see how well it does predicting that SAME data. That's why it's rubbish. DON'T EVER DO THIS.
 
 What we've done is look at something called *in-sample error* (ISE) or *training error*. It is a useful metric but only tells half the story. 
 
