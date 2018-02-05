@@ -303,7 +303,9 @@ OS_R^2: -0.7537 | OS_RMSE: 41.286
 * RMSE show great variability in-sample vs out-of-sample
 
 ### Discussion
-It's no surprise that R^2 is higher in-sample. The surprise here is RMSE. What's particularly interesting is that sometimes training error is higher than test error and sometimes it's the other way around. This is a small dataset so the skewed distribution in the target variable is producing this effect. A much larger dataset would be affected to a much smaller degree. With that in mind, you'll almost always see test errors that are higher than training errors. If not, there's something funky going on in your data like we have here. It's a red flag to keep in mind. Anyway, we get very different results depending on how we split the data. In this case, I didn't change the proportion of data that's selected, merely how it's split. So that's good to know. How you split can dramatically affect your model. In some cases it generalizes well and other times it doesn't. 
+It's no surprise that R^2 is higher in-sample. The surprise here is RMSE. What's particularly interesting is that sometimes training error is higher than test error and sometimes it's the other way around. This is a small dataset so the skewed distribution in the target variable is producing this effect. A much larger dataset would be affected to a much smaller degree. 
+
+With that in mind, you'll almost always see test errors that are higher than training errors. If not, there's something funky going on in your data like we have here. It's a red flag to keep in mind. Anyway, we get very different results depending on how we split the data. In this case, I didn't change the proportion of data that's selected, merely how it's split. So that's good to know. How you split can dramatically affect your model. In some cases it generalizes well and other times it doesn't. 
 
 An obvious question you're probably asking is how do I best split my data? Trial and error?
 
