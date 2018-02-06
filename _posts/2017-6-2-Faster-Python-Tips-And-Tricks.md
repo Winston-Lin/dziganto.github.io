@@ -146,6 +146,8 @@ Approach #2
 ```
 Generator expressions are certainly easy to use as they look almost identical to list expressions. So do they perform as touted? In both versions, the answer is unequivocally YES! List expressions scaled with the data whereas generator expressions scaled in constant time for both versions. An interesing result is that Py27 generator expressions were slightly faster than Py35. I am unclear as to why that is the case. Worth exploring in the future. 
 
+> Update: Generator expressions seem to evaluate lazily, meaning they do nothing until you call for some action. This would explain why they seem to scale infinitely well. The big takeaway is generator expressions allow you to handle data that won't fit into memory as well as an infinite stream of data. List expressions breakdown in both scenarios.
+
 ![LoopOverCollectionPy35](/assets/images/listgenexppy35.png?raw=true){: .center-image }
 
 ## Dots
