@@ -115,7 +115,7 @@ Let's look at one more plot to drive these ideas home.
 
 ![Bias-Variance Target Pic](/assets/images/bias-and-variance-targets.jpg?raw=true){: .center-image }
 
-Imagine you've entered an archery competition. You receive a score based on which portion of the target you hit - 0 for the red circle (bullseye), 1 for the blue, and 2 for the while. The goal is to minimize your score and you do that by hitting as many bullseyes as possible.
+Imagine you've entered an archery competition. You receive a score based on which portion of the target you hit: 0 for the red circle (bullseye), 1 for the blue, and 2 for the while. The goal is to minimize your score and you do that by hitting as many bullseyes as possible.
 
 The archery metaphor is a useful analog to explain what we're trying to accomplish by building a model. Given different datasets (equivalent to different arrows), we want a model that predicts as closely as possible to observed data (aka targets). 
 
