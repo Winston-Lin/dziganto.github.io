@@ -7,7 +7,7 @@ categories: [Cross-Validation, Data Science, Machine Learning, Model Tuning, Pyt
 ![Comic](/assets/images/cv_image.png?raw=true){: .center-image }
 
 ## Introduction
-Last time we discussed training error, test error, and train/test split. We learned that training a model on all the available data and then testing on that very same data is an awful way to build models because we have no indication as to how well that model will perform on unseen data. In other words, we don't know if the model is essentially memorizing the data it's seen or if it's truly picking up the pattern inherent in the data (i.e. its ability to generalize). 
+Last time in [Model Tuning (Part 1 - Train/Test Split)](https://dziganto.github.io/data%20science/machine%20learning/model%20tuning/python/Model-Tuning-Train-Test-Split/) we discussed training error, test error, and train/test split. We learned that training a model on all the available data and then testing on that very same data is an awful way to build models because we have no indication as to how well that model will perform on unseen data. In other words, we don't know if the model is essentially memorizing the data it's seen or if it's truly picking up the pattern inherent in the data (i.e. its ability to generalize). 
 
 To remedy that situation, we implemented *train/test split* that effectively holds some data aside from the model building process for testing at the very end when the model is fully trained. This allows us to see how the model performs on unseen data and gives us some indication as to whether the model generalizes or not. 
 
