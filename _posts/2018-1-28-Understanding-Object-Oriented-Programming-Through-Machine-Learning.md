@@ -9,9 +9,9 @@ categories: [Classes, Data Science, Linear Regression, Machine Learning, Object-
 ## Introduction
 Object-Oriented Programming (OOP) is not easy to wrap your head around. You can read tutorial after tutorial and sift through example after example only to find your head swimming. Don't worry, you're not alone. 
 
-When I first started learning OOP, I read about bicycles and bank accounts and filing cabinets. I read about all manor of objects with basic and specific characteristics. It was easy to follow along. However, I always felt I was missing something. It wasn't until I had that inexplicable eureka moment that I finally glimpsed the power of OOP. 
+When I first started learning OOP, I read about bicycles and bank accounts and filing cabinets. I read about all manor of objects with both basic and specific characteristics. It was easy to follow along. However, I always felt I was missing something. It wasn't until I had that inexplicable eureka moment that I finally glimpsed the power of OOP. 
 
-However, I always felt as though my eureka moment took longer than it should have. I doubt I'm alone. Therefore, this post is my attempt to explain the basics of OOP through the lens of my favorite subject - machine learning. I hope you find it helpful.
+However, I always felt as though my eureka moment took longer than it should have. I doubt I'm alone. Therefore, this post is my attempt to explain the basics of OOP through the lens of my favorite subject: machine learning. I hope you find it helpful.
 
 ## Setup
 I discussed the basics of linear regression in a previous post entitled [Linear Regression 101 (Part 1 - Basics)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Basics/). If you're unfamiliar, please start there because I'm going to assume you're up to speed. Anyway, in that discussion I showed how to find the parameters of a linear regression model using nothing more than simple linear algebra. We defined a function called **ols** (short for Ordinary Least Squares) that looks like this:
@@ -64,14 +64,14 @@ class MyLinearRegression:
 
 Have no fear if that looks scary or overwhelming. I'll break it down for you and you'll see it's really not that complicated. Just stay with me.
 
-The first thing to notice is that we're defining a *class* as opposed to a function. We do that, unsurprisingly, with the **class** keyword. By convention, you should capitalize your class names. Notice how I named my class **MyLinearRegression**? Starting your classes with a capital letter helps to differentiate them from functions, the latter of which is lower case by convention. 
+The first thing to notice is that we're defining a *class* as opposed to a function. We do that, unsurprisingly, with the **class** keyword. By convention, you should capitalize your class names. Notice how I named my class **MyLinearRegression**? Starting your classes with a capital letter helps to differentiate them from functions, the latter of which is lowercase by convention. 
 
 The next block of code which starts with `def __init__(self, fit_intercept=True):` is where things get more complicated. Stay with me; I promise it's not that bad. 
 
 At a high level, `__init__` provides a recipe for how to build an *instance* of **MyLinearRegression**. Think of `__init__` like a factory. Let's pretend you wanted to crank out hundreds of linear regression models. You can do that one of two ways. First, you have the **ols** function that provides the instructions on how to calculate linear regression parameters. So you could, in theory, save off hundreds of copies of the **ols** function with hundreds of appropriate variable names. There's nothing inherently wrong with that. Or you could save off hundreds of *instances* of class **MyLinearRegression** with hundreds of appropriate variable names. Both accomplish very similar tasks but do so in very different ways. You'll understand why as we get a little further along.
 > Technical note: the **\__init\__** block of code is optional, though it's quite common. You'll know when you need it and when you don't with a bit more practice with OOP.
 
-What the heck is *self*? Since an instance of **MyLinearRegression** can take on any name a user gives it, we need a way to link the user's instance name back to the class so we can accomplish certain tasks. Think of *self* as a variable whose sole job is to learn the name of a particular instance. Say we named a particular instance of **MyLinearRegression** *mlr* like so:
+What the heck is *self*? Since an instance of **MyLinearRegression** can take on any name a user gives it, we need a way to link the user's instance name back to the class so we can accomplish certain tasks. Think of *self* as a variable whose sole job is to learn the name of a particular instance. Say we named a particular instance of the class **MyLinearRegression** as instance *mlr* like so:
 
 ```
 mlr = MyLinearRegression()
@@ -81,7 +81,7 @@ Again, the class **MyLinearRegression** provides instructions on how to build a 
 
 Now this business about `self.coef_`, `self.intercept_`, and `self._fit_intercept`. All three are simply variables, technically called *attributes*, attached to the class object. When we build *mlr*, our class provides a blueprint that calls for the creation of three *attributes*. `self.coef_` and `self.intercept_` are placeholders. We haven't calculated model parameters but when we do we'll place those values into these attributes. `self._fit_intercept` is a boolean (True or False) that is set to True by default per the keyword argument. A user can define whether to calculate the intercept by setting this argument to True or avoid it by setting the argument to False. Since we didn't set *fit_intercept* to False when we created *mlr*, *mlr* will provide the intercept parameter once it's calculated.
 
-Great, let's add a "function" called **fit** which will take an array of data and a vector of ground truth values all to calculate and return linear regression model parameters. 
+Great, let's add a "function" called **fit** which will take an array of data and a vector of ground truth values in order to calculate and return linear regression model parameters. 
 > Note: We're building this class one piece at a time. I'm doing this simply for pedagogical reasons.
 
 ```
@@ -147,7 +147,7 @@ mlr = MyLinearRegression()
 mlr.fit(X_data, y_target)
 ```
 
-We instantiate a model object called *mlr* and then find its model parameters on data (X_data and y_target) passed by the user. Once that's done, we can access the intercept and remaining parameters like so:
+We instantiate a model object called *mlr* and then find its model parameters on data (*X_data* and *y_target*) passed by the user. Once that's done, we can access the intercept and remaining parameters like so:
 
 ```
 intercept = mlr.intercept_
@@ -222,7 +222,9 @@ See how everything (data and methods) is contained or encapsulated in a single c
 
 But wait, there's more.
 
-Say we had another class called **Metrics**. This class captures a number of key metrics associated with regression models (see [Linear Regression 101 (Part 2 - Metrics)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Metrics/)). It looks like this:
+Say we had another class called **Metrics**. This class captures a number of key metrics associated with regression models. See [Linear Regression 101 (Part 2 - Metrics)](https://dziganto.github.io/data%20science/linear%20regression/machine%20learning/python/Linear-Regression-101-Metrics/) for details. 
+
+It looks like this:
 
 ```
 class Metrics:
@@ -387,7 +389,7 @@ class MyLinearRegressionWithInheritance(ModifiedMetrics):
 
 This means **ModifiedMetrics** acts like a base class and **MyLinearRegressionWithInheritance** can inherit from it. Why may this be helpufl? First, it's far more elegant. Secondly, imagine your wrote not just a linear regression algorithm but a Decision Tree and K-Nearest Neighbors, and you wanted each of those algorithms to have access to the same methods that calculate and return key regression metrics. On the one hand, you could copy all that code into each model object. On another hand, you could pass those model objects to the **Metrics** class. Or you could simply inherit **ModifiedMetrics**. While all will work, the last solution is by far the most elegant. It keeps all your code modular. It also ensures you're constructing your classes in a way that won't break your code down the line. In short, it makes your life easier and ensures quality code. It's much easier to change base class methods or add/delete without having to comb through each algorithm to see if you made the required updates. In short, it makes your code manageable at scale.
 
-We covered a lot of ground in short order so this is a good place to stop for now. 
+We covered a lot of ground in short order, so this is a good place to stop for now. 
 
 ## Wrap Up
 OOP is a powerful paradigm, keeping your code organized and manageable at scale. However, it's not a magic bullet. Like any tool, you have to know where and when it's appropriate to use. That means you should spend some time learning at least a handful of OOP design patterns - there are many wonderful resources available. You'll be surprised how much more powerful, elegant, and efficient you're code will be with a little study. 
