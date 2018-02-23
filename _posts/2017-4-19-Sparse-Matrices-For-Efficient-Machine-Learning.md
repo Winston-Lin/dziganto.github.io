@@ -113,7 +113,8 @@ y = np.random.binomial(1, 0.5, 2000)  ## dummy target variable
 ```
 
 ### Spy()
-I mentioned Matplotlib's *spy()* method which allows us to visualize the sparsity of a dataset. *Note: the **%matplotlib inline** is for Jupyter notebook users. Feel free to omit it otherwise.*
+I mentioned Matplotlib's *spy()* method which allows us to visualize the sparsity of a dataset. 
+>*Note: the **%matplotlib inline** is for Jupyter notebook users. Feel free to omit it otherwise.*
 ```
 %matplotlib inline
 import matplotlib.pyplot as plt
