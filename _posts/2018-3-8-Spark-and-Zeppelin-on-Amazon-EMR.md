@@ -30,9 +30,9 @@ See other post
 1. `wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O ~/anaconda.sh`
 2. `bash ~/anaconda.sh -b -p $HOME/anaconda`
 3. `echo -e '\nexport PATH=$HOME/anaconda/bin:$PATH' >> $HOME/.bashrc && source $HOME/.bashrc`
-4. `conda install seaborn pandas`
+4. `conda install seaborn pandas requests`
 
-## Get Data
+## Get Data (SKIP)
 1. `mkdir data`
 2. `cd data`
 3. `wget https://archive.ics.uci.edu/ml/machine-learning-databases/00280/HIGGS.csv.gz`
