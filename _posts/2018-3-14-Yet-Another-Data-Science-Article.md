@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Yet Another Data Science Article
 categories: [data science, satire]
 ---
