@@ -1,6 +1,6 @@
 ---
 published: false
-title: Yet Another Data Science Post
+title: Yet Another Data Science Article
 categories: [data science, satire]
 ---
 
