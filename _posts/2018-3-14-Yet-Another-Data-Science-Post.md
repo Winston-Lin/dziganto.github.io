@@ -9,3 +9,4 @@ categories: [data science, satire]
 
 # Solution
 ![image](/assets/images/ds_solution.png?raw=true){: .center-image }
+
