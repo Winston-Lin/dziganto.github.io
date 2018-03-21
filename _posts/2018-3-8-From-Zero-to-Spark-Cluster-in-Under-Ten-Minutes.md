@@ -12,7 +12,8 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 ## Prerequisites
 1. You have an AWS account.
 2. You have Chrome or Firefox
-3. Basic familiarity with Python and the command line.
+3. You have basic familiarity with the command line.
+4. You have basic familiarity with Python. (Optional) 
 
 ## Foxy Proxy Setup
 1. In Chrome or Firefox, add the **FoxyProxy** extension.
