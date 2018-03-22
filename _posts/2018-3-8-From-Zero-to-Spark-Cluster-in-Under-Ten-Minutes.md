@@ -49,23 +49,26 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 1. `wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O ~/anaconda.sh`
 2. `bash ~/anaconda.sh -b -p $HOME/anaconda`
 3. `echo -e '\nexport PATH=$HOME/anaconda/bin:$PATH' >> $HOME/.bashrc && source $HOME/.bashrc`
-4. `conda install seaborn pandas requests`
-
-## Get Data (SKIP)
-1. `mkdir data`
-2. `cd data`
-3. `wget https://archive.ics.uci.edu/ml/machine-learning-databases/00280/HIGGS.csv.gz`
-4. `gunzip HIGGS.csv.gz`
 
 ## Turn on FoxyProxy 	
-1. Use proxies based on their pre-defined patterns and priorities
+1. Open the browser with FoxyProxy installed
+2. Click FoxyProxy icon
+3. Click ```Use proxies based on their pre-defined patterns and priorities```
 
 ## Amazon EMR Dashboard
-1. Click Enable web connection
-2. Copy/paste command in new Terminal tab (opens port; looks like doesn’t complete but normal)
-3. Click Zeppelin
+1. On EMR dashboard, click ```Enable web connection```
+2. Copy the command at the bottom 
+3. Open new Terminal tab 
+4. Paste command which opens and forwards port (note: it will look like it's not working but it is so leave it alone)
+3. On EMR dashboard, click Zeppelin button
 
 ## Update Zeppelin for Anaconda
-1. Interpreters
-2. Python --> CHANGE PYTHON INTERPRETER: **zeppelin.python** = `/home/hadoop/anaconda/bin/python`
-3. Spark --> CHANGE SPARK INTERPRETER: **zeppelin.pyspark.python** = `/home/hadoop/anaconda/bin/python`
+1. Top right, click button with green dot
+2. In drop down, select ```Interpreters```
+3. Search for **python**
+4. Click ```Edit```
+5. Change **zeppelin.python** from ```python``` to `/home/hadoop/anaconda/bin/python`
+6. Select dropdown for Interpreters again
+7. Search for spark
+8. Click ```Edit```
+9. Change **zeppelin.pyspark.python** from ```python``` to `/home/hadoop/anaconda/bin/python`
