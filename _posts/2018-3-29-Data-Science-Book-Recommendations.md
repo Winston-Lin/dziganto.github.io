@@ -1,6 +1,6 @@
 ---
 published: true
-title: Book Recommendations
+title: Data Science Book Recommendations
 categories: [Data Science, Machine Learning]
 ---
 
