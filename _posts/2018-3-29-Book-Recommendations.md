@@ -1,23 +1,8 @@
 ---
-published: false
+published: true
 title: Book Recommendations
 categories: [Data Science, Machine Learning]
 ---
-
-
-Last week I posted a picture of my data science library (below) and asked for recommendations on great books that I'm missing.
-
-The response was completely overwhelming! 
-
-Thank you all for sharing! 
-
-In an attempt to give back, I combed through the comments to list, categorize, and link all recommendations. 
-
-Note: It wasn't always clear which book should go into which category or even which categories to include, but I did my best.
-
-Enjoy!
-
-
 
 ![image](/assets/images/ml_books.png?raw=true){: .center-image }
 
