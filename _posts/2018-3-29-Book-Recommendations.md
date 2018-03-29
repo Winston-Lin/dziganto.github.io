@@ -11,7 +11,9 @@ The response was completely overwhelming!
 
 Thank you all for sharing! 
 
-In an attempt to give back, I combed through the comments to list, categorize, and link all recommendations. It wasn't always clear which book should go into which category or even which categories to include, but I did my best.
+In an attempt to give back, I combed through the comments to list, categorize, and link all recommendations. 
+
+Note: It wasn't always clear which book should go into which category or even which categories to include, but I did my best.
 
 Enjoy!
 
@@ -19,145 +21,148 @@ Enjoy!
 
 ![image](/assets/images/ml_books.png?raw=true){: .center-image }
 
+
 ## Visualization
 
-Good Charts https://amzn.to/2GUllWE
+[Good Charts](https://amzn.to/2GUllWE)
 
-Visualize This: The FlowingData Guide to Design, Visualization, and Statistics https://amzn.to/2E5uDfj
+[Visualize This: The FlowingData Guide to Design, Visualization, and Statistics](https://amzn.to/2E5uDfj)
 
-The Functional Art: An introduction to information graphics and visualization (Voices That Matter) https://amzn.to/2GjGlZM
+[The Functional Art: An introduction to information graphics and visualization (Voices That Matter)](https://amzn.to/2GjGlZM)
 
 
 
 ## Linear Algebra
 
-Linear Algebra Done Right https://amzn.to/2pR8MU2
+[Linear Algebra Done Right](https://amzn.to/2pR8MU2)
 
 
 
-## Stats 
+## Basic Stats 
 
-An Introduction to Statistical Methods and Data Analysis https://amzn.to/2GmNZ1s
+[An Introduction to Statistical Methods and Data Analysis](https://amzn.to/2GmNZ1s)
 
-OpenIntro Statistics https://bit.ly/1FNQSUQ
+[OpenIntro Statistics](https://bit.ly/1FNQSUQ)
 
-All of Statistics: A Concise Course in Statistical Inference https://amzn.to/2uxET0A
+[All of Statistics: A Concise Course in Statistical Inference](https://amzn.to/2uxET0A)
 
-Statistics for Experimenters: Design, Innovation, and Discovery https://amzn.to/2GjSvOh
+[Statistics for Experimenters: Design, Innovation, and Discovery](https://amzn.to/2GjSvOh)
 
-Handbook of Parametric and Nonparametric Statistical Procedures https://amzn.to/2Ih0Y5F
+[Handbook of Parametric and Nonparametric Statistical Procedures](https://amzn.to/2Ih0Y5F)
 
-Design and Analysis: A Researcher's Handbook https://amzn.to/2pQzkon
+[Design and Analysis: A Researcher's Handbook](https://amzn.to/2pQzkon)
 
-Multivariate Analysis https://amzn.to/2E2YIfK
+[Multivariate Analysis](https://amzn.to/2E2YIfK)
 
-Categorical Data Analysis https://amzn.to/2E2Z06k
+[Categorical Data Analysis](https://amzn.to/2E2Z06k)
 
-Applied Longitudinal Analysis https://amzn.to/2pQqyXA
+[Applied Longitudinal Analysis](https://amzn.to/2pQqyXA)
 
-A Course in Large Sample Theory https://amzn.to/2GUvq5Y
-
+[A Course in Large Sample Theory](https://amzn.to/2GUvq5Y)
 
 
 ## Programming
-The Pragmatic Programmer: From Journeyman to Master https://amzn.to/2pPG1bf
+[The Pragmatic Programmer: From Journeyman to Master https://amzn.to/2pPG1bf
 
+
+## Data Cleaning
+[Best Practices in Data Cleaning](https://amzn.to/2IeCYjy)
 
 
 ## Machine Learning
-Doing Data Science: Straight Talk from the Frontline https://www.amazon.com/Doing-Data-Science-Straight-Frontline/dp/1449358659/ref=sr_1_1?s=books&ie=UTF8&qid=1522336195&sr=1-1&keywords=doing+data+science
+[Doing Data Science: Straight Talk from the Frontline](https://amzn.to/2J5biPk)
 
-Data Science at the Command Line https://www.amazon.com/Data-Science-Command-Line-Time-Tested/dp/1491947853/ref=sr_1_1?s=books&ie=UTF8&qid=1522336493&sr=1-1&keywords=Data+Science+at+the+Command+Line
+[Data Science at the Command Line](https://amzn.to/2GjsmiQ)
 
-Machine Learning: A Probabilistic Perspective https://www.amazon.com/Machine-Learning-Probabilistic-Perspective-Computation/dp/0262018020/ref=sr_1_1?ie=UTF8&qid=1522334225&sr=8-1&keywords=Machine+Learning%3A+A+Probabilistic+Perspective
+[Machine Learning: A Probabilistic Perspective](https://amzn.to/2GjRv0C)
 
-Gaussian Processes for Machine Learning https://www.amazon.com/Gaussian-Processes-Learning-Adaptive-Computation/dp/026218253X/ref=sr_1_1?s=books&ie=UTF8&qid=1522334838&sr=1-1&keywords=Gaussian+Processes+for+Machine+Learning
+[Gaussian Processes for Machine Learning](https://amzn.to/2uB5eL0)
 
-Bayesian Data Analysis https://www.amazon.com/Bayesian-Analysis-Chapman-Statistical-Science/dp/1439840954/ref=sr_1_1?s=books&ie=UTF8&qid=1522334883&sr=1-1&keywords=Bayesian+Data+Analysis
+[Bayesian Data Analysis](https://amzn.to/2uv1N8Z)
 
-Bayesian Reasoning and Machine Learning https://www.amazon.com/Bayesian-Reasoning-Machine-Learning-Barber/dp/0521518148/ref=sr_1_1?s=books&ie=UTF8&qid=1522335157&sr=1-1&keywords=Bayesian+Reasoning+%26+Machine+Learning
+[Bayesian Reasoning and Machine Learning](https://amzn.to/2pRbQQP)
 
-Regression Modeling Strategies: With Applications to Linear Models, Logistic and Ordinal Regression, and Survival Analysis https://www.amazon.com/Regression-Modeling-Strategies-Applications-Statistics/dp/3319194240/ref=sr_1_1?s=books&ie=UTF8&qid=1522334917&sr=1-1&keywords=Regression+Modeling+Strategies
+[Regression Modeling Strategies: With Applications to Linear Models, Logistic and Ordinal Regression, and Survival Analysis](https://amzn.to/2GoqC7X)
 
-Data Analysis Using Regression and Multilevel/Hierarchical Models https://www.amazon.com/Analysis-Regression-Multilevel-Hierarchical-Models/dp/052168689X/ref=sr_1_1?s=books&ie=UTF8&qid=1522334966&sr=1-1&keywords=Data+Analysis+Using+Regression+and+Multilevel%2FHierarchical+Models
+[Data Analysis Using Regression and Multilevel/Hierarchical Models](https://amzn.to/2GVszd6)
 
-Time Series Analysis and Its Applications https://www.amazon.com/Time-Analysis-Its-Applications-Statistics/dp/3319524518/ref=sr_1_1?s=books&ie=UTF8&qid=1522335772&sr=1-1&keywords=time+series+shumway
+[Time Series Analysis and Its Applications](https://amzn.to/2uABVsm)
 
-Applied Survival Analysis: Regression Modeling of Time-to-Event Data https://www.amazon.com/Applied-Survival-Analysis-Time-Event/dp/0471754994/ref=sr_1_1?s=books&ie=UTF8&qid=1522335882&sr=1-1&keywords=Lemeshow+survival+analysis
+[Applied Survival Analysis: Regression Modeling of Time-to-Event Data](https://amzn.to/2uu2srd)
 
-Information Theory, Inference and Learning Algorithms https://www.amazon.com/Information-Theory-Inference-Learning-Algorithms/dp/0521642981/ref=sr_1_1?s=books&ie=UTF8&qid=1522336401&sr=1-1&keywords=Information+Theory%2C+Inference+and+Learning+Algorithms
+[Information Theory, Inference and Learning Algorithms](https://amzn.to/2GEgMlC)
 
-Elements of Information Theory https://www.amazon.com/Elements-Information-Theory-Telecommunications-Processing/dp/0471241954/ref=sr_1_1?s=books&ie=UTF8&qid=1522336457&sr=1-1&keywords=Elements+of+Information+Theory
+[Elements of Information Theory](https://amzn.to/2J1ddEu)
 
-Learning From Data https://www.amazon.com/Learning-Data-Yaser-S-Abu-Mostafa/dp/1600490069/ref=sr_1_3?s=books&ie=UTF8&qid=1522336850&sr=1-3&keywords=Learning+from+Data
+[Learning From Data](https://amzn.to/2pR8T2w)
 
-Evaluating Learning Algorithms: A Classification Perspective https://www.amazon.com/Evaluating-Learning-Algorithms-Classification-Perspective/dp/1107653118/ref=sr_1_1?s=books&ie=UTF8&qid=1522336886&sr=1-1&keywords=Evaluating+Learning+Algorithms
+[Evaluating Learning Algorithms: A Classification Perspective](https://amzn.to/2GYSCjG)
 
-Hands-On Machine Learning with Scikit-Learn and TensorFlow https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291/ref=sr_1_3?s=books&ie=UTF8&qid=1522336923&sr=1-3&keywords=Hands-On+Machine+Learning
+[Hands-On Machine Learning with Scikit-Learn and TensorFlow](https://amzn.to/2E4PK1D)
 
-Machine Learning Refined https://www.amazon.com/Machine-Learning-Refined-Foundations-Applications/dp/1107123526/ref=sr_1_2?s=books&ie=UTF8&qid=1522340072&sr=1-2&keywords=machine+learning+refined
+[Machine Learning Refined](https://amzn.to/2GUDG67)
 
-Best Practices in Data Cleaning https://www.amazon.com/Best-Practices-Data-Cleaning-Everything/dp/1412988012/ref=sr_1_1?s=books&ie=UTF8&qid=1522340132&sr=1-1&keywords=best+practices+in+data+cleaning
+[Understanding Machine Learning: From Theory to Algorithms](https://amzn.to/2IeISB2)
 
-Understanding Machine Learning: From Theory to Algorithms https://www.amazon.com/Understanding-Machine-Learning-Theory-Algorithms/dp/1107057132/ref=sr_1_1?s=books&ie=UTF8&qid=1522340205&sr=1-1&keywords=understanding+machine+learning+from+theory+to+algorithms
+[Machine Learning: An Algorithmic Perspective] https://amzn.to/2J3RV9h
 
-Machine Learning: An Algorithmic Perspective https://www.amazon.com/Machine-Learning-Algorithmic-Perspective-Recognition/dp/1466583282/ref=sr_1_1?s=books&ie=UTF8&qid=1522340260&sr=1-1&keywords=machine+learning+an+algorithmic+perspective
+[Applied Predictive Modeling](https://amzn.to/2GjnA94)
 
-Applied Predictive Modeling https://www.amazon.com/Applied-Predictive-Modeling-Max-Kuhn/dp/1461468485/ref=sr_1_1?s=books&ie=UTF8&qid=1522341488&sr=1-1&keywords=applied+predictive+modeling
-
-Machine Learning: The Art and Science of Algorithms that Make Sense of Data https://www.amazon.com/Machine-Learning-Science-Algorithms-Sense/dp/1107422221/ref=sr_1_1?s=books&ie=UTF8&qid=1522341523&sr=1-1&keywords=machine+learning+flach
+[Machine Learning: The Art and Science of Algorithms that Make Sense of Data](https://amzn.to/2GAQKzT)
 
 
 
 ## Deep Learning
 
-Deep Learning with Python http://www.deeplearningitalia.com/wp-content/uploads/2017/12/Dropbox_Chollet.pdf
+[Deep Learning with Python](https://bit.ly/2pPpLpE)
 
-Supervised Sequence Labelling with Recurrent Neural Networks https://www.cs.toronto.edu/~graves/preprint.pdf
+[Supervised Sequence Labelling with Recurrent Neural Networks](https://bit.ly/2E4T7Wf)
 
 
 
 ## Ethics/Privacy
 
-Sharing Big Data Safely: Managing Data Security https://www.amazon.com/Sharing-Big-Data-Safely-Managing/dp/1491952121/ref=sr_1_1?s=books&ie=UTF8&qid=1522341713&sr=1-1&keywords=sharing+big+data+safely
+[Sharing Big Data Safely: Managing Data Security](https://amzn.to/2GU0Eu3)
 
 
 
 ## Non-technical
 
-Analytics: How to Win with Intelligence https://www.amazon.com/Analytics-How-Intelligence-John-Thompson/dp/1634622375/ref=sr_1_1?s=books&ie=UTF8&qid=1522333917&sr=1-1&keywords=analytics+how+to+win+with+intelligence
+[Analytics: How to Win with Intelligence](https://amzn.to/2GIZ14y)
 
-Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking http://shop.oreilly.com/product/0636920028918.do
+[Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking](https://oreil.ly/JXlOIo)
 
-Naked Statistics: Stripping the Dread from the Data https://www.amazon.com/Naked-Statistics-Stripping-Dread-Data/dp/039334777X/ref=sr_1_1?s=books&ie=UTF8&qid=1522336049&sr=1-1&keywords=Naked+Statistics%3A+Stripping+the+Dread+from+the+Data
+[Naked Statistics: Stripping the Dread from the Data](https://amzn.to/2pNBjL8)
 
-How to Lie with Statistics https://www.amazon.com/How-Lie-Statistics-Darrell-Huff/dp/0393310728/ref=sr_1_1?s=books&ie=UTF8&qid=1522336124&sr=1-1&keywords=How+to+Lie+with+Statistics
+[How to Lie with Statistics](https://amzn.to/2Ghu5Jv)
 
-Mastering Data Mining: The Art and Science of Customer Relationship Management  https://www.amazon.com/Mastering-Data-Mining-Relationship-Management/dp/0471331236/ref=sr_1_1?s=books&ie=UTF8&qid=1522341978&sr=1-1&keywords=mastering+data+mining+the+art+and+science
+[Mastering Data Mining: The Art and Science of Customer Relationship Management](https://amzn.to/2GmhWCQ)
 
-Spin Selling https://www.amazon.com/Spin-Selling-Neil-Rackham/dp/0566076896/ref=sr_1_5?s=books&ie=UTF8&qid=1522341659&sr=1-5&keywords=spin+selling
+[Spin Selling](https://amzn.to/2Gjj9XH)
 
 
 
 ## Pedagogy
 
-Understanding By Design https://www.amazon.com/Understanding-Design-Grant-Wiggins/dp/1416600353/ref=sr_1_1?s=books&ie=UTF8&qid=1522335006&sr=1-1&keywords=Understanding+by+Design
+[Understanding By Design](https://amzn.to/2GmsiyF)
 
-Teaching and Learning STEM: A Practical Guide https://www.amazon.com/Teaching-Learning-STEM-Practical-Guide/dp/1118925815/ref=sr_1_1?s=books&ie=UTF8&qid=1522335118&sr=1-1&keywords=Teaching+and+learning+STEM+a+practical+guide
+[Teaching and Learning STEM: A Practical Guide](https://amzn.to/2GUEXtM)
 
 
 
 ## General Business
 
-The Mind Of The Strategist: The Art of Japanese Business https://www.amazon.com/Mind-Strategist-Art-Japanese-Business/dp/0070479046/ref=sr_1_1?s=books&ie=UTF8&qid=1522335196&sr=1-1&keywords=Mind+of+the+Strategist
+[The Mind Of The Strategist: The Art of Japanese Business](https://amzn.to/2GWoLrZ)
 
-Toyota Kata: Managing People for Improvement, Adaptiveness and Superior Results https://www.amazon.com/Toyota-Kata-Managing-Improvement-Adaptiveness/dp/0071635238/ref=sr_1_1?s=books&ie=UTF8&qid=1522335239&sr=1-1&keywords=Toyota+Kata
+[Toyota Kata: Managing People for Improvement, Adaptiveness and Superior Results](https://amzn.to/2GnmZz2)
 
-Certain to Win https://www.amazon.com/Certain-Win-Chet-Richards/dp/1413453775/ref=sr_1_2?s=books&ie=UTF8&qid=1522335273&sr=1-2&keywords=Certain+to+Win
+[Certain to Win](https://amzn.to/2GjyVpx)
 
 
 
 ## Other
-Against the Gods: The Remarkable Story of Risk https://www.amazon.com/Against-Gods-Remarkable-Story-Risk/dp/0471295639/ref=sr_1_1?s=books&ie=UTF8&qid=1522334462&sr=1-1&keywords=Against+the+Gods  
+[Gödel, Escher, Bach: An Eternal Golden Braid](https://amzn.to/2GyS6ev)
 
-The Machine Stops https://www.goodreads.com/book/show/4711854-the-machine-stops?from_search=true
+[Against the Gods: The Remarkable Story of Risk](https://amzn.to/2GmXP3o)
+
+[The Machine Stops](https://bit.ly/2pTnDgu)
