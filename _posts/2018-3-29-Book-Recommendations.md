@@ -115,7 +115,7 @@ Enjoy!
 
 [Against the Gods: The Remarkable Story of Risk](https://amzn.to/2GmXP3o)
 
-[Gödel, Escher, Bach: An Eternal Golden Braid](https://amzn.to/2GyS6ev)
+[Gödel, Escher, Bach: An Eternal Golden Braid](https://amzn.to/2J7fL46)
 
 [The Machine Stops](https://bit.ly/2pTnDgu)
 
