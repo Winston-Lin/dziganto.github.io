@@ -17,7 +17,7 @@ Enjoy!
 
 
 
-![image](/assets/images/name.jpeg?raw=true){: .center-image }
+![image](/assets/images/ml_books.png?raw=true){: .center-image }
 
 ## Visualization
 
