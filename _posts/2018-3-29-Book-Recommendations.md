@@ -62,7 +62,7 @@ Enjoy!
 
 
 ## Programming
-[The Pragmatic Programmer: From Journeyman to Master https://amzn.to/2pPG1bf
+[The Pragmatic Programmer: From Journeyman to Master](https://amzn.to/2pPG1bf)
 
 
 ## Data Cleaning
@@ -104,7 +104,7 @@ Enjoy!
 
 [Understanding Machine Learning: From Theory to Algorithms](https://amzn.to/2IeISB2)
 
-[Machine Learning: An Algorithmic Perspective] https://amzn.to/2J3RV9h
+[Machine Learning: An Algorithmic Perspective](https://amzn.to/2J3RV9h)
 
 [Applied Predictive Modeling](https://amzn.to/2GjnA94)
 
