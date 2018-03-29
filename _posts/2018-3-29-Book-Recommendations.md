@@ -158,5 +158,5 @@ Certain to Win https://www.amazon.com/Certain-Win-Chet-Richards/dp/1413453775/re
 
 
 ## Other
-Against the Gods: The Remarkable Story of Risk https://www.amazon.com/Against-Gods-Remarkable-Story-Risk/dp/0471295639/ref=sr_1_1?s=books&ie=UTF8&qid=1522334462&sr=1-1&keywords=Against+the+Gods
+Against the Gods: The Remarkable Story of Risk https://www.amazon.com/Against-Gods-Remarkable-Story-Risk/dp/0471295639/ref=sr_1_1?s=books&ie=UTF8&qid=1522334462&sr=1-1&keywords=Against+the+Gods  
 The Machine Stops https://www.goodreads.com/book/show/4711854-the-machine-stops?from_search=true
