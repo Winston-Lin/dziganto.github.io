@@ -12,9 +12,9 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 ## Prerequisites
 1. You have an AWS account.
 2. You have setup a [Key Pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html#create-a-key-pair).
-2. You have `Chrome` or `Firefox`
-3. You have basic familiarity with the command line.
-4. You have basic familiarity with Python. (Optional) 
+3. You have `Chrome` or `Firefox`
+4. You have basic familiarity with the command line.
+5. You have basic familiarity with Python. (Optional) 
 
 ## 1 - Foxy Proxy Setup (Optional: only for Zeppelin)
 1. In `Chrome` or `Firefox`, add the **FoxyProxy** extension.
@@ -31,22 +31,14 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 ## 2 - EMR Cluster Setup
 1. Login in to [AWS](https://aws.amazon.com/).
 2. Navigate to `EMR` located under **Analytics**.
-
 ![EMR](/assets/images/EMR.png?raw=true){: .center-image }
-
 3. Click the `Create cluster` button.
-
 ![Create EMR Cluster](/assets/images/EMR_create_cluster.png?raw=true){: .center-image }
-
 4. You are now in **Step 1: Software and Steps**. Click `Go to advanced options`.
 > Here you can name your cluster and select whichever S3 bucket you want to connect to.
-
 ![EMR Advanced Options](/assets/images/EMR_advanced_options.png?raw=true){: .center-image }
-
 5. Click the big data tools you require. I'll select `Spark` and `Zeppelin` for this tutorial.
-
 ![EMR Software](/assets/images/EMR_select_software.png?raw=true){: .center-image }
-
 6. Click `Next` at bottom right of screen.
 7. In **Step 2: Hardware**, select the instance types, instance counts, on-demand or spot pricing, and auto-scaling options.
 > For this tutorial we'll simply change the instance type to `m4.xlarge` and Core to 1 instance. Everything else will remain as default. See the following picture for details.
