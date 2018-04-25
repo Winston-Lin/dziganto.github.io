@@ -42,6 +42,7 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 6. Click `Next` at bottom right of screen.  
 7. In **Step 2: Hardware**, select the instance types, instance counts, on-demand or spot pricing, and auto-scaling options.
 > For this tutorial we'll simply change the instance type to `m4.xlarge` and Core to 1 instance. Everything else will remain as default. See the following picture for details.  
+
 ![EMR Software](/assets/images/EMR_instance_types.png?raw=true){: .center-image }  
 8. Click `Next` at bottom right of screen.  
 9. The next page is **Step 3: General Cluster Settings** Here you have the chance to rename your cluster, select S3 bucket, and add a bootstrap script - among other options.  
