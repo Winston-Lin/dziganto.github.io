@@ -118,8 +118,8 @@ We have to update the Python path in Zeppelin to leverage the new version we ins
 Admittedly, while that's not a complicated process, it is time consuming. The good news is that you never have to configure FoxyProxy again AND there are neat little tricks you can add to make the build process much easier. For example, you can add a bootstrap script that will install and configure miniconda on all nodes during the build. 
 
 Furthermore, if you want to spin up another cluster that is similar or identical to the one we just built, all you have to do is:
-1. Navigate to the EMR dashboard 
-2. Select the cluster you want to mimic 
-3. Select `Clone` 
+1. Navigate to the EMR dashboard. 
+2. Select the cluster you want to mimic. 
+3. Select `Clone`. 
 
 You can start building another cluster in seconds! 
