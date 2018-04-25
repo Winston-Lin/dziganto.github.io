@@ -30,30 +30,35 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 
 ## 2 - EMR Cluster Setup
 1. Login in to [AWS](https://aws.amazon.com/).
-2. Navigate to `EMR` located under **Analytics**.
-![EMR](/assets/images/EMR.png?raw=true){: .center-image }
+2. Navigate to `EMR` located under **Analytics**.  
+
+![EMR](/assets/images/EMR.png?raw=true){: .center-image }  
 3. Click the `Create cluster` button.
 ![Create EMR Cluster](/assets/images/EMR_create_cluster.png?raw=true){: .center-image }
 4. You are now in **Step 1: Software and Steps**. Click `Go to advanced options`.
 > Here you can name your cluster and select whichever S3 bucket you want to connect to.
-![EMR Advanced Options](/assets/images/EMR_advanced_options.png?raw=true){: .center-image }
+
+![EMR Advanced Options](/assets/images/EMR_advanced_options.png?raw=true){: .center-image }  
 5. Click the big data tools you require. I'll select `Spark` and `Zeppelin` for this tutorial.
-![EMR Software](/assets/images/EMR_select_software.png?raw=true){: .center-image }
-6. Click `Next` at bottom right of screen.
+![EMR Software](/assets/images/EMR_select_software.png?raw=true){: .center-image }  
+6. Click `Next` at bottom right of screen.  
 7. In **Step 2: Hardware**, select the instance types, instance counts, on-demand or spot pricing, and auto-scaling options.
 > For this tutorial we'll simply change the instance type to `m4.xlarge` and Core to 1 instance. Everything else will remain as default. See the following picture for details.  
-![EMR Software](/assets/images/EMR_instance_types.png?raw=true){: .center-image }
-8. Click `Next` at bottom right of screen.
-9. The next page is **Step 3: General Cluster Settings** Here you have the chance to rename your cluster, select S3 bucket, and add a bootstrap script - among other options. 
-10. Click `Next` at bottom right of screen.
+
+![EMR Software](/assets/images/EMR_instance_types.png?raw=true){: .center-image }  
+8. Click `Next` at bottom right of screen.  
+9. The next page is **Step 3: General Cluster Settings** Here you have the chance to rename your cluster, select S3 bucket, and add a bootstrap script - among other options.  
+10. Click `Next` at bottom right of screen.  
 11. The next page is **Step 4: Security**. It is imperative that you select a predefined key pair. 
-> Do NOT proceed without a key!
+> Do NOT proceed without a key!  
 12. Click `Create cluster` at bottom right of screen.
 > A new screen pops up that looks like this:   
-![EMR Cluster Creation](/assets/images/EMR_cluster_creation.png?raw=true){: .center-image }
+
+![EMR Cluster Creation](/assets/images/EMR_cluster_creation.png?raw=true){: .center-image }  
 10. Your cluster is finished building when you see a status of **Waiting** in green. 
 > Be patient as this will take 5+ minutes depending on which big data software you installed. It's not unusual for the build process to take 10-15 minutes or more. Here's what a complete build looks like:  
-![EMR Cluster Running](/assets/images/EMR_cluster_running.png?raw=true){: .center-image }
+
+![EMR Cluster Running](/assets/images/EMR_cluster_running.png?raw=true){: .center-image }  
 11. Congratulations, you have a cluster running Spark!
 
 ## 3 - Update MyIP (Optional)
