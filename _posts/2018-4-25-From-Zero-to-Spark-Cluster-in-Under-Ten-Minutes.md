@@ -129,4 +129,6 @@ Furthermore, if you want to spin up another cluster that is similar or identical
 
 You can start building another cluster in seconds! 
 
+---
+
 # Reminder: Don't forget to terminate your cluster when you're done.
