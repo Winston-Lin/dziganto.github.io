@@ -34,7 +34,7 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 
 ![EMR](/assets/images/EMR.png?raw=true){: .center-image }  
 3. Click the `Create cluster` button.
-![Create EMR Cluster](/assets/images/EMR_create_cluster.png?raw=true){: .center-image }
+![Create EMR Cluster](/assets/images/EMR_create_cluster.png?raw=true){: .center-image }  
 4. You are now in **Step 1: Software and Steps**. Click `Go to advanced options`.
 > Here you can name your cluster and select whichever S3 bucket you want to connect to.
 
@@ -55,11 +55,11 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 > A new screen pops up that looks like this:   
 
 ![EMR Cluster Creation](/assets/images/EMR_cluster_creation.png?raw=true){: .center-image }  
-10. Your cluster is finished building when you see a status of **Waiting** in green. 
+13. Your cluster is finished building when you see a status of **Waiting** in green. 
 > Be patient as this will take 5+ minutes depending on which big data software you installed. It's not unusual for the build process to take 10-15 minutes or more. Here's what a complete build looks like:  
 
 ![EMR Cluster Running](/assets/images/EMR_cluster_running.png?raw=true){: .center-image }  
-11. Congratulations, you have a cluster running Spark!
+14. Congratulations, you have a cluster running Spark!
 
 ## 3 - Update MyIP (Optional)
 I like to set a location-specific IP for each cluster I build. This is completely optional. However, should you choose to do this, you'll have to update your IP manually or by security group. Here's how to do that manually:
