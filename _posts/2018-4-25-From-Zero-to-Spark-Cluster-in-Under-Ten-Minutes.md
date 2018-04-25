@@ -31,7 +31,6 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 ## 2 - EMR Cluster Setup
 1. Login in to [AWS](https://aws.amazon.com/).
 2. Navigate to `EMR` located under **Analytics**.  
-
 ![EMR](/assets/images/EMR.png?raw=true){: .center-image }  
 3. Click the `Create cluster` button.
 ![Create EMR Cluster](/assets/images/EMR_create_cluster.png?raw=true){: .center-image }  
