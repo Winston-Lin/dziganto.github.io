@@ -41,18 +41,16 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 ![EMR Software](/assets/images/EMR_select_software.png?raw=true){: .center-image }  
 6. Click `Next` at bottom right of screen.  
 7. In **Step 2: Hardware**, select the instance types, instance counts, on-demand or spot pricing, and auto-scaling options.
-> For this tutorial we'll simply change the instance type to `m4.xlarge` and Core to 1 instance. Everything else will remain as default. See the following picture for details.  
-
+8. For this tutorial we'll simply change the instance type to `m4.xlarge` and Core to 1 instance. Everything else will remain as default. See the following picture for details.  
 ![EMR Software](/assets/images/EMR_instance_types.png?raw=true){: .center-image }  
-8. Click `Next` at bottom right of screen.  
-9. The next page is **Step 3: General Cluster Settings** Here you have the chance to rename your cluster, select S3 bucket, and add a bootstrap script - among other options.  
-10. Click `Next` at bottom right of screen.  
-11. The next page is **Step 4: Security**. It is imperative that you select a predefined key pair. 
+9. Click `Next` at bottom right of screen.  
+10. The next page is **Step 3: General Cluster Settings** Here you have the chance to rename your cluster, select S3 bucket, and add a bootstrap script - among other options.  
+11. Click `Next` at bottom right of screen.  
+12. The next page is **Step 4: Security**. It is imperative that you select a predefined key pair. 
 > Do NOT proceed without a key!  
-12. Click `Create cluster` at bottom right of screen.
-> A new screen pops up that looks like this:   
+13. Click `Create cluster` at bottom right of screen. A new screen pops up that looks like this:   
 ![EMR Cluster Creation](/assets/images/EMR_cluster_creation.png?raw=true){: .center-image }  
-13. Your cluster is finished building when you see a status of **Waiting** in green. 
+14. Your cluster is finished building when you see a status of **Waiting** in green. 
 > Be patient as this will take 5+ minutes depending on which big data software you installed. It's not unusual for the build process to take 10-15 minutes or more. Here's what a complete build looks like:  
 ![EMR Cluster Running](/assets/images/EMR_cluster_running.png?raw=true){: .center-image }  
 14. Congratulations, you have a cluster running Spark!
@@ -84,7 +82,9 @@ Let's install Python and conda on this Master node now that we're logged in. Cop
 4. This process is successful if when you type `which python` you get **~/anaconda/bin/python**.
 5. You can now install any python package you want with `conda install package_name`.
 6. Congratulations, you now have Python and conda on your Master node.
-> Note that miniconda is not installed on the Core node. You can do that separately or consider creating a bootstrap script that will automatically take care of this for you upon build. 
+> Note that miniconda is not installed on the Core node. 
+> 
+> You can do that separately or consider creating a bootstrap script that will automatically take care of this for you upon build. 
 
 ## 6 - Access Zeppelin Remotely (Optional)
 1. Open your browser that has FoxyProxy installed.
