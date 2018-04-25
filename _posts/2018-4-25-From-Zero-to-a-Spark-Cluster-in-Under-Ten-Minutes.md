@@ -42,9 +42,7 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 6. Click `Next` at bottom right of screen.
 7. In **Step 2: Hardware**, select the instance types, instance counts, on-demand or spot pricing, and auto-scaling options.
 > For this tutorial we'll simply change the instance type to `m4.xlarge` and Core to 1 instance. Everything else will remain as default. See the following picture for details.
-
 ![EMR Software](/assets/images/EMR_instance_types.png?raw=true){: .center-image }
-
 8. Click `Next` at bottom right of screen.
 9. The next page is **Step 3: General Cluster Settings** Here you have the chance to rename your cluster, select S3 bucket, and add a bootstrap script - among other options. 
 10. Click `Next` at bottom right of screen.
@@ -52,14 +50,10 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 > Do NOT proceed without a key!
 12. Click `Create cluster` at bottom right of screen.
 > A new screen pops up that looks like this: 
-
 ![EMR Cluster Creation](/assets/images/EMR_cluster_creation.png?raw=true){: .center-image }
-
 10. Your cluster is finished building when you see a status of **Waiting** in green. 
 > Be patient as this will take 5+ minutes depending on which big data software you installed. It's not unusual for the build process to take 10-15 minutes or more. Here's what a complete build looks like:
-
 ![EMR Cluster Running](/assets/images/EMR_cluster_running.png?raw=true){: .center-image }
-
 11. Congratulations, you have a cluster running Spark!
 
 ## 3 - Update MyIP (Optional)
@@ -74,9 +68,7 @@ I like to set a location-specific IP for each cluster I build. This is completel
 ## 4 - SSH Into Your Cluster
 1. Navigate to EMR dashboard.
 2. Click `SSH` button.
-
 ![SSH](/assets/images/EMR_SSH.png?raw=true){: .center-image }
-
 3. Copy the command in the code block. Be sure to update the path to your key if it's not located in your Home. 
 4. Open Terminal and paste command.
 5. A prompt will ask if you want to continue connecting. Type `yes`.
