@@ -1,6 +1,6 @@
 ---
 published: true
-title: From Zero to a Spark Cluster in Under 10 Minutes
+title: From Zero to Spark Cluster in Under 10 Minutes
 categories: [Amazon EMR, Apache Spark, Apache Zeppelin, Big Data]
 ---
 
