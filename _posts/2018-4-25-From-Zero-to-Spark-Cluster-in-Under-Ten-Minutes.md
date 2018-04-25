@@ -4,7 +4,7 @@ title: From Zero to Spark Cluster in Under 10 Minutes
 categories: [Amazon EMR, Apache Spark, Apache Zeppelin, Big Data]
 ---
 
-![image](/assets/images/name.jpeg?raw=true){: .center-image }
+![image](/assets/images/Amazon_EMR_main.png?raw=true){: .center-image }
 
 ## Objective
 In this no frills post, you'll learn how to setup a big data cluster on Amazon EMR in less than ten minutes. 
@@ -76,10 +76,17 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 
 11. Congratulations, you have a cluster running Spark!
 
-## Amazon EMR Dashboard
-1. Security group for Master (MyIP)
-2. MyIP for SSH
-3. SSH in
+## Update MyIP (Optional)
+I like to set a location-specific IP for each cluster I build. This is completely optional. However, should you choose to do this, you'll have to update your IP manually or by security group. Here's how to do that manually:
+1. Still in the EMR dashboard, locate `Security groups for Master:`. Click it.
+2. On next page select **Master group**.
+3. Towards the bottom of the page select `Inbound` tab.
+4. Then click `Edit`.
+5. Select `MyIP` for SSH type.
+6. Click `Save`.
+
+## SSH Into Your Cluster
+
 
 ## Install Miniconda
 1. `wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O ~/anaconda.sh`
