@@ -11,7 +11,7 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 
 ## Prerequisites
 1. You have an AWS account.
-2. You have setup a [Key Pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html#create-a-key-pair)
+2. You have setup a [Key Pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html#create-a-key-pair).
 2. You have `Chrome` or `Firefox`
 3. You have basic familiarity with the command line.
 4. You have basic familiarity with Python. (Optional) 
@@ -49,11 +49,7 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 
 6. Click `Next` at bottom right of screen.
 7. In **Step 2: Hardware**, select the instance types, instance counts, on-demand or spot pricing, and auto-scaling options.
-> For this tutorial we'll simply change the instance type to `m4.xlarge` and Core to 1 instance. 
->
-> Everything else will remain as default.
->
-> See following picture for details.
+> For this tutorial we'll simply change the instance type to `m4.xlarge` and Core to 1 instance. Everything else will remain as default. See the following picture for details.
 
 ![EMR Software](/assets/images/EMR_instance_types.png?raw=true){: .center-image }
 
@@ -68,9 +64,7 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 ![EMR Cluster Creation](/assets/images/EMR_cluster_creation.png?raw=true){: .center-image }
 
 10. Your cluster is finished building when you see a status of **Waiting** in green. 
-> Be patient as this will take 5+ minutes depending on which big data software you installed. It's not unusual for the build process to take 10-15 minutes or more. 
->
-> Here's what a complete build looks like:
+> Be patient as this will take 5+ minutes depending on which big data software you installed. It's not unusual for the build process to take 10-15 minutes or more. Here's what a complete build looks like:
 
 ![EMR Cluster Running](/assets/images/EMR_cluster_running.png?raw=true){: .center-image }
 
