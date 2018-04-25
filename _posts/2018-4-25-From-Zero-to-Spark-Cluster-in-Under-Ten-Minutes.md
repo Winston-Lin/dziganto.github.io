@@ -16,7 +16,7 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 3. You have basic familiarity with the command line.
 4. You have basic familiarity with Python. (Optional) 
 
-## Foxy Proxy Setup (Optional: only for Zeppelin)
+## 1 - Foxy Proxy Setup (Optional: only for Zeppelin)
 1. In `Chrome` or `Firefox`, add the **FoxyProxy** extension.
 2. Restart browser after installing FoxyProxy.
 3. Open your favorite text editor and save [this code](https://github.com/dziganto/dziganto.github.io/blob/master/_scripts/foxyproxy-settings.xml) as **foxyproxy-settings.xml**. Keep track of where you save it.
@@ -28,7 +28,7 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 9. Click `Open`.
 10. Congratulations, Foxy Proxy is now setup.
 
-## EMR Cluster Setup
+## 2 - EMR Cluster Setup
 1. Login in to [AWS](https://aws.amazon.com/).
 2. Navigate to `EMR` located under **Analytics**.
 
@@ -70,7 +70,7 @@ In this no frills post, you'll learn how to setup a big data cluster on Amazon E
 
 11. Congratulations, you have a cluster running Spark!
 
-## Update MyIP (Optional)
+## 3 - Update MyIP (Optional)
 I like to set a location-specific IP for each cluster I build. This is completely optional. However, should you choose to do this, you'll have to update your IP manually or by security group. Here's how to do that manually:
 1. Still in the EMR dashboard, locate `Security groups for Master:`. Click it.
 2. On next page select **Master group**.
@@ -79,7 +79,7 @@ I like to set a location-specific IP for each cluster I build. This is completel
 5. Select `MyIP` for SSH type.
 6. Click `Save`.
 
-## SSH Into Your Cluster
+## 4 - SSH Into Your Cluster
 1. Navigate to EMR dashboard.
 2. Click `SSH` button.
 
@@ -91,7 +91,7 @@ I like to set a location-specific IP for each cluster I build. This is completel
 6. A large EMR logo will pop up in your Terminal window if you followed all the steps.
 7. Congratulations, you have setup your first EMR cluster and can access it remotely.
 
-## Install Miniconda on Master
+## 5 - Install Miniconda on Master (Optional)
 Let's install Python and conda on this Master node now that we're logged in. Copy and paste the following commands to install and configure Miniconda.
 1. `wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O ~/anaconda.sh` 
 2. `bash ~/anaconda.sh -b -p $HOME/anaconda`
@@ -101,26 +101,31 @@ Let's install Python and conda on this Master node now that we're logged in. Cop
 6. Congratulations, you now have Python and conda on your Master node.
 > Note that miniconda is not installed on the Core node. You can do that separately or consider creating a bootstrap script that will automatically take care of this for you upon build. 
 
-## Access Zeppelin Remotely (Optional)
-The first thing we need to do is to turn on FoxyProxy.
+## 6 - Access Zeppelin Remotely (Optional)
 1. Open your browser that has FoxyProxy installed.
 2. Click `FoxyProxy icon`.
 3. Click `Use proxies based on their pre-defined patterns and priorities`.
+4. On EMR dashboard, click `Enable web connection`.
+5. Copy the command in the code block.
+6. Open new Terminal tab.
+7. Paste command which opens and forwards port 
+> Note: it will look like it's not working but it is so leave it alone!
+8. On EMR dashboard, the `Zeppelin` button should now be blue. Click on it.
+9. You are successful if Zeppelin opens in a new tab in your browser.
+10. Congratulations, you can access your EMR cluster through Zeppelin!
 
-## Amazon EMR Dashboard
-1. On EMR dashboard, click ```Enable web connection```
-2. Copy the command at the bottom 
-3. Open new Terminal tab 
-4. Paste command which opens and forwards port (note: it will look like it's not working but it is so leave it alone)
-3. On EMR dashboard, click Zeppelin button
-
-## Update Zeppelin for Anaconda
-1. Top right, click button with green dot
-2. In drop down, select ```Interpreters```
-3. Search for **python**
-4. Click ```Edit```
+## 7 - Update Zeppelin for Anaconda (Optional)
+We have to update the Python path in Zeppelin to leverage the new version we installed in step 5. 
+1. At the top right of Zeppelin, click `anonymous`.
+2. In drop down, select `Interpreter`.
+3. Search for **python**.
+4. Click `Edit`.
 5. Change **zeppelin.python** from ```python``` to `/home/hadoop/anaconda/bin/python`
-6. Select dropdown for Interpreters again
-7. Search for spark
-8. Click ```Edit```
+6. Click `Save` on bottom left.
+6. Select dropdown for Interpreters again.
+7. Search for spark.
+8. Click `Edit`.
 9. Change **zeppelin.pyspark.python** from ```python``` to `/home/hadoop/anaconda/bin/python`
+10. Click `Save` on bottom left. 
+11. Navigate back to Zeppelin Home by clicking `Zeppelin` top left.
+12. Congratulations, you have all the tools you need to run PySpark on a Spark cluster!
