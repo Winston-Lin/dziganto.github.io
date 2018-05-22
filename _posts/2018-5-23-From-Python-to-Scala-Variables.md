@@ -4,6 +4,8 @@ title: From Python to Scala - Variables (lesson 1)
 categories: [Python, Scala]
 ---
 
+![Scala](/assets/images/scala_logo.png?raw=true){: .center-image }
+
 ## Introduction
 Python is a beautiful, high-level programming language. I've solved innumerable problems with it over the years, so I have a particular fondness for its abilities. However, no tool is perfect for everything. Each has its strengths and each has its weaknesses. Part of Python's power comes from its object-oriented construction. With it, you can do some pretty amazing things. However, functional programming has proven itself a powerful tool for massive scale systems. Therefore, it is time to move beyond Python to the wonderful world of Scala.
 
