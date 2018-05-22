@@ -6,13 +6,13 @@ main:
     url: /cryptography/
   - title: "DL/ML"
     url: /deep learning/
-  - title: "Info Theory"
-    url: /information theory/
-  - title: "Python"
+  - title: "Programming"
     url: /python/   
-  - title: "Misc"
-    url: /misc/
   - title: "Talks"
     url: /talks/
   - title: "Resources"
     url: /resources/
+  - title: "Info Theory"
+    url: /information theory/
+  - title: "Misc"
+    url: /misc/
