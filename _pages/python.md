@@ -9,4 +9,4 @@ author_profile: true
 [Faster Python - Tips & Tricks](https://dziganto.github.io/python/Faster-Python-Tips-And-Tricks/)  
 
 ## Scala
-[From Python to Scala - Variables (lesson 1)](https://dziganto.github.io/python/scala/From-Python-to-Scala-Variables/)
+[From Python to Scala - Variables](https://dziganto.github.io/python/scala/From-Python-to-Scala-Variables/)
