@@ -1,6 +1,6 @@
 ---
 published: true
-title: From Python to Scala - Variables (lesson 1)
+title: From Python to Scala - Variables
 categories: [Python, Scala]
 ---
 
