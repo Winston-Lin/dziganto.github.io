@@ -31,7 +31,7 @@ Let's look at a few plots to make sure we understand trend, seasonality, and res
 ### Residuals
 ![Residuals](/assets/images/residuals.png?raw=true){: .center-image }
 
-Now that you have the big picture, let's look at the nuts and bolts. I'll show you how I created the data above, how to create the plots shown above, and how to decompose a time series model in Python. 
+Now that you have the big picture, let's look at the nuts and bolts. I'll show you how I created the data above, how to create derivatives of the plots shown above, and how to decompose a time series model in Python. 
 
 # Create Time Series Data
 Time series data is data that is measured at equally-spaced intervals. Think of a sensor that takes measurements every minute. 
