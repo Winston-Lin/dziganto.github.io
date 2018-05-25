@@ -4,13 +4,13 @@ title: Introduction to Time Series
 categories: [Python, Time Series]
 ---
 
-![Time Series](/assets/images/<replace>?raw=true){: .center-image }
+![Time Series](/assets/images/time_series_title.png?raw=true){: .center-image }
 
 # Introduction
 
 Dealing with data that is sequential in nature requires special techniques. Unlike traditional Ordinary Least Squares or Decision Trees where the observations are independent, time series data is such that there is correlation between successive samples. In other words, order very much matters. Think stock prices or daily temperatures. Identifying time series data and knowing what to do next is a valuable skill for any modeler. 
 
-Time series data has three components: 
+The first step on our journey is to identify the three components of time series data: 
 1. Trend
 2. Seasonality
 3. Residuals 
@@ -23,18 +23,19 @@ Let's look at a few plots to make sure we understand trend, seasonality, and res
 ![TS Data](/assets/images/timeseries.png?raw=true){: .center-image }
 
 ### Trend
-![Trend](/assets/images/trend.png?raw=true){: .center-image }
+![Trend](/assets/images/trend_component.png?raw=true){: .center-image }
 
 ### Seasonality
-![Seasonality](/assets/images/seasonality.png?raw=true){: .center-image }
+![Seasonality](/assets/images/seasonal_component.png?raw=true){: .center-image }
 
 ### Residuals
 ![Residuals](/assets/images/residuals.png?raw=true){: .center-image }
 
-Now that you have the big picture, let's look at the nuts and bolts. I'll show you how I created the data above. I'll also show you how to decompose a time series model in Python as well as how to create the plots shown above. 
+Now that you have the big picture, let's look at the nuts and bolts. I'll show you how I created the data above, how to create the plots shown above, and how to decompose a time series model in Python. 
 
 # Create Time Series Data
-Time series data is data that is measured at equally-spaced intervals. Think of a sensor that takes measurements every minute. On the other hand, suppose you had a sensor that took measurements at random times; that is not time series. 
+Time series data is data that is measured at equally-spaced intervals. Think of a sensor that takes measurements every minute. 
+> A sensor that takes measurements at random times is not time series. 
 
 ### Trend
 The first step is to create a time interval with equal spacing. 
@@ -44,7 +45,7 @@ time = np.arange(50)
 ```
 Great. Now to construct the trend. 
 
-Sticking with the sensor example, suppose the sensor is oriented towards an oscillating fan that alternates right and left. The trend component capture the wind speed as someone adjusts the fan speed. Increased fan speed translates to increased sensor measurements.
+Sticking with the sensor example, suppose the sensor is oriented towards an oscillating fan that alternates right and left. The trend component captures the wind speed as someone adjusts the fan speed. Increased fan speed translates to increased sensor measurements.
 ```
 trend = np.empty_like(time, dtype='float')
 for t in time:
@@ -110,7 +111,7 @@ plt.ylabel("electricity demand")
 ![Residual Plot](/assets/images/residuals.png?raw=true){: .center-image }
 
 # Aggregating Components
-Now comes the time to aggregate the three components: trend, seasonality, and residuals. This will give us the time series data were looking for. 
+Now comes time to aggregate the three components: trend, seasonality, and residuals. This will give us the time series data were looking for. 
 
 As it turns out, there are two major ways to aggregate (or decompose, as we'll see later) time series data. 
 
@@ -157,7 +158,7 @@ plt.ylabel("sensor measurement")
 ![Multiplicative Plot](/assets/images/multiplicative.png?raw=true_){: .center-image }
 
 # Additive vs Multiplicative?
-The primary questions likely bouncing around your skull is how can I tell if a time series is additive or multiplicative? Simply plotting the original time series data, called a *run plot*, is one way to do so. If the seasonality and residual components are independent of the trend, then you have an additive series. If the seasonality and residual components are in fact dependent, meaning they fluctuate, on trend, then you have a multiplicative series. Look at the additive and multiplicative plots above. You'll notice a big difference in the amplitudes of the peaks and troughs. 
+The primary question likely bouncing around your head is how can I tell if a time series is additive or multiplicative? Simply plotting the original time series data, called a *run plot*, is one way to do so. If the seasonality and residual components are independent of the trend, then you have an additive series. If the seasonality and residual components are in fact dependent, meaning they fluctuate on trend, then you have a multiplicative series. Look at the additive and multiplicative plots above. You'll notice a big difference in the amplitudes of the peaks and troughs. Specifically, the amplitude of the seasonal component of the multiplicative time series is changes with trend.  
 
 # Time Series Decomposition with Python
 You'll likely never know how real-world data was generated. However, I'm about to show you a powerful tool that will allow you to decompose a time series into its components. Let's see how simple it is.
