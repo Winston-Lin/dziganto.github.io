@@ -167,7 +167,9 @@ You'll likely never know how real-world data was generated. However, I'm about t
 
 ```
 from statsmodels.tsa.seasonal import seasonal_decompose
-ss_decomposition = seasonal_decompose(x=additive, model='additive', freq=6)
+ss_decomposition = seasonal_decompose(x=additive, 
+                                      model='additive', 
+                                      freq=6)
 estimated_trend = ss_decomposition.trend
 estimated_seasonal = ss_decomposition.seasonal
 estimated_residual = ss_decomposition.resid
@@ -201,7 +203,9 @@ axes[3].legend(loc='upper left')
 Multiplicative decomposition follows the exact same pattern. The only major change is that we change model to 'multiplicative'.
 
 ```
-ss_decomposition = seasonal_decompose(x=multiplicative, model='multiplicative', freq=6)
+ss_decomposition = seasonal_decompose(x=multiplicative, 
+                                      model='multiplicative', 
+                                      freq=6)
 estimated_trend = ss_decomposition.trend
 estimated_seasonal = ss_decomposition.seasonal
 estimated_residual = ss_decomposition.resid
