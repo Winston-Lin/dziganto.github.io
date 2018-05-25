@@ -19,16 +19,16 @@ Trend, as its name suggests, is the overall direction of the data. Seasonality i
 
 Let's look at a few plots to make sure we understand trend, seasonality, and residuals.
 
-#### Time Series Data
+### Time Series Data
 ![TS Data](/assets/images/timeseries.png?raw=true){: .center-image }
 
-#### Trend
+### Trend
 ![Trend](/assets/images/trend.png?raw=true){: .center-image }
 
-#### Seasonality
+### Seasonality
 ![Seasonality](/assets/images/seasonality.png?raw=true){: .center-image }
 
-#### Residuals
+### Residuals
 ![Residuals](/assets/images/residuals.png?raw=true){: .center-image }
 
 Now that you have the big picture, let's look at the nuts and bolts. I'll show you how I created the data above. I'll also show you how to decompose a time series model in Python as well as how to create the plots shown above. 
@@ -36,7 +36,7 @@ Now that you have the big picture, let's look at the nuts and bolts. I'll show y
 # Create Time Series Data
 Time series data is data that is measured at equally-spaced intervals. Think of a sensor that takes measurements every minute. On the other hand, suppose you had a sensor that took measurements at random times; that is not time series. 
 
-#### Trend
+### Trend
 The first step is to create a time interval with equal spacing. 
 ```
 import numpy as np
@@ -69,7 +69,7 @@ Here's the result:
 
 ![Trend Plot](/assets/images/trend.png?raw=true){: .center-image }
 
-#### Seasonality
+### Seasonality
 The next step is to create a periodic element. The wind speed sensor analog is the wind speed that's captured as the fan sweeps left to right and back again. 
 
 Here's an example of how we can create that:
@@ -90,7 +90,7 @@ plt.ylabel("sensor measurement")
 
 ![Trend Plot](/assets/images/seasonality.png?raw=true){: .center-image }
 
-#### Residual 
+### Residual 
 The last component is the residual. This is a noise component, as mentioned earlier. We can fabricate that like so:
 
 ```
@@ -114,7 +114,7 @@ Now comes the time to aggregate the three components: trend, seasonality, and re
 
 As it turns out, there are two major ways to aggregate (or decompose, as we'll see later) time series data. 
 
-#### Additive
+### Additive
 The first way is simply a sum of the three components. 
 
 ![LaTeX image 1](/assets/images/additive_formula.png?raw=true){: .center-image }
@@ -132,7 +132,7 @@ plt.ylabel("sensor measurement");
 
 ![Additive Plot](/assets/images/additive.png?raw=true){: .center-image }
 
-#### Multiplicative
+### Multiplicative
 The second way to decompose time series data is a multiplication of all three components. 
 
 ![LaTeX image 2](/assets/images/multiplicative_formula.png?raw=true){: .center-image }
@@ -162,7 +162,7 @@ The primary questions likely bouncing around your skull is how can I tell if a t
 # Time Series Decomposition with Python
 You'll likely never know how real-world data was generated. However, I'm about to show you a powerful tool that will allow you to decompose a time series into its components. Let's see how simple it is.
 
-#### Additive Decomposition
+### Additive Decomposition
 
 ```
 from statsmodels.tsa.seasonal import seasonal_decompose
@@ -196,7 +196,7 @@ axes[3].legend(loc='upper left')
 
 ![All Additive Plots](/assets/images/additive_all.png?raw=true_){: .center-image }
 
-# Multiplicative Decomposition
+### Multiplicative Decomposition
 Multiplicative decomposition follows the exact same pattern. The only major change is that we change model to 'multiplicative'.
 
 ```
