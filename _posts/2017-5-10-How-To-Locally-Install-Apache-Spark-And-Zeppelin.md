@@ -43,7 +43,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 # Install Spark & Its Dependencies
 1. Copy and paste these commands into Terminal:
 ```
-$ brew cask install java
+$ brew cask install java8
 $ brew install scala
 $ brew install apache-spark
 ```
