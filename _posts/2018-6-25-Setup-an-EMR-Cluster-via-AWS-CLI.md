@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: Setup an EMR Cluster via AWS CLI
 categories: [AWS, AWS CLI, EMR, Big Data, Hadoop, JupyterHub, Spark]
 ---
