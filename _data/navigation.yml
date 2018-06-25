@@ -2,8 +2,6 @@
 main:
   - title: "Big Data"
     url: /big data/
-  - title: "Crypto"
-    url: /cryptography/
   - title: "Machine Learning"
     url: /deep learning/
   - title: "Programming"
@@ -12,5 +10,7 @@ main:
     url: /resources/
   - title: "Talks"
     url: /talks/
+  - title: "Crypto"
+    url: /cryptography/
   - title: "Misc"
     url: /misc/
