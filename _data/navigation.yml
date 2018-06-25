@@ -4,7 +4,7 @@ main:
     url: /big data/
   - title: "Crypto"
     url: /cryptography/
-  - title: "DL/ML"
+  - title: "Machine Learning"
     url: /deep learning/
   - title: "Programming"
     url: /python/   
