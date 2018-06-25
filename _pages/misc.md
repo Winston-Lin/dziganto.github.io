@@ -15,5 +15,8 @@ General Posts, Hashing, and RNGs
 # Hashing
 [An Introduction to Hashing](https://dziganto.github.io/computer%20science/data%20science/hashing/machine%20learning/python/Introduction-to-Hashing/)
 
+# Information Theory
+Coming Soon!
+
 # Random Number Generators
 Coming Soon!
