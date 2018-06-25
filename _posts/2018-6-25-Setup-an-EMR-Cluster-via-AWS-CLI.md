@@ -4,6 +4,8 @@ title: Setup an EMR Cluster via AWS CLI
 categories: [AWS, AWS CLI, EMR, Big Data, Hadoop, JupyterHub, Spark]
 ---
 
+![image](/assets/images/Amazon_EMR_main.png?raw=true){: .center-image }
+
 ## Objective
 In this no frills post, you'll learn how to setup a big data cluster on Amazon EMR using nothing but the AWS command line. 
 
